@@ -163,6 +163,13 @@
     <Compile Include="ASP.Net\ActivitiesPage\activityAdd.aspx.designer.cs">
       <DependentUpon>activityAdd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx.cs">
+      <DependentUpon>ActivityDesc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx.designer.cs">
+      <DependentUpon>ActivityDesc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASP.Net\ActivitiesPage\ActivityPage.cs" />
     <Compile Include="ASP.Net\ActivitiesPage\App_Code\Activity.cs" />
     <Compile Include="ASP.Net\HomePage\HomePage.aspx.cs">
@@ -218,6 +225,7 @@
     <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage.css" />
     <Content Include="ASP.Net\ActivitiesPage\activityAdd.aspx" />
+    <Content Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\Css\activityForm.css" />
     <Content Include="ASP.Net\HomePage\HomePage.aspx" />
     <Content Include="ASP.Net\LandingPage\LandingPage.aspx" />
