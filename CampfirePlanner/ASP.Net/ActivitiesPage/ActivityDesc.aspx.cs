@@ -20,11 +20,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 showActivityDesc();
                 if (Session["UserAuthentication"].ToString() == "Admin")
                 {
-                    Button btnDel = new Button();
-                    btnDel.ID = "btnDel";
-                    btnDel.Text = "Delete Activity";
-                    btnDel.Click += new EventHandler(btnDel_Click);
-                    topRight.Controls.Add(btnDel);
+                    btnDel.Visible = true;
                 }
             }
         }
@@ -50,16 +46,16 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             lblLinks.Text = result.Tables[0].Rows[0]["Link"].ToString();
 
             //Display Categories
-            string catDisplay = result.Tables[0].Rows[0]["Category"].ToString();
-            if (catDisplay.Contains("a"))
-                catDisplay +=
-            else if (catDisplay.Contains("b"))
-                catDisplay +=
-            else if (catDisplay.Contains("b"))
-                catDisplay +=
-            else if (catDisplay.Contains("b"))
-                catDisplay +=
-            lblCategories.Text = catDisplay;
+            //string catDisplay = result.Tables[0].Rows[0]["Category"].ToString();
+            //if (catDisplay.Contains("a"))
+            //    catDisplay +=
+            //else if (catDisplay.Contains("b"))
+            //    catDisplay +=
+            //else if (catDisplay.Contains("b"))
+            //    catDisplay +=
+            //else if (catDisplay.Contains("b"))
+            //    catDisplay +=
+            //lblCategories.Text = catDisplay;
         }
 
         private int deleteActivity()
@@ -74,11 +70,15 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
 
             return 0;
         }
-        void btnDel_Click(object sender, EventArgs e)
+
+        protected void btnDel_Click(object sender, EventArgs e)
         {
-            if (deleteActivity() == 0)
+            if (Session["UserAuthentication"].ToString() == "Admin")
             {
-                Response.Redirect("~/ASP.Net/ActivitiesPage/ActivitiesPage.aspx");
+                if (deleteActivity() == 0)
+                {
+                    Response.Redirect("~/ASP.Net/ActivitiesPage/ActivitiesPage.aspx");
+                }
             }
         }
     }
