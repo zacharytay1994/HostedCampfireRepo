@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="CampfirePlannerPlanner.ASP.Net.LoginRegister.LoginPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="CampfirePlannerPlanner.ASP.Net.LoginRegister.LoginPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="LoginPage.css" rel="stylesheet" type="text/css" />
 </asp:Content>

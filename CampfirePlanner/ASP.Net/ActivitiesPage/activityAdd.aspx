@@ -1,11 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activityAdd.aspx.cs" Inherits="CampfirePlanner.activityAdd" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activityAdd.aspx.cs" Inherits="CampfirePlanner.ASP.Net.ActivitiesPage.activityAdd" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
     <title>Add Activity</title>
-    <link rel="stylesheet" href="~/Css/activityForm.css"/>
+    <link rel="stylesheet" href="~/ASP.Net/ActivitiesPage/Css/activityForm.css"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:Extra-Bold" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
 </head>
@@ -54,6 +55,17 @@
                 </div>
                 <div class="row">
                     <div class="col-25">
+                        <label for="Duration">Approximate Duration</label>
+                    </div>
+                    <div class="col-75">
+                        <asp:TextBox ID="txtDuration" runat="server"></asp:TextBox> <br \ />
+                        <asp:Label ID="Label1" runat="server" Text="How long will you game be?"></asp:Label>
+&nbsp;<br />
+                        <asp:RequiredFieldValidator ID="rfvDuration" runat="server" ControlToValidate="txtDuration" ErrorMessage="Please select a duration!" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
                         <label for="explanation">Explanation of Game</label>
                     </div>
                     <div class="col-75">
@@ -91,4 +103,3 @@
     </main>
 </body>
 </html>
-
