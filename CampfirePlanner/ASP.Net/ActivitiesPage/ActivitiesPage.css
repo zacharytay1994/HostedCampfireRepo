@@ -1,4 +1,5 @@
 ﻿body {
+
 }
 h1 {
     border: solid;
@@ -8,6 +9,11 @@ p {
     border: solid;
 }
 
-table {
-    border: solid;
+div.col-md-2 {
+    border:thin solid;
+    border-radius:7px;
+    margin-left:74px;
+    margin-top:20px;
+    margin-bottom:20px;
+    padding:10px;
 }
