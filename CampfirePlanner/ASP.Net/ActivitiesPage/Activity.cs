@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Campfire.ActivityDesc
+namespace CampfirePlanner.ActivityDesc
 {
     public class Activity
     {

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CampfirePlanner.ASP.Net.LoginRegister {
+namespace CampfirePlannerPlanner.ASP.Net.LoginRegister {
     
     
     public partial class LoginPage {

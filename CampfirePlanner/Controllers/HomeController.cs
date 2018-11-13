@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CampfirePlanner.Controllers
+namespace CampfirePlannerPlanner.Controllers
 {
     public class HomeController : Controller
     {

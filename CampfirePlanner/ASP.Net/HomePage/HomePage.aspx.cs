@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CampfirePlanner.ASP.Net.HomePage
+namespace CampfirePlannerPlanner.ASP.Net.HomePage
 {
     public partial class HomePage : System.Web.UI.Page
     {

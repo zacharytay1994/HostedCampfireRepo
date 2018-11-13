@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CampfirePlanner.ASP.Net
+namespace CampfirePlannerPlanner.ASP.Net
 {
     public partial class LandingPage : System.Web.UI.Page
     {

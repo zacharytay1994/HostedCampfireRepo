@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Campfire.ActivityAddForm
+namespace CampfirePlanner.ActivityAddForm
 {
     public partial class confirmActivityAdd : System.Web.UI.Page
     {

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CampfirePlanner.ASP.Net.MasterPages.MainNavBar {
+namespace CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar {
     
     
     public partial class NavBar {

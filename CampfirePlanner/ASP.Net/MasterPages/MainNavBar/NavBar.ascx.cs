@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CampfirePlanner.ASP.Net.MasterPages.MainNavBar
+namespace CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar
 {
     public partial class NavBar : System.Web.UI.UserControl
     {

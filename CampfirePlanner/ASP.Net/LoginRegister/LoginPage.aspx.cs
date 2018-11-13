@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CampfirePlanner.ASP.Net.LoginRegister
+namespace CampfirePlannerPlanner.ASP.Net.LoginRegister
 {
     public partial class LoginPage : System.Web.UI.Page
     {
@@ -21,11 +21,11 @@ namespace CampfirePlanner.ASP.Net.LoginRegister
             //if (CheckLoginData(inputEmail, inputPw) == true)
             //{
             //    string strConn = ConfigurationManager.ConnectionStrings
-            //        ["CampfireConnectionString"].ToString();
+            //        ["CampfirePlannerConnectionString"].ToString();
 
             //    SqlConnection conn = new SqlConnection(strConn);
 
-            //    SqlCommand cmd = new SqlCommand("SELECT Username FROM CampfireUsers WHERE EmailAddr=@email AND Password=@password", conn);
+            //    SqlCommand cmd = new SqlCommand("SELECT Username FROM CampfirePlannerUsers WHERE EmailAddr=@email AND Password=@password", conn);
             //    cmd.Parameters.AddWithValue("@password", inputPw);
             //    cmd.Parameters.AddWithValue("@email", inputEmail);
             //    conn.Open();

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CampfirePlanner.ASP.Net.LoginRegister
+namespace CampfirePlannerPlanner.ASP.Net.LoginRegister
 {
     public partial class RegisterPage : System.Web.UI.Page
     {

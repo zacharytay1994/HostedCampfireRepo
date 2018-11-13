@@ -1,7 +1,7 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NavBar.ascx.cs" Inherits="CampfirePlanner.ASP.Net.MasterPages.MainNavBar.NavBar" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NavBar.ascx.cs" Inherits="CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar.NavBar" %>
 <nav class="navbar navbar-expand-md bg-light navbar-light">
     <!-- The brand(or icon) of the navbar -->
-    <a class="navbar-brand" href="#" style="font-size: 32px; font-weight: bold; color: red;">Campfire
+    <a class="navbar-brand" href="#" style="font-size: 32px; font-weight: bold; color: red;">CampfirePlanner
     </a>
     <!-- Toggle/collapsible Button, also known as hamburger button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar">

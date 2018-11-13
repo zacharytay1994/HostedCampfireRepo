@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Campfire.ActivityAddForm
+namespace CampfirePlanner.ActivityAddForm
 {
 
 

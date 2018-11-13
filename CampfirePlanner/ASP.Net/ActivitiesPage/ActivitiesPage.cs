@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace Campfire.ActivitiesPage
+namespace CampfirePlanner.ActivitiesPage
 {
     public class ActivityPage
     {
@@ -21,7 +21,7 @@ namespace Campfire.ActivitiesPage
         {
             // Get Data from SQL and store Data in DataTable table
             string strConn = ConfigurationManager.ConnectionStrings
-                ["CampfireConnectionString"].ToString();
+                ["CampfirePlannerConnectionString"].ToString();
 
             SqlConnection conn = new SqlConnection(strConn);
 

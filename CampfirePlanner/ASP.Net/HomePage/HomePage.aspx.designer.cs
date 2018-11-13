@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CampfirePlanner.ASP.Net.HomePage
+namespace CampfirePlannerPlanner.ASP.Net.HomePage
 {
 
 

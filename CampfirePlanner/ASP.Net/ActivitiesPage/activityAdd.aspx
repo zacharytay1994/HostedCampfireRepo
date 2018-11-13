@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activityAdd.aspx.cs" Inherits="Campfire.activityAdd" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activityAdd.aspx.cs" Inherits="CampfirePlanner.activityAdd" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">

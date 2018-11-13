@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CampfirePlanner.Classes
+namespace CampfirePlannerPlanner.Classes
 {
     public class SQLFunctions
     {
@@ -11,11 +11,11 @@ namespace CampfirePlanner.Classes
         //   string _password)
         //{
         //    string strConn = ConfigurationManager.ConnectionStrings
-        //            ["CampfireConnectionString"].ToString();
+        //            ["CampfirePlannerConnectionString"].ToString();
 
         //    SqlConnection conn = new SqlConnection(strConn);
 
-        //    SqlCommand cmd = new SqlCommand("INSERT INTO CampfireUsers " +
+        //    SqlCommand cmd = new SqlCommand("INSERT INTO CampfirePlannerUsers " +
         //        "(Username, EmailAddr, Password) VALUES (@username," +
         //        "@email, @password)", conn);
 
@@ -34,11 +34,11 @@ namespace CampfirePlanner.Classes
         //public bool CheckLoginData(string _email, string _password)
         //{
         //    string strConn = ConfigurationManager.ConnectionStrings
-        //            ["CampfireConnectionString"].ToString();
+        //            ["CampfirePlannerConnectionString"].ToString();
 
         //    SqlConnection conn = new SqlConnection(strConn);
 
-        //    SqlCommand cmd = new SqlCommand("SELECT Password FROM CampfireUsers WHERE EmailAddr=@email", conn);
+        //    SqlCommand cmd = new SqlCommand("SELECT Password FROM CampfirePlannerUsers WHERE EmailAddr=@email", conn);
         //    cmd.Parameters.AddWithValue("@email", _email);
         //    conn.Open();
         //    string pw = (string)cmd.ExecuteScalar();
@@ -52,7 +52,7 @@ namespace CampfirePlanner.Classes
         //public void AddActivity(string _activityname, string _activitydesc, string _activitycat, string _activityexp, string _activitylink)
         //{
         //    string strConn = ConfigurationManager.ConnectionStrings
-        //            ["CampfireConnectionString"].ToString();
+        //            ["CampfirePlannerConnectionString"].ToString();
 
         //    SqlConnection conn = new SqlConnection(strConn);
 

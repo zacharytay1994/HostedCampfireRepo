@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Campfire.ActivityDesc {
+namespace CampfirePlanner.ActivityDesc {
     
     
     public partial class ActivityDesc {

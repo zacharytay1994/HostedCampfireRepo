@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LandingPage.aspx.cs" Inherits="CampfirePlanner.ASP.Net.LandingPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LandingPage.aspx.cs" Inherits="CampfirePlannerPlanner.ASP.Net.LandingPage" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Button ID="btn_enter" runat="server" OnClick="btn_enter_Click" Text="Enter Campfire" UseSubmitBehavior="False" />
+            <asp:Button ID="btn_enter" runat="server" OnClick="btn_enter_Click" Text="Enter CampfirePlanner" UseSubmitBehavior="False" />
         </div>
     </form>
 </body>

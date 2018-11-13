@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace CampfirePlanner
+namespace CampfirePlannerPlanner
 {
     public class FilterConfig
     {

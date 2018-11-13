@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Campfire {
+namespace CampfirePlanner {
     
     
     public partial class activityAdd {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="RegisterPage.aspx.cs" Inherits="CampfirePlanner.ASP.Net.LoginRegister.RegisterPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="RegisterPage.aspx.cs" Inherits="CampfirePlannerPlanner.ASP.Net.LoginRegister.RegisterPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <link href="RegisterPage.css" rel="stylesheet" type="text/css" />

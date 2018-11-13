@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Campfire.App_Code;
+using CampfirePlanner.App_Code;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 
-namespace Campfire
+namespace CampfirePlanner
 {
     public partial class activityAdd : System.Web.UI.Page
     {

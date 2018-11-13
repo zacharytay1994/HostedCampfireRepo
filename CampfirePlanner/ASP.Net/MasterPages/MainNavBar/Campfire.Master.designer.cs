@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CampfirePlanner.ASP.Net.MasterPages.MainNavBar {
+namespace CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar {
     
     
-    public partial class Campfire {
+    public partial class CampfirePlanner {
         
         /// <summary>
         /// head control.
@@ -37,7 +37,7 @@ namespace CampfirePlanner.ASP.Net.MasterPages.MainNavBar {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CampfirePlanner.ASP.Net.MasterPages.MainNavBar.NavBar Navbar;
+        protected global::CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar.NavBar Navbar;
         
         /// <summary>
         /// ContentPlaceHolder1 control.

@@ -8,7 +8,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Campfire.ActivityDesc
+namespace CampfirePlanner.ActivityDesc
 {
     public partial class ActivityDesc : System.Web.UI.Page
     {
@@ -22,7 +22,7 @@ namespace Campfire.ActivityDesc
             int actID = Convert.ToInt32(Request.QueryString["actID"]);
 
             //Display Fields
-            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+            string strConn = ConfigurationManager.ConnectionStrings["CampfirePlannerConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
             SqlCommand cmd = new SqlCommand("SELECT * FROM Activities WHERE ActivityID = @actid", conn);
             cmd.Parameters.AddWithValue("@actid", actID);
