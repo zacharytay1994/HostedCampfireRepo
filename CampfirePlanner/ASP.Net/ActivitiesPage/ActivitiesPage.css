@@ -10,10 +10,10 @@ p {
 }
 
 div.col-md-2 {
-    border:thin solid;
-    border-radius:7px;
-    margin-left:74px;
-    margin-top:20px;
-    margin-bottom:20px;
-    padding:10px;
+    border: thin solid;
+    border-radius: 7px;
+    margin-left: 74px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
 }

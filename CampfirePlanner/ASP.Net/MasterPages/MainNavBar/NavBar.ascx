@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NavBar.ascx.cs" Inherits="CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar.NavBar" %>
-<nav class="navbar navbar-expand-md bg-light navbar-light">
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:aliceblue">
     <!-- The brand(or icon) of the navbar -->
     <a class="navbar-brand" href="#" style="font-size: 32px; font-weight: bold; color: red;">CampfirePlanner
     </a>
