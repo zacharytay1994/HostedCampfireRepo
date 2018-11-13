@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="ActivitiesPage.css" type="text/css" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
     <asp:HiddenField runat="server" ID="SendA" Value="1" />
     <style>
         
