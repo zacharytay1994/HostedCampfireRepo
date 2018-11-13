@@ -21,20 +21,20 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             int actID = Convert.ToInt32(Request.QueryString["actID"]);
 
             //Display Fields
-            //string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
-            //SqlConnection conn = new SqlConnection(strConn);
-            //SqlCommand cmd = new SqlCommand("SELECT * FROM Activities WHERE ActivityID = @actid", conn);
-            //cmd.Parameters.AddWithValue("@actid", actID);
-            //SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
-            //DataSet result = new DataSet();
-            //conn.Open();
-            //daActivity.Fill(result, "Activities");
-            //conn.Close();
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Activities WHERE ActivityID = @actid", conn);
+            cmd.Parameters.AddWithValue("@actid", actID);
+            SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
+            conn.Open();
+            daActivity.Fill(result, "Activities");
+            conn.Close();
 
-            //lblTitle.Text = result.Tables[0].Rows[0]["ActivityName"].ToString();
-            //lblDesc.Text = result.Tables[0].Rows[0]["ActivityDesc"].ToString();
-            //lblExp.Text = result.Tables[0].Rows[0]["ActivityDesc"].ToString();
-            //lblLinks.Text = result.Tables[0].Rows[0]["Link"].ToString();
+            lblTitle.Text = result.Tables[0].Rows[0]["ActivityName"].ToString();
+            lblDesc.Text = result.Tables[0].Rows[0]["ActivityDesc"].ToString();
+            lblExp.Text = result.Tables[0].Rows[0]["ActivityDesc"].ToString();
+            lblLinks.Text = result.Tables[0].Rows[0]["Link"].ToString();
 
             //Display Categories
             //cmd = new SqlCommand("SELECT * FROM Category INNER JOIN Activities ON Category.ActivityID = Activities.ActivityID WHERE Activities.ActivityID = @actid", conn);
