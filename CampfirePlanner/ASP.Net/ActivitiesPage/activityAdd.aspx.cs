@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CampfirePlanner.App_Code;
+using CampfirePlanner.ASP.Net.ActivitiesPage.App_Code;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 
-namespace CampfirePlanner
+namespace CampfirePlanner.ASP.Net.ActivitiesPage
 {
     public partial class activityAdd : System.Web.UI.Page
     {
@@ -30,10 +30,10 @@ namespace CampfirePlanner
                 objActivity.activityDescription = briefDescription.Text;
 
                 string categ = "";
-                
+
                 foreach (var x in lbCat.SelectedValue)
                 {
-                    categ += x;                    
+                    categ += x;
                 }
                 objActivity.category = categ;
                 objActivity.activityExplanation = txtExplanation.Text;
