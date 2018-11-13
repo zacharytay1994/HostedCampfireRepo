@@ -1,0 +1,94 @@
+﻿body {
+    background-image: url("test.jpg");
+    background-size: auto;
+    background-attachment: fixed;
+}
+
+.auto-style4 {
+    height: 30px;
+    width: 566px;
+}
+
+.auto-style5 {
+    height: 30px;
+    width: 120px;
+}
+
+.auto-style7 {
+    font-family: 'Microsoft YaHei';
+    font-size: 30pt;
+    font-weight: bold;
+    color: black;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 110px;
+    padding-left: 110px;
+}
+
+.auto-style9 {
+    font-family: "Segoe UI";
+    font-size: large;
+}
+
+.textbox {
+    border-radius: 5px;
+}
+
+.auto-style10 {
+    width: 380px;
+}
+
+.submitbutton {
+    background-color: transparent;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    color: black;
+    font-size: x-large;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.auto-style11 {
+    height: 20px;
+    width: 120px;
+}
+
+.auto-style12 {
+    height: 20px;
+    width: 566px;
+}
+
+p.registerheader {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+p.submit {
+    text-align: center;
+    padding-top: 0px;
+}
+
+table {
+    width: 77%;
+    margin-left: 23%;
+}
+
+tr {
+    border-style: none;
+    /*border-width:thin;*/
+}
+
+td {
+    color: black;
+}
+
+tablep {
+    border: solid;
+}

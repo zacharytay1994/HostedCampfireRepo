@@ -1,0 +1,92 @@
+﻿body {
+    background-image: url(test.jpg);
+    background-size: auto;
+    background-attachment: fixed;
+}
+
+.auto-style4 {
+    height: 30px;
+    width: 566px;
+}
+
+.auto-style5 {
+    height: 30px;
+    width: 120px;
+}
+
+.auto-style7 {
+    font-family: 'Microsoft YaHei';
+    font-size: 30pt;
+    font-weight: bold;
+    color: black;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 137px;
+    padding-left: 137px;
+}
+
+.auto-style9 {
+    font-family: "Segoe UI";
+    font-size: large;
+}
+
+.auto-style11 {
+    height: 40px;
+    width: 120px;
+}
+
+.auto-style12 {
+    height: 40px;
+    width: 566px;
+}
+
+.textbox {
+    border-radius: 5px;
+}
+
+.loginbutton {
+    background-color: transparent;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    color: black;
+    font-size: x-large;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.hypercss {
+    color: black;
+}
+
+    .hypercss:hover {
+        color: black;
+    }
+
+p.loginheader {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+table {
+    width: 77%;
+    margin-left: 23%;
+}
+
+tr {
+    border-style: none;
+}
+
+td {
+    color: black;
+}
+
+p.hlink, p.login {
+    text-align: center;
+}
