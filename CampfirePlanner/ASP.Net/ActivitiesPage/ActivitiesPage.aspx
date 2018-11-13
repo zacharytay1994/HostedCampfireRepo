@@ -37,7 +37,7 @@
                     break;
             }
              //Call .cs function
-            window.location = '..ASP.Net/ActivitiesPage/ActivityDesc.aspx' + '?actID=' + parse;
+            window.location = '../ActivitiesPage/ActivityDesc.aspx' + '?actID=' + parse;
             return false; //Redirect
         }
     </script>
