@@ -20,11 +20,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 showActivityDesc();
                 if (Session["UserAuthentication"].ToString() == "Admin")
                 {
-                    Button btnDel = new Button();
-                    btnDel.ID = "btnDel";
-                    btnDel.Text = "Delete Activity";
-                    btnDel.Click += new EventHandler(btnDel_Click);
-                    topRight.Controls.Add(btnDel);
+                    btnDel.Visible = true;
                 }
             }
         }
@@ -74,11 +70,15 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
 
             return 0;
         }
-        void btnDel_Click(object sender, EventArgs e)
+
+        protected void btnDel_Click(object sender, EventArgs e)
         {
-            if (deleteActivity() == 0)
+            if (Session["UserAuthentication"].ToString() == "Admin")
             {
-                Response.Redirect("~/ASP.Net/ActivitiesPage/ActivitiesPage.aspx");
+                if (deleteActivity() == 0)
+                {
+                    Response.Redirect("~/ASP.Net/ActivitiesPage/ActivitiesPage.aspx");
+                }
             }
         }
     }
