@@ -4,6 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:HiddenField runat="server" ID="SendA" Value="1" />
+    <style>
+        
+    </style>
     <script>
        document.getElementById("<%=SendA.ClientID%>").Value = "3";
     </script>
@@ -61,8 +64,8 @@
     </div>
     <div class="container">
         <div class="row">
-            <div onclick="redirect(this.id)" class="col-md-3" id="4">
-                <table style="width:100%">            
+            <div onclick="redirect(this.id)" class="col-md-2" id="4">
+                <table class="box" style="width:100%">            
                     <tr>
                         <td>Name:</td>
                         <td>
@@ -90,8 +93,9 @@
                 </table>
                 <%--<asp:Button runat="server" width="100%" ID="Button0" OnClick="Button0_Click" Text="Let's GO!" />--%>
             </div>
-            <div onclick="redirect(this.id)" class="col-md-3" id="8">
-                <table style="width:100%">
+
+            <div onclick="redirect(this.id)" class="col-md-2" id="8">
+                <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
                         <td>
@@ -119,8 +123,9 @@
                 </table>
                 <%--<asp:Button runat="server" width="100%" ID="Button1" onclick="Button1_Click" Text="Let's GO!" />--%>
             </div>
-             <div onclick="redirect(this.id)" class="col-md-3" id="12">
-                <table style="width:100%">
+
+             <div onclick="redirect(this.id)" class="col-md-2" id="12">
+                <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
                         <td>
@@ -148,8 +153,9 @@
                 </table>
                  <%--<asp:Button runat="server" width="100%" ID="Button2" onclick="Button2_Click" Text="Let's GO!" />--%>
             </div>
-             <div onclick="redirect(this.id)" class="col-md-3" id="16">
-                <table style="width:100%">
+
+             <div onclick="redirect(this.id)" class="col-md-2" id="16">
+                <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
                         <td>
@@ -179,8 +185,8 @@
             </div>
         </div>
         <div class="row">
-            <div onclick="redirect(this.id)" class="col-md-3" id="20">
-                <table style="width:100%">
+            <div onclick="redirect(this.id)" class="col-md-2" id="20">
+                <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
                         <td>
@@ -208,8 +214,9 @@
                 </table>
                 <%--<asp:Button runat="server" width="100%" ID="Button4" onclick="Button4_Click" Text="Let's GO!" />--%>
             </div>
-             <div onclick="redirect(this.id)" class="col-md-3" id="24">
-                <table style="width:100%">
+
+             <div onclick="redirect(this.id)" class="col-md-2" id="24">
+                <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
                         <td>
@@ -237,8 +244,9 @@
                 </table>
                 <%-- <asp:Button runat="server" width="100%" ID="Button5" onclick="Button5_Click" Text="Let's GO!" />--%>
             </div>
-             <div onclick="redirect(this.id)" class="col-md-3" ID="28">
-                <table style="width:100%">
+
+             <div onclick="redirect(this.id)" class="col-md-2" ID="28">
+                <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
                         <td>
@@ -266,8 +274,9 @@
                 </table>
                 <%-- <asp:Button runat="server" width="100%" ID="Button6" onclick="Button6_Click" Text="Let's GO!" />--%>
             </div>
-            <div onclick="redirect(this.id)" class="col-md-3">
-                <table style="width:100%">
+
+            <div onclick="redirect(this.id)" class="col-md-2">
+                <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
                         <td>
