@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="ScheduleNested.master.cs" Inherits="CampfirePlanner.ASP.Net.MasterPages.ScheduleNavBar.ScheduleNested" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="Schedule.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#" style="display:block">MyEvents</a>
+      <a href="#" style="display:block">ManageGroups</a>
+      <a href="#" style="display:block">CreateNewGroup</a>
+    </div>
+
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+             document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+    <div class="col-md-12">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server"></asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
