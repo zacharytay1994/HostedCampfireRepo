@@ -149,7 +149,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-<<<<<<< HEAD
     <Compile Include="ASP.Net\ActivitiesPage\ActivitiesPage.aspx.cs">
       <DependentUpon>ActivitiesPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -158,16 +157,6 @@
       <DependentUpon>ActivitiesPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASP.Net\ActivitiesPage\ActivityPage.cs" />
-=======
-    <Compile Include="ASP.Net\ActivitiesPage\activityAdd.aspx.cs">
-      <DependentUpon>activityAdd.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASP.Net\ActivitiesPage\activityAdd.aspx.designer.cs">
-      <DependentUpon>activityAdd.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ASP.Net\ActivitiesPage\App_Code\Activity.cs" />
->>>>>>> 4a129c8fab8e4169bd95370d90df53bf8eaa90bb
     <Compile Include="ASP.Net\HomePage\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -218,13 +207,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage.css" />
-=======
-    <Content Include="ASP.Net\ActivitiesPage\activityAdd.aspx" />
-    <Content Include="ASP.Net\ActivitiesPage\Css\activityForm.css" />
->>>>>>> 4a129c8fab8e4169bd95370d90df53bf8eaa90bb
     <Content Include="ASP.Net\HomePage\HomePage.aspx" />
     <Content Include="ASP.Net\LandingPage\LandingPage.aspx" />
     <Content Include="ASP.Net\LoginRegister\LoginPage.aspx" />
@@ -316,7 +300,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
