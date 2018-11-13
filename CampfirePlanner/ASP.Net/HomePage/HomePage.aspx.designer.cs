@@ -12,20 +12,9 @@ namespace CampfirePlannerPlanner.ASP.Net.HomePage {
     
     public partial class HomePage {
         
-        /// <summary>
-<<<<<<< HEAD
-        /// cbl_categories control.
-=======
-        /// GridView1 control.
->>>>>>> b7e52a6c4944f56bcc9f292ee6d861c6496da635
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-<<<<<<< HEAD
+ 
         protected global::System.Web.UI.WebControls.CheckBoxList cbl_categories;
-=======
+
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
@@ -36,6 +25,5 @@ namespace CampfirePlannerPlanner.ASP.Net.HomePage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_userid;
->>>>>>> b7e52a6c4944f56bcc9f292ee6d861c6496da635
     }
 }
