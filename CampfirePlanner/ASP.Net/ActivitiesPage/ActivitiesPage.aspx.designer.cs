@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CampfirePlanner.ActivitiesPage {
+namespace CampfirePlanner.ASP.Net.ActivitiesPage {
     
     
     public partial class ActivitiesPage {

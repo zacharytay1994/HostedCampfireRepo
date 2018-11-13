@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="ActivitiesPage.aspx.cs" Inherits="CampfirePlanner.ActivitiesPage.ActivitiesPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="ActivitiesPage.aspx.cs" Inherits="CampfirePlanner.ASP.Net.ActivitiesPage.ActivitiesPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="ActivitiesPage_ss.css" type="text/css" />
+    <link rel="stylesheet" href="ActivitiesPage.css" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:HiddenField runat="server" ID="SendA" Value="1" />
@@ -36,7 +36,6 @@
                     parse = <%= Label32Update()%>;
                     break;
             }
-            //var parse =<%= Label4Update()%>;
              //Call .cs function
             window.location = '../ActivityDesc/ActivityDesc.aspx' + '?actID=' + parse;
             return false; //Redirect
@@ -307,7 +306,4 @@
         <asp:Label ID="lblID" runat="server"></asp:Label>
         <br />
     </div>
-    
-   
-    
 </asp:Content>

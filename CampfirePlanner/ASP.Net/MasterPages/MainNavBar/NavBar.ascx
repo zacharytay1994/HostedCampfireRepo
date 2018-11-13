@@ -15,7 +15,7 @@
                 <a class="nav-link" href="#">Planner</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Activities</a>
+                <a class="nav-link" href="../ActivitiesPage/ActivitiesPage.aspx">Activities</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About Us</a>

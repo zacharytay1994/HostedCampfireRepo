@@ -156,29 +156,7 @@
     <Compile Include="ASP.Net\ActivitiesPage\ActivitiesPage.aspx.designer.cs">
       <DependentUpon>ActivitiesPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ASP.Net\ActivitiesPage\ActivitiesPage.cs" />
-    <Compile Include="ASP.Net\ActivitiesPage\Activity.cs" />
-    <Compile Include="ASP.Net\ActivitiesPage\activityAdd.aspx.cs">
-      <DependentUpon>activityAdd.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASP.Net\ActivitiesPage\activityAdd.aspx.designer.cs">
-      <DependentUpon>activityAdd.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx.cs">
-      <DependentUpon>ActivityDesc.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx.designer.cs">
-      <DependentUpon>ActivityDesc.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ASP.Net\ActivitiesPage\confirmActivityAdd.aspx.cs">
-      <DependentUpon>confirmActivityAdd.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASP.Net\ActivitiesPage\confirmActivityAdd.aspx.designer.cs">
-      <DependentUpon>confirmActivityAdd.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="ASP.Net\ActivitiesPage\ActivityPage.cs" />
     <Compile Include="ASP.Net\HomePage\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -230,10 +208,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage.aspx" />
-    <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage_ss.css" />
-    <Content Include="ASP.Net\ActivitiesPage\activityAdd.aspx" />
-    <Content Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx" />
-    <Content Include="ASP.Net\ActivitiesPage\confirmActivityAdd.aspx" />
+    <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage.css" />
     <Content Include="ASP.Net\HomePage\HomePage.aspx" />
     <Content Include="ASP.Net\LandingPage\LandingPage.aspx" />
     <Content Include="ASP.Net\LoginRegister\LoginPage.aspx" />
