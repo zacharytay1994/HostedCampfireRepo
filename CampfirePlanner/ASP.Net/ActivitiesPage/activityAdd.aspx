@@ -58,10 +58,11 @@
                         <label for="Duration">Approximate Duration</label>
                     </div>
                     <div class="col-75">
-                        <asp:TextBox ID="txtDuration" runat="server"></asp:TextBox> <br \ />
-                        <asp:Label ID="Label1" runat="server" Text="How long will you game be?"></asp:Label>
+                        <asp:TextBox ID="txtDuration" type="number" step="1" min="1" max="120" runat="server" placeholder="Minutes"></asp:TextBox> <br \ />
+                        <asp:Label ID="Label1" runat="server" Text="Values from 1 to 120 minutes"></asp:Label>
 &nbsp;<br />
-                        <asp:RequiredFieldValidator ID="rfvDuration" runat="server" ControlToValidate="txtDuration" ErrorMessage="Please select a duration!" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvDuration" runat="server" ControlToValidate="txtDuration" ErrorMessage="Please enter a duration!" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator> <br \ />
+                        <asp:RangeValidator ID="rvDuration" runat="server" ControlToValidate="txtDuration" ErrorMessage="Please enter a valid duration!" ForeColor="Red" MaximumValue="120" MinimumValue="1"></asp:RangeValidator>
                     </div>
                 </div>
                 <div class="row">
