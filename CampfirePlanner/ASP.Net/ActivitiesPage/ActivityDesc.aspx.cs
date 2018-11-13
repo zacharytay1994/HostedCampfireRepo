@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using CampfirePlanner.ASP.Net.ActivitiesPage.App_Code;
 
 namespace CampfirePlanner.ASP.Net.ActivitiesPage
 {
@@ -14,10 +15,21 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string s = Request.QueryString["field1"];
-            //Session["ActivityID"] = "";
-            //lbl_activityid.Text = s; //Session["ActivityID"].ToString();
-
+            if (!Page.IsPostBack)
+            {
+                showActivityDesc();
+                if (Session["UserAuthentication"].ToString() == "Admin")
+                {
+                    Button btnDel = new Button();
+                    btnDel.ID = "btnDel";
+                    btnDel.Text = "Delete Activity";
+                    btnDel.Click += new EventHandler(btnDel_Click);
+                    topRight.Controls.Add(btnDel);
+                }
+            }
+        }
+        private void showActivityDesc()
+        {
             int actID = Convert.ToInt32(Request.QueryString["actID"]);
 
             //Display Fields
@@ -34,18 +46,40 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             lblTitle.Text = result.Tables[0].Rows[0]["ActivityName"].ToString();
             lblDesc.Text = result.Tables[0].Rows[0]["ActivityDesc"].ToString();
             lblExp.Text = result.Tables[0].Rows[0]["ActivityDesc"].ToString();
+            lblDuration.Text = result.Tables[0].Rows[0]["Duration"].ToString();
             lblLinks.Text = result.Tables[0].Rows[0]["Link"].ToString();
 
             //Display Categories
-            //cmd = new SqlCommand("SELECT * FROM Category INNER JOIN Activities ON Category.ActivityID = Activities.ActivityID WHERE Activities.ActivityID = @actid", conn);
-            //cmd.Parameters.AddWithValue("@actid", actID);
-            //SqlDataAdapter daCategory = new SqlDataAdapter(cmd);
-            //result = new DataSet();
-            //conn.Open();
-            //daCategory.Fill(result, "Category");
-            //conn.Close();
+            string catDisplay = result.Tables[0].Rows[0]["Category"].ToString();
+            if (catDisplay.Contains("a"))
+                catDisplay +=
+            else if (catDisplay.Contains("b"))
+                catDisplay +=
+            else if (catDisplay.Contains("b"))
+                catDisplay +=
+            else if (catDisplay.Contains("b"))
+                catDisplay +=
+            lblCategories.Text = catDisplay;
+        }
 
-            //lblCategories.Text += result.Tables[0].Rows[0]["CategoryName"].ToString();
+        private int deleteActivity()
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("DELETE FROM Activities WHERE ActivityID = @actid", conn);
+            cmd.Parameters.AddWithValue("@actid", Convert.ToInt32(Request.QueryString["actID"]));
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            return 0;
+        }
+        void btnDel_Click(object sender, EventArgs e)
+        {
+            if (deleteActivity() == 0)
+            {
+                Response.Redirect("~/ASP.Net/ActivitiesPage/ActivitiesPage.aspx");
+            }
         }
     }
 }

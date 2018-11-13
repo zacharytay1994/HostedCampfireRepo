@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace CampfirePlanner.ASP.Net.ActivitiesPage
 {
@@ -77,5 +80,6 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
         //    }
         //    return filteredTable;
         //}
+        }
     }
 }

@@ -34,13 +34,17 @@ namespace CampfirePlannerPlanner.ASP.Net.LoginRegister
             //    {
             //        Session["UserAuthentication"] = dr["Username"].ToString();
             //        conn.Close();
-            //        Response.Redirect("~/HomePage.aspx");
+            //        Response.Redirect("~/HomePage/HomePage.aspx");
             //    }
-            //}
-            //else
-            //{
-            //    lblMessage.Text = "Invalid Login ID or Password";
-            //}
+            //}   else if (inputEmail == "admin@gmail.com" && inputPw == "pass123")
+            //    {
+            //        Session["UserAuthentication"] = "Admin";
+            //        Response.Redirect("~/HomePage/HomePage.aspx");
+            //    }
+            //    else
+            //    {
+            //        lblMessage.Text = "Invalid Login ID or Password";
+            //    }
             Response.Redirect("~/ASP.Net/HomePage/HomePage.aspx");
         }
     }
