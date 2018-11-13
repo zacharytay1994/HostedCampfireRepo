@@ -40,12 +40,30 @@ namespace CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar {
         protected global::CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar.NavBar Navbar;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// body control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder body;
+        
+        /// <summary>
+        /// body2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder body2;
+        
+        /// <summary>
+        /// body3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder body3;
     }
 }
