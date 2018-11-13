@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ASP.Net/MasterPages/MainNavBar/Campfire.Master.cs" Inherits="CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar.CampfirePlanner" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="~/ASP.Net/MasterPages/MainNavBar/Campfire.Master.cs" Inherits="CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar.CampfirePlanner" %>
 <%@ Register Src="~/ASP.Net/MasterPages/MainNavBar/NavBar.ascx" TagPrefix="uc1" TagName="Navbar" runat="server"%>
 
 <!DOCTYPE html>
@@ -27,11 +27,16 @@
     <form id="form1" runat="server">
         <uc1:Navbar runat="server" id="Navbar" /> 
         <div class="row">
-            <div class="col-sm-12">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
+                <div class="col-sm-2">
+                    <asp:ContentPlaceHolder ID="body" runat="server"></asp:ContentPlaceHolder>
+                </div>
+                <div class="col-sm-8">
+                    <asp:ContentPlaceHolder ID="body2" runat="server"></asp:ContentPlaceHolder>
+                </div>
+                <div class="col-sm-2">
+                    <asp:ContentPlaceHolder ID="body3" runat="server"></asp:ContentPlaceHolder>
+                </div>
             </div>
-        </div>  
     </form>
 </body>
 </html>
