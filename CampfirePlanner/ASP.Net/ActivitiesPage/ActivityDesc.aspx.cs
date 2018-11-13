@@ -50,16 +50,16 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             lblLinks.Text = result.Tables[0].Rows[0]["Link"].ToString();
 
             //Display Categories
-            string catDisplay = result.Tables[0].Rows[0]["Category"].ToString();
-            if (catDisplay.Contains("a"))
-                catDisplay +=
-            else if (catDisplay.Contains("b"))
-                catDisplay +=
-            else if (catDisplay.Contains("b"))
-                catDisplay +=
-            else if (catDisplay.Contains("b"))
-                catDisplay +=
-            lblCategories.Text = catDisplay;
+            //string catDisplay = result.Tables[0].Rows[0]["Category"].ToString();
+            //if (catDisplay.Contains("a"))
+            //    catDisplay +=
+            //else if (catDisplay.Contains("b"))
+            //    catDisplay +=
+            //else if (catDisplay.Contains("b"))
+            //    catDisplay +=
+            //else if (catDisplay.Contains("b"))
+            //    catDisplay +=
+            //lblCategories.Text = catDisplay;
         }
 
         private int deleteActivity()

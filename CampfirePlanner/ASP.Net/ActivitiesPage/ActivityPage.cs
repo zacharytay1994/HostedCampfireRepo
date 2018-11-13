@@ -80,6 +80,6 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
         //    }
         //    return filteredTable;
         //}
-        }
+        //}
     }
 }
