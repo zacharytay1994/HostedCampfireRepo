@@ -52,13 +52,13 @@
         <tr>
             <td class="auto-style4"></td>
             <td class="auto-style3">
-                <asp:Button ID="btnRecommendation" runat="server" OnClick="btnRecommendation_Click" Text="Get Recommendation" />
+                <asp:Button ID="btnRecommendation" runat="server" OnClick="btnRecommendation_Click" Text="Get Recommendation" Width="176px" />
             </td>
         </tr>
         <tr>
             <td class="auto-style5">&nbsp;</td>
             <td>
-                <asp:Label ID="lblActivity" runat="server"></asp:Label>
+                <asp:Label ID="lblActivity" runat="server" Font-Size="X-Large"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -68,7 +68,13 @@
                     <asp:ListItem>Land</asp:ListItem>
                     <asp:ListItem>Sea</asp:ListItem>
                 </asp:ListBox>
-                <asp:GridView ID="gvRecommendation" runat="server">
+                <asp:GridView ID="gvRecommendation" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gvRecommendation_SelectedIndexChanged">
+                    <Columns>
+                        <asp:BoundField HeaderText="Name" />
+                        <asp:BoundField HeaderText="Category" />
+                        <asp:BoundField HeaderText="Duration" />
+                        <asp:ButtonField Text="View" />
+                    </Columns>
                 </asp:GridView>
             </td>
         </tr>

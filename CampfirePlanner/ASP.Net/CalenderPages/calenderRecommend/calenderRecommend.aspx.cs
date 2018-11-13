@@ -27,6 +27,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             lblStart.Text = txtStart.Text;
             lblEnd.Text = txtEnd.Text;
             TimeSpan timeActivity = DateTime.Parse(txtEnd.Text).Subtract(DateTime.Parse(txtStart.Text)); //The time the activity should take
+            lblActivity.Text = "Here are some activities under " + timeActivity.TotalMinutes + " minutes!";
         }
 
         protected void displayRecommendation()
@@ -55,6 +56,11 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
 
             //Display the list of data in GridView
             gvRecommendation.DataBind();
+        }
+
+        protected void gvRecommendation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
