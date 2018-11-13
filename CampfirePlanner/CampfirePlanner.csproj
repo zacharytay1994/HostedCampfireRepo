@@ -172,6 +172,13 @@
     </Compile>
     <Compile Include="ASP.Net\ActivitiesPage\ActivityPage.cs" />
     <Compile Include="ASP.Net\ActivitiesPage\App_Code\Activity.cs" />
+    <Compile Include="ASP.Net\CalenderPages\calenderRecommend\calenderRecommend.aspx.cs">
+      <DependentUpon>calenderRecommend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASP.Net\CalenderPages\calenderRecommend\calenderRecommend.aspx.designer.cs">
+      <DependentUpon>calenderRecommend.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASP.Net\HomePage\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -227,6 +234,7 @@
     <Content Include="ASP.Net\ActivitiesPage\activityAdd.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\Css\activityForm.css" />
+    <Content Include="ASP.Net\CalenderPages\calenderRecommend\calenderRecommend.aspx" />
     <Content Include="ASP.Net\HomePage\HomePage.aspx" />
     <Content Include="ASP.Net\LandingPage\LandingPage.aspx" />
     <Content Include="ASP.Net\LoginRegister\LoginPage.aspx" />
