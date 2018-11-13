@@ -22,13 +22,13 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
         protected global::System.Web.UI.WebControls.Label lblTitle;
         
         /// <summary>
-        /// topRight control.
+        /// btnDel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder topRight;
+        protected global::System.Web.UI.WebControls.Button btnDel;
         
         /// <summary>
         /// lblDuration control.

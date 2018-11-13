@@ -36,6 +36,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                     categ += x;
                 }
                 objActivity.category = categ;
+                objActivity.duration = Convert.ToInt32(txtDuration);
                 objActivity.activityExplanation = txtExplanation.Text;
                 objActivity.link = txtLinks.Text;
                 string uploadedFile = "";
@@ -77,7 +78,8 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 string strValues = "";
                 strValues += "name=" + activityName.Text;
                 strValues += "&description=" + id.ToString();
-                //strValues += "&category=" + ;
+                strValues += "&category=" + categ;
+                strValues += "&duration=" + txtDuration;
                 strValues += "&explain=" + txtExplanation.Text;
                 strValues += "&link=" + txtLinks.Text;
                 strValues += "&photo=defaultpicture.jpg";
