@@ -32,9 +32,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage.App_Code
             //which will return the auto-generated staffID after insertation,
             //and the connection object for connecting to the database.
             SqlCommand cmd = new SqlCommand
-                             ("INSERT INTO Activities (ActivityName, ActivityDesc, CategoryID, Duration, ActivityExp, Link)" +
-                             "OUTPUT INSERTED.ActivityID " +
-                             "VALUES (@name, @desc, @cat, @dur, @expla, @link)", conn);
+                             ("INSERT INTO Activity (ActivityName, ActivityDesc, CategoryID, Duration, ActvityExp, Link) VALUES (@name, @desc, @cat, @dur, @expla, @link)", conn);
 
             //Define the parameters used in SQL statement, value for each parameter
             //is retrieved from respective class's property.
@@ -50,13 +48,12 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage.App_Code
 
             //ExectureScalar is used to retrieve the auto-generated
             //ID after exectuing the INSERT SQL statement
-            int id = (int)cmd.ExecuteScalar();
+            cmd.ExecuteNonQuery();
 
             //A connection should be closed after operations.
             conn.Close();
 
-            //Return id when no error occurs.
-            return id;
+            return 0;
         }
     }
 }
