@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="ActivitiesPage.css" type="text/css" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <asp:HiddenField runat="server" ID="SendA" Value="1" />
     <style>
         
@@ -44,27 +44,28 @@
             return false; //Redirect
         }
     </script>
-    <div class="container">
+    <div class="title">
         <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">Features Item Here</h1>
+            <div class="col-sm-12">
+                <h1 class="text-center" style="text-align:center;">Featured Item Here</h1>
             </div>
         </div>
     </div>
-    <div class="container">
 
+    <div class="col-md-12">
         <asp:CheckBoxList ID="cbl_categories" runat="server" OnSelectedIndexChanged="cbl_categories_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True">
             <asp:ListItem Value="a">CategoryOne</asp:ListItem>
             <asp:ListItem Value="b">CategoryTwo</asp:ListItem>
             <asp:ListItem Value="c">CategoryThree</asp:ListItem>
             <asp:ListItem Value="d">CategoryFour</asp:ListItem>
         </asp:CheckBoxList>
-        &nbsp;Please Select Categories to Display<br />
-        
+    <h3 style="text-align:center;">Please Select Categories to Display</h3><br />
     </div>
+
     <div class="container">
         <div class="row">
-            <div onclick="redirect(this.id)" class="col-md-2" id="4">
+            <div onclick="redirect(this.id)" class="col-md-2" id="4" style="border:3px solid black;">
+                <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">            
                     <tr>
                         <td>Name:</td>
@@ -94,7 +95,8 @@
                 <%--<asp:Button runat="server" width="100%" ID="Button0" OnClick="Button0_Click" Text="Let's GO!" />--%>
             </div>
 
-            <div onclick="redirect(this.id)" class="col-md-2" id="8">
+            <div onclick="redirect(this.id)" class="col-md-2" id="8" style="border:3px solid black;">
+                <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
@@ -124,7 +126,8 @@
                 <%--<asp:Button runat="server" width="100%" ID="Button1" onclick="Button1_Click" Text="Let's GO!" />--%>
             </div>
 
-             <div onclick="redirect(this.id)" class="col-md-2" id="12">
+             <div onclick="redirect(this.id)" class="col-md-2" id="12" style="border:3px solid black;">
+                <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
@@ -154,7 +157,8 @@
                  <%--<asp:Button runat="server" width="100%" ID="Button2" onclick="Button2_Click" Text="Let's GO!" />--%>
             </div>
 
-             <div onclick="redirect(this.id)" class="col-md-2" id="16">
+             <div onclick="redirect(this.id)" class="col-md-2" id="16" style="border:3px solid black;">
+                <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
@@ -185,7 +189,8 @@
             </div>
         </div>
         <div class="row">
-            <div onclick="redirect(this.id)" class="col-md-2" id="20">
+            <div onclick="redirect(this.id)" class="col-md-2" id="20" style="border:3px solid black;">
+                <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
@@ -215,7 +220,8 @@
                 <%--<asp:Button runat="server" width="100%" ID="Button4" onclick="Button4_Click" Text="Let's GO!" />--%>
             </div>
 
-             <div onclick="redirect(this.id)" class="col-md-2" id="24">
+             <div onclick="redirect(this.id)" class="col-md-2" id="24" style="border:3px solid black;">
+                <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
@@ -245,7 +251,8 @@
                 <%-- <asp:Button runat="server" width="100%" ID="Button5" onclick="Button5_Click" Text="Let's GO!" />--%>
             </div>
 
-             <div onclick="redirect(this.id)" class="col-md-2" ID="28">
+             <div onclick="redirect(this.id)" class="col-md-2" ID="28" style="border:3px solid black;">
+                <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
@@ -275,8 +282,9 @@
                 <%-- <asp:Button runat="server" width="100%" ID="Button6" onclick="Button6_Click" Text="Let's GO!" />--%>
             </div>
 
-            <div onclick="redirect(this.id)" class="col-md-2">
-                <table class="box" style="width:100%">
+            <div onclick="redirect(this.id)" class="col-md-2" style="border:3px solid black;">
+                <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
+                <table class="box" style="width:100%;">
                     <tr>
                         <td>Name:</td>
                         <td>
@@ -306,10 +314,11 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" style="text-align:center;">
         <asp:Button ID="btn_previous" runat="server" Text="Previous" OnClick="btn_previous_Click" />
         <asp:Button ID="btn_next" runat="server" Text="Next" OnClick="btn_next_Click" />
-    &nbsp;Page:
+        <br>
+        Page:
         <asp:Label ID="lbl_pagenumber" runat="server" Text="Label"></asp:Label>
         <br />
         <asp:Label ID="lblID" runat="server"></asp:Label>

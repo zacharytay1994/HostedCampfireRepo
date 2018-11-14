@@ -13,40 +13,52 @@
             Please Select Start and End Date of Your Event
         </p>
         <p>
-
             Name of Event:
             <asp:TextBox ID="txtEvent" runat="server"></asp:TextBox>
 
         </p>
-        <asp:calendar id="calSelect" runat="server" backcolor="White" bordercolor="Black" daynameformat="Shortest" font-names="Times New Roman" font-size="10pt" forecolor="Black" height="287px" nextprevformat="FullMonth" titleformat="Month" width="357px" onload="calSelect_Load" onprerender="calSelect_PreRender" onselectionchanged="calSelect_SelectionChanged">
-        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
-        <DayStyle Width="14%" />
-        <NextPrevStyle Font-Size="8pt" ForeColor="White" />
-        <OtherMonthDayStyle ForeColor="#999999" />
-        <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
-        <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
-        <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
-        <TodayDayStyle BackColor="#CCCC99" />
-    </asp:calendar>
-
+        <div class="row">
+            <asp:Calendar ID="calSelect" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="287px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="357px" OnLoad="calSelect_Load" OnPreRender="calSelect_PreRender" OnSelectionChanged="calSelect_SelectionChanged">
+                <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
+                <DayStyle Width="14%" />
+                <NextPrevStyle Font-Size="8pt" ForeColor="White" />
+                <OtherMonthDayStyle ForeColor="#999999" />
+                <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
+                <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
+                <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
+                <TodayDayStyle BackColor="#CCCC99" />
+            </asp:Calendar>
+            <table>
+                <tr>
+                    <td>asasasas</td>
+                </tr>
+            </table>
+        </div>
         Days:&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:textbox id="txtDayz" runat="server" readonly="True" width="53px" Height="31px"></asp:textbox>
+    <asp:TextBox ID="txtDayz" runat="server" ReadOnly="True" Width="53px" Height="31px"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:rangevalidator id="rvDayz" runat="server" controltovalidate="txtDayz" cssclass="auto-style1" display="Dynamic" errormessage="Number of Days Cannot Exceed 7" maximumvalue="7" minimumvalue="1"></asp:rangevalidator>
+    <asp:RangeValidator ID="rvDayz" runat="server" ControlToValidate="txtDayz" CssClass="auto-style1" Display="Dynamic" ErrorMessage="Number of Days Cannot Exceed 7" MaximumValue="7" MinimumValue="1"></asp:RangeValidator>
         <asp:RequiredFieldValidator ID="rfDayz" runat="server" ControlToValidate="txtEvent" CssClass="auto-style1" Display="Dynamic" ErrorMessage="Please Select At Least 1 Day"></asp:RequiredFieldValidator>
         <br />
-        <asp:button id="btnReset" runat="server" onclick="btnReset_Click" text="Reset" />
+        <asp:Button ID="btnReset" runat="server" OnClick="btnReset_Click" Text="Reset" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:button id="btnEvent" runat="server" height="38px" onclick="btnEvent_Click" text="Add Event" width="118px" />
-    &nbsp;
+    <asp:Button ID="btnEvent" runat="server" Height="38px" OnClick="btnEvent_Click" Text="Add Event" Width="118px" />
+        &nbsp;
         <asp:RequiredFieldValidator ID="rfName" runat="server" ControlToValidate="txtEvent" CssClass="auto-style1" Display="Dynamic" ErrorMessage="Name of Event cannot be blank"></asp:RequiredFieldValidator>
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="body2" runat="server">
-    <p>
-        &nbsp;</p>
+    <table>
+        <tr>
+            <th>Hi</th>
+        </tr>
+        <tr>
+            <td>Yo</td>
+        </tr>
+    </table>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="body3" runat="server">
     <p>
-        &nbsp;</p>
+        &nbsp;
+    </p>
 </asp:Content>
