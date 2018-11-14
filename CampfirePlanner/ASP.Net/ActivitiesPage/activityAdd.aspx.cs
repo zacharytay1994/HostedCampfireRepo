@@ -41,7 +41,6 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 objActivity.duration = Convert.ToInt32(txtDuration);
                 objActivity.activityExplanation = txtExplanation.Text;
                 objActivity.link = txtLinks.Text;
-                string uploadedFile = "";
                 if (upPhoto.HasFile == true)
                 {
                     HttpPostedFile file = upPhoto.PostedFile;
