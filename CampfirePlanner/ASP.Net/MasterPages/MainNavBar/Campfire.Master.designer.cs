@@ -40,13 +40,13 @@ namespace CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar {
         protected global::CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar.NavBar Navbar;
         
         /// <summary>
-        /// body control.
+        /// body1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder body;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder body1;
         
         /// <summary>
         /// body2 control.
