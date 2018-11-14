@@ -13,13 +13,13 @@ namespace CampfirePlanner.ASP.Net.CalenderPages {
     public partial class calenderRecommend {
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// rblDay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblDay;
         
         /// <summary>
         /// lblDay control.
@@ -83,15 +83,6 @@ namespace CampfirePlanner.ASP.Net.CalenderPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblActivity;
-        
-        /// <summary>
-        /// ListBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox1;
         
         /// <summary>
         /// gvRecommendation control.

@@ -14,7 +14,12 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            /*
+            for (int i = 1; i < EventActivity.Days; i++)
+            {
+                rblDay.Items.Add(new ListItem(Convert.ToString(i), Convert.ToString(i)));
+            }   
+            */
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)

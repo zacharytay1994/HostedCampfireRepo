@@ -15,17 +15,23 @@
             font-family: "Segoe UI";
             font-weight: bold;
         }
+        .auto-style6 {
+            width: 362px;
+            font-family: "Segoe UI";
+            font-weight: bold;
+            height: 210px;
+        }
+        .auto-style7 {
+            height: 210px;
+        }
         </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
     <table class="w-100">
         <tr>
             <td class="auto-style4">Select Day:</td>
             <td class="auto-style3">
-                <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem>1</asp:ListItem>
-                    <asp:ListItem>2</asp:ListItem>
-                    <asp:ListItem>3</asp:ListItem>
+                <asp:RadioButtonList ID="rblDay" runat="server" RepeatDirection="Horizontal">
                 </asp:RadioButtonList>
                 <asp:Label ID="lblDay" runat="server"></asp:Label>
             </td>
@@ -52,7 +58,7 @@
         <tr>
             <td class="auto-style4"></td>
             <td class="auto-style3">
-                <asp:Button ID="btnRecommendation" runat="server" OnClick="btnRecommendation_Click" Text="Get Recommendation" Width="176px" />
+                <asp:Button ID="btnRecommendation" runat="server" OnClick="btnRecommendation_Click" Text="Get Recommendation" Width="162px" />
             </td>
         </tr>
         <tr>
@@ -62,26 +68,32 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style5">&nbsp;</td>
-            <td>
-                <asp:ListBox ID="ListBox1" runat="server" Width="134px">
-                    <asp:ListItem>Land</asp:ListItem>
-                    <asp:ListItem>Sea</asp:ListItem>
-                </asp:ListBox>
-                <asp:GridView ID="gvRecommendation" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gvRecommendation_SelectedIndexChanged">
+            <td class="auto-style6"></td>
+            <td class="auto-style7">
+                <asp:GridView ID="gvRecommendation" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gvRecommendation_SelectedIndexChanged" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
+                    <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField HeaderText="Name" />
                         <asp:BoundField HeaderText="Category" />
                         <asp:BoundField HeaderText="Duration" />
                         <asp:ButtonField Text="View" />
                     </Columns>
+                    <FooterStyle BackColor="#CCCC99" />
+                    <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                    <RowStyle BackColor="#F7F7DE" />
+                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                    <SortedAscendingHeaderStyle BackColor="#848384" />
+                    <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                    <SortedDescendingHeaderStyle BackColor="#575357" />
                 </asp:GridView>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">&nbsp;</td>
             <td>
-                <asp:Button ID="btnReset" runat="server" Text="Reset" />
+                <asp:Button ID="btnReset" runat="server" Text="Return to Events " />
                 <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnConfirm_Click" />
                 <asp:Label ID="lblAdd" runat="server"></asp:Label>
             </td>
