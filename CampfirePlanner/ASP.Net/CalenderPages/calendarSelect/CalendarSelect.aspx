@@ -17,28 +17,23 @@
             <asp:TextBox ID="txtEvent" runat="server"></asp:TextBox>
 
         </p>
-<<<<<<< HEAD
-        
-=======
         <div class="row">
-        <asp:calendar id="calSelect" runat="server" backcolor="White" bordercolor="Black" daynameformat="Shortest" font-names="Times New Roman" font-size="10pt" forecolor="Black" height="287px" nextprevformat="FullMonth" titleformat="Month" width="357px" onload="calSelect_Load" onprerender="calSelect_PreRender" onselectionchanged="calSelect_SelectionChanged">
-        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
-        <DayStyle Width="14%" />
-        <NextPrevStyle Font-Size="8pt" ForeColor="White" />
-        <OtherMonthDayStyle ForeColor="#999999" />
-        <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
-        <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
-        <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
-        <TodayDayStyle BackColor="#CCCC99" />
-    </asp:calendar>
+            <asp:Calendar ID="calSelect" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="287px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="357px" OnLoad="calSelect_Load" OnPreRender="calSelect_PreRender" OnSelectionChanged="calSelect_SelectionChanged">
+                <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
+                <DayStyle Width="14%" />
+                <NextPrevStyle Font-Size="8pt" ForeColor="White" />
+                <OtherMonthDayStyle ForeColor="#999999" />
+                <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
+                <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
+                <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
+                <TodayDayStyle BackColor="#CCCC99" />
+            </asp:Calendar>
             <table>
                 <tr>
                     <td>asasasas</td>
                 </tr>
             </table>
         </div>
->>>>>>> 19890ee8f76b5917479f61bee84e8dd69e60c3df
-
         Days:&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:TextBox ID="txtDayz" runat="server" ReadOnly="True" Width="53px" Height="31px"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;&nbsp;
