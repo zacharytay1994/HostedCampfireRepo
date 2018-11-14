@@ -13,7 +13,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Label1.Text = stringy;
+            Label1.Text = stringy;
         }
     }
 }

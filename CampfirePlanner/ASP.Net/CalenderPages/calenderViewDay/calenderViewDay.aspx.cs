@@ -18,11 +18,17 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             int eventid = 2;
 
             DataTable table = GetData(eventid, day);
-            //fillTimeTable();
+            fillTimeTable();
 
             calenderViewDay1 myControl = (calenderViewDay1)Page.LoadControl("../calenderViewDay/calenderViewDay.ascx");
-            Page.Controls.Add(myControl);
-            Page.Controls.Add(Page.LoadControl("../calenderViewDay/calenderViewDay.ascx"));
+            myControl.stringy = "StringyTest";
+            ContentPlaceHolder content = (ContentPlaceHolder)this.Master.FindControl("body1");
+            content.Controls.Add(myControl);
+
+            TableCell c = new TableCell();
+            c.Controls.Add(myControl);
+            Table1.Rows[0].Cells.Add(c);
+            //Page.Controls.Add(Page.LoadControl("../calenderViewDay/calenderViewDay.ascx"));
 
         }
 
