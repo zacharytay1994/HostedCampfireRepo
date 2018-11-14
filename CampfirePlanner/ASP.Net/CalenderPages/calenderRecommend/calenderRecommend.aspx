@@ -24,6 +24,15 @@
         .auto-style7 {
             height: 210px;
         }
+        .auto-style8 {
+            width: 362px;
+            font-family: "Segoe UI";
+            font-weight: bold;
+            height: 38px;
+        }
+        .auto-style9 {
+            height: 38px;
+        }
         </style>
     <link rel="stylesheet" href="~/ASP.Net/CalenderPages/calenderRecommend/Css/calendarRecommend.css"/>
 </asp:Content>
@@ -63,21 +72,23 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style5">&nbsp;</td>
-            <td>
+            <td class="auto-style8"></td>
+            <td class="auto-style9">
                 <asp:Label ID="lblActivity" runat="server" Font-Size="X-Large"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style6"></td>
             <td class="auto-style7">
-                <asp:GridView ID="gvRecommendation" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" AllowPaging="True" OnPageIndexChanging="gvRecommendation_PageIndexChanging" PageSize="5">
+                <asp:GridView ID="gvRecommendation" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" AllowPaging="True" OnPageIndexChanging="gvRecommendation_PageIndexChanging" PageSize="5" OnSelectedIndexChanged="gvRecommendation_SelectedIndexChanged" OnSelectedIndexChanging="gvRecommendation_SelectedIndexChanging" Width="807px">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
+                        <asp:BoundField DataField="ActivityID" HeaderText="ID" />
                         <asp:BoundField HeaderText="Name" DataField="ActivityName" />
                         <asp:BoundField HeaderText="Category" DataField="CategoryID" />
                         <asp:BoundField HeaderText="Duration" DataField="Duration" />
-                        <asp:ButtonField Text="View" />
+                        <asp:HyperLinkField Text="View Activity" />
+                        <asp:ButtonField Text="Select" CommandName="Select" />
                     </Columns>
                     <FooterStyle BackColor="#CCCC99" />
                     <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
@@ -89,6 +100,7 @@
                     <SortedDescendingCellStyle BackColor="#EAEAD3" />
                     <SortedDescendingHeaderStyle BackColor="#575357" />
                 </asp:GridView>
+                <asp:Label ID="lblGrid" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
