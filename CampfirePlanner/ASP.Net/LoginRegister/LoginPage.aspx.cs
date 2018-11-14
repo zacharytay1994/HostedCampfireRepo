@@ -29,7 +29,7 @@ namespace CampfirePlannerPlanner.ASP.Net.LoginRegister
 
                 SqlConnection conn = new SqlConnection(strConn);
 
-                SqlCommand cmd = new SqlCommand("SELECT Username, Type FROM CampfireUsers WHERE EmailAddr=@email AND Password=@password", conn);
+                SqlCommand cmd = new SqlCommand("SELECT Username, Type FROM Users WHERE EmailAddr=@email AND Password=@password", conn);
                 cmd.Parameters.AddWithValue("@password", inputPw);
                 cmd.Parameters.AddWithValue("@email", inputEmail);
                 conn.Open();
@@ -62,7 +62,7 @@ namespace CampfirePlannerPlanner.ASP.Net.LoginRegister
 
             SqlConnection conn = new SqlConnection(strConn);
 
-            SqlCommand cmd = new SqlCommand("SELECT Password FROM CampfireUsers WHERE EmailAddr=@email", conn);
+            SqlCommand cmd = new SqlCommand("SELECT Password FROM Users WHERE EmailAddr=@email", conn);
             cmd.Parameters.AddWithValue("@email", _email);
             conn.Open();
             string pw = (string)cmd.ExecuteScalar();

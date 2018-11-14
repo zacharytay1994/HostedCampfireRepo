@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CampfirePlanner.Classes;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
 {
@@ -47,8 +51,6 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
             {
                 calSelect.SelectedDates.Add(dt);
             }
-
-
         }
 
         protected void calSelect_Load(object sender, EventArgs e)
@@ -81,8 +83,46 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
         {
             if (rvDayz.IsValid)
             {
-                
+                DateTime startDate;
+                DateTime endDate;
+                Event newEvent = new Event();
+                if (SelectedDates[1] > SelectedDates[0])
+                {
+                    startDate = SelectedDates[0];
+                    endDate = SelectedDates[1];
+                }
+                else
+                {
+                    startDate = SelectedDates[1];
+                    endDate = SelectedDates[0];
+                }
+
+                newEvent.startDate = startDate;
+                newEvent.endDate = endDate;
+                newEvent.eventName = txtEvent.Text;
+                newEvent.accountID = getAccID();
+                newEvent.createEvent();
             }
+        }
+
+        private int getAccID()
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("SELECT AccountiD FROM Users WHERE Username=@name", conn);
+
+            cmd.Parameters.AddWithValue("@name", Session["UserAuthentication"].ToString());
+
+            SqlDataAdapter daID = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
+
+            conn.Open();
+            int accID = (int)cmd.ExecuteScalar();
+            daID.Fill(result, "Parent");
+            conn.Close();
+
+            return accID;
         }
     }
 }
