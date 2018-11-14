@@ -21,28 +21,33 @@ namespace CampfirePlannerPlanner.ASP.Net.LoginRegister
         {
             string inputEmail = txtEmail.Text;
             string inputPw = txtPw.Text;
-            if (inputEmail == "admin@gmail.com" && inputPw == "pass123")
-            {
-                Session["UserAuthentication"] = "Admin";
-                Response.Redirect("~/ASP.Net/HomePage/HomePage.aspx");
-            }
-            else if (CheckLoginData(inputEmail, inputPw))
+            
+            if (CheckLoginData(inputEmail, inputPw))
             {
                 string strConn = ConfigurationManager.ConnectionStrings
-                    ["CampfirePlannerConnectionString"].ToString();
+                    ["CampfireConnectionString"].ToString();
 
                 SqlConnection conn = new SqlConnection(strConn);
 
-                SqlCommand cmd = new SqlCommand("SELECT Username FROM CampfirePlannerUsers WHERE EmailAddr=@email AND Password=@password", conn);
+                SqlCommand cmd = new SqlCommand("SELECT Username, Type FROM CampfireUsers WHERE EmailAddr=@email AND Password=@password", conn);
                 cmd.Parameters.AddWithValue("@password", inputPw);
                 cmd.Parameters.AddWithValue("@email", inputEmail);
                 conn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    Session["UserAuthentication"] = dr["Username"].ToString();
-                    conn.Close();
-                    Response.Redirect("~/ASP.Net/HomePage/HomePage.aspx");
+                    if (dr["Type"].ToString() == "A")
+                    {
+                        Session["UserAuthentication"] = "Admin";
+                        conn.Close();
+                        Response.Redirect("~/ASP.Net/HomePage/HomePage.aspx");
+                    }
+                    else
+                    {
+                        Session["UserAuthentication"] = dr["Username"].ToString();
+                        conn.Close();
+                        Response.Redirect("~/ASP.Net/HomePage/HomePage.aspx");
+                    }
                 }
             }
             else
