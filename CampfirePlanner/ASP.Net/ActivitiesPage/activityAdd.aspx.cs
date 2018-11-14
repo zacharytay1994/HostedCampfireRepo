@@ -53,24 +53,25 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                         File = new FileDescription(file.FileName, file.InputStream),
                     };
                     var uploadResult = _cloudinary.Upload(uploadParams);
+
+                    objActivity.activityPhoto = uploadResult.SecureUri.ToString();
+
+                    int id = objActivity.activityAdd();
+
+                    string strValues = "";
+                    strValues += "name=" + activityName.Text;
+                    strValues += "&description=" + id.ToString();
+                    strValues += "&category=" + categ;
+                    strValues += "&duration=" + txtDuration;
+                    strValues += "&explain=" + txtExplanation.Text;
+                    strValues += "&link=" + txtLinks.Text;
+                    strValues += "&photo=defaultpicture.jpg";
+                    Response.Redirect("confirmActivityAdd.aspx?" + strValues);
                 }
                 else
                 {
                     lblPhoto.Text = "Please select a file!";
                 }
-                objActivity.activityPhoto = "defaultpicture.jpg";
-
-                int id = objActivity.activityAdd();
-
-                string strValues = "";
-                strValues += "name=" + activityName.Text;
-                strValues += "&description=" + id.ToString();
-                strValues += "&category=" + categ;
-                strValues += "&duration=" + txtDuration;
-                strValues += "&explain=" + txtExplanation.Text;
-                strValues += "&link=" + txtLinks.Text;
-                strValues += "&photo=defaultpicture.jpg";
-                Response.Redirect("confirmActivityAdd.aspx?" + strValues);
             }
         }
 

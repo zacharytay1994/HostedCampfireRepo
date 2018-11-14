@@ -32,7 +32,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage.App_Code
             //which will return the auto-generated staffID after insertation,
             //and the connection object for connecting to the database.
             SqlCommand cmd = new SqlCommand
-                             ("INSERT INTO Activity (ActivityName, ActivityDesc, CategoryID, Duration, ActvityExp, Link) VALUES (@name, @desc, @cat, @dur, @expla, @link)", conn);
+                             ("INSERT INTO Activity (ActivityName, ActivityDesc, CategoryID, Duration, ActvityExp, Link, URL) VALUES (@name, @desc, @cat, @dur, @expla, @link, @url)", conn);
 
             //Define the parameters used in SQL statement, value for each parameter
             //is retrieved from respective class's property.
@@ -42,6 +42,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage.App_Code
             cmd.Parameters.AddWithValue("@dur", duration);
             cmd.Parameters.AddWithValue("@expla", activityExplanation);
             cmd.Parameters.AddWithValue("@link", link);
+            cmd.Parameters.AddWithValue("@url", activityPhoto);
 
             //A connection to database must be opened before any operations made.
             conn.Open();
