@@ -4,29 +4,15 @@
 
 body {
     font-family: Verdana,sans-serif;
-    color: white;
+    color: black;
     font-size: 16px;
     margin: 0 auto;
     background-image: url('../Images/background.jpeg');
-    background-attachment: fixed;
 }
 
 h2 {
     text-align: center;
 }
-
-.schedulelist {
-    float: left;
-    height: 100%;
-}
-
-    .schedulelist > div {
-        text-align: center;
-        font-size: 14px;
-        padding: 10px;
-        margin-left: 5px;
-        margin-top: 10px;
-    }
 
 .featured {
     width: 100%;
@@ -39,10 +25,6 @@ h2 {
         font-size: 14px;
         line-height: 30px;
     }
-
-.slist, .str, .sth {
-    border: 1px solid black;
-}
 
 /*.othergames {
     margin-left: auto;
