@@ -191,6 +191,7 @@
     </Compile>
     <Compile Include="ASP.Net\CalenderPages\calenderViewDay\calenderViewDay.ascx.designer.cs">
       <DependentUpon>calenderViewDay.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ASP.Net\CalenderPages\calendarSelect\CalendarSelect.aspx.cs">
       <DependentUpon>CalendarSelect.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
