@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelectDay
+namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
 {
-    public partial class calendarSelectDay : System.Web.UI.Page
+    public partial class ActivityContainer : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

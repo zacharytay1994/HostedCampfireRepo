@@ -41,7 +41,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
 
             lblTitle.Text = result.Tables[0].Rows[0]["ActivityName"].ToString();
             lblDesc.Text = result.Tables[0].Rows[0]["ActivityDesc"].ToString();
-            lblExp.Text = result.Tables[0].Rows[0]["ActivityDesc"].ToString();
+            lblExp.Text = result.Tables[0].Rows[0]["ActivityExp"].ToString();
             lblDuration.Text = result.Tables[0].Rows[0]["Duration"].ToString();
             lblLinks.Text = result.Tables[0].Rows[0]["Link"].ToString();
 

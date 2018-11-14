@@ -1,0 +1,13 @@
+﻿.radioButtonList input[type="radio"] {
+    width: auto;
+    float: left;
+}
+
+.radioButtonList label {
+    width: auto;
+    display: inline;
+    float: left;
+    font-size: 0.7rem;
+    color: #0367B2 !important;
+    font-style: italic;
+}

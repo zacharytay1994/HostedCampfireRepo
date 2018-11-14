@@ -9,6 +9,8 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 
 namespace CampfirePlanner.ASP.Net.ActivitiesPage
 {
@@ -42,30 +44,16 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 string uploadedFile = "";
                 if (upPhoto.HasFile == true)
                 {
-                    string savePath;
+                    HttpPostedFile file = upPhoto.PostedFile;
 
-                    //Find the filename extension of the file to be uploaded
-                    string fileExt = Path.GetExtension(upPhoto.FileName);
-
-                    uploadedFile = activityName.Text + fileExt;
-
-                    //MapPath - to find the complete path to the images folder in server
-                    savePath = MapPath("~/imgages/gamePhotos/" + uploadedFile);
-
-                    try
+                    var myAccount = new Account { ApiKey = "775262439546842", ApiSecret = "AaFN__kiLc85ypytnaHJuIlHLKY", Cloud = "campfire-inc" };
+                    Cloudinary _cloudinary = new Cloudinary(myAccount);
+                    
+                    var uploadParams = new ImageUploadParams()
                     {
-                        upPhoto.SaveAs(savePath); //Upload the file to server
-                        objActivity.activityPhoto = uploadedFile;
-                    }
-                    catch (IOException)
-                    {
-                        //File IO error, could be due to access rights denied
-                        lblPhoto.Text = "File uploading fail!";
-                    }
-                    catch (Exception ex) //Other types of errors
-                    {
-                        lblPhoto.Text = ex.Message;
-                    }
+                        File = new FileDescription(file.FileName, file.InputStream),
+                    };
+                    var uploadResult = _cloudinary.Upload(uploadParams);
                 }
                 else
                 {
