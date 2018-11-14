@@ -21,7 +21,7 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
     <table class="w-100">
         <tr>
             <td class="auto-style1" rowspan="5">Slideshow Thingy Here</td>
