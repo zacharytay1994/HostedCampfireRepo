@@ -21,7 +21,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 Session["session_page"] = 0;
                 lbl_pagenumber.Text = Session["session_page"].ToString();
 
-                //fillGrid(Session["session_type"], Session["session_page"]);
+                fillGrid(Session["session_type"], Session["session_page"]);
             }
         }
 
@@ -39,55 +39,55 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
 
         public void fillGrid(object _type, object _page)
         {
-            //ActivityPage ap = new ActivityPage(_type, _page);
-            //DataTable table = ap.getData();
-            //DataTable filteredTable = ap.filterData(table, _type as List<string>);
+            ActivityPage ap = new ActivityPage(_type, _page);
+            DataTable table = ap.getData();
+            DataTable filteredTable = ap.filterData(table, _type as List<string>);
 
-            //List<string> _typeList = Session["session_type"] as List<string>;
-            //string nameControlString;
-            //Label control;
-            ////Label control2;
-            //int j = Convert.ToInt32(_page) * 8;
-            //for (int i = 1; i <= 32; i += 4)
-            //{
-            //    nameControlString = "Label" + i.ToString();
-            //    control = (Label)FindControlRecursive(Page, nameControlString);
-            //    if (control != null)
-            //    {
-            //        if (j < filteredTable.Rows.Count)
-            //        {
-            //            control.Text = filteredTable.Rows[j]["Name"].ToString();
-            //        }
-            //    }
-            //    nameControlString = "Label" + (i + 1).ToString();
-            //    control = (Label)FindControlRecursive(Page, nameControlString);
-            //    if (control != null)
-            //    {
-            //        if (j < filteredTable.Rows.Count)
-            //        {
-            //            control.Text = filteredTable.Rows[j]["Description"].ToString();
-            //        }
-            //    }
-            //    nameControlString = "Label" + (i + 2).ToString();
-            //    control = (Label)FindControlRecursive(Page, nameControlString);
-            //    if (control != null)
-            //    {
-            //        if (j < filteredTable.Rows.Count)
-            //        {
-            //            control.Text = filteredTable.Rows[j]["Category"].ToString();
-            //        }
-            //    }
-            //    nameControlString = "Label" + (i + 3).ToString();
-            //    control = (Label)FindControlRecursive(Page, nameControlString);
-            //    if (control != null)
-            //    {
-            //        if (j < filteredTable.Rows.Count)
-            //        {
-            //            control.Text = filteredTable.Rows[j]["ID"].ToString();
-            //            j++;
-            //        }
-            //    }
-            //}
+            List<string> _typeList = Session["session_type"] as List<string>;
+            string nameControlString;
+            Label control;
+            //Label control2;
+            int j = Convert.ToInt32(_page) * 8;
+            for (int i = 1; i <= 32; i += 4)
+            {
+                nameControlString = "Label" + i.ToString();
+                control = (Label)FindControlRecursive(Page, nameControlString);
+                if (control != null)
+                {
+                    if (j < filteredTable.Rows.Count)
+                    {
+                        control.Text = filteredTable.Rows[j]["ActivityName"].ToString();
+                    }
+                }
+                nameControlString = "Label" + (i + 1).ToString();
+                control = (Label)FindControlRecursive(Page, nameControlString);
+                if (control != null)
+                {
+                    if (j < filteredTable.Rows.Count)
+                    {
+                        control.Text = filteredTable.Rows[j]["ActivityDesc"].ToString();
+                    }
+                }
+                nameControlString = "Label" + (i + 2).ToString();
+                control = (Label)FindControlRecursive(Page, nameControlString);
+                if (control != null)
+                {
+                    if (j < filteredTable.Rows.Count)
+                    {
+                        control.Text = filteredTable.Rows[j]["CategoryID"].ToString();
+                    }
+                }
+                nameControlString = "Label" + (i + 3).ToString();
+                control = (Label)FindControlRecursive(Page, nameControlString);
+                if (control != null)
+                {
+                    if (j < filteredTable.Rows.Count)
+                    {
+                        control.Text = filteredTable.Rows[j]["ActivityID"].ToString();
+                        j++;
+                    }
+                }
+            }
         }
 
         protected void btn_previous_Click(object sender, EventArgs e)

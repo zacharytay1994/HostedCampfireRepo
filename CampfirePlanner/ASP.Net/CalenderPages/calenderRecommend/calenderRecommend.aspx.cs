@@ -14,33 +14,36 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            for (int i = 1; i < EventActivity.Days; i++)
+            string targetedEventID = Request.QueryString["id"];
+            //lblDay.Text = targetedEventID; //grab the targeted id from previous page
+          
+            if (!Page.IsPostBack)
             {
-                rblDay.Items.Add(new ListItem(Convert.ToString(i), Convert.ToString(i)));
-            }   
-            */
-        }
-
-        protected void btnConfirm_Click(object sender, EventArgs e)
-        {
-
+                for (int i = 1; i <= getNumberOfDays(); i++)
+                {
+                    rblDay.Items.Add(new ListItem("Day " + Convert.ToString(i), Convert.ToString(i)));
+                }
+            }
         }
 
         protected void btnRecommendation_Click(object sender, EventArgs e)
         {
-            lblStart.Text = txtStart.Text;
-            lblEnd.Text = txtEnd.Text;
+            //lblStart.Text = txtStart.Text;
+            //lblEnd.Text = txtEnd.Text;
             TimeSpan timeActivity = DateTime.Parse(txtEnd.Text).Subtract(DateTime.Parse(txtStart.Text)); //The time the activity should take
             lblActivity.Text = "Here are some activities under " + timeActivity.TotalMinutes + " minutes!";
+            displayRecommendation();
         }
 
         protected void displayRecommendation()
-        {
-            string strConn = ConfigurationManager.ConnectionStrings["EventPlannerConnectionString"].ToString();
+        {          
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Activities WHERE duration <= @dur ORDER BY duration DESC", conn);
+            
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Activities WHERE Duration <= @dur ORDER BY Duration DESC", conn);
+            TimeSpan timeActivity = DateTime.Parse(txtEnd.Text).Subtract(DateTime.Parse(txtStart.Text)); //The time the activity should take
+            cmd.Parameters.AddWithValue("@dur", timeActivity.TotalMinutes);
+            
 
             //Declare and instantiate DataAdapter object
             SqlDataAdapter daRecommendation = new SqlDataAdapter(cmd);
@@ -63,9 +66,84 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             gvRecommendation.DataBind();
         }
 
-        protected void gvRecommendation_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btnAdd_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void gvRecommendation_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            // Set the page index to the page clicked by user.
+            gvRecommendation.PageIndex = e.NewPageIndex;
+            // Display records on the new page.
+            displayRecommendation();
+        }
+
+        protected int getNumberOfDays()
+        {
+            string targetedEventID = Request.QueryString["id"];
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Events WHERE EventID = @event", conn);
+            //cmd.Parameters.AddWithValue("@event", targetedEventID);
+            cmd.Parameters.AddWithValue("@event", 1);
+
+            //Declare and instantiate DataAdapter object
+            SqlDataAdapter daEvents = new SqlDataAdapter(cmd);
+
+            //Create a DataSet object to contain the records retrieved from database
+            DataSet result = new DataSet();
+
+            //A connection must be opened before any operations made.
+            conn.Open();
+
+            daEvents.Fill(result, "Events");
+
+            //A connection should always be closed, whether error occurs or not.
+            conn.Close();
+
+            DateTime start = Convert.ToDateTime(result.Tables[0].Rows[0]["StartDate"]);
+            DateTime end = Convert.ToDateTime(result.Tables[0].Rows[0]["EndDate"]);
+
+            TimeSpan daysActivity = end.Subtract(start);
+
+            return daysActivity.Days + 1;
+        }
+
+        protected DateTime getStartDate()
+        {
+            string targetedEventID = Request.QueryString["id"];
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Events WHERE EventID = @event", conn);
+            //cmd.Parameters.AddWithValue("@event", targetedEventID);
+            cmd.Parameters.AddWithValue("@event", 1);
+
+            //Declare and instantiate DataAdapter object
+            SqlDataAdapter daEvents = new SqlDataAdapter(cmd);
+
+            //Create a DataSet object to contain the records retrieved from database
+            DataSet result = new DataSet();
+
+            //A connection must be opened before any operations made.
+            conn.Open();
+
+            daEvents.Fill(result, "Events");
+
+            //A connection should always be closed, whether error occurs or not.
+            conn.Close();
+
+            DateTime start = Convert.ToDateTime(result.Tables[0].Rows[0]["StartDate"]);
+
+            return start;
+        }
+
+        protected void rblDay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DateTime newDate = getStartDate().AddDays(Convert.ToDouble(rblDay.SelectedValue) - 1);
+            lblDay.Text = newDate.ToString();
         }
     }
 }
