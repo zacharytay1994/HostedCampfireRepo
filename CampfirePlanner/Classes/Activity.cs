@@ -23,7 +23,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage.App_Code
         public int activityAdd()
         {
             //Read connection string "ePortfolioConnectionString" from web.config file.
-            string strConn = ConfigurationManager.ConnectionStrings["EventPlannerConnectionString"].ToString();
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
 
             //Instantiate a SqlConnection object with the Connection String read.
             SqlConnection conn = new SqlConnection(strConn);

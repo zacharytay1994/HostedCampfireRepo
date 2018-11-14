@@ -22,25 +22,24 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             */
         }
 
-        protected void btnConfirm_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnRecommendation_Click(object sender, EventArgs e)
         {
-            lblStart.Text = txtStart.Text;
-            lblEnd.Text = txtEnd.Text;
+            //lblStart.Text = txtStart.Text;
+            //lblEnd.Text = txtEnd.Text;
             TimeSpan timeActivity = DateTime.Parse(txtEnd.Text).Subtract(DateTime.Parse(txtStart.Text)); //The time the activity should take
             lblActivity.Text = "Here are some activities under " + timeActivity.TotalMinutes + " minutes!";
+            displayRecommendation();
         }
 
         protected void displayRecommendation()
-        {
-            string strConn = ConfigurationManager.ConnectionStrings["EventPlannerConnectionString"].ToString();
+        {          
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Activities WHERE duration <= @dur ORDER BY duration DESC", conn);
+            
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Activities WHERE Duration <= @dur ORDER BY Duration DESC", conn);
+            TimeSpan timeActivity = DateTime.Parse(txtEnd.Text).Subtract(DateTime.Parse(txtStart.Text)); //The time the activity should take
+            cmd.Parameters.AddWithValue("@dur", timeActivity.TotalMinutes);
+            
 
             //Declare and instantiate DataAdapter object
             SqlDataAdapter daRecommendation = new SqlDataAdapter(cmd);
@@ -63,9 +62,17 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             gvRecommendation.DataBind();
         }
 
-        protected void gvRecommendation_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btnAdd_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void gvRecommendation_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            // Set the page index to the page clicked by user.
+            gvRecommendation.PageIndex = e.NewPageIndex;
+            // Display records on the new page.
+            displayRecommendation();
         }
     }
 }
