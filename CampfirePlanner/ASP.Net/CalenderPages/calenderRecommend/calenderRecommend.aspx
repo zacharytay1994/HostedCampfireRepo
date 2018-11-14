@@ -58,7 +58,7 @@
         <tr>
             <td class="auto-style4"></td>
             <td class="auto-style3">
-                <asp:Button ID="btnRecommendation" runat="server" OnClick="btnRecommendation_Click" Text="Get Recommendation" Width="162px" />
+                <asp:Button ID="btnRecommendation" runat="server" OnClick="btnRecommendation_Click" Text="Get Recommendation" Width="176px" />
             </td>
         </tr>
         <tr>
@@ -70,12 +70,12 @@
         <tr>
             <td class="auto-style6"></td>
             <td class="auto-style7">
-                <asp:GridView ID="gvRecommendation" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gvRecommendation_SelectedIndexChanged" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
+                <asp:GridView ID="gvRecommendation" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" AllowPaging="True" OnPageIndexChanging="gvRecommendation_PageIndexChanging" PageSize="5">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField HeaderText="Name" />
-                        <asp:BoundField HeaderText="Category" />
-                        <asp:BoundField HeaderText="Duration" />
+                        <asp:BoundField HeaderText="Name" DataField="ActivityName" />
+                        <asp:BoundField HeaderText="Category" DataField="CategoryID" />
+                        <asp:BoundField HeaderText="Duration" DataField="Duration" />
                         <asp:ButtonField Text="View" />
                     </Columns>
                     <FooterStyle BackColor="#CCCC99" />
@@ -94,7 +94,7 @@
             <td class="auto-style5">&nbsp;</td>
             <td>
                 <asp:Button ID="btnReset" runat="server" Text="Return to Events " />
-                <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnConfirm_Click" />
+                <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
                 <asp:Label ID="lblAdd" runat="server"></asp:Label>
             </td>
         </tr>

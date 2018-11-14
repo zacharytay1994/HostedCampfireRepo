@@ -173,8 +173,8 @@
     <Compile Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx.designer.cs">
       <DependentUpon>ActivityDesc.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ASP.Net\ActivitiesPage\ActivityPage.cs" />
-    <Compile Include="ASP.Net\ActivitiesPage\App_Code\Activity.cs" />
+    <Compile Include="Classes\ActivityPage.cs" />
+    <Compile Include="Classes\Activity.cs" />
     <Compile Include="ASP.Net\CalenderPages\calenderRecommend\calenderRecommend.aspx.cs">
       <DependentUpon>calenderRecommend.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,6 +238,7 @@
     <Compile Include="ASP.Net\MasterPages\ScheduleNavBar\ScheduleNested.master.designer.cs">
       <DependentUpon>ScheduleNested.master</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Event.cs" />
     <Compile Include="Classes\SQLFunctions.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
