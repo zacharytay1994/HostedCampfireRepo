@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="LoginPage.css" rel="stylesheet" type="text/css" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
      <p class="loginheader"><span class="auto-style7">Login</span></p>
     <p class="loginp">
     <table class="w-100" width="100%" border="0" style="border:none;">

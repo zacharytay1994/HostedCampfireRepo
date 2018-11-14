@@ -3,7 +3,7 @@
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <link href="RegisterPage.css" rel="stylesheet" type="text/css" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <p class="registerheader"><span class="auto-style7">Register</span></p>
     <p class="tablep">
     <table class="w-100" width=100% border="0" style="border:none;">
