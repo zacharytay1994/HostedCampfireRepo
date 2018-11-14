@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
 {
-    public partial class calenderViewDay : System.Web.UI.Page
+    public partial class ActivityContainer : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int day = 1;
+
         }
     }
 }
