@@ -262,6 +262,7 @@
     <Content Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\Css\activityForm.css" />
     <Content Include="ASP.Net\CalenderPages\calenderRecommend\calenderRecommend.aspx" />
+    <Content Include="ASP.Net\CalenderPages\calenderRecommend\Css\calendarRecommend.css" />
     <Content Include="ASP.Net\CalenderPages\calenderViewDay\calenderViewDay.aspx" />
     <Content Include="ASP.Net\HomePage\HomePage.aspx" />
     <Content Include="ASP.Net\LandingPage\LandingPage.aspx" />

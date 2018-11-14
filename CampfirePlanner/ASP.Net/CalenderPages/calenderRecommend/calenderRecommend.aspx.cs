@@ -14,12 +14,16 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            for (int i = 1; i < EventActivity.Days; i++)
+            string targetedEventID = Request.QueryString["id"];
+            //lblDay.Text = targetedEventID; //grab the targeted id from previous page
+          
+            if (!Page.IsPostBack)
             {
-                rblDay.Items.Add(new ListItem(Convert.ToString(i), Convert.ToString(i)));
-            }   
-            */
+                for (int i = 1; i <= getNumberOfDays(); i++)
+                {
+                    rblDay.Items.Add(new ListItem("Day " + Convert.ToString(i), Convert.ToString(i)));
+                }
+            }
         }
 
         protected void btnRecommendation_Click(object sender, EventArgs e)
@@ -73,6 +77,73 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             gvRecommendation.PageIndex = e.NewPageIndex;
             // Display records on the new page.
             displayRecommendation();
+        }
+
+        protected int getNumberOfDays()
+        {
+            string targetedEventID = Request.QueryString["id"];
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Events WHERE EventID = @event", conn);
+            //cmd.Parameters.AddWithValue("@event", targetedEventID);
+            cmd.Parameters.AddWithValue("@event", 1);
+
+            //Declare and instantiate DataAdapter object
+            SqlDataAdapter daEvents = new SqlDataAdapter(cmd);
+
+            //Create a DataSet object to contain the records retrieved from database
+            DataSet result = new DataSet();
+
+            //A connection must be opened before any operations made.
+            conn.Open();
+
+            daEvents.Fill(result, "Events");
+
+            //A connection should always be closed, whether error occurs or not.
+            conn.Close();
+
+            DateTime start = Convert.ToDateTime(result.Tables[0].Rows[0]["StartDate"]);
+            DateTime end = Convert.ToDateTime(result.Tables[0].Rows[0]["EndDate"]);
+
+            TimeSpan daysActivity = end.Subtract(start);
+
+            return daysActivity.Days + 1;
+        }
+
+        protected DateTime getStartDate()
+        {
+            string targetedEventID = Request.QueryString["id"];
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Events WHERE EventID = @event", conn);
+            //cmd.Parameters.AddWithValue("@event", targetedEventID);
+            cmd.Parameters.AddWithValue("@event", 1);
+
+            //Declare and instantiate DataAdapter object
+            SqlDataAdapter daEvents = new SqlDataAdapter(cmd);
+
+            //Create a DataSet object to contain the records retrieved from database
+            DataSet result = new DataSet();
+
+            //A connection must be opened before any operations made.
+            conn.Open();
+
+            daEvents.Fill(result, "Events");
+
+            //A connection should always be closed, whether error occurs or not.
+            conn.Close();
+
+            DateTime start = Convert.ToDateTime(result.Tables[0].Rows[0]["StartDate"]);
+
+            return start;
+        }
+
+        protected void rblDay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DateTime newDate = getStartDate().AddDays(Convert.ToDouble(rblDay.SelectedValue) - 1);
+            lblDay.Text = newDate.ToString();
         }
     }
 }
