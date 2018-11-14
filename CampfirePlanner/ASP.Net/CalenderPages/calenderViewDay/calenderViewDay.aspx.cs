@@ -15,13 +15,14 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
         protected void Page_Load(object sender, EventArgs e)
         {
             int day = 1;
-            int eventid = 1;
+            int eventid = 2;
 
             DataTable table = GetData(eventid, day);
-            fillTimeTable();
-            TableCell c = new TableCell();
-            c.Controls.Add(new LiteralControl(table.Rows[0]["StartTime"].ToString()));
-            Table1.Rows[0].Cells.Add(c);
+            //fillTimeTable();
+
+            calenderViewDay1 myControl = (calenderViewDay1)Page.LoadControl("../calenderViewDay/calenderViewDay.ascx");
+            Page.Controls.Add(myControl);
+            Page.Controls.Add(Page.LoadControl("../calenderViewDay/calenderViewDay.ascx"));
 
         }
 
@@ -35,7 +36,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             SqlConnection conn = new SqlConnection(strConn);
 
             SqlCommand cmd = new SqlCommand
-                ("SELECT * FROM EventActivity WHERE EventID = @eventid AND Day = @day", conn);
+                ("SELECT * FROM EventActivities WHERE EventID = @eventid AND Day = @day", conn);
 
             cmd.Parameters.AddWithValue("@eventid", _eventid);
             cmd.Parameters.AddWithValue("@day", _day);
@@ -98,10 +99,18 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             }
         }
 
-        public int returnTime(string _time)
+        public bool returnTime(string _tabletime, string _activitytime)
         {
-
-            return 0;
+            string compareTime = "";
+            compareTime = "" + _activitytime[0] + _activitytime[1] + _activitytime[3] + _activitytime[4];
+            if (_tabletime == _activitytime)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
