@@ -13,6 +13,8 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
 {
     public partial class CalendarSelect : System.Web.UI.Page
     {
+        Event newEvent = new Event();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -20,8 +22,9 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
 
         protected void calSelect_SelectionChanged(object sender, EventArgs e)
         {
-            int dayz = 1;
-                if (SelectedDates.Count() != 2 && !SelectedDates.Contains(calSelect.SelectedDate))
+            if (SelectedDates.Count() != 2 && calSelect.SelectedDate >= DateTime.Today)
+            {
+                if (!SelectedDates.Contains(calSelect.SelectedDate))
                 {
                     SelectedDates.Add(calSelect.SelectedDate);
                 }
@@ -29,16 +32,17 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
                 {
                     SelectedDates.Remove(calSelect.SelectedDate);
                 }
+            }
 
-                ViewState["SelectedDates"] = SelectedDates;
-
+            ViewState["SelectedDates"] = SelectedDates;
+            int dayz = 0;
             if (SelectedDates.Count() == 2)
             {
                 dayz = (SelectedDates[0].Day - SelectedDates[1].Day);
                 if (dayz < 0)
                     dayz = -dayz;
             }
-            else
+            else if (SelectedDates.Count() == 1)
                 dayz = 1;
             txtDayz.Text = dayz.ToString();
         }
@@ -64,7 +68,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
             {
                 if (ViewState["SelectedDates"] == null)
                     ViewState["SelectedDates"] = new List<DateTime>();
-                
+
                 return (List<DateTime>)ViewState["SelectedDates"];
             }
             set
@@ -79,21 +83,28 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
             txtDayz.Text = "";
         }
 
-        protected void btnEvent_Click(object sender, EventArgs e)
+        protected void btnCreate_Click(object sender, EventArgs e)
         {
             if (rvDayz.IsValid)
             {
                 DateTime startDate;
                 DateTime endDate;
-                Event newEvent = new Event();
-                if (SelectedDates[1] > SelectedDates[0])
+                if (SelectedDates.Count() > 1)
                 {
-                    startDate = SelectedDates[0];
-                    endDate = SelectedDates[1];
+                    if (SelectedDates[1] > SelectedDates[0])
+                    {
+                        startDate = SelectedDates[0];
+                        endDate = SelectedDates[1];
+                    }
+                    else
+                    {
+                        startDate = SelectedDates[1];
+                        endDate = SelectedDates[0];
+                    }
                 }
                 else
                 {
-                    startDate = SelectedDates[1];
+                    startDate = SelectedDates[0];
                     endDate = SelectedDates[0];
                 }
 
@@ -101,7 +112,16 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
                 newEvent.endDate = endDate;
                 newEvent.eventName = txtEvent.Text;
                 newEvent.accountID = getAccID();
-                newEvent.createEvent();
+                //newEvent.createEvent();
+
+                txtEvent.Enabled = false;
+                calSelect.Enabled = false;
+                btnReset.Enabled = false;
+                btnCreate.Enabled = false;
+                tdList.Visible = true;
+                tdList2.Visible = true;
+
+                fillUserList();
             }
         }
 
@@ -110,7 +130,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
 
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("SELECT AccountiD FROM Users WHERE Username=@name", conn);
+            SqlCommand cmd = new SqlCommand("SELECT AccountID FROM Users WHERE Username=@name", conn);
 
             cmd.Parameters.AddWithValue("@name", Session["UserAuthentication"].ToString());
 
@@ -119,10 +139,58 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
 
             conn.Open();
             int accID = (int)cmd.ExecuteScalar();
-            daID.Fill(result, "Parent");
+            daID.Fill(result, "Users");
             conn.Close();
 
             return accID;
+        }
+
+        private void fillUserList()
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Type = 'u'", conn);
+            SqlDataAdapter daUsers = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
+
+            conn.Open();
+            daUsers.Fill(result, "Users");
+            conn.Close();
+
+            gvUsers.DataSource = result.Tables["Users"];
+            gvUsers.DataBind();
+        }
+
+        protected void gvUsers_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "addUser")
+            {
+                int i = Convert.ToInt32(e.CommandArgument);
+                int accID = Convert.ToInt32(gvUsers.Rows[i].Cells[0].Text);
+            }
+        }
+
+        protected void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            gvUsers.DataSource = null;
+
+            string search = txtSearch.Text;
+
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Type = 'u' AND Username LIKE '%'+@name+'%'", conn);
+            cmd.Parameters.AddWithValue("@name", search);
+            SqlDataAdapter daSearch = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
+
+            conn.Open();
+            daSearch.Fill(result, "Users");
+            conn.Close();
+
+            gvUsers.DataSource = result.Tables["Users"];
+            gvUsers.DataBind();
         }
     }
 }

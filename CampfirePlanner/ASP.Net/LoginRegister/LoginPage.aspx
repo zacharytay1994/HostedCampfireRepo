@@ -23,7 +23,7 @@
                 <asp:Label ID="lbl_Password" runat="server" CssClass="auto-style9" Text="Password :"></asp:Label>
             </td>
             <td class="auto-style4">
-                <asp:TextBox ID="txtPw" runat="server" Width="380px" cssclass="textbox"></asp:TextBox>
+                <asp:TextBox ID="txtPw" runat="server" Width="380px" cssclass="textbox" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
         <tr>
