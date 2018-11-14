@@ -40,14 +40,11 @@
                         <label for="category">Category of Game</label>
                     </div>
                     <div class="col-75">
-                        <asp:ListBox ID="lbCat" runat="server" SelectionMode="Multiple">
-                        <asp:ListItem Value="a">Land</asp:ListItem>
-                        <asp:ListItem Value="b">Sea</asp:ListItem>
-                        <asp:ListItem Value="c">Running</asp:ListItem>
-                        <asp:ListItem Value="d">Board</asp:ListItem>
-                        <asp:ListItem Value="e">Tiring</asp:ListItem>
-                        <asp:ListItem Value="f">Bonding</asp:ListItem>
-                        <asp:ListItem Value="g">Action</asp:ListItem>
+                        <asp:ListBox ID="lbCat" runat="server" SelectionMode="Multiple" AutoPostBack="True">
+                        <asp:ListItem Value="a">Action</asp:ListItem>
+                        <asp:ListItem Value="b">Adventure</asp:ListItem>
+                        <asp:ListItem Value="c">Rhythm</asp:ListItem>
+                        <asp:ListItem Value="d">IceBreaker</asp:ListItem>
                         </asp:ListBox>
                         <asp:Label ID="lblCat" runat="server" Text="Hold Ctrl + Click to Select Multiple Categories" ForeColor="Orange"></asp:Label> <br />
                         <asp:RequiredFieldValidator ID="rfvCat" runat="server" ErrorMessage="Please Select at least One Category!" Display="Dynamic" ForeColor="Red" ControlToValidate="lbCat"></asp:RequiredFieldValidator>
@@ -62,7 +59,6 @@
                         <asp:Label ID="Label1" runat="server" Text="Values from 1 to 120 minutes"></asp:Label>
 &nbsp;<br />
                         <asp:RequiredFieldValidator ID="rfvDuration" runat="server" ControlToValidate="txtDuration" ErrorMessage="Please enter a duration!" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator> <br \ />
-                        <asp:RangeValidator ID="rvDuration" runat="server" ControlToValidate="txtDuration" ErrorMessage="Please enter a valid duration!" ForeColor="Red" MaximumValue="120" MinimumValue="1"></asp:RangeValidator>
                     </div>
                 </div>
                 <div class="row">
