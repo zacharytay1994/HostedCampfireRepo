@@ -108,7 +108,7 @@
             <td>
                 <asp:Button ID="btnReset" runat="server" Text="Return to Events " />
                 <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
-                <asp:Label ID="lblAdd" runat="server"></asp:Label>
+                <asp:Label ID="lblAdd" runat="server" Visible="False"></asp:Label>
             </td>
         </tr>
     </table>

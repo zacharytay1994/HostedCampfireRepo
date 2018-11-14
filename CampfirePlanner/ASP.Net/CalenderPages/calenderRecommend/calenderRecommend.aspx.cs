@@ -7,12 +7,12 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using CampfirePlanner.Classes;
 
 namespace CampfirePlanner.ASP.Net.CalenderPages
 {
     public partial class calenderRecommend : System.Web.UI.Page
     {
-        int reccID;
         protected void Page_Load(object sender, EventArgs e)
         {
             string targetedEventID = Request.QueryString["id"];
@@ -29,8 +29,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
 
         protected void btnRecommendation_Click(object sender, EventArgs e)
         {
-            //lblStart.Text = txtStart.Text;
-            //lblEnd.Text = txtEnd.Text;
+            //lblStart.Text = DateTime.Parse(txtStart.Text).TimeOfDay.ToString();
             TimeSpan timeActivity = DateTime.Parse(txtEnd.Text).Subtract(DateTime.Parse(txtStart.Text)); //The time the activity should take
             lblActivity.Text = "Here are some activities under " + timeActivity.TotalMinutes + " minutes!";
             displayRecommendation();
@@ -41,7 +40,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
             
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Activities WHERE Duration <= @dur ORDER BY Duration DESC", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Activity WHERE Duration <= @dur ORDER BY Duration DESC", conn);
             TimeSpan timeActivity = DateTime.Parse(txtEnd.Text).Subtract(DateTime.Parse(txtStart.Text)); //The time the activity should take
             cmd.Parameters.AddWithValue("@dur", timeActivity.TotalMinutes);
             
@@ -67,28 +66,6 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             gvRecommendation.DataBind();
         }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            string eventID = Request.QueryString["eventID"];
-            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
-
-            SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM EventActivities WHERE EventID = @eveid AND ActivityID = @actid AND Day = @day AND StartTime = @startt", conn);
-
-            cmd.Parameters.AddWithValue("@eveid", 1);
-            cmd.Parameters.AddWithValue("@actid", 2);
-            cmd.Parameters.AddWithValue("@day", 2);
-            cmd.Parameters.AddWithValue("@startt", 2);
-
-            SqlDataAdapter daID = new SqlDataAdapter(cmd);
-            DataSet result = new DataSet();
-
-            conn.Open();
-            int eventActivityID = (int)cmd.ExecuteScalar();
-            daID.Fill(result, "EventActivity");
-            conn.Close();
-        }
-
         protected void gvRecommendation_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             // Set the page index to the page clicked by user.
@@ -99,13 +76,13 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
 
         protected int getNumberOfDays()
         {
-            string targetedEventID = Request.QueryString["id"];
+            string targetedEventID = Request.QueryString["id"]; //*********
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Events WHERE EventID = @event", conn);
-            //cmd.Parameters.AddWithValue("@event", targetedEventID);
-            cmd.Parameters.AddWithValue("@event", 1);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Event WHERE EventID = @event", conn);
+            //cmd.Parameters.AddWithValue("@event", targetedEventID); 
+            cmd.Parameters.AddWithValue("@event", 3); //CHANGE THIS WHEN THE QUERYSTRING OF EVENT ID ARRIVES FROM PREVIOUS PAGE
 
             //Declare and instantiate DataAdapter object
             SqlDataAdapter daEvents = new SqlDataAdapter(cmd);
@@ -116,7 +93,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             //A connection must be opened before any operations made.
             conn.Open();
 
-            daEvents.Fill(result, "Events");
+            daEvents.Fill(result, "Event");
 
             //A connection should always be closed, whether error occurs or not.
             conn.Close();
@@ -135,9 +112,9 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Events WHERE EventID = @event", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Event WHERE EventID = @event", conn);
             //cmd.Parameters.AddWithValue("@event", targetedEventID);
-            cmd.Parameters.AddWithValue("@event", 1);
+            cmd.Parameters.AddWithValue("@event", 3); //CHANGE THIS WHEN QUERYSTRING ARRIVES
 
             //Declare and instantiate DataAdapter object
             SqlDataAdapter daEvents = new SqlDataAdapter(cmd);
@@ -148,7 +125,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             //A connection must be opened before any operations made.
             conn.Open();
 
-            daEvents.Fill(result, "Events");
+            daEvents.Fill(result, "Event");
 
             //A connection should always be closed, whether error occurs or not.
             conn.Close();
@@ -164,30 +141,6 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             lblDay.Text = newDate.ToString();
         }
 
-        protected void addToEvents()
-        {
-            string eventID = Request.QueryString["eventID"];
-            //Read connection string "ePortfolioConnectionString" from web.config file.
-            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
-
-            //Instantiate a SqlConnection object with the Connection String read.
-            SqlConnection conn = new SqlConnection(strConn);
-
-            //Instantiate a SqlCommand object, supply it with an INSERT SQL statement
-            //which will return the auto-generated staffID after insertation,
-            //and the connection object for connecting to the database.
-            SqlCommand cmd = new SqlCommand
-                             ("INSERT INTO EventActivity (EventID, ActivityID, Day, StartTime)" +
-                             "VALUES (@eveid, @actid, @day, @startt)", conn);
-
-            //Define the parameters used in SQL statement, value for each parameter
-            //is retrieved from respective class's property.
-            cmd.Parameters.AddWithValue("@eveid", eventID);
-            cmd.Parameters.AddWithValue("@actid", reccID);
-            cmd.Parameters.AddWithValue("@day", rblDay.SelectedValue);
-            cmd.Parameters.AddWithValue("@startt", txtStart.Text);
-        }
-
         protected void gvRecommendation_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -195,9 +148,25 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
 
         protected void gvRecommendation_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
+            int recommendationID;
             GridViewRow r = gvRecommendation.Rows[e.NewSelectedIndex];
-            int recommendationID = Convert.ToInt32(r.Cells[0].Text);
-            reccID = recommendationID;
+            recommendationID = Convert.ToInt32(r.Cells[0].Text);
+            lblAdd.Text = recommendationID.ToString();
+            //reccID = recommendationID;
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            int eventID = Convert.ToInt32(Request.QueryString["eventID"]);
+            // Create a new object
+            EventActivity objActivity = new EventActivity();
+
+            //objActivity.EventID = eventID;
+            objActivity.EventID = 3;  //Change this to querystring ver when other page before is done
+            objActivity.ActivityID = Convert.ToInt32(lblAdd.Text);
+            objActivity.StartTime = DateTime.Parse(txtStart.Text).TimeOfDay.ToString();
+            objActivity.Day = Convert.ToInt32(rblDay.SelectedValue);
+            objActivity.eventActivityAdd();
         }
     }
 }
