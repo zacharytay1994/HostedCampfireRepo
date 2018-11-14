@@ -60,7 +60,7 @@
             <asp:ListItem Value="d">CategoryFour</asp:ListItem>
         </asp:CheckBoxList>
         &nbsp;Please Select Categories to Display<br />
-
+        
     </div>
     <div class="container">
         <div class="row">

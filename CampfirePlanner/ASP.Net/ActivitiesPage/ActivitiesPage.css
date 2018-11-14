@@ -15,4 +15,6 @@ div.col-md-2 {
     margin-left: 56px;
     margin-top: 20px;
     margin-bottom: 20px;
+    background-image: url(https://i.imgur.com/5qcSCa2.png);
+    filter:blur(1px);
 }
