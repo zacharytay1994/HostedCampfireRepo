@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="ActivitiesPage.css" type="text/css" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <asp:HiddenField runat="server" ID="SendA" Value="1" />
     <style>
         
@@ -44,27 +44,28 @@
             return false; //Redirect
         }
     </script>
-    <div class="container">
+    <div class="title">
         <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">Features Item Here</h1>
+            <div class="col-sm-12">
+                <h1 class="text-center" style="text-align:center;">Featured Item Here</h1>
             </div>
         </div>
     </div>
-    <div class="container">
 
+    <div class="col-md-12">
         <asp:CheckBoxList ID="cbl_categories" runat="server" OnSelectedIndexChanged="cbl_categories_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True">
             <asp:ListItem Value="a">CategoryOne</asp:ListItem>
             <asp:ListItem Value="b">CategoryTwo</asp:ListItem>
             <asp:ListItem Value="c">CategoryThree</asp:ListItem>
             <asp:ListItem Value="d">CategoryFour</asp:ListItem>
         </asp:CheckBoxList>
-        &nbsp;Please Select Categories to Display<br />
-        
+    <h3 style="text-align:center;">Please Select Categories to Display</h3><br />
     </div>
+
     <div class="container">
         <div class="row">
             <div onclick="redirect(this.id)" class="col-md-2" id="4">
+                <img src="../../Images/image2.jpg" width="100%" style="border: 1px double black;"/>
                 <table class="box" style="width:100%">            
                     <tr>
                         <td>Name:</td>
@@ -95,6 +96,7 @@
             </div>
 
             <div onclick="redirect(this.id)" class="col-md-2" id="8">
+                <img src="../../Images/image2.jpg" width="100%" style="border: 1px solid black;"/>
                 <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
@@ -125,6 +127,7 @@
             </div>
 
              <div onclick="redirect(this.id)" class="col-md-2" id="12">
+                 <img src="../../Images/image2.jpg" width="100%" style="border: 1px solid black;"/>
                 <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
@@ -155,6 +158,7 @@
             </div>
 
              <div onclick="redirect(this.id)" class="col-md-2" id="16">
+                 <img src="../../Images/image2.jpg" width="100%" style="border: 1px solid black;"/>
                 <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
@@ -186,6 +190,7 @@
         </div>
         <div class="row">
             <div onclick="redirect(this.id)" class="col-md-2" id="20">
+                <img src="../../Images/image2.jpg" width="100%" style="border: 1px solid black;"/>
                 <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
@@ -216,6 +221,7 @@
             </div>
 
              <div onclick="redirect(this.id)" class="col-md-2" id="24">
+                 <img src="../../Images/image2.jpg" width="100%" style="border: 1px solid black;"/>
                 <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
@@ -246,6 +252,7 @@
             </div>
 
              <div onclick="redirect(this.id)" class="col-md-2" ID="28">
+                 <img src="../../Images/image2.jpg" width="100%" style="border: 1px solid black;"/>
                 <table class="box" style="width:100%">
                     <tr>
                         <td>Name:</td>
@@ -276,7 +283,8 @@
             </div>
 
             <div onclick="redirect(this.id)" class="col-md-2">
-                <table class="box" style="width:100%">
+                <img src="../../Images/image2.jpg" width="100%" style="border: 1px solid black;"/>
+                <table class="box" style="width:100%;">
                     <tr>
                         <td>Name:</td>
                         <td>
@@ -306,10 +314,11 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" style="text-align:center;">
         <asp:Button ID="btn_previous" runat="server" Text="Previous" OnClick="btn_previous_Click" />
         <asp:Button ID="btn_next" runat="server" Text="Next" OnClick="btn_next_Click" />
-    &nbsp;Page:
+        <br>
+        Page:
         <asp:Label ID="lbl_pagenumber" runat="server" Text="Label"></asp:Label>
         <br />
         <asp:Label ID="lblID" runat="server"></asp:Label>

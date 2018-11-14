@@ -266,6 +266,7 @@
                 <table class="clist">
                     <tr>
                         <th class="auto-style1">Categories</th>
+                        <th></th>
                     </tr>
                     <tr>
                         <asp:CheckBoxList ID="cbl_categories" runat="server" RepeatDirection="Vertical" AutoPostBack="True" Width="200px" CssClass="auto-style2" Height="159px">
