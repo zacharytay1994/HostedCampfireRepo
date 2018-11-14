@@ -12,6 +12,9 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
         protected void Page_Load(object sender, EventArgs e)
         {
             int day = 1;
+            int eventid = 1;
+
+
         }
     }
 }
