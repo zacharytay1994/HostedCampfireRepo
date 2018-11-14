@@ -18,6 +18,7 @@
             <asp:TextBox ID="txtEvent" runat="server"></asp:TextBox>
 
         </p>
+        <div class="row">
         <asp:calendar id="calSelect" runat="server" backcolor="White" bordercolor="Black" daynameformat="Shortest" font-names="Times New Roman" font-size="10pt" forecolor="Black" height="287px" nextprevformat="FullMonth" titleformat="Month" width="357px" onload="calSelect_Load" onprerender="calSelect_PreRender" onselectionchanged="calSelect_SelectionChanged">
         <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
         <DayStyle Width="14%" />
@@ -28,6 +29,12 @@
         <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
         <TodayDayStyle BackColor="#CCCC99" />
     </asp:calendar>
+            <table>
+                <tr>
+                    <td>asasasas</td>
+                </tr>
+            </table>
+        </div>
 
         Days:&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:textbox id="txtDayz" runat="server" readonly="True" width="53px" Height="31px"></asp:textbox>
