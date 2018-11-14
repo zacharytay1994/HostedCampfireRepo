@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelectDay {
+namespace CampfirePlanner.ASP.Net.CreateEvent {
     
     
-    public partial class calendarSelectDay {
+    public partial class CreateEvent {
         
         /// <summary>
-        /// Calendar1 control.
+        /// calSelect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.Calendar calSelect;
         
         /// <summary>
         /// Button1 control.
