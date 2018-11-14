@@ -38,7 +38,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                     categ += x;
                 }
                 objActivity.category = categ;
-                objActivity.duration = Convert.ToInt32(txtDuration);
+                objActivity.duration = Convert.ToInt32(txtDuration.Text);
                 objActivity.activityExplanation = txtExplanation.Text;
                 objActivity.link = txtLinks.Text;
                 if (upPhoto.HasFile == true)

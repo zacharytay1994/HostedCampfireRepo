@@ -12,11 +12,12 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
 {
     public partial class calenderRecommend : System.Web.UI.Page
     {
+        int reccID;
         protected void Page_Load(object sender, EventArgs e)
         {
             string targetedEventID = Request.QueryString["id"];
             //lblDay.Text = targetedEventID; //grab the targeted id from previous page
-          
+
             if (!Page.IsPostBack)
             {
                 for (int i = 1; i <= getNumberOfDays(); i++)
@@ -68,7 +69,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void gvRecommendation_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -144,6 +145,42 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
         {
             DateTime newDate = getStartDate().AddDays(Convert.ToDouble(rblDay.SelectedValue) - 1);
             lblDay.Text = newDate.ToString();
+        }
+
+        protected void addToEvents()
+        {
+            string eventID = Request.QueryString["eventID"];
+            //Read connection string "ePortfolioConnectionString" from web.config file.
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+
+            //Instantiate a SqlConnection object with the Connection String read.
+            SqlConnection conn = new SqlConnection(strConn);
+
+            //Instantiate a SqlCommand object, supply it with an INSERT SQL statement
+            //which will return the auto-generated staffID after insertation,
+            //and the connection object for connecting to the database.
+            SqlCommand cmd = new SqlCommand
+                             ("INSERT INTO EventActivity (EventID, ActivityID, Day, StartTime)" +
+                             "VALUES (@eveid, @actid, @day, @startt)", conn);
+
+            //Define the parameters used in SQL statement, value for each parameter
+            //is retrieved from respective class's property.
+            cmd.Parameters.AddWithValue("@eveid", eventID);
+            cmd.Parameters.AddWithValue("@actid", reccID);
+            cmd.Parameters.AddWithValue("@day", rblDay.SelectedValue);
+            cmd.Parameters.AddWithValue("@startt", txtStart.Text);
+        }
+
+        protected void gvRecommendation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void gvRecommendation_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            GridViewRow r = gvRecommendation.Rows[e.NewSelectedIndex];
+            int recommendationID = Convert.ToInt32(r.Cells[0].Text);
+            reccID = recommendationID;
         }
     }
 }

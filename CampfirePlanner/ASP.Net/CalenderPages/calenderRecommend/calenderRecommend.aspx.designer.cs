@@ -94,6 +94,15 @@ namespace CampfirePlanner.ASP.Net.CalenderPages {
         protected global::System.Web.UI.WebControls.GridView gvRecommendation;
         
         /// <summary>
+        /// lblGrid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGrid;
+        
+        /// <summary>
         /// btnReset control.
         /// </summary>
         /// <remarks>
