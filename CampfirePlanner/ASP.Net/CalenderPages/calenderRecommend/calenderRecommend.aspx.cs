@@ -69,7 +69,24 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            
+            string eventID = Request.QueryString["eventID"];
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM EventActivities WHERE EventID = @eveid AND ActivityID = @actid AND Day = @day AND StartTime = @startt", conn);
+
+            cmd.Parameters.AddWithValue("@eveid", 1);
+            cmd.Parameters.AddWithValue("@actid", 2);
+            cmd.Parameters.AddWithValue("@day", 2);
+            cmd.Parameters.AddWithValue("@startt", 2);
+
+            SqlDataAdapter daID = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
+
+            conn.Open();
+            int eventActivityID = (int)cmd.ExecuteScalar();
+            daID.Fill(result, "EventActivity");
+            conn.Close();
         }
 
         protected void gvRecommendation_PageIndexChanging(object sender, GridViewPageEventArgs e)

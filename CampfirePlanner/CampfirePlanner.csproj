@@ -251,6 +251,7 @@
       <DependentUpon>ScheduleNested.master</DependentUpon>
     </Compile>
     <Compile Include="Classes\Event.cs" />
+    <Compile Include="Classes\EventActivity.cs" />
     <Compile Include="Classes\SQLFunctions.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
