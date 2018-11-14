@@ -20,7 +20,7 @@ namespace CampfirePlanner.Classes
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
 
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("INSERT INTO Events (StartDate, EndDate, EventName, AccountID) " +
+            SqlCommand cmd = new SqlCommand("INSERT INTO Event (StartDate, EndDate, EventName, AccountID) " +
                                             "OUTPUT INSERTED.EventID " +
                                             "VALUES(@sdate, @edate, @ename, @aID)", conn);
 
