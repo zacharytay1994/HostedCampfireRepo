@@ -4,10 +4,10 @@
 
 body {
     font-family: Verdana,sans-serif;
-    color: black;
+    color: white;
     font-size: 16px;
     margin: 0 auto;
-    background-color:lightgoldenrodyellow;
+    background-color: #752900;
     background-image: url('../Images/background.jpeg');
 }
 
