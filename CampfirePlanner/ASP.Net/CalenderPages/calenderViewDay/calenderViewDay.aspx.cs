@@ -20,15 +20,17 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             DataTable table = GetData(eventid, day);
             fillTimeTable();
 
-            calenderViewDay1 myControl = (calenderViewDay1)Page.LoadControl("../calenderViewDay/calenderViewDay.ascx");
-            myControl.stringy = "StringyTest";
-            ContentPlaceHolder content = (ContentPlaceHolder)this.Master.FindControl("body1");
-            content.Controls.Add(myControl);
+            //calenderViewDay1 myControl = (calenderViewDay1)Page.LoadControl("../calenderViewDay/calenderViewDay.ascx");
+            //myControl.stringy = "StringyTest";
+            //ContentPlaceHolder content = (ContentPlaceHolder)this.Master.FindControl("body1");
+            //content.Controls.Add(myControl);
 
-            TableCell c = new TableCell();
-            c.Controls.Add(myControl);
-            Table1.Rows[0].Cells.Add(c);
+            //TableCell c = new TableCell();
+            //c.Controls.Add(myControl);
+            //Table1.Rows[0].Cells.Add(c);
             //Page.Controls.Add(Page.LoadControl("../calenderViewDay/calenderViewDay.ascx"));
+
+            returnTime(table);
 
         }
 
@@ -105,18 +107,52 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             }
         }
 
-        public bool returnTime(string _tabletime, string _activitytime)
+        public void returnTime(DataTable _table)
         {
-            string compareTime = "";
-            compareTime = "" + _activitytime[0] + _activitytime[1] + _activitytime[3] + _activitytime[4];
-            if (_tabletime == _activitytime)
+            for (int i=0; i<_table.Rows.Count;i++)
             {
-                return true;
+                string timeValue = _table.Rows[i]["StartTime"].ToString();
+                string mins = timeValue[3].ToString() + timeValue[4].ToString();
+                string hours = timeValue[0].ToString() + timeValue[1].ToString();
+                int index = Convert.ToInt32(mins) % 15;
+                index += Convert.ToInt32(hours) * 4;
+
+                calenderViewDay1 myControl = (calenderViewDay1)Page.LoadControl("../calenderViewDay/calenderViewDay.ascx");
+                string name = getNameActivity(Convert.ToInt32(_table.Rows[i]["ActivityID"]));
+                myControl.stringy = name;
+                ContentPlaceHolder content = (ContentPlaceHolder)this.Master.FindControl("body1");
+                content.Controls.Add(myControl);
+
+                TableCell c = new TableCell();
+                c.Controls.Add(myControl);
+                Table1.Rows[index].Cells.Add(c);
             }
-            else
-            {
-                return false;
-            }
+        }
+
+        public string getNameActivity(int _index)
+        {
+            // Get Data from SQL and store Data in DataTable table
+            string strConn = ConfigurationManager.ConnectionStrings
+                ["CampfireConnectionString"].ToString();
+
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand
+                ("SELECT ActivityName FROM Activity WHERE ActivityID = @index", conn);
+
+            cmd.Parameters.AddWithValue("@index", _index);
+
+            DataSet result = new DataSet();
+
+            SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
+
+            conn.Open();
+
+            string name = cmd.ExecuteScalar().ToString();
+
+            conn.Close();
+
+            return name;
         }
     }
 }
