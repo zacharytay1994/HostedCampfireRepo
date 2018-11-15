@@ -282,7 +282,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage.aspx" />
-    <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage.css" />
+    <Content Include="ASP.Net\ActivitiesPage\Css\ActivitiesPage.css" />
     <Content Include="ASP.Net\ActivitiesPage\activityAdd.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\Css\activityForm.css" />

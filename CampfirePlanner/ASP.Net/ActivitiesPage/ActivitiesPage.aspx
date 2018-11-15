@@ -1,10 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="ActivitiesPage.aspx.cs" Inherits="CampfirePlanner.ASP.Net.ActivitiesPage.ActivitiesPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="ActivitiesPage.css" type="text/css" />
+    <link href="Css/ActivitiesPage.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <asp:HiddenField runat="server" ID="SendA" Value="1" />
     <style>
+        
+    .auto-style1 {
+        width: 1090px;
+    }
         
     </style>
     <script>
@@ -48,7 +52,6 @@
         <div class="row">
             <div class="col-sm-12">
                 <%--<h1 class="text-center" style="text-align:center;">Featured Item Here</h1>--%>
-                <h2>Featured Activities</h2>
                 <div class="slideshow-container" style="text-align:center;">
                     <div class="mySlides1">
                         <div class="numText">1 / 3</div>
@@ -68,25 +71,28 @@
                         <br />
                     <div class="text">Caption Text</div>
                     </div>
-                    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                    <a class="prev" onclick="plusSlides(-1, 0)" style="color:white;">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 0)" style="color:white;">&#10095;</a>
                 </div>
                 <div style="text-align:center">
                     <span class="dot1" onclick="currentSlide(1)"></span> 
                     <span class="dot1" onclick="currentSlide(2)"></span> 
                     <span class="dot1" onclick="currentSlide(3)"></span> 
                 </div>
+                <br />
+                <h2 style="text-align:center;">Featured Activities</h2>
             </div>
         </div>
     </div>
 
     <div class="col-md-12">
-        <asp:CheckBoxList ID="cbl_categories" runat="server" OnSelectedIndexChanged="cbl_categories_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True">
+        <asp:CheckBoxList Width="500px" Style="text-align:center" ID="cbl_categories" runat="server" OnSelectedIndexChanged="cbl_categories_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True" BorderStyle="Solid" BorderWidth="1px" CssClass="categoriesbox">
             <asp:ListItem Value="a">CategoryOne</asp:ListItem>
             <asp:ListItem Value="b">CategoryTwo</asp:ListItem>
             <asp:ListItem Value="c">CategoryThree</asp:ListItem>
             <asp:ListItem Value="d">CategoryFour</asp:ListItem>
         </asp:CheckBoxList>
+                
     <h3 style="text-align:center;">Please Select Categories to Display</h3><br />
     </div>
 
