@@ -74,5 +74,10 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
             //Display the list of data in GridView
             gvEvents.DataBind();
         }
+
+        protected void btnEvents_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ASP.Net/CalenderPages/calendarSelect/CalendarSelect.aspx");
+        }
     }
 }

@@ -44,7 +44,10 @@
             </tr>
             <tr>
                 <td class="auto-style1">&nbsp;</td>
-                <td class="auto-style4">&nbsp;</td>
+                <td class="auto-style4">
+                    <asp:GridView ID="GridView1" runat="server">
+                    </asp:GridView>
+                </td>
                 <td>
                     <asp:GridView ID="gvEvents" runat="server" EmptyDataText="There are no Events!" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
                         <AlternatingRowStyle BackColor="White" />
@@ -53,7 +56,8 @@
                             <asp:BoundField DataField="StartDate" DataFormatString="{0:MM-dd-yyyy}" HeaderText="Start Date" />
                             <asp:BoundField DataField="EndDate" DataFormatString="{0:MM-dd-yyyy}" HeaderText="End Date" />
                             <asp:BoundField DataField="EventName" HeaderText="Event Name" />
-                            <asp:ButtonField Text="View" />
+                            <asp:ButtonField CommandName="Select" Text="Collaborators" />
+                            <asp:HyperLinkField DataNavigateUrlFields="EventID" DataNavigateUrlFormatString="../calenderViewDay/calenderViewDay.aspx?eventID={0}" Text="View" />
                         </Columns>
                         <FooterStyle BackColor="#CCCC99" />
                         <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
@@ -72,8 +76,15 @@
                 <td class="auto-style6">
                     &nbsp;</td>
                 <td class="auto-style7">
-                    <asp:Button ID="btnEvents" runat="server" Text="Add Events" />
+                    <asp:Button ID="btnEvents" runat="server" Text="Add Events" OnClick="btnEvents_Click" />
                 </td>
+            </tr>
+            <tr>
+                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style6">
+                    &nbsp;</td>
+                <td class="auto-style7">
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style1">&nbsp;</td>
