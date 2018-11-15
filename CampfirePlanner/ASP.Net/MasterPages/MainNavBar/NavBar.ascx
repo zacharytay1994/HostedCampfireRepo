@@ -12,7 +12,7 @@
         <!-- Links that are aligned to the left, mr-auto: right margin auto-adjusted -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="~/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx">Planner</a>
+                <a class="nav-link" href="../CalenderPages/calendarEventMain/calendarEventMain.aspx">Planner</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../ActivitiesPage/ActivitiesPage.aspx">Activities</a>

@@ -20,7 +20,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
 
         protected int returnUserID()
         {
-            string userName = Session["UserAuthentication"].ToString();
+            string userName = "zach";//Session["UserAuthentication"].ToString();
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
 
