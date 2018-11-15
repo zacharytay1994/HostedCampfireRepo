@@ -67,6 +67,24 @@ namespace CampfirePlanner.ASP.Net.CalenderPages {
         protected global::System.Web.UI.WebControls.Label lblEnd;
         
         /// <summary>
+        /// rfvTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTime;
+        
+        /// <summary>
+        /// lblValidTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValidTime;
+        
+        /// <summary>
         /// btnRecommendation control.
         /// </summary>
         /// <remarks>

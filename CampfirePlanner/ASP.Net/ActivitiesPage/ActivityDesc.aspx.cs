@@ -22,6 +22,10 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 {
                     btnDel.Visible = true;
                 }
+                else
+                {
+                    btnDel.Visible = false;
+                }
             }
         }
         private void showActivityDesc()
@@ -31,7 +35,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             //Display Fields
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Activities WHERE ActivityID = @actid", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Activity WHERE ActivityID = @actid", conn);
             cmd.Parameters.AddWithValue("@actid", actID);
             SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
             DataSet result = new DataSet();
@@ -62,7 +66,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
         {
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("DELETE FROM Activities WHERE ActivityID = @actid", conn);
+            SqlCommand cmd = new SqlCommand("DELETE FROM Activity WHERE ActivityID = @actid", conn);
             cmd.Parameters.AddWithValue("@actid", Convert.ToInt32(Request.QueryString["actID"]));
             conn.Open();
             cmd.ExecuteNonQuery();
