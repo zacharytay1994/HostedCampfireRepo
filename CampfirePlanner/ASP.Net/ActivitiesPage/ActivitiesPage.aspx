@@ -6,6 +6,10 @@
     <asp:HiddenField runat="server" ID="SendA" Value="1" />
     <style>
         
+    .auto-style1 {
+        width: 1090px;
+    }
+        
     </style>
     <script>
        document.getElementById("<%=SendA.ClientID%>").Value = "3";
@@ -82,17 +86,13 @@
     </div>
 
     <div class="col-md-12">
-        <table style="text-align:center;">
-            <tr>
-                <asp:CheckBoxList Width="500px" Style="text-align:left" ID="cbl_categories" runat="server" OnSelectedIndexChanged="cbl_categories_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True" BorderStyle="Solid" BorderWidth="1px" CssClass="categoriesbox">
-                <asp:ListItem Value="a">CategoryOne</asp:ListItem>
-                <asp:ListItem Value="b">CategoryTwo</asp:ListItem>
-                <asp:ListItem Value="c">CategoryThree</asp:ListItem>
-                <asp:ListItem Value="d">CategoryFour</asp:ListItem>
-                </asp:CheckBoxList>
-            </tr>
-            
-        </table>
+        <asp:CheckBoxList Width="500px" Style="text-align:center" ID="cbl_categories" runat="server" OnSelectedIndexChanged="cbl_categories_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True" BorderStyle="Solid" BorderWidth="1px" CssClass="categoriesbox">
+            <asp:ListItem Value="a">CategoryOne</asp:ListItem>
+            <asp:ListItem Value="b">CategoryTwo</asp:ListItem>
+            <asp:ListItem Value="c">CategoryThree</asp:ListItem>
+            <asp:ListItem Value="d">CategoryFour</asp:ListItem>
+        </asp:CheckBoxList>
+                
     <h3 style="text-align:center;">Please Select Categories to Display</h3><br />
     </div>
 
