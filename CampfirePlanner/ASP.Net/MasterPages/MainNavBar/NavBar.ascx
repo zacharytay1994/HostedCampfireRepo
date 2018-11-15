@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NavBar.ascx.cs" Inherits="CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar.NavBar" %>
 <nav class="navbar navbar-expand-md navbar-light" style="background-color:aliceblue">
     <!-- The brand(or icon) of the navbar -->
-    <a class="navbar-brand" href="#" style="font-size: 32px; font-weight: bold; color: red;">CampfirePlanner
+    <a class="navbar-brand" href="/ASP.Net/HomePage/HomePage.aspx" style="font-size: 32px; font-weight: bold; color: red;">CampfirePlanner
     </a>
     <!-- Toggle/collapsible Button, also known as hamburger button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar">
@@ -12,10 +12,10 @@
         <!-- Links that are aligned to the left, mr-auto: right margin auto-adjusted -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="../CalenderPages/calendarEventMain/calendarEventMain.aspx">Planner</a>
+                <a class="nav-link" href="/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx">Planner</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../ActivitiesPage/ActivitiesPage.aspx">Activities</a>
+                <a class="nav-link" href="/ASP.Net/ActivitiesPage/ActivitiesPage.aspx">Activities</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About Us</a>
