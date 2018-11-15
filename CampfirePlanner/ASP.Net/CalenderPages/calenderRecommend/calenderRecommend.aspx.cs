@@ -23,7 +23,6 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
                     lblValidTime.Text = "Please enter valid times!";
                 }
             }
-            btnAdd.Visible = false;
 
             if (!Page.IsPostBack)
             {
@@ -73,7 +72,6 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
 
                 //Display the list of data in GridView
                 gvRecommendation.DataBind();
-                btnAdd.Visible = true;
             }
         }
 
@@ -87,13 +85,12 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
 
         protected int getNumberOfDays()
         {
-            string targetedEventID = Request.QueryString["id"]; //*********
+            string targetedEventID = Request.QueryString["eventID"]; //*********
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM Event WHERE EventID = @event", conn);
-            //cmd.Parameters.AddWithValue("@event", targetedEventID); 
-            cmd.Parameters.AddWithValue("@event", 3); //CHANGE THIS WHEN THE QUERYSTRING OF EVENT ID ARRIVES FROM PREVIOUS PAGE
+            cmd.Parameters.AddWithValue("@event", targetedEventID);
 
             //Declare and instantiate DataAdapter object
             SqlDataAdapter daEvents = new SqlDataAdapter(cmd);
@@ -119,13 +116,12 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
 
         protected DateTime getStartDate()
         {
-            string targetedEventID = Request.QueryString["id"];
+            string targetedEventID = Request.QueryString["eventID"];
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM Event WHERE EventID = @event", conn);
-            //cmd.Parameters.AddWithValue("@event", targetedEventID);
-            cmd.Parameters.AddWithValue("@event", 3); //CHANGE THIS WHEN QUERYSTRING ARRIVES
+            cmd.Parameters.AddWithValue("@event", targetedEventID);
 
             //Declare and instantiate DataAdapter object
             SqlDataAdapter daEvents = new SqlDataAdapter(cmd);
@@ -172,13 +168,12 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             // Create a new object
             EventActivity objActivity = new EventActivity();
 
-            //objActivity.EventID = eventID;
-            objActivity.EventID = 3;  //Change this to querystring ver when other page before is done
+            objActivity.EventID = eventID;
             objActivity.ActivityID = Convert.ToInt32(lblAdd.Text);
             objActivity.StartTime = DateTime.Parse(txtStart.Text).TimeOfDay.ToString();
             objActivity.Day = Convert.ToInt32(rblDay.SelectedValue);
             objActivity.eventActivityAdd();
-            lblAdd.Text = "Added!";
+            lblAdded.Text = "Added!";
         }
 
         protected void btnReturn_Click(object sender, EventArgs e)

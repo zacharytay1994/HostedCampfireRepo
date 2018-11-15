@@ -112,15 +112,16 @@
                     <SortedDescendingCellStyle BackColor="#EAEAD3" />
                     <SortedDescendingHeaderStyle BackColor="#575357" />
                 </asp:GridView>
-                <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
-                <asp:Label ID="lblAdd" runat="server" Visible="False"></asp:Label>
                 <asp:Label ID="lblGrid" runat="server"></asp:Label>
+                <asp:Label ID="lblAdd" runat="server" Visible="False"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">&nbsp;</td>
             <td>
                 <asp:Button ID="btnReturn" runat="server" Text="Return to Event Page" CausesValidation="False" OnClick="btnReturn_Click" />
+                <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
+                <asp:Label ID="lblAdded" runat="server" ForeColor="Red"></asp:Label>
             </td>
         </tr>
     </table>

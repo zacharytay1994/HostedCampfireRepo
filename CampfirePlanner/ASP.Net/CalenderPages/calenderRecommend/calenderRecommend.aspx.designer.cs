@@ -112,13 +112,13 @@ namespace CampfirePlanner.ASP.Net.CalenderPages {
         protected global::System.Web.UI.WebControls.GridView gvRecommendation;
         
         /// <summary>
-        /// btnAdd control.
+        /// lblGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Label lblGrid;
         
         /// <summary>
         /// lblAdd control.
@@ -130,15 +130,6 @@ namespace CampfirePlanner.ASP.Net.CalenderPages {
         protected global::System.Web.UI.WebControls.Label lblAdd;
         
         /// <summary>
-        /// lblGrid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGrid;
-        
-        /// <summary>
         /// btnReturn control.
         /// </summary>
         /// <remarks>
@@ -146,5 +137,23 @@ namespace CampfirePlanner.ASP.Net.CalenderPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnReturn;
+        
+        /// <summary>
+        /// btnAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAdd;
+        
+        /// <summary>
+        /// lblAdded control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAdded;
     }
 }
