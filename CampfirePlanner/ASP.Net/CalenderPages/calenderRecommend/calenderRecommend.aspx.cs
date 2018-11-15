@@ -23,6 +23,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
                     lblValidTime.Text = "Please enter valid times!";
                 }
             }
+            btnAdd.Visible = false;
 
             if (!Page.IsPostBack)
             {
@@ -72,6 +73,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
 
                 //Display the list of data in GridView
                 gvRecommendation.DataBind();
+                btnAdd.Visible = true;
             }
         }
 
@@ -176,6 +178,12 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             objActivity.StartTime = DateTime.Parse(txtStart.Text).TimeOfDay.ToString();
             objActivity.Day = Convert.ToInt32(rblDay.SelectedValue);
             objActivity.eventActivityAdd();
+            lblAdd.Text = "Added!";
+        }
+
+        protected void btnReturn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx");
         }
     }
 }

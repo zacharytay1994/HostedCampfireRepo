@@ -19,10 +19,10 @@
             width: 362px;
             font-family: "Segoe UI";
             font-weight: bold;
-            height: 210px;
+            height: 211px;
         }
         .auto-style7 {
-            height: 210px;
+            height: 211px;
         }
         .auto-style8 {
             width: 362px;
@@ -92,7 +92,7 @@
         <tr>
             <td class="auto-style6"></td>
             <td class="auto-style7">
-                <asp:GridView ID="gvRecommendation" runat="server" EmptyDataText="There are no activities!" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" AllowPaging="True" OnPageIndexChanging="gvRecommendation_PageIndexChanging" PageSize="5" OnSelectedIndexChanged="gvRecommendation_SelectedIndexChanged" OnSelectedIndexChanging="gvRecommendation_SelectedIndexChanging" Width="807px">
+                <asp:GridView ID="gvRecommendation" runat="server" EmptyDataText="There are no activities!" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" AllowPaging="True" OnPageIndexChanging="gvRecommendation_PageIndexChanging" PageSize="5" OnSelectedIndexChanged="gvRecommendation_SelectedIndexChanged" OnSelectedIndexChanging="gvRecommendation_SelectedIndexChanging" Width="890px">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="ActivityID" HeaderText="ID" />
@@ -112,15 +112,15 @@
                     <SortedDescendingCellStyle BackColor="#EAEAD3" />
                     <SortedDescendingHeaderStyle BackColor="#575357" />
                 </asp:GridView>
+                <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
+                <asp:Label ID="lblAdd" runat="server" Visible="False"></asp:Label>
                 <asp:Label ID="lblGrid" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style5">&nbsp;</td>
             <td>
-                <asp:Button ID="btnReset" runat="server" Text="Return to Event Page" />
-                <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
-                <asp:Label ID="lblAdd" runat="server" Visible="False"></asp:Label>
+                <asp:Button ID="btnReturn" runat="server" Text="Return to Event Page" CausesValidation="False" OnClick="btnReturn_Click" />
             </td>
         </tr>
     </table>
