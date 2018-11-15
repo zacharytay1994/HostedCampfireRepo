@@ -14,6 +14,10 @@
         .auto-style4 {
             width: 402px;
         }
+        .auto-style5 {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
@@ -43,7 +47,7 @@
                         </asp:Calendar>
                     </div>
                     Days:&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="txtDayz" runat="server" ReadOnly="True" Width="53px" Height="31px" AutoPostBack="True">0</asp:TextBox>
+                    <asp:TextBox ID="txtDayz" runat="server" ReadOnly="True" Width="53px" Height="31px">0</asp:TextBox>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:RangeValidator ID="rvDayz" runat="server" ControlToValidate="txtDayz" CssClass="auto-style1" Display="Dynamic" ErrorMessage="Number of Days Cannot Exceed 7" MaximumValue="7" MinimumValue="1"></asp:RangeValidator>
                     &nbsp;<asp:RequiredFieldValidator ID="rfDayz" runat="server" ControlToValidate="txtEvent" CssClass="auto-style1" Display="Dynamic" ErrorMessage="Please Select At Least 1 Day"></asp:RequiredFieldValidator>
@@ -84,14 +88,19 @@
                     Users Selected:
                     <asp:Label ID="lblCount" runat="server"></asp:Label>
                     <br />
+                    <asp:ListBox ID="lbSelected" runat="server" AutoPostBack="True" Height="263px" OnSelectedIndexChanged="lbSelected_SelectedIndexChanged" Width="244px"></asp:ListBox>
+                    <br />
+                    <asp:Button ID="btnRemove" runat="server" OnClick="btnRemove_Click" Text="Remove" Visible="False" />
                     <br />
                     <br />
                     <br />
                     <br />
                     <br />
+                    To unlock the boss button:<br />
+                    - Fill in ALL Fields<br />
                     <br />
-                    <br />
-                    <br />
+
+                    <asp:Button ID="btnEventCreate" runat="server" CssClass="auto-style5" OnClick="btnEventCreate_Click" Text="Create Event" />
 
                 </td>
             </tr>

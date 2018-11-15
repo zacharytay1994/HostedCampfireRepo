@@ -14,7 +14,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
     public partial class CalendarSelect : System.Web.UI.Page
     {
         Event newEvent = new Event();
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -112,8 +112,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
                 newEvent.endDate = endDate;
                 newEvent.eventName = txtEvent.Text;
                 newEvent.accountID = getAccID();
-                //newEvent.createEvent();
-
+                
                 txtEvent.Enabled = false;
                 calSelect.Enabled = false;
                 btnReset.Enabled = false;
@@ -167,7 +166,20 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
             if (e.CommandName == "addUser")
             {
                 int i = Convert.ToInt32(e.CommandArgument);
-                int accID = Convert.ToInt32(gvUsers.Rows[i].Cells[0].Text);
+                string userName = gvUsers.Rows[i].Cells[1].Text;
+                string accID = gvUsers.Rows[i].Cells[0].Text;
+
+                bool success = true;
+                foreach (ListItem li in lbSelected.Items)
+                {
+                    if (li.ToString() == userName)
+                        success = false;
+                }
+                if (success)
+                {
+                    lbSelected.Items.Add(new ListItem(userName, accID));
+                    lblCount.Text = lbSelected.Items.Count.ToString();
+                }
             }
         }
 
@@ -191,6 +203,53 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
 
             gvUsers.DataSource = result.Tables["Users"];
             gvUsers.DataBind();
+        }
+
+        protected void lbSelected_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnRemove.Visible = true;
+        }
+
+        protected void btnRemove_Click(object sender, EventArgs e)
+        {
+            lbSelected.Items.Remove(lbSelected.SelectedItem);
+            lbSelected.DataBind();
+            btnRemove.Visible = false;
+            lblCount.Text = lbSelected.Items.Count.ToString();
+        }
+
+        protected void btnEventCreate_Click(object sender, EventArgs e)
+        {
+            int eventID = newEvent.createEvent();
+            addEventMembers(eventID, getAccID(), "c");
+            foreach (ListItem li in lbSelected.Items)
+            {
+                int accID = Convert.ToInt32(li.Value);
+
+                addEventMembers(eventID, accID, "m");
+            }
+
+        }
+
+        private void addEventMembers(int eID, int aID, string aStatus)
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO EventMembers (EventID, AccountID, MemberStatus) " +
+                                            "OUTPUT INSERTED.EventID " +
+                                            "VALUES(@eID, @aID, @mStatus)", conn);
+
+            cmd.Parameters.AddWithValue("@eID", eID);
+            cmd.Parameters.AddWithValue("@aID", aID);
+            cmd.Parameters.AddWithValue("@mStatus", aStatus);
+
+            SqlDataAdapter daID = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
+
+            conn.Open();
+            daID.Fill(result, "Users");
+            conn.Close();
         }
     }
 }
