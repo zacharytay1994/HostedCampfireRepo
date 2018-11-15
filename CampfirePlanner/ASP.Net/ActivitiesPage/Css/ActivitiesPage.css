@@ -1,5 +1,6 @@
 ﻿body {
-    background-color:lightgoldenrodyellow;
+    background-color: #752900;
+    color: white;
 }
 h1 {
     border: solid;
@@ -15,7 +16,7 @@ p {
     margin-left: 70px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-image: url('../../Images/image3.jpg');
+    background-color: #ff8f2d;
 }
 
 /*-----SlideShow-----*/

@@ -6,6 +6,20 @@
     <asp:HiddenField runat="server" ID="SendA" Value="1" />
     <style>
         
+        .auto-style1 {
+            height: 35px;
+        }
+        .auto-style2 {
+            height: 38px;
+        }
+        .auto-style3 {
+            height: 21px;
+        }
+        .auto-style4 {
+            font-family: "Segoe UI";
+            font-size: x-small;
+        }
+        
     </style>
     <script>
        document.getElementById("<%=SendA.ClientID%>").Value = "3";
@@ -102,30 +116,17 @@
                 <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">            
                     <tr>
-                        <td>Name:</td>
-                        <td>
-                            <asp:Label ID="Label1" runat="server" Text="lbl_1"></asp:Label>
-                        </td>
+                        <td class="auto-style3"><strong>
+                            <asp:Label ID="Label1" runat="server"></asp:Label>
+                            </strong></td>
                     </tr>
                     <tr>
-                        <td>Description:</td>
                         <td>
-                            <asp:Label ID="Label2" runat="server" Text="lbl_2"></asp:Label>
+                            <asp:Label ID="Label2" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label4" runat="server" Text="1" Visible="False"></asp:Label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Category:</td>
-                        <td>
-                            <asp:Label ID="Label3" runat="server" Text="lbl_3"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>ID:</td>
-                        <td>
-                            <asp:Label ID="Label4" runat="server" Text="1"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
+                    </table>
                 <%--<asp:Button runat="server" width="100%" ID="Button0" OnClick="Button0_Click" Text="Let's GO!" />--%>
             </div>
 
@@ -133,30 +134,17 @@
                 <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">
                     <tr>
-                        <td>Name:</td>
-                        <td>
-                            <asp:Label ID="Label5" runat="server" Text="lbl_1"></asp:Label>
-                        </td>
+                        <td><strong>
+                            <asp:Label ID="Label5" runat="server"></asp:Label>
+                            </strong></td>
                     </tr>
                     <tr>
-                        <td>Description:</td>
                         <td>
-                            <asp:Label ID="Label6" runat="server" Text="lbl_2"></asp:Label>
+                            <asp:Label ID="Label6" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label8" runat="server" Text="2" Visible="False"></asp:Label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Category:</td>
-                        <td>
-                            <asp:Label ID="Label7" runat="server" Text="lbl_3"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>ID:</td>
-                        <td>
-                            <asp:Label ID="Label8" runat="server" Text="2"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
+                    </table>
                 <%--<asp:Button runat="server" width="100%" ID="Button1" onclick="Button1_Click" Text="Let's GO!" />--%>
             </div>
 
@@ -164,30 +152,17 @@
                 <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">
                     <tr>
-                        <td>Name:</td>
-                        <td>
-                            <asp:Label ID="Label9" runat="server" Text="lbl_1"></asp:Label>
-                        </td>
+                        <td><strong>
+                            <asp:Label ID="Label9" runat="server"></asp:Label>
+                            </strong></td>
                     </tr>
                     <tr>
-                        <td>Description:</td>
-                        <td>
-                            <asp:Label ID="Label10" runat="server" Text="lbl_2"></asp:Label>
+                        <td class="auto-style1">
+                            <asp:Label ID="Label10" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label12" runat="server" Text="3" Visible="False"></asp:Label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Category:</td>
-                        <td>
-                            <asp:Label ID="Label11" runat="server" Text="lbl_3"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>ID:</td>
-                        <td>
-                            <asp:Label ID="Label12" runat="server" Text="3"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
+                    </table>
                  <%--<asp:Button runat="server" width="100%" ID="Button2" onclick="Button2_Click" Text="Let's GO!" />--%>
             </div>
 
@@ -195,30 +170,17 @@
                 <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">
                     <tr>
-                        <td>Name:</td>
-                        <td>
-                            <asp:Label ID="Label13" runat="server" Text="lbl_1"></asp:Label>
-                        </td>
+                        <td><strong>
+                            <asp:Label ID="Label13" runat="server"></asp:Label>
+                            </strong></td>
                     </tr>
                     <tr>
-                        <td>Description:</td>
                         <td>
-                            <asp:Label ID="Label14" runat="server" Text="lbl_2"></asp:Label>
+                            <asp:Label ID="Label14" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label16" runat="server" Text="4" Visible="False"></asp:Label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Category:</td>
-                        <td>
-                            <asp:Label ID="Label15" runat="server" Text="lbl_3"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>ID:</td>
-                        <td>
-                            <asp:Label ID="Label16" runat="server" Text="4"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
+                    </table>
                  <%--<asp:Button runat="server" width="100%" ID="Button3" onclick="Button3_Click" Text="Let's GO!" />--%>
             </div>
         </div>
@@ -227,30 +189,17 @@
                 <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">
                     <tr>
-                        <td>Name:</td>
-                        <td>
-                            <asp:Label ID="Label17" runat="server" Text="lbl_1"></asp:Label>
-                        </td>
+                        <td><strong>
+                            <asp:Label ID="Label17" runat="server"></asp:Label>
+                            </strong></td>
                     </tr>
                     <tr>
-                        <td>Description:</td>
                         <td>
-                            <asp:Label ID="Label18" runat="server" Text="lbl_2"></asp:Label>
+                            <asp:Label ID="Label18" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label20" runat="server" Text="5" Visible="False"></asp:Label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Category:</td>
-                        <td>
-                            <asp:Label ID="Label19" runat="server" Text="lbl_3"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>ID:</td>
-                        <td>
-                            <asp:Label ID="Label20" runat="server" Text="5"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
+                    </table>
                 <%--<asp:Button runat="server" width="100%" ID="Button4" onclick="Button4_Click" Text="Let's GO!" />--%>
             </div>
 
@@ -258,30 +207,17 @@
                 <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">
                     <tr>
-                        <td>Name:</td>
-                        <td>
-                            <asp:Label ID="Label21" runat="server" Text="lbl_1"></asp:Label>
-                        </td>
+                        <td><strong>
+                            <asp:Label ID="Label21" runat="server"></asp:Label>
+                            </strong></td>
                     </tr>
                     <tr>
-                        <td>Description:</td>
                         <td>
-                            <asp:Label ID="Label22" runat="server" Text="lbl_2"></asp:Label>
+                            <asp:Label ID="Label22" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label24" runat="server" Text="6" Visible="False"></asp:Label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Category:</td>
-                        <td>
-                            <asp:Label ID="Label23" runat="server" Text="lbl_3"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>ID:</td>
-                        <td>
-                            <asp:Label ID="Label24" runat="server" Text="6"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
+                    </table>
                 <%-- <asp:Button runat="server" width="100%" ID="Button5" onclick="Button5_Click" Text="Let's GO!" />--%>
             </div>
 
@@ -289,30 +225,17 @@
                 <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%">
                     <tr>
-                        <td>Name:</td>
-                        <td>
-                            <asp:Label ID="Label25" runat="server" Text="lbl_1"></asp:Label>
-                        </td>
+                        <td class="auto-style2"><strong>
+                            <asp:Label ID="Label25" runat="server"></asp:Label>
+                            </strong></td>
                     </tr>
                     <tr>
-                        <td>Description:</td>
-                        <td>
-                            <asp:Label ID="Label26" runat="server" Text="lbl_2"></asp:Label>
+                        <td class="auto-style2">
+                            <asp:Label ID="Label26" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label28" runat="server" Text="7" Visible="False"></asp:Label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Category:</td>
-                        <td>
-                            <asp:Label ID="Label27" runat="server" Text="lbl_3"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>ID:</td>
-                        <td>
-                            <asp:Label ID="Label28" runat="server" Text="7"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
+                    </table>
                 <%-- <asp:Button runat="server" width="100%" ID="Button6" onclick="Button6_Click" Text="Let's GO!" />--%>
             </div>
 
@@ -320,30 +243,17 @@
                 <a href="ActivityDesc.aspx"><img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;"/></a>
                 <table class="box" style="width:100%;">
                     <tr>
-                        <td>Name:</td>
-                        <td>
-                            <asp:Label ID="Label29" runat="server" Text="lbl_1"></asp:Label>
-                        </td>
+                        <td><strong>
+                            <asp:Label ID="Label29" runat="server"></asp:Label>
+                            </strong></td>
                     </tr>
                     <tr>
-                        <td>Description:</td>
                         <td>
-                            <asp:Label ID="Label30" runat="server" Text="lbl_2"></asp:Label>
+                            <asp:Label ID="Label30" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label32" runat="server" Text="8" Visible="False"></asp:Label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Category:</td>
-                        <td>
-                            <asp:Label ID="Label31" runat="server" Text="lbl_3"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>ID:</td>
-                        <td>
-                            <asp:Label ID="Label32" runat="server" Text="8"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
+                    </table>
                 <%--<asp:Button runat="server" width="100%" ID="Button7" onclick="Button7_Click" text="Let's GO!"/>--%>
             </div>
         </div>
