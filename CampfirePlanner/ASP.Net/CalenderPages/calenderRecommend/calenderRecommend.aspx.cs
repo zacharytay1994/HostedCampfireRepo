@@ -15,8 +15,14 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string targetedEventID = Request.QueryString["id"];
-            //lblDay.Text = targetedEventID; //grab the targeted id from previous page
+            if (txtStart.Text != "" || txtEnd.Text != "")
+            {
+                TimeSpan timeActivity = DateTime.Parse(txtEnd.Text).Subtract(DateTime.Parse(txtStart.Text));
+                if (timeActivity.TotalMinutes < 0)
+                {
+                    lblValidTime.Text = "Please enter valid times!";
+                }
+            }
 
             if (!Page.IsPostBack)
             {
@@ -36,34 +42,37 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
         }
 
         protected void displayRecommendation()
-        {          
-            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
-            SqlConnection conn = new SqlConnection(strConn);
-            
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Activity WHERE Duration <= @dur ORDER BY Duration DESC", conn);
-            TimeSpan timeActivity = DateTime.Parse(txtEnd.Text).Subtract(DateTime.Parse(txtStart.Text)); //The time the activity should take
-            cmd.Parameters.AddWithValue("@dur", timeActivity.TotalMinutes);
-            
+        {
+            if (txtStart.Text != "" && txtEnd.Text != "")
+            {
+                string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+                SqlConnection conn = new SqlConnection(strConn);
 
-            //Declare and instantiate DataAdapter object
-            SqlDataAdapter daRecommendation = new SqlDataAdapter(cmd);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Activity WHERE Duration <= @dur ORDER BY Duration DESC", conn);
+                TimeSpan timeActivity = DateTime.Parse(txtEnd.Text).Subtract(DateTime.Parse(txtStart.Text)); //The time the activity should take
+                cmd.Parameters.AddWithValue("@dur", timeActivity.TotalMinutes);
 
-            //Create a DataSet object to contain the records retrieved from database
-            DataSet result = new DataSet();
 
-            //A connection must be opened before any operations made.
-            conn.Open();
+                //Declare and instantiate DataAdapter object
+                SqlDataAdapter daRecommendation = new SqlDataAdapter(cmd);
 
-            daRecommendation.Fill(result, "Recommendation");
+                //Create a DataSet object to contain the records retrieved from database
+                DataSet result = new DataSet();
 
-            //A connection should always be closed, whether error occurs or not.
-            conn.Close();
+                //A connection must be opened before any operations made.
+                conn.Open();
 
-            //Specify GridView to get data from table
-            gvRecommendation.DataSource = result.Tables["Recommendation"];
+                daRecommendation.Fill(result, "Recommendation");
 
-            //Display the list of data in GridView
-            gvRecommendation.DataBind();
+                //A connection should always be closed, whether error occurs or not.
+                conn.Close();
+
+                //Specify GridView to get data from table
+                gvRecommendation.DataSource = result.Tables["Recommendation"];
+
+                //Display the list of data in GridView
+                gvRecommendation.DataBind();
+            }
         }
 
         protected void gvRecommendation_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -138,7 +147,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
         protected void rblDay_SelectedIndexChanged(object sender, EventArgs e)
         {
             DateTime newDate = getStartDate().AddDays(Convert.ToDouble(rblDay.SelectedValue) - 1);
-            lblDay.Text = newDate.ToString();
+            lblDay.Text = newDate.Date.ToString("d");
         }
 
         protected void gvRecommendation_SelectedIndexChanged(object sender, EventArgs e)

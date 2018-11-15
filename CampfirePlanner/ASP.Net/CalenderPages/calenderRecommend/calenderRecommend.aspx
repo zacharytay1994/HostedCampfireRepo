@@ -66,6 +66,18 @@
             </td>
         </tr>
         <tr>
+            <td class="auto-style5">&nbsp;</td>
+            <td>
+                <asp:RequiredFieldValidator ID="rfvTime" runat="server" ControlToValidate="txtStart" Display="Dynamic" ErrorMessage="Please give us the intended times of activity!" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style5">&nbsp;</td>
+            <td>
+                <asp:Label ID="lblValidTime" runat="server" ForeColor="Red"></asp:Label>
+            </td>
+        </tr>
+        <tr>
             <td class="auto-style4"></td>
             <td class="auto-style3">
                 <asp:Button ID="btnRecommendation" runat="server" OnClick="btnRecommendation_Click" Text="Get Recommendation" Width="176px" />
@@ -80,7 +92,7 @@
         <tr>
             <td class="auto-style6"></td>
             <td class="auto-style7">
-                <asp:GridView ID="gvRecommendation" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" AllowPaging="True" OnPageIndexChanging="gvRecommendation_PageIndexChanging" PageSize="5" OnSelectedIndexChanged="gvRecommendation_SelectedIndexChanged" OnSelectedIndexChanging="gvRecommendation_SelectedIndexChanging" Width="807px">
+                <asp:GridView ID="gvRecommendation" runat="server" EmptyDataText="There are no activities!" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" AllowPaging="True" OnPageIndexChanging="gvRecommendation_PageIndexChanging" PageSize="5" OnSelectedIndexChanged="gvRecommendation_SelectedIndexChanged" OnSelectedIndexChanging="gvRecommendation_SelectedIndexChanging" Width="807px">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="ActivityID" HeaderText="ID" />
@@ -106,7 +118,7 @@
         <tr>
             <td class="auto-style5">&nbsp;</td>
             <td>
-                <asp:Button ID="btnReset" runat="server" Text="Return to Events " />
+                <asp:Button ID="btnReset" runat="server" Text="Return to Event Page" />
                 <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
                 <asp:Label ID="lblAdd" runat="server" Visible="False"></asp:Label>
             </td>
