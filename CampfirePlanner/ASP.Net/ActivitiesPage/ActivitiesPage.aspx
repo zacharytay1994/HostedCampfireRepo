@@ -47,7 +47,35 @@
     <div class="title">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="text-center" style="text-align:center;">Featured Item Here</h1>
+                <%--<h1 class="text-center" style="text-align:center;">Featured Item Here</h1>--%>
+                <h2>Featured Activities</h2>
+                <div class="slideshow-container" style="text-align:center;">
+                    <div class="mySlides1">
+                        <div class="numText">1 / 3</div>
+                        <a href="HomePage.aspx"><img src="../../Images/image1.jpg" style="width:100%;" /></a>
+                        <br />
+                        <div class="text">Caption Text</div>
+                    </div>
+                    <div class="mySlides1">
+                        <div class="numText">2 / 3</div>
+                        <a href="HomePage.aspx"><img src="../../Images/image2.jpg" style="width:100%;" /></a>
+                        <br />
+                        <div class="text">Caption Text</div>
+                    </div>
+                    <div class="mySlides1">
+                        <div class="numText">3 / 3</div>
+                        <a href="HomePage.aspx"><img src="../../Images/image3.jpg" style="width:100%;" /></a>
+                        <br />
+                    <div class="text">Caption Text</div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                </div>
+                <div style="text-align:center">
+                    <span class="dot1" onclick="currentSlide(1)"></span> 
+                    <span class="dot1" onclick="currentSlide(2)"></span> 
+                    <span class="dot1" onclick="currentSlide(3)"></span> 
+                </div>
             </div>
         </div>
     </div>
@@ -324,4 +352,75 @@
         <asp:Label ID="lblID" runat="server"></asp:Label>
         <br />
     </div>
+    <!---Scripts--->
+        <script>
+          //Single slideshow
+            /*var slideIndex = 1;
+            showSlides(slideIndex);
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides1");
+              var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1; }    
+                if (n < 1) { slideIndex = slides.length; }
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }*/
+            
+            //Multiple slideshows
+            var slideIndex = [1,1];
+            var slideId = ["mySlides1", "mySlides2"];
+            var dotId = ["dot1", "dot2"];
+            showSlides(1, 0);
+            showSlides(1, 1);
+
+            function plusSlides(n, no) {
+              showSlides(slideIndex[no] += n, no);
+            }
+            
+            function showSlides(n, no) {
+              var i;
+                var x = document.getElementsByClassName(slideId[no]);
+                var dots = document.getElementsByClassName(dotId[no]);
+                if (n > x.length) { slideIndex[no] = 1;}    
+                if (n < 1) { slideIndex[no] = x.length;}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                x[slideIndex[no] - 1].style.display = "block";
+                dots[slideIndex[no]-1].className += " active";
+            }
+            
+            //Automatic scrolling
+            /*var slideIndex = 0;
+            var slideId = ["mySlides1" , "mySlides2"];
+            showSlides(1,0);
+            showSlides(1,1);
+            function showSlides(n, no) {
+                var i;
+                var x = document.getElementsByClassName("slideId[n,no]");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}
+                slides[slideIndex-1].style.display = "block";
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }*/ 
+        </script>
 </asp:Content>

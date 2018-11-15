@@ -26,7 +26,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             SqlConnection conn = new SqlConnection(strConn);
 
             SqlCommand cmd = new SqlCommand
-                ("SELECT * FROM Activities", conn);
+                ("SELECT * FROM Activity", conn);
 
             DataSet result = new DataSet();
 
