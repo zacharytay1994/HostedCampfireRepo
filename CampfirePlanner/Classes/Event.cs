@@ -20,14 +20,12 @@ namespace CampfirePlanner.Classes
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
 
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("INSERT INTO Event (StartDate, EndDate, EventName, AccountID) " +
-                                            "OUTPUT INSERTED.EventID " +
-                                            "VALUES(@sdate, @edate, @ename, @aID)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Event(StartDate, EndDate, AccountID, EventName) OUTPUT INSERTED.EventID VALUES (@sdate, @edate, @aID, @ename)", conn);
 
-            cmd.Parameters.AddWithValue("@sdate", startDate);
-            cmd.Parameters.AddWithValue("@edate", endDate);
+            cmd.Parameters.AddWithValue("@sdate", startDate.ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@edate", endDate.ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@aID", accountID);
             cmd.Parameters.AddWithValue("@ename", eventName);
-            cmd.Parameters.AddWithValue("@aid", accountID);
 
             conn.Open();
             int id = (int)cmd.ExecuteScalar();

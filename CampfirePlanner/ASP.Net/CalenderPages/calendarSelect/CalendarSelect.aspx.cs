@@ -13,11 +13,9 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
 {
     public partial class CalendarSelect : System.Web.UI.Page
     {
-        Event newEvent = new Event();
-        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void calSelect_SelectionChanged(object sender, EventArgs e)
@@ -89,6 +87,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
             {
                 DateTime startDate;
                 DateTime endDate;
+
                 if (SelectedDates.Count() > 1)
                 {
                     if (SelectedDates[1] > SelectedDates[0])
@@ -108,11 +107,10 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
                     endDate = SelectedDates[0];
                 }
 
-                newEvent.startDate = startDate;
-                newEvent.endDate = endDate;
-                newEvent.eventName = txtEvent.Text;
-                newEvent.accountID = getAccID();
-                
+                Session["startDate"] = startDate;
+                Session["endDate"] = endDate;
+                Session["evName"] = txtEvent.Text;
+
                 txtEvent.Enabled = false;
                 calSelect.Enabled = false;
                 btnReset.Enabled = false;
@@ -149,7 +147,8 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
 
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Type = 'u'", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE AccountID != @id AND Type = 'u'", conn);
+            cmd.Parameters.AddWithValue("@id", getAccID());
             SqlDataAdapter daUsers = new SqlDataAdapter(cmd);
             DataSet result = new DataSet();
 
@@ -192,7 +191,8 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
 
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Type = 'u' AND Username LIKE '%'+@name+'%'", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE AccountID != @id AND Type = 'u' AND Username LIKE '%'+@name+'%'", conn);
+            cmd.Parameters.AddWithValue("@id", getAccID());
             cmd.Parameters.AddWithValue("@name", search);
             SqlDataAdapter daSearch = new SqlDataAdapter(cmd);
             DataSet result = new DataSet();
@@ -220,7 +220,13 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
 
         protected void btnEventCreate_Click(object sender, EventArgs e)
         {
+            Event newEvent = new Event();
+            newEvent.startDate = Convert.ToDateTime(Session["startDate"]);
+            newEvent.endDate = Convert.ToDateTime(Session["endDate"]);
+            newEvent.eventName = Session["evName"].ToString();
+            newEvent.accountID = getAccID();
             int eventID = newEvent.createEvent();
+
             addEventMembers(eventID, getAccID(), "c");
             foreach (ListItem li in lbSelected.Items)
             {
@@ -229,6 +235,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
                 addEventMembers(eventID, accID, "m");
             }
 
+            Response.Redirect("/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx");
         }
 
         private void addEventMembers(int eID, int aID, string aStatus)
@@ -236,9 +243,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
 
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("INSERT INTO EventMembers (EventID, AccountID, MemberStatus) " +
-                                            "OUTPUT INSERTED.EventID " +
-                                            "VALUES(@eID, @aID, @mStatus)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO EventMembers (EventID, AccountID, MemberStatus) VALUES(@eID, @aID, @mStatus)", conn);
 
             cmd.Parameters.AddWithValue("@eID", eID);
             cmd.Parameters.AddWithValue("@aID", aID);
@@ -248,7 +253,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
             DataSet result = new DataSet();
 
             conn.Open();
-            daID.Fill(result, "Users");
+            cmd.ExecuteNonQuery();
             conn.Close();
         }
     }

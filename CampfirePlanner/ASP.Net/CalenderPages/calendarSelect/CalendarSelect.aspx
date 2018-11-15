@@ -32,7 +32,7 @@
                     </p>
                     <p>
                         Name of Event:
-                        <asp:TextBox ID="txtEvent" runat="server" AutoPostBack="True"></asp:TextBox>
+                        <asp:TextBox ID="txtEvent" runat="server" AutoPostBack="True" AutoCompleteType="Disabled"></asp:TextBox>
                     </p>
                     <div class="row">
                         <asp:Calendar ID="calSelect" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="287px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="357px" OnLoad="calSelect_Load" OnPreRender="calSelect_PreRender" OnSelectionChanged="calSelect_SelectionChanged">
@@ -95,9 +95,6 @@
                     <br />
                     <br />
                     <br />
-                    <br />
-                    To unlock the boss button:<br />
-                    - Fill in ALL Fields<br />
                     <br />
 
                     <asp:Button ID="btnEventCreate" runat="server" CssClass="auto-style5" OnClick="btnEventCreate_Click" Text="Create Event" />
