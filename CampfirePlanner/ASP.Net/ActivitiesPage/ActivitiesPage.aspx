@@ -118,7 +118,7 @@
 
     <div class="container">
         <div class="row">
-            <div onclick="redirect(this.id)" class="col-md-2" id="4" style="border: 3px solid black;">
+            <div onclick="redirect(this.id)" class="col-md-2" id="4" style="border: 3px solid black; background-image: url(<%= getImage()%>)">
                 <a href="ActivityDesc.aspx">
                     <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
                 <table class="box" style="width: 100%">
