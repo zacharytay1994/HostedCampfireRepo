@@ -171,6 +171,20 @@
     <Compile Include="ASP.Net\ActivitiesPage\ActivitiesPage.aspx.designer.cs">
       <DependentUpon>ActivitiesPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ASP.Net\ActivitiesPage\ActivitiesPage2.ascx.cs">
+      <DependentUpon>ActivitiesPage2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASP.Net\ActivitiesPage\ActivitiesPage2.ascx.designer.cs">
+      <DependentUpon>ActivitiesPage2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ASP.Net\ActivitiesPage\ActivitiesPage2.aspx.cs">
+      <DependentUpon>ActivitiesPage2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASP.Net\ActivitiesPage\ActivitiesPage2.aspx.designer.cs">
+      <DependentUpon>ActivitiesPage2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASP.Net\ActivitiesPage\activityAdd.aspx.cs">
       <DependentUpon>activityAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -282,6 +296,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage.aspx" />
+    <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage2.ascx" />
+    <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage2.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\Css\ActivitiesPage.css" />
     <Content Include="ASP.Net\ActivitiesPage\activityAdd.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx" />
