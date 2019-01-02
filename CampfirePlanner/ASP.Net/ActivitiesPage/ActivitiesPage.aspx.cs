@@ -133,11 +133,39 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             return catList;
         }
 
+        public string getImage()
+        {
+            //string link = "";
+            //Label control;
+            ////Read connection string "CampfireConnectionString" from web.config file.
+            //string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+
+            ////Instantiate a SqlConnection object with the Connection String read.
+            //SqlConnection conn = new SqlConnection(strConn);
+            //SqlCommand cmd = new SqlCommand("SELECT URL FROM Activity WHERE ActivityID=@assignedID", conn);
+
+            //for (int i=4; i<=32; i+=4)
+            //{
+            //    string controlName = "Label" + i.ToString();
+            //    control = (Label)FindControlRecursive(Page, controlName);
+                
+            //    cmd.Parameters.AddWithValue("@assignedID", control.Text);
+            //    conn.Open();
+            //    if (cmd.ExecuteScalar().ToString() != null)
+            //    {
+            //        link = cmd.ExecuteScalar().ToString();
+            //    }
+            //    conn.Close();
+                
+                //}
+            
+            return ""; //link;
+        }
+
         public int Label4Update()
         {
             return Convert.ToInt32(Label4.Text);
         }
-
         public int Label8Update()
         {
             return Convert.ToInt32(Label8.Text);
