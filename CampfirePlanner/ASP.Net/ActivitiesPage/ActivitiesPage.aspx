@@ -9,7 +9,7 @@
         .auto-style1 {
             height: 35px;
         }
-
+        \
         .auto-style2 {
             height: 38px;
         }
@@ -71,7 +71,7 @@
                             <img src="../../Images/image1.jpg" style="width: 100%;" /></a>
                         <br />
                         <div class="text">Caption Text</div>
-                    </div>
+                    </div> 
                     <div class="mySlides1">
                         <div class="numText">2 / 3</div>
                         <a href="HomePage.aspx">

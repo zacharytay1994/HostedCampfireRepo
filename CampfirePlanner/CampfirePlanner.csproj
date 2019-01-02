@@ -285,6 +285,7 @@
     <Content Include="ASP.Net\ActivitiesPage\Css\ActivitiesPage.css" />
     <Content Include="ASP.Net\ActivitiesPage\activityAdd.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx" />
+    <Content Include="ASP.Net\ActivitiesPage\Css\activityDesc.css" />
     <Content Include="ASP.Net\ActivitiesPage\Css\activityForm.css" />
     <Content Include="ASP.Net\CalenderPages\calendarEventMain\calendarEventMain.aspx" />
     <Content Include="ASP.Net\CalenderPages\calendarSelect\CalendarSelect.aspx" />

@@ -48,6 +48,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             lblExp.Text = result.Tables[0].Rows[0]["ActivityExp"].ToString();
             lblDuration.Text = result.Tables[0].Rows[0]["Duration"].ToString();
             lblLinks.Text = result.Tables[0].Rows[0]["Link"].ToString();
+            //imgActivity.ImageUrl = result.Tables[0].Rows[0]["Url"].ToString();
 
             //Display Categories
             //string catDisplay = result.Tables[0].Rows[0]["Category"].ToString();
@@ -73,6 +74,11 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             conn.Close();
 
             return 0;
+        }
+
+        private void slideshowScale()
+        {
+
         }
 
         protected void btnDel_Click(object sender, EventArgs e)
