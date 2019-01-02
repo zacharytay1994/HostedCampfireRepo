@@ -232,7 +232,7 @@
                 </table>
                 <%-- <asp:Button runat="server" width="100%" ID="Button5" onclick="Button5_Click" Text="Let's GO!" />--%>
             </div>
-
+            <div>Buddhi is stupid</div>
             <div onclick="redirect(this.id)" class="col-md-2" id="28" style="border: 3px solid black;">
                 <a href="ActivityDesc.aspx">
                     <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
