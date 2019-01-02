@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="~/ASP.Net/CalenderPages/calenderRecommend/Css/calendarRecommend.css"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
-    <table class="w-100">
+    &nbsp;<table class="w-100">
         <tr>
             <td class="auto-style4">Select Day:</td>
             <td class="auto-style3">

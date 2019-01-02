@@ -145,7 +145,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
         protected void rblDay_SelectedIndexChanged(object sender, EventArgs e)
         {
             DateTime newDate = getStartDate().AddDays(Convert.ToDouble(rblDay.SelectedValue) - 1);
-            lblDay.Text = newDate.Date.ToString("d");
+            lblDay.Text = newDate.Date.ToString("dd MMMM yyyy, dddd");
         }
 
         protected void gvRecommendation_SelectedIndexChanged(object sender, EventArgs e)
