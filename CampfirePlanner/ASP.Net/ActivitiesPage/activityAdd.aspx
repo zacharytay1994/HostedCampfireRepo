@@ -17,7 +17,7 @@
             <form id="activitiesForm" runat="server">
                 <div class="row">
                     <div class="col-25">
-                        <label for="activityName">Name of Game</label>
+                        <label for="gameName">Name of Game</label>
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="activityName" runat="server" placeholder="The name of the game!" CssClass="textbox"></asp:TextBox>

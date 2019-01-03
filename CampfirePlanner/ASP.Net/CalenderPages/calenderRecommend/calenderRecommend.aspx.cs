@@ -148,11 +148,6 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             lblDay.Text = newDate.Date.ToString("dd MMMM yyyy, dddd");
         }
 
-        protected void gvRecommendation_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         protected void gvRecommendation_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
             int recommendationID;
@@ -179,6 +174,11 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
         protected void btnReturn_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx");
+        }
+
+        protected void gvRecommendation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
