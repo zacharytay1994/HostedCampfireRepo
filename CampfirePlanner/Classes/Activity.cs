@@ -26,35 +26,45 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage.App_Code
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
 
             //Instantiate a SqlConnection object with the Connection String read.
-            SqlConnection conn = new SqlConnection(strConn);
+            SqlConnection conn1 = new SqlConnection(strConn);
 
             //Instantiate a SqlCommand object, supply it with an INSERT SQL statement
             //which will return the auto-generated staffID after insertation,
             //and the connection object for connecting to the database.
-            SqlCommand cmd = new SqlCommand
-                             ("INSERT INTO Activity (ActivityName, ActivityDesc, CategoryID, Duration, ActivityExp, Link, URL) VALUES (@name, @desc, @cat, @dur, @expla, @link, @url)", conn);
+            SqlCommand cmd1 = new SqlCommand
+                             ("INSERT INTO Activity (ActivityName, ActivityDesc, CategoryID, Duration, ActivityExp, Link) OUTPUT INSERTED.ActivityID VALUES (@name, @desc, @cat, @dur, @expla, @link)", conn1);
 
             //Define the parameters used in SQL statement, value for each parameter
             //is retrieved from respective class's property.
-            cmd.Parameters.AddWithValue("@name", activityName);
-            cmd.Parameters.AddWithValue("@desc", activityDescription);
-            cmd.Parameters.AddWithValue("@cat", category);
-            cmd.Parameters.AddWithValue("@dur", duration);
-            cmd.Parameters.AddWithValue("@expla", activityExplanation);
-            cmd.Parameters.AddWithValue("@link", link);
-            cmd.Parameters.AddWithValue("@url", activityPhoto);
+            cmd1.Parameters.AddWithValue("@name", activityName);
+            cmd1.Parameters.AddWithValue("@desc", activityDescription);
+            cmd1.Parameters.AddWithValue("@cat", category);
+            cmd1.Parameters.AddWithValue("@dur", duration);
+            cmd1.Parameters.AddWithValue("@expla", activityExplanation);
+            cmd1.Parameters.AddWithValue("@link", link);
 
             //A connection to database must be opened before any operations made.
-            conn.Open();
+            conn1.Open();
 
             //ExectureScalar is used to retrieve the auto-generated
             //ID after exectuing the INSERT SQL statement
-            cmd.ExecuteNonQuery();
+            int id = (int)cmd1.ExecuteScalar();
 
             //A connection should be closed after operations.
-            conn.Close();
+            conn1.Close();
 
-            return 0;
+            return id;
+            //SqlConnection conn2 = new SqlConnection(strConn);
+            //SqlCommand cmd2 = new SqlCommand
+            //                 ("INSERT INTO Images (ImgLink, ActivityID) VALUES (@imglink, @actid)", conn2);
+            //cmd2.Parameters.AddWithValue("@imglink", activityPhoto);
+            //cmd2.Parameters.AddWithValue("actid", activityID);
+
+            //conn2.Open();
+            //int id = cmd2.ExecuteNonQuery();
+            //conn2.Close();
+
+            //return id;
         }
     }
 }
