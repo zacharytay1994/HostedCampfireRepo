@@ -1,8 +1,7 @@
-﻿body1 {
-    background-image: url(test.jpg);
-    background-size: auto;
+﻿body {
+    background-image: url('../../Images/loginbackground.jpg');
+    background-size:cover;
     background-attachment: fixed;
-    background-color: darkorange;
 }
 
 .auto-style4 {
@@ -13,6 +12,7 @@
 .auto-style5 {
     height: 30px;
     width: 120px;
+    color:white;
 }
 
 .auto-style7 {
@@ -44,6 +44,44 @@
     width: 566px;
 }
 
+.loginform {
+    padding: 100px 0px 50px 0px;
+}
+
+.top-pic {
+    width: 130px;
+    height: 130px;
+    display: block;
+    -webkit-transform: rotate(45deg) translate3d(0, 0, 0);
+    -moz-transform: rotate(45deg) translate3d(0, 0, 0);
+    -ms-transform: rotate(45deg) translate3d(0, 0, 0);
+    -o-transform: rotate(45deg) translate3d(0, 0, 0);
+    transform: rotate(45deg) translate3d(0, 0, 0);
+    margin: 0 auto 4em;
+    background: #fff;
+    position: relative;
+}
+
+    .top-pic span {
+        border: 2px solid #F36;
+        width: 105px;
+        height: 105px;
+        display: block;
+        margin: 0px auto;
+        position: absolute;
+        top: 11px;
+        left: 11px;
+    }
+
+        .top-pic span img {
+            -webkit-transform: rotate(-45deg) translate3d(0, 0, 0);
+            -moz-transform: rotate(-45deg) translate3d(0, 0, 0);
+            -ms-transform: rotate(-45deg) translate3d(0, 0, 0);
+            -o-transform: rotate(-45deg) translate3d(0, 0, 0);
+            transform: rotate(-45deg) translate3d(0, 0, 0);
+            margin: 20px 0 0 20px;
+        }
+
 .textbox {
     border-radius: 5px;
 }
@@ -52,8 +90,9 @@
     background-color: transparent;
     border-style: solid;
     border-width: thin;
-    border-color: black;
-    color: black;
+    border-color: white;
+    color: white;
+    text-align:center;
     font-size: x-large;
     padding-top: 7px;
     padding-bottom: 7px;
@@ -62,7 +101,7 @@
 }
 
 .hypercss {
-    color: black;
+    color: white;
 }
 
     .hypercss:hover {
