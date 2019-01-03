@@ -28,7 +28,7 @@
         <tr>
             <td class="auto-style1" rowspan="5">
                 <div class="col-sm-12">
-                    <%--<h1 class="text-center" style="text-align:center;">Featured Item Here</h1>--%>
+                    <%--<asp:Label ID="lbl_activityid" runat="server"></asp:Label>--%>
                     <div id="slideshow" class="slideshow-container" style="text-align: center;">
                         <div id="slide1" class="mySlides1">
                             <img id="image1" runat="server" src="" style="height: 250px;" />
@@ -36,6 +36,22 @@
                         <a class="prev" onclick="plusSlides(-1, 0)" style="color: white;">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 0)" style="color: white;">&#10095;</a>
                     </div>
+                    <script>
+                        if (<%= slideshowCount()%> == 2) {
+                            var div = document.createElement("div");
+                            div.id = "slide2";
+                            div.className = "mySlides1";
+                            div.innerHTML += "<img src=\"<%= getImgLink()%>\" id=\"image2\" style=\"height: 250px;\">"
+                            document.getElementById("slideshow").appendChild(div);
+                        }
+                        else if (<%= slideshowCount()%> == 3) {
+                            var div = document.createElement("div");
+                            div.id = "slide3";
+                            div.className = "mySlides1";
+                            div.innerHTML += "<img src=\"<%= getImgLink2()%>\" id=\"image3\" style=\"height: 250px;\">"
+                            document.getElementById("slideshow").appendChild(div);
+                        }
+                    </script>
                     <div style="text-align: center">
                         <span class="dot1" onclick="currentSlide(1)"></span>
                         <span class="dot1" onclick="currentSlide(2)"></span>
@@ -71,7 +87,11 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style1">Votes Displayed Here</td>
+            <td class="auto-style1">UpVotes:
+                <asp:Label ID="txtUpVotes" runat="server"></asp:Label>
+                &nbsp;DownVotes:
+                <asp:Label ID="txtDownVotes" runat="server"></asp:Label>
+            </td>
             <td colspan="2">
                 <asp:Label ID="lblCategories" runat="server"></asp:Label>
             </td>
@@ -120,21 +140,6 @@
             }
             x[slideIndex[no] - 1].style.display = "block";
             dots[slideIndex[no] - 1].className += " active";
-        }
-
-        if (<%= slideshowCount()%> == 2) {
-            var div = document.createElement("div");
-            div.id = "slide2";
-            div.className = "mySlides1";
-            div.innerHTML += "<img src=\"<%= getImgLink()%>\" id=\"image2\" style=\"height: 250px;\">"
-            document.getElementById("slideshow").appendChild(div);
-        }
-        else if (<%= slideshowCount()%> == 3) {
-            var div = document.createElement("div");
-            div.id = "slide3";
-            div.className = "mySlides1";
-            div.innerHTML += "<img src=\"<%= getImgLink()%>\" id=\"image3\" style=\"height: 250px;\">"
-            document.getElementById("slideshow").appendChild(div);
         }
     </script>
 </asp:Content>

@@ -76,7 +76,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
 
         public string getImgLink2()
         {
-            if (slideshowCount() > 1)
+            if (slideshowCount() > 2)
             {
                 int actID = Convert.ToInt32(Request.QueryString["actID"]);
 
