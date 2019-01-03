@@ -35,12 +35,12 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             //Display Fields
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Activity WHERE ActivityID = @actid", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Activity INNER JOIN Images ON Activity.ActivityID = Images.ActivityID WHERE Activity.ActivityID = @actid", conn);
             cmd.Parameters.AddWithValue("@actid", actID);
             SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
-            DataSet result = new DataSet();
+            DataSet result = new DataSet(); 
             conn.Open();
-            daActivity.Fill(result, "Activities");
+            daActivity.Fill(result, "Activity");
             conn.Close();
 
             lblTitle.Text = result.Tables[0].Rows[0]["ActivityName"].ToString();
@@ -48,19 +48,53 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             lblExp.Text = result.Tables[0].Rows[0]["ActivityExp"].ToString();
             lblDuration.Text = result.Tables[0].Rows[0]["Duration"].ToString();
             lblLinks.Text = result.Tables[0].Rows[0]["Link"].ToString();
-            //imgActivity.ImageUrl = result.Tables[0].Rows[0]["Url"].ToString();
+            image1.Src = result.Tables[0].Rows[0]["ImgLink"].ToString();
+        }
+       
+        public string getImgLink()
+        {
+            if (slideshowCount() > 1)
+            {
+                int actID = Convert.ToInt32(Request.QueryString["actID"]);
 
-            //Display Categories
-            //string catDisplay = result.Tables[0].Rows[0]["Category"].ToString();
-            //if (catDisplay.Contains("a"))
-            //    catDisplay +=
-            //else if (catDisplay.Contains("b"))
-            //    catDisplay +=
-            //else if (catDisplay.Contains("b"))
-            //    catDisplay +=
-            //else if (catDisplay.Contains("b"))
-            //    catDisplay +=
-            //lblCategories.Text = catDisplay;
+                //Display Fields
+                string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+                SqlConnection conn = new SqlConnection(strConn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Images WHERE ActivityID = @actid", conn);
+                cmd.Parameters.AddWithValue("@actid", actID);
+                SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
+                DataSet result = new DataSet();
+                conn.Open();
+                daActivity.Fill(result, "Activity");
+                conn.Close();
+
+                return result.Tables[0].Rows[1]["ImgLink"].ToString();
+            }
+            else
+                return "";
+        }
+
+        public string getImgLink2()
+        {
+            if (slideshowCount() > 1)
+            {
+                int actID = Convert.ToInt32(Request.QueryString["actID"]);
+
+                //Display Fields
+                string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+                SqlConnection conn = new SqlConnection(strConn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Images WHERE ActivityID = @actid", conn);
+                cmd.Parameters.AddWithValue("@actid", actID);
+                SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
+                DataSet result = new DataSet();
+                conn.Open();
+                daActivity.Fill(result, "Activity");
+                conn.Close();
+
+                return result.Tables[0].Rows[2]["ImgLink"].ToString();
+            }
+            else
+                return "";
         }
 
         private int deleteActivity()
@@ -76,9 +110,24 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             return 0;
         }
 
-        private void slideshowScale()
+        public int slideshowCount()
         {
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
 
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Images WHERE ActivityID=@actid", conn);
+
+            cmd.Parameters.AddWithValue("@actid", Convert.ToInt32(Request.QueryString["actID"]));
+
+            SqlDataAdapter dacount = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
+
+            conn.Open();
+            int count = (int)cmd.ExecuteScalar();
+            dacount.Fill(result, "Images");
+            conn.Close();
+
+            return count;
         }
 
         protected void btnDel_Click(object sender, EventArgs e)

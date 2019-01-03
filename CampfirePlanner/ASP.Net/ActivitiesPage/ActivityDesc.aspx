@@ -29,27 +29,9 @@
             <td class="auto-style1" rowspan="5">
                 <div class="col-sm-12">
                     <%--<h1 class="text-center" style="text-align:center;">Featured Item Here</h1>--%>
-                    <div class="slideshow-container" style="text-align: center;">
+                    <div id="slideshow" class="slideshow-container" style="text-align: center;">
                         <div id="slide1" class="mySlides1">
-                            <div class="numText">1 / 3</div>
-                            <a href="HomePage.aspx">
-                                <img src="../../Images/image1.jpg" style="width: 100%;" /></a>
-                            <br />
-                            <div class="text">Caption Text</div>
-                        </div>
-                        <div id="slide2" class="mySlides1">
-                            <div class="numText">2 / 3</div>
-                            <a href="HomePage.aspx">
-                                <img src="" style="width: 100%;" /></a>
-                            <br />
-                            <div class="text">Caption Text</div>
-                        </div>
-                        <div id="slide3" class="mySlides1">
-                            <div class="numText">3 / 3</div>
-                            <a href="HomePage.aspx">
-                                <img src="" style="width: 100%; visibility: hidden;" /></a>
-                            <br />
-                            <div class="text">Caption Text</div>
+                            <img id="image1" runat="server" src="" style="height: 250px;" />
                         </div>
                         <a class="prev" onclick="plusSlides(-1, 0)" style="color: white;">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 0)" style="color: white;">&#10095;</a>
@@ -99,7 +81,7 @@
                 <asp:Label ID="lblExp" runat="server"></asp:Label>
                 Activity ID =
                
-                <asp:Label ID="lbl_activityid" runat="server"></asp:Label>
+                <%--<asp:Label ID="lbl_activityid" runat="server"></asp:Label>--%>
             </td>
         </tr>
         <tr>
@@ -138,6 +120,21 @@
             }
             x[slideIndex[no] - 1].style.display = "block";
             dots[slideIndex[no] - 1].className += " active";
+        }
+
+        if (<%= slideshowCount()%> == 2) {
+            var div = document.createElement("div");
+            div.id = "slide2";
+            div.className = "mySlides1";
+            div.innerHTML += "<img src=\"<%= getImgLink()%>\" id=\"image2\" style=\"height: 250px;\">"
+            document.getElementById("slideshow").appendChild(div);
+        }
+        else if (<%= slideshowCount()%> == 3) {
+            var div = document.createElement("div");
+            div.id = "slide3";
+            div.className = "mySlides1";
+            div.innerHTML += "<img src=\"<%= getImgLink()%>\" id=\"image3\" style=\"height: 250px;\">"
+            document.getElementById("slideshow").appendChild(div);
         }
     </script>
 </asp:Content>
