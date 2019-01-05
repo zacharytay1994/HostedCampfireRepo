@@ -312,6 +312,8 @@
     <Content Include="ASP.Net\CalenderPages\calenderViewDay\testPage.html" />
     <Content Include="ASP.Net\HomePage\HomePage.aspx" />
     <Content Include="ASP.Net\LandingPage\LandingPage.aspx" />
+    <Content Include="ASP.Net\LoginRegister\LoginImages\l.png" />
+    <Content Include="ASP.Net\LoginRegister\LoginImages\m.png" />
     <Content Include="ASP.Net\LoginRegister\LoginPage.aspx" />
     <Content Include="ASP.Net\LoginRegister\LoginPage.css" />
     <Content Include="ASP.Net\LoginRegister\RegisterPage.aspx" />
