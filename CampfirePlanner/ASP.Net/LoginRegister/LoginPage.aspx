@@ -1,35 +1,63 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="CampfirePlannerPlanner.ASP.Net.LoginRegister.LoginPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="LoginPage.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    .auto-style13 {
+        width: 300px;
+        height: 30px;
+    }
+    .auto-style14 {
+        height: 40px;
+        width: 300px;
+    }
+    .auto-style15 {
+        width: 100%;
+        margin-right: 0px;
+        height: 174px;
+    }
+    .auto-style16 {
+        height: 30px;
+        width: 205px;
+        color: white;
+        text-align: right;
+    }
+    .auto-style17 {
+        height: 40px;
+        width: 205px;
+    }
+    .auto-style18 {
+        /*border-radius: 5px;*/
+    border-style: none;
+        border-color: inherit;
+        border-width: medium;
+        color: white;
+        margin-bottom: 20px;
+        margin-left: 0;
+    }
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <div class="loginform">
         <div class="top-pic"><span><img src="../../Images/loginpic.png" /></span></div>
-        <table class="w-100" border="0" style="border:none;">
+        <table class="auto-style15" border="0" style="border:none;">
             <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="lbl_Email" runat="server" CssClass="auto-style9" Text="Email :"></asp:Label>
+                <td class="auto-style16">
                 </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtEmail" runat="server" Width="380px" cssclass="textbox" placeholder="Email"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style11"></td>
-                <td class="auto-style12"></td>
-            </tr>
-            <tr>
-                <td class="auto-style5">
-                    <asp:Label ID="lbl_Password" runat="server" CssClass="auto-style9" Text="Password :"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:TextBox ID="txtPw" runat="server" Width="380px" cssclass="textbox" TextMode="Password" placeholder="********"></asp:TextBox>
+                <td class="auto-style13">
+                    <asp:TextBox ID="txtEmail" style="padding-left: 40px;" runat="server" Width="413px" cssclass="emailtb" placeholder="Email" Height="44px"></asp:TextBox>
+                    <br />
                 </td>
             </tr>
             <tr>
-                <td class="auto-style11">
+                <td class="auto-style17"></td>
+                <td class="auto-style14">
+                    <asp:TextBox ID="txtPw" style="padding-left: 40px;" runat="server" Width="413px" cssclass="pwtb" TextMode="Password" placeholder="********" Height="44px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style17">
                     &nbsp;</td>
-                <td class="auto-style12">
+                <td class="auto-style14">
                     <asp:Label ID="lblMessage" runat="server" CssClass="auto-style18"></asp:Label>
                 </td>
             </tr>

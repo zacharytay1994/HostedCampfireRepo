@@ -2,7 +2,9 @@
     background-image: url('../../Images/loginbackground.jpg');
     background-size:cover;
     background-attachment: fixed;
+    margin:0;
 }
+
 
 /*.auto-style4 {
     height: 30px;
@@ -72,8 +74,29 @@
     /*width: 566px;*/
 }
 
+.emailtb {
+    background-image: url('LoginImages/m.png');
+    background-position: left center;
+    background-position-x: 8px;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.pwtb {
+    background-image: url('LoginImages/l.png');
+    background-position: left center;
+    background-position-x: 8px;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+}
+
 .loginform {
-    padding: 100px 0px 50px 0px;
+    padding: 80px 0px 0px 0px;
 }
 
 .top-pic {
@@ -111,7 +134,13 @@
         }
 
 .textbox {
-    border-radius: 5px;
+    /*border-radius: 5px;*/
+    background-color:black;
+    border:none;
+    color:white;
+    margin-bottom: 20px;
+    /*-webkit-filter: blur(1px);*/
+    /*filter: url(100px);*/
 }
 
 .loginbutton {
@@ -153,8 +182,8 @@ p.loginheader {
 }
 
 table {
-    width: 77%;
-    margin-left: 23%;
+    width: 100%;
+    /*margin-right:23%;*/
 }
 
 tr {

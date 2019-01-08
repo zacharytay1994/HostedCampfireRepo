@@ -348,9 +348,11 @@
     <Content Include="Images\image1.jpg" />
     <Content Include="Images\image2.jpg" />
     <Content Include="Images\image3.jpg" />
+    <Content Include="Images\lock.png" />
     <Content Include="Images\loginbackground.jpg" />
     <Content Include="Images\loginpic.png" />
     <Content Include="Images\Logo_sm.png" />
+    <Content Include="Images\touhou.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />

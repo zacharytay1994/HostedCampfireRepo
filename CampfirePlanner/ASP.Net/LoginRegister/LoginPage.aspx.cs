@@ -52,7 +52,7 @@ namespace CampfirePlannerPlanner.ASP.Net.LoginRegister
             }
             else
             {
-                lblMessage.Text = "Invalid Login ID or Password";
+                lblMessage.Text = "Invalid Email or Password";
             }
         }
 
