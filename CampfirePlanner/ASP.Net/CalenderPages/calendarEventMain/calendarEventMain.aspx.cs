@@ -16,11 +16,11 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
         {
             lblWelcome.Text = "Welcome, " + Session["UserAuthentication"].ToString();
             displayEvents();
-        }
+        }              
 
         protected int returnUserID()
         {
-            string userName = "zach";//Session["UserAuthentication"].ToString();
+            string userName = Session["UserAuthentication"].ToString();
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
 
@@ -73,6 +73,40 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
 
             //Display the list of data in GridView
             gvEvents.DataBind();
+        }
+
+        protected void gvEvents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string eventID = gvEvents.SelectedRow.Cells[0].Text;
+            string eventName = gvEvents.SelectedRow.Cells[3].Text;
+            string conString = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM EventMembers INNER JOIN Users ON EventMembers.AccountID = Users.AccountID WHERE EventID = @EventID", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        cmd.Parameters.AddWithValue("@EventID", eventID);
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        this.gvCollab.DataSource = dt;
+                        this.gvCollab.DataBind();
+                    }
+                }
+            }
+
+            lblCollabInfo.Text = "Collaborators for " + eventName;
+            if (gvCollab.Rows.Count == 0)
+            {
+                lblCollab.Visible = true;
+                lblCollab.Text = "You are not currently collaborating with anyone!";
+            }
+
+            else
+            {
+                lblCollab.Visible = true;
+                lblCollab.Text = "You are collaborating with " + gvCollab.Rows.Count + " people!";
+            }
         }
 
         protected void btnEvents_Click(object sender, EventArgs e)

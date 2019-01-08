@@ -312,7 +312,6 @@
     <Content Include="ASP.Net\CalenderPages\calendarEventMain\calendarEventMain.aspx" />
     <Content Include="ASP.Net\CalenderPages\calendarSelect\CalendarSelect.aspx" />
     <Content Include="ASP.Net\CalenderPages\calenderRecommend\calenderRecommend.aspx" />
-    <Content Include="ASP.Net\CalenderPages\calenderRecommend\Css\calendarRecommend.css" />
     <Content Include="ASP.Net\CalenderPages\calenderViewDay\calenderViewDay.ascx" />
     <Content Include="ASP.Net\CalenderPages\calenderViewDay\calenderViewDay.aspx" />
     <Content Include="ASP.Net\CalenderPages\calenderViewDay\testPage.html" />
