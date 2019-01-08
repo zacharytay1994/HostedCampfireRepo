@@ -147,18 +147,18 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 return "";
         }
 
-        private int deleteActivity()
-        {
-            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
-            SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("DELETE FROM Activity WHERE ActivityID = @actid", conn);
-            cmd.Parameters.AddWithValue("@actid", Convert.ToInt32(Request.QueryString["actID"]));
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+        //private int deleteActivity()
+        //{
+        //    string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+        //    SqlConnection conn = new SqlConnection(strConn);
+        //    SqlCommand cmd = new SqlCommand("DELETE FROM Activity WHERE ActivityID = @actid", conn);
+        //    cmd.Parameters.AddWithValue("@actid", Convert.ToInt32(Request.QueryString["actID"]));
+        //    conn.Open();
+        //    cmd.ExecuteNonQuery();
+        //    conn.Close();
 
-            return 0;
-        }
+        //    return 0;
+        //}
 
         public int slideshowCount()
         {
@@ -180,16 +180,16 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             return count;
         }
 
-        protected void btnDel_Click(object sender, EventArgs e)
-        {
-            if (Session["UserAuthentication"].ToString() == "Admin")
-            {
-                if (deleteActivity() == 0)
-                {
-                    Response.Redirect("~/ASP.Net/ActivitiesPage/ActivitiesPage.aspx");
-                }
-            }
-        }
+        //protected void btnDel_Click(object sender, EventArgs e)
+        //{
+        //    if (Session["UserAuthentication"].ToString() == "Admin")
+        //    {
+        //        if (deleteActivity() == 0)
+        //        {
+        //            Response.Redirect("~/ASP.Net/ActivitiesPage/ActivitiesPage.aspx");
+        //        }
+        //    }
+        //}
 
         protected void btnUpVote_Click(object sender, EventArgs e)
         {

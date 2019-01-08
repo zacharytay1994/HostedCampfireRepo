@@ -66,7 +66,7 @@
                     <h2 style="text-align: center;">Featured Activities</h2>
                 </div>
     <asp:Label ID="lblTitle" runat="server"></asp:Label>
-    <asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')" />
+    <%--<asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')"--%> />
     <asp:Label ID="lblDuration" runat="server"></asp:Label>
     <asp:Label ID="lblDesc" runat="server"></asp:Label>
     <asp:Label ID="lblLinks" runat="server"></asp:Label>
