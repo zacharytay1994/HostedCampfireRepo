@@ -14,7 +14,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int eventid = Convert.ToInt32(Request.QueryString["eventID"]);
+            int eventid = 3;//Convert.ToInt32(Request.QueryString["eventID"]);
             int day = 1;
             //int eventid = 2;
 
@@ -32,7 +32,15 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             //Page.Controls.Add(Page.LoadControl("../calenderViewDay/calenderViewDay.ascx"));
 
             returnTime(table);
+            lv_databind(table);
 
+        }
+
+        // bind data to listview
+        public void lv_databind(DataTable table)
+        {
+            testview.DataSource = table;
+            testview.DataBind();
         }
 
         // Get data of activities on specific day of event
