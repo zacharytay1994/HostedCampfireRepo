@@ -21,23 +21,23 @@
             color: #FFFFFF;
             background-color: #FF3300;
         }
+
         .auto-style5 {
             height: 72px;
         }
+
         .auto-style6 {
             text-align: center;
             width: 469px;
             height: 56px;
         }
+
         .auto-style7 {
             height: 56px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
-    <table class="w-100">
-        <tr>
-            <td class="auto-style1" rowspan="5">
                 <div class="col-sm-12">
                     <%--<asp:Label ID="lbl_activityid" runat="server"></asp:Label>--%>
                     <div id="slideshow" class="slideshow-container" style="text-align: center;">
@@ -63,68 +63,18 @@
                             document.getElementById("slideshow").appendChild(div);
                         }
                     </script>
-                    <div style="text-align: center">
-                        <span class="dot1" onclick="currentSlide(1)"></span>
-                        <span class="dot1" onclick="currentSlide(2)"></span>
-                        <span class="dot1" onclick="currentSlide(3)"></span>
-                    </div>
-                    <br />
                     <h2 style="text-align: center;">Featured Activities</h2>
                 </div>
-            </td>
-            <td class="auto-style2">
-                <asp:Label ID="lblTitle" runat="server"></asp:Label>
-            </td>
-            <td class="auto-style2">
-                <asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')" />
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <asp:Label ID="lblDuration" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">&nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="2" class="auto-style5">
-                <asp:Label ID="lblDesc" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style2" colspan="2">
-                <asp:Label ID="lblLinks" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style6">
-                <asp:Button ID="btnUpVote" runat="server" OnClick="btnUpVote_Click" Text="Up" />
-&nbsp;<asp:Label ID="txtVotes" runat="server"></asp:Label>
-                &nbsp;<asp:Button ID="btnDownVote" runat="server" OnClick="btnDownVote_Click" Text="Down" />
-&nbsp;</td>
-            <td colspan="2" class="auto-style7">
-                <asp:Label ID="lblCategories" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="text-left" colspan="3">
-                <asp:Label ID="lblExp" runat="server"></asp:Label>
-                Activity ID =
-               
-                <%--<asp:Label ID="lbl_activityid" runat="server"></asp:Label>--%>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style3" colspan="3"></td>
-        </tr>
-        <tr>
-            <td class="auto-style3" colspan="3">Comments</td>
-        </tr>
-        <tr>
-            <td class="text-left" colspan="3">&nbsp;</td>
-        </tr>
-    </table>
+    <asp:Label ID="lblTitle" runat="server"></asp:Label>
+    <asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')" />
+    <asp:Label ID="lblDuration" runat="server"></asp:Label>
+    <asp:Label ID="lblDesc" runat="server"></asp:Label>
+    <asp:Label ID="lblLinks" runat="server"></asp:Label>
+    <asp:Button ID="btnUpVote" runat="server" OnClick="btnUpVote_Click1" Text="Up" />
+    <asp:Label ID="lblVotes" runat="server"></asp:Label>
+    <asp:Button ID="btnDownVote" runat="server" Text="Button" />
+    <asp:Label ID="lblCategories" runat="server"></asp:Label>
+    <asp:Label ID="lblExp" runat="server"></asp:Label>
     <script>
         //Multiple slideshows
         var slideIndex = [1, 1];
