@@ -19,14 +19,14 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             {
                 showActivityDesc();
 
-                if (Session["UserAuthentication"].ToString() == "Admin")
-                {
-                    btnDel.Visible = true;
-                }
-                else
-                {
-                    btnDel.Visible = false;
-                }
+                //if (Session["UserAuthentication"].ToString() == "Admin")
+                //{
+                //    btnDel.Visible = true;
+                //}
+                //else
+                //{
+                //    btnDel.Visible = false;
+                //}
             }
         }
         private void showActivityDesc()
@@ -191,11 +191,6 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
         //    }
         //}
 
-        protected void btnUpVote_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnDownVote_Click(object sender, EventArgs e)
         {
             if (isVoteValid())
@@ -212,7 +207,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             }
         }
 
-        protected void btnUpVote_Click1(object sender, EventArgs e)
+        protected void btnUpVote_Click(object sender, EventArgs e)
         {
             if (isVoteValid())
             {
