@@ -67,22 +67,31 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
         protected global::System.Web.UI.WebControls.Label lblLinks;
         
         /// <summary>
-        /// txtUpVotes control.
+        /// btnUpVote control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtUpVotes;
+        protected global::System.Web.UI.WebControls.Button btnUpVote;
         
         /// <summary>
-        /// txtDownVotes control.
+        /// txtVotes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtDownVotes;
+        protected global::System.Web.UI.WebControls.Label txtVotes;
+        
+        /// <summary>
+        /// btnDownVote control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDownVote;
         
         /// <summary>
         /// lblCategories control.

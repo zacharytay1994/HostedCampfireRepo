@@ -18,6 +18,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             if (!Page.IsPostBack)
             {
                 showActivityDesc();
+
                 if (Session["UserAuthentication"].ToString() == "Admin")
                 {
                     btnDel.Visible = true;
@@ -38,7 +39,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             SqlCommand cmd = new SqlCommand("SELECT * FROM Activity INNER JOIN Images ON Activity.ActivityID = Images.ActivityID WHERE Activity.ActivityID = @actid", conn);
             cmd.Parameters.AddWithValue("@actid", actID);
             SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
-            DataSet result = new DataSet(); 
+            DataSet result = new DataSet();
             conn.Open();
             daActivity.Fill(result, "Activity");
             conn.Close();
@@ -49,8 +50,56 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             lblDuration.Text = result.Tables[0].Rows[0]["Duration"].ToString();
             lblLinks.Text = result.Tables[0].Rows[0]["Link"].ToString();
             image1.Src = result.Tables[0].Rows[0]["ImgLink"].ToString();
+
+            //Display Categories
+            lblCategories.Text = displayCategories();
         }
-       
+
+        private string displayCategories()
+        {
+            int actID = Convert.ToInt32(Request.QueryString["actID"]);
+
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("SELECT CategoryID FROM Activity WHERE Categories.ActivityID = @actid", conn);
+            cmd.Parameters.AddWithValue("@actid", actID);
+            SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
+            conn.Open();
+            string cat = (string)cmd.ExecuteScalar();
+            conn.Close();
+
+            List<string> catList = new List<string>();
+            cmd = new SqlCommand("SELECT catName FROM Categories", conn);
+            SqlDataAdapter daCategories = new SqlDataAdapter(cmd);
+            result = new DataSet();
+            conn.Open();
+            daCategories.Fill(result, "Categories");
+            conn.Close();
+
+            foreach (DataRow row in result.Tables["SkillSet"].Rows)
+            {
+                catList.Add(row[0].ToString());
+            }
+
+            string actCategories = "";
+            for (int i = 0; i < cat.Length; i++)
+            {
+                if (cat[i].ToString() == "a")
+                    actCategories += catList[0];
+                else if (cat[i].ToString() == "b")
+                    actCategories += catList[1];
+                else if (cat[i].ToString() == "c")
+                    actCategories += catList[2];
+                else if (cat[i].ToString() == "d")
+                    actCategories += catList[3];
+                else if (cat[i].ToString() == "e")
+                    actCategories += catList[4];
+            }
+
+            return actCategories;
+        }
+
         public string getImgLink()
         {
             if (slideshowCount() > 1)
@@ -139,6 +188,16 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                     Response.Redirect("~/ASP.Net/ActivitiesPage/ActivitiesPage.aspx");
                 }
             }
+        }
+
+        protected void btnUpVote_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnDownVote_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
