@@ -4,6 +4,7 @@
 <style type="text/css">
     .auto-style13 {
         width: 300px;
+        height: 30px;
     }
     .auto-style14 {
         height: 40px;
@@ -12,6 +13,7 @@
     .auto-style15 {
         width: 100%;
         margin-right: 0px;
+        height: 174px;
     }
     .auto-style16 {
         height: 30px;
@@ -23,6 +25,15 @@
         height: 40px;
         width: 205px;
     }
+    .auto-style18 {
+        /*border-radius: 5px;*/
+    border-style: none;
+        border-color: inherit;
+        border-width: medium;
+        color: white;
+        margin-bottom: 20px;
+        margin-left: 0;
+    }
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
@@ -31,15 +42,16 @@
         <table class="auto-style15" border="0" style="border:none;">
             <tr>
                 <td class="auto-style16">
-                    &nbsp;</td>
+                </td>
                 <td class="auto-style13">
-                    <asp:TextBox ID="txtEmail" runat="server" Width="380px" cssclass="textbox" placeholder="Email"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" style="padding-left: 40px;" runat="server" Width="413px" cssclass="emailtb" placeholder="Email" Height="44px"></asp:TextBox>
+                    <br />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style17"></td>
                 <td class="auto-style14">
-                    <asp:TextBox ID="txtPw" runat="server" Width="380px" cssclass="textbox" TextMode="Password" placeholder="********"></asp:TextBox>
+                    <asp:TextBox ID="txtPw" style="padding-left: 40px;" runat="server" Width="413px" cssclass="pwtb" TextMode="Password" placeholder="********" Height="44px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
