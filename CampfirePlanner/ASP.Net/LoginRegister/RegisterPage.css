@@ -1,5 +1,5 @@
 ﻿body {
-    background-image: url("test.jpg");
+    background-image: url('../../Images/background.jpeg');
     background-size: auto;
     background-attachment: fixed;
 }
@@ -12,21 +12,48 @@
 .auto-style5 {
     height: 30px;
     width: 120px;
+    color: white;
 }
 
-.auto-style7 {
-    font-family: 'Microsoft YaHei';
-    font-size: 30pt;
-    font-weight: bold;
-    color: black;
-    border-style: solid;
-    border-width: thin;
-    border-color: black;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-right: 110px;
-    padding-left: 110px;
+p.registerheader {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 60px;
 }
+
+.regi-pic {
+    width: 130px;
+    height: 130px;
+    display: block;
+    -webkit-transform: rotate(45deg) translate3d(0, 0, 0);
+    -moz-transform: rotate(45deg) translate3d(0, 0, 0);
+    -ms-transform: rotate(45deg) translate3d(0, 0, 0);
+    -o-transform: rotate(45deg) translate3d(0, 0, 0);
+    transform: rotate(45deg) translate3d(0, 0, 0);
+    margin: 0 auto 4em;
+    background: #fff;
+    position: relative;
+}
+
+    .regi-pic span {
+        border: 2px solid #F36;
+        width: 105px;
+        height: 105px;
+        display: block;
+        margin: 0px auto;
+        position: absolute;
+        top: 11px;
+        left: 11px;
+    }
+
+        .regi-pic span img {
+            -webkit-transform: rotate(-45deg) translate3d(0, 0, 0);
+            -moz-transform: rotate(-45deg) translate3d(0, 0, 0);
+            -ms-transform: rotate(-45deg) translate3d(0, 0, 0);
+            -o-transform: rotate(-45deg) translate3d(0, 0, 0);
+            transform: rotate(-45deg) translate3d(0, 0, 0);
+            margin: 20px 0 0 20px;
+        }
 
 .auto-style9 {
     font-family: "Segoe UI";
@@ -42,17 +69,27 @@
 }
 
 .submitbutton {
-    background-color: transparent;
-    border-style: solid;
-    border-width: thin;
-    border-color: black;
-    color: black;
-    font-size: x-large;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 14px;
-    padding-right: 14px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    padding: 13px 0;
+    background: #ff3366;
+    display: inline-block;
+    width: 20%;
+    outline: none;
+    border: 2px solid #ff3366;
+    cursor: pointer;
+    text-transform: uppercase;
 }
+
+    .submitbutton:hover {
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        border: 2px solid #fff;
+    }
 
 .auto-style11 {
     height: 20px;
@@ -62,12 +99,7 @@
 .auto-style12 {
     height: 20px;
     width: 566px;
-}
-
-p.registerheader {
-    text-align: center;
-    padding-top: 80px;
-    padding-bottom: 60px;
+    color: white;
 }
 
 p.submit {

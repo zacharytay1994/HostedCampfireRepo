@@ -4,13 +4,13 @@
     <link href="RegisterPage.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
-    <p class="registerheader"><span class="auto-style7">Register</span></p>
-    <p class="tablep">
-    <table class="w-100" width=100% border="0" style="border:none;">
+    <p class="registerheader"><span class="regi-pic"><img src="../../Images/loginpic.png" /></span></p>
+
+    <table class="w-100" border="0" style="border:none;">
         <tr>
             <td class="auto-style5">
                 <asp:Label ID="lbl_username" runat="server" Text="Username" CssClass="auto-style9"></asp:Label>
-                :</td>
+                </td>
             <td class="auto-style4">
                 <asp:TextBox ID="tb_username" runat="server" cssclass="textbox" Width="380px"></asp:TextBox>
             </td>
@@ -65,6 +65,6 @@
                 </p></td>
         </tr>
     </table>
-    </p>
-    <p class="submit"><asp:Button ID="btn_submit" runat="server" Text="Submit" OnClick="btn_submit_Click" cssclass="submitbutton"/></p>
+
+    <p class="submit"><asp:Button ID="btn_submit" runat="server" Text="Register" OnClick="btn_submit_Click" cssclass="submitbutton"/></p>
 </asp:Content>
