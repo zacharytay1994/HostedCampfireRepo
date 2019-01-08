@@ -2,6 +2,7 @@
     background-image: url('../../Images/loginbackground.jpg');
     background-size:cover;
     background-attachment: fixed;
+    margin:0;
 }
 
 /*.auto-style4 {
@@ -111,7 +112,10 @@
         }
 
 .textbox {
-    border-radius: 5px;
+    /*border-radius: 5px;*/
+    background-color:black;
+    -webkit-filter: blur(1px);
+    /*filter: url(100px);*/
 }
 
 .loginbutton {
@@ -164,8 +168,8 @@ p.loginheader {
 }
 
 table {
-    width: 77%;
-    margin-left: 23%;
+    width: 100%;
+    /*margin-right:23%;*/
 }
 
 tr {
