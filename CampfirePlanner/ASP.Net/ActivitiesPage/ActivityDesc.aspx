@@ -21,6 +21,17 @@
             color: #FFFFFF;
             background-color: #FF3300;
         }
+        .auto-style5 {
+            height: 72px;
+        }
+        .auto-style6 {
+            text-align: center;
+            width: 469px;
+            height: 56px;
+        }
+        .auto-style7 {
+            height: 56px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
@@ -77,7 +88,7 @@
             <td colspan="2">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td colspan="2" class="auto-style5">
                 <asp:Label ID="lblDesc" runat="server"></asp:Label>
             </td>
         </tr>
@@ -87,12 +98,12 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style1">UpVotes:
-                <asp:Label ID="txtUpVotes" runat="server"></asp:Label>
-                &nbsp;DownVotes:
-                <asp:Label ID="txtDownVotes" runat="server"></asp:Label>
-            </td>
-            <td colspan="2">
+            <td class="auto-style6">
+                <asp:Button ID="btnUpVote" runat="server" OnClick="btnUpVote_Click" Text="Up" />
+&nbsp;<asp:Label ID="txtVotes" runat="server"></asp:Label>
+                &nbsp;<asp:Button ID="btnDownVote" runat="server" OnClick="btnDownVote_Click" Text="Down" />
+&nbsp;</td>
+            <td colspan="2" class="auto-style7">
                 <asp:Label ID="lblCategories" runat="server"></asp:Label>
             </td>
         </tr>
