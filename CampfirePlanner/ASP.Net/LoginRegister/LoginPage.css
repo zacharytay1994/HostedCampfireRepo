@@ -4,15 +4,15 @@
     background-attachment: fixed;
 }
 
-.auto-style4 {
+/*.auto-style4 {
     height: 30px;
-    width: 566px;
-    /*background: rgba(255, 255, 255, 0.32);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.32);
     margin-bottom: 1.5em;
-    padding: 8px;*/
+    padding: 8px;
 }
 
-    /*.auto-style4 i {
+    .auto-style4 i {
         background: url('LoginImages/m.png');
         width: 38px;
         height: 38px;
@@ -69,7 +69,7 @@
 
 .auto-style12 {
     height: 40px;
-    width: 566px;
+    /*width: 566px;*/
 }
 
 .loginform {
