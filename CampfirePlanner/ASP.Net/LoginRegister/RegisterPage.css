@@ -2,6 +2,7 @@
     background-image: url('../../Images/background.jpeg');
     background-size: auto;
     background-attachment: fixed;
+    margin:0;
 }
 
 .auto-style4 {
@@ -15,13 +16,13 @@
     color: white;
 }
 
-p.registerheader {
+registerheader {
     text-align: center;
     padding-top: 80px;
     padding-bottom: 60px;
 }
 
-.regi-pic {
+p.regi-pic {
     width: 130px;
     height: 130px;
     display: block;
@@ -31,22 +32,23 @@ p.registerheader {
     -o-transform: rotate(45deg) translate3d(0, 0, 0);
     transform: rotate(45deg) translate3d(0, 0, 0);
     margin: 0 auto 4em;
+    margin-top: 80px;
     background: #fff;
     position: relative;
 }
 
-    .regi-pic span {
+    p.regi-pic span {
         border: 2px solid #F36;
         width: 105px;
         height: 105px;
         display: block;
-        margin: 0px auto;
+        /*margin: 20px;*/
         position: absolute;
         top: 11px;
         left: 11px;
     }
 
-        .regi-pic span img {
+        p.regi-pic span img {
             -webkit-transform: rotate(-45deg) translate3d(0, 0, 0);
             -moz-transform: rotate(-45deg) translate3d(0, 0, 0);
             -ms-transform: rotate(-45deg) translate3d(0, 0, 0);
@@ -61,8 +63,14 @@ p.registerheader {
 }
 
 .textbox {
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    margin-bottom: 20px;
+    padding-left: 7px;
 }
+
+
 
 .auto-style10 {
     width: 380px;
@@ -108,8 +116,7 @@ p.submit {
 }
 
 table {
-    width: 77%;
-    margin-left: 23%;
+    width: 100%;
 }
 
 tr {
