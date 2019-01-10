@@ -1,0 +1,40 @@
+﻿body {
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+p, div, li, .buttonStyle {
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    color: black;
+}
+
+h2 {
+    text-align:center;
+}
+
+.lblWelcome {  
+    text-align:center;
+}
+
+.eventGrid {
+    width:80%;
+    min-width:80%;
+}
+
+.header {
+    font-size:medium;
+}
+
+.pager {
+
+}
+
+.rows {
+    
+}
+
+    .rows:hover {
+        color: #F7F6F3; 
+        background-color: #CE5D5A; 
+    }
