@@ -58,7 +58,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             if (voteCheck() == 1)      // Currently Up-Voted
                 btnUpVote.Style["background-color"] = "green";
             else if (voteCheck() == 0) // Currently Down-Voted
-                btnDownVote.Style["background-color"] = "green";
+                btnDownVote.Style["background-color"] = "red";
 
             //Display Categories
             //lblCategories.Text = displayCategories();
@@ -227,7 +227,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             daVotes.Fill(result, "Votes");
             conn.Close();
 
-            if (result.Tables["Votes"].Rows.Count > 0)
+            if (result.Tables["Votes"].Rows.Count > 0) // If user voted before
             {
                 int userVote = Convert.ToInt32(result.Tables[0].Rows[0]["VoteValue"]);
                 if (userVote == voteStatus) // If user clicks same vote
@@ -242,7 +242,9 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 }
                 else // If user votes differently
                 {
-                    cmd = new SqlCommand("UPDATE Votes SET VoteValue = @vote", conn);
+                    cmd = new SqlCommand("UPDATE Votes SET VoteValue = @vote WHERE ActivityID = @actID AND AccountID = @accID", conn);
+                    cmd.Parameters.AddWithValue("@accID", getAccID());
+                    cmd.Parameters.AddWithValue("@actid", Convert.ToInt32(Request.QueryString["actID"]));
                     cmd.Parameters.AddWithValue("@vote", voteStatus);
 
                     conn.Open();
