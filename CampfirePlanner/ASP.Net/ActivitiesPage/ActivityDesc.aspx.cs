@@ -50,7 +50,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             lblDuration.Text = result.Tables[0].Rows[0]["Duration"].ToString();
             lblLinks.Text = result.Tables[0].Rows[0]["Link"].ToString();
             image1.Src = result.Tables[0].Rows[0]["ImgLink"].ToString();
-            //lblVotes.Text = result.Tables[0].Rows[0]["Vote"].ToString();
+            lblVotes.Text = voteCount().ToString();
 
             // Color Voted Button
             btnUpVote.Style["background-color"] = "white";
@@ -289,6 +289,33 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             }
             else
                 return -1;
+        }
+
+        private int voteCount()
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("SELECT VoteValue FROM Votes WHERE ActivityID = @actID", conn);
+
+            cmd.Parameters.AddWithValue("@actid", Convert.ToInt32(Request.QueryString["actID"]));
+
+            SqlDataAdapter daVotes = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
+
+            conn.Open();
+            daVotes.Fill(result, "Votes");
+            conn.Close();
+
+            int total = 0;
+            foreach (DataRow row in result.Tables["Votes"].Rows)
+            {
+                if (Convert.ToInt32(row[0]) == 1)
+                    total += 1;
+                else
+                    total -= 1;
+            }
+            return total;
         }
 
         private int getAccID()
