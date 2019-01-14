@@ -19,7 +19,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             //int eventid = 2;
 
             DataTable table = GetData(eventid, day);
-            fillTimeTable();
+            //fillTimeTable();
 
             //calenderViewDay1 myControl = (calenderViewDay1)Page.LoadControl("../calenderViewDay/calenderViewDay.ascx");
             //myControl.stringy = "StringyTest";
@@ -31,9 +31,8 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             //Table1.Rows[0].Cells.Add(c);
             //Page.Controls.Add(Page.LoadControl("../calenderViewDay/calenderViewDay.ascx"));
 
-            returnTime(table);
+            //returnTime(table);
             lv_databind(table);
-
         }
 
         // bind data to listview
@@ -53,7 +52,8 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             SqlConnection conn = new SqlConnection(strConn);
 
             SqlCommand cmd = new SqlCommand
-                ("SELECT * FROM EventActivities WHERE EventID = @eventid AND Day = @day", conn);
+                ("SELECT * FROM EventActivities INNER JOIN Activity ON EventActivities.ActivityID = Activity.ActivityID " +
+                "WHERE EventID = @eventid AND Day = @day ORDER BY StartTime ASC", conn);
 
             cmd.Parameters.AddWithValue("@eventid", _eventid);
             cmd.Parameters.AddWithValue("@day", _day);
