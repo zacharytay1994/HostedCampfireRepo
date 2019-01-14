@@ -113,5 +113,10 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
         {
             Response.Redirect("~/ASP.Net/CalenderPages/calendarSelect/CalendarSelect.aspx");
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ASP.Net/HomePage/HomePage.aspx");
+        }
     }
 }

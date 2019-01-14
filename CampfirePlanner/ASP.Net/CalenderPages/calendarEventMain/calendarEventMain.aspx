@@ -37,6 +37,8 @@
             </asp:GridView>
             <br />
             <asp:Button ID="btnEvents" runat="server" CssClass="addEventBtn" Text="Add Events" OnClick="btnEvents_Click" />
+        &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnBack" runat="server" CssClass="backEventBtn" Text="Back" OnClick="btnBack_Click" />
         </div>
         <div>
             <asp:Label ID="lblCollabInfo" runat="server" Font-Bold="True" Font-Size="XX-Large" Visible="True"></asp:Label>
