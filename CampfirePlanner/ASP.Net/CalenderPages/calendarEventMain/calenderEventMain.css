@@ -1,7 +1,9 @@
 ﻿body {
-    width: 60%;
-    margin: 0 auto;
-    padding: 10px;
+    width: 100%;
+    /*margin: 0 auto;
+    padding: 10px;*/
+    background-color: #f5f5dc;
+    /*background-image: url("https://www.transparenttextures.com/patterns/felt.png");*/
 }
 
 p, div, li, .buttonStyle {
@@ -14,12 +16,15 @@ h2 {
 }
 
 .lblWelcome {  
+    display: block;
+    margin-bottom: 50px;
     text-align:center;
 }
 
 .eventGrid {
     width:80%;
     min-width:80%;
+    position:center;
 }
 
 .header {
@@ -49,3 +54,25 @@ h2 {
         color: #F7F6F3;
     }
 
+.addEventBtn {
+    text-align: center;
+    vertical-align: central;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    background: #ff3366;
+    display: inline-block;
+    width: 20%;
+    outline: none;
+    border: 2px solid #ff3366;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+    .addEventbtn:hover {
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        border: 2px solid #fff;
+    }
