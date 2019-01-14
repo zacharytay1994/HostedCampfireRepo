@@ -1,24 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="CalendarSelect.aspx.cs" Inherits="CampfirePlanner.ASP.Net.CalenderPages.calendarSelect.CalendarSelect" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            color: #FF0000;
-        }
-        .auto-style2 {
-            width: 387px;
-        }
-        .auto-style3 {
-            width: 20px;
-        }
-        .auto-style4 {
-            width: 402px;
-        }
-        .auto-style5 {
-            color: #FFFFFF;
-            background-color: #000000;
-        }
-    </style>
+    <link href="CalendarSelect.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <div>
@@ -35,7 +18,7 @@
                         <asp:TextBox ID="txtEvent" runat="server" AutoPostBack="True" AutoCompleteType="Disabled"></asp:TextBox>
                     </p>
                     <div class="row">
-                        <asp:Calendar ID="calSelect" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="287px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="357px" OnLoad="calSelect_Load" OnPreRender="calSelect_PreRender" OnSelectionChanged="calSelect_SelectionChanged">
+                        <asp:Calendar ID="calSelect" runat="server" BackColor="White" CssClass="calendarSelect" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="287px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="357px" OnLoad="calSelect_Load" OnPreRender="calSelect_PreRender" OnSelectionChanged="calSelect_SelectionChanged">
                             <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
                             <DayStyle Width="14%" />
                             <NextPrevStyle Font-Size="8pt" ForeColor="White" />
