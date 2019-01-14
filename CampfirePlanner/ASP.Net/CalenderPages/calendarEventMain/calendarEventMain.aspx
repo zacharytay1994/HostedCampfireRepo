@@ -35,7 +35,7 @@
                 <SortedDescendingCellStyle BackColor="#EAEAD3" />
                 <SortedDescendingHeaderStyle BackColor="#575357" />--%>
             </asp:GridView>
-
+            <br />
             <asp:Button ID="btnEvents" runat="server" CssClass="addEventBtn" Text="Add Events" OnClick="btnEvents_Click" />
         </div>
         <div>

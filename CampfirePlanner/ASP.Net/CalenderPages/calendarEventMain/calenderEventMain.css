@@ -54,3 +54,25 @@ h2 {
         color: #F7F6F3;
     }
 
+.addEventBtn {
+    text-align: center;
+    vertical-align: central;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    background: #ff3366;
+    display: inline-block;
+    width: 20%;
+    outline: none;
+    border: 2px solid #ff3366;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+    .addEventbtn:hover {
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        border: 2px solid #fff;
+    }
