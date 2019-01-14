@@ -1,7 +1,9 @@
 ﻿body {
-    width: 60%;
-    margin: 0 auto;
-    padding: 10px;
+    width: 100%;
+    /*margin: 0 auto;
+    padding: 10px;*/
+    background-color: #f5f5dc;
+    /*background-image: url("https://www.transparenttextures.com/patterns/felt.png");*/
 }
 
 p, div, li, .buttonStyle {
@@ -14,12 +16,15 @@ h2 {
 }
 
 .lblWelcome {  
+    display: block;
+    margin-bottom: 50px;
     text-align:center;
 }
 
 .eventGrid {
     width:80%;
     min-width:80%;
+    position:center;
 }
 
 .header {
