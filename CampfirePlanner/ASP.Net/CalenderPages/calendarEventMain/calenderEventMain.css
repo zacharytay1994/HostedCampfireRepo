@@ -23,7 +23,10 @@ h2 {
 }
 
 .header {
+    background-color: lightgrey;
     font-size:medium;
+    border-style: solid;
+    border-color: black;
 }
 
 .pager {
@@ -31,10 +34,18 @@ h2 {
 }
 
 .rows {
-    
+    background-color: aliceblue;
+    color: black;
+    border-style: solid;
+    border-width: 1px;
 }
 
-    .rows:hover {
-        color: #F7F6F3; 
-        background-color: #CE5D5A; 
+    .rows::alternate {
+        background-color: green;
     }
+
+    .rows:hover {
+        background-color: #CE5D5A;
+        color: #F7F6F3;
+    }
+
