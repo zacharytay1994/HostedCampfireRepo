@@ -19,14 +19,16 @@
         </tr>
         <tr>
             <td class="auto-style2">
-                &nbsp;</td>
+                <asp:Label ID="lblProjName" runat="server" Text="PROJECT/EVENT"></asp:Label>
+            </td>
             <td class="auto-style2">
                 &nbsp;</td>
             <td class="auto-style2" rowspan="2">&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style2">
-                &nbsp;</td>
+                <asp:Label ID="lblOrganizer" runat="server" Text="ORGANIZER"></asp:Label>
+            </td>
             <td class="auto-style2">
                 &nbsp;</td>
         </tr>
