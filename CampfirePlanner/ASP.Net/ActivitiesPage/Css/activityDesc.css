@@ -43,3 +43,22 @@ img {
         background-color: #f1f1f1;
         color: white;
     }
+
+/* unvisited link */
+.btnUP:link, .btnDOWN:link {
+    color: black;
+}
+
+/* mouse over link */
+.btnUP:hover, .btnDOWN:hover {
+    color: grey;
+}
+
+/* selected link */
+.btnUP:active {
+    color: green;
+} 
+
+.btnDOWN:active {
+    color:red;
+}

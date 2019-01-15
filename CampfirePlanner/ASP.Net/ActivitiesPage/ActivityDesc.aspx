@@ -65,14 +65,19 @@
                     </script>
                     <h2 style="text-align: center;">Featured Activities</h2>
                 </div>
+                <div>
+                    <asp:ImageButton ID="btnUpVote" runat="server" ImageUrl="~/Images/thumbs-up.png" CssClass="btnUP" Width="25px" Height="25px" OnClick="btnUpVote_Click" />
+                    <asp:ImageButton ID="btnDownVote" runat="server" ImageUrl="~/Images/dislike-thumb.png" CssClass="btnDOWN" Width="25px" Height="25px" OnClick="btnDownVote_Click" />
+                    <asp:Label ID="lblVotes" runat="server"></asp:Label>
+                </div>
     <asp:Label ID="lblTitle" runat="server"></asp:Label>
     <%--<asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')"--%> />
     <asp:Label ID="lblDuration" runat="server"></asp:Label>
     <asp:Label ID="lblDesc" runat="server"></asp:Label>
     <asp:Label ID="lblLinks" runat="server"></asp:Label>
-    <asp:Button ID="btnUpVote" runat="server" OnClick="btnUpVote_Click1" Text="Up" />
-    <asp:Label ID="lblVotes" runat="server"></asp:Label>
-    <asp:Button ID="btnDownVote" runat="server" Text="Button" />
+    
+    
+    
     <asp:Label ID="lblCategories" runat="server"></asp:Label>
     <asp:Label ID="lblExp" runat="server"></asp:Label>
     <script>
