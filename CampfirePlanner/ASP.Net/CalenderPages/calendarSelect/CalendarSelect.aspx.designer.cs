@@ -31,6 +31,15 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect {
         protected global::System.Web.UI.WebControls.Calendar calSelect;
         
         /// <summary>
+        /// lblDates control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDates;
+        
+        /// <summary>
         /// txtDayz control.
         /// </summary>
         /// <remarks>
@@ -67,15 +76,6 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect {
         protected global::System.Web.UI.WebControls.Button btnReset;
         
         /// <summary>
-        /// btnCreate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreate;
-        
-        /// <summary>
         /// rfName control.
         /// </summary>
         /// <remarks>
@@ -83,15 +83,6 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfName;
-        
-        /// <summary>
-        /// tdList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableCell tdList;
         
         /// <summary>
         /// txtSearch control.
@@ -110,15 +101,6 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvUsers;
-        
-        /// <summary>
-        /// tdList2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableCell tdList2;
         
         /// <summary>
         /// lblCount control.
