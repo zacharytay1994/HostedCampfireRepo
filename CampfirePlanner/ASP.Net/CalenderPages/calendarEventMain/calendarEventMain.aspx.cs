@@ -14,13 +14,13 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "Welcome, " + "zach"; /*Session["UserAuthentication"].ToString();*/
+            lblWelcome.Text = "Welcome, " + Session["UserAuthentication"].ToString();
             displayEvents();
         }              
 
         protected int returnUserID()
         {
-            string userName = "zach";/*Session["UserAuthentication"].ToString();*/
+            string userName = Session["UserAuthentication"].ToString();
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
 
