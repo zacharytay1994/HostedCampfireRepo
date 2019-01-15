@@ -1,0 +1,28 @@
+﻿body {
+    text-align: center;
+    background-color: #ffdead;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+}
+
+.label1 {
+    text-align:center;
+    font-size:larger;
+    font-weight:bold;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+
+.auto-style1 {
+    height: 64px;
+}
+
+.auto-style2 {
+    height: 62px;
+}
+
+table {
+    position:center;
+    margin-left: auto;
+    margin-right: auto;
+}

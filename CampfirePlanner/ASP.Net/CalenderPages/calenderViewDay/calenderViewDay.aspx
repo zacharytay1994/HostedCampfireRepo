@@ -1,22 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="calenderViewDay.aspx.cs" Inherits="CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay.calenderViewDay" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            height: 64px;
-        }
-        .auto-style2 {
-            height: 62px;
-        }
-    </style>
+    <link href="calenderViewDay.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
-    <table class="w-100">
-        <tr>
-            <td class="auto-style2" colspan="2">
-                <asp:Label ID="PageTitle" runat="server" Text="Label"></asp:Label>
-            </td>
-            <td class="auto-style2"></td>
-        </tr>
+
+<asp:Label ID="PageTitle" runat="server" Text="Schedular" CssClass="label1"></asp:Label>
+    <table>
         <tr>
             <td class="auto-style2">
                 &nbsp;</td>
@@ -89,8 +78,9 @@
         </tr>
     </table>
     <asp:DropDownList ID="ddl1" runat="server"></asp:DropDownList>
+
     <asp:Table ID="Table1" runat="server">
-        </asp:Table>
+    </asp:Table>
      
     </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="body2" runat="server">
