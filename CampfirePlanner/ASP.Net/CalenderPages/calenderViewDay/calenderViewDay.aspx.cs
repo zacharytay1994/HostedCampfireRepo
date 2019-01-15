@@ -19,6 +19,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             //int eventid = 2;
 
             DataTable table = GetData(eventid, day);
+            initInterface(eventid);
             //fillTimeTable();
 
             //calenderViewDay1 myControl = (calenderViewDay1)Page.LoadControl("../calenderViewDay/calenderViewDay.ascx");
@@ -33,6 +34,39 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
 
             //returnTime(table);
             lv_databind(table);
+        }
+
+        public void initInterface(int eventid)
+        {
+            // Get Data from SQL and store Data in DataTable table
+            string strConn = ConfigurationManager.ConnectionStrings
+                ["CampfireConnectionString"].ToString();
+
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand
+                ("select EventName, Username from Event INNER JOIN " +
+                "Users ON event.AccountID = Users.AccountID Where EventID = @eventid", conn);
+
+            cmd.Parameters.AddWithValue("@eventid", eventid);
+
+            DataSet result = new DataSet();
+
+            SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
+
+            conn.Open();
+
+            daActivity.Fill(result, "ActivityTable");
+
+            conn.Close();
+
+            DataTable table = result.Tables["ActivityTable"];
+
+            string organizerName = table.Rows[0]["Username"].ToString();
+            string eventName = table.Rows[0]["EventName"].ToString();
+
+            lblOrganizerO.Text = organizerName;
+            lblProjNameO.Text = eventName;
         }
 
         // bind data to listview
