@@ -1,22 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/CalendarNavBar/Calendar.Master" AutoEventWireup="true" CodeBehind="calendarEventMain.aspx.cs" Inherits="CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain.calendarEventMain" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="calendarEventMain.aspx.cs" Inherits="CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain.calendarEventMain" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="calenderEventMain.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:Extra-Bold" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
     <style type="text/css">
-        .auto-style1 {
-            width: 1265px;
-            height: 36px;
-            position: absolute;
-            top: 750px;
-            left: 0px;
+        .auto-style2 {
+            display: block;
+            margin-bottom: 50px;
+            text-align: center;
+            font-family: Arial;
+            text-decoration: underline;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <main>
     <div>
-        <asp:Label ID="lblWelcome" runat="server" CssClass="lblWelcome" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
+        <asp:Label ID="lblWelcome" runat="server" CssClass="auto-style2" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
     </div>
     <div>
         <h2>Current Events</h2>
