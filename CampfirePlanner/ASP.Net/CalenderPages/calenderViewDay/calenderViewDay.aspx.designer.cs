@@ -22,6 +22,24 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay {
         protected global::System.Web.UI.WebControls.Label PageTitle;
         
         /// <summary>
+        /// lblProjName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblProjName;
+        
+        /// <summary>
+        /// lblOrganizer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOrganizer;
+        
+        /// <summary>
         /// testview control.
         /// </summary>
         /// <remarks>
