@@ -67,24 +67,24 @@
                 <div class="slideshow-container" style="text-align: center;">
                     <div class="mySlides1">
                         <div class="numText">1 / 3</div>
-                        <a href="HomePage.aspx">
-                            <img src="../../Images/image1.jpg" style="width: 100%;" /></a>
+                        <a runat="server" id="slide1Link" href="">
+                            <img runat="server" id="slide1" style="width: 400px; height: 350px;" /></a>
                         <br />
-                        <div class="text">Caption Text</div>
+                        <div runat="server" id="slide1Title" class="text">Caption Text</div>
                     </div> 
                     <div class="mySlides1">
                         <div class="numText">2 / 3</div>
-                        <a href="HomePage.aspx">
-                            <img src="../../Images/image2.jpg" style="width: 100%;" /></a>
+                        <a runat="server" id="slide2Link" href="">
+                            <img runat="server" id="slide2" style="width: 400px; height: 350px;" /></a>
                         <br />
-                        <div class="text">Caption Text</div>
+                        <div runat="server" id="slide2Title" class="text">Caption Text</div>
                     </div>
                     <div class="mySlides1 ">
                         <div class="numText">3 / 3</div>
-                        <a href="HomePage.aspx">
-                            <img src="../../Images/image3.jpg" style="width: 100%;" /></a>
+                        <a runat="server" id="slide3Link">
+                            <img runat="server" id ="slide3" style="width: 400px; height: 350px;" /></a>
                         <br />
-                        <div class="text">Caption Text</div>
+                        <div runat="server" id="slide3Title" class="text">Caption Text</div>
                     </div>
                     <a class="prev" onclick="plusSlides(-1)" style="color: white;">&#10094;</a>
                     <a class="next" onclick="plusSlides(1)" style="color: white;">&#10095;</a>

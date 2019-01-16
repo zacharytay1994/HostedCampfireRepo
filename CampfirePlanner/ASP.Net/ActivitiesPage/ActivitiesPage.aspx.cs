@@ -22,6 +22,8 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 lbl_pagenumber.Text = Session["session_page"].ToString();
 
                 fillGrid(Session["session_type"], Session["session_page"]);
+
+                setImgSrc();
             }
         }
 
@@ -193,6 +195,52 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
         public int Label32Update()
         {
             return Convert.ToInt32(Label32.Text);
+        }
+
+        private string getFeaturedActivity(int actID)
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("SELECT ImgLink FROM Images WHERE ActivityID = @actID", conn);
+            cmd.Parameters.AddWithValue("@actid", actID);
+
+            SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
+
+            conn.Open();
+            daActivity.Fill(result, "Images");
+            conn.Close();
+
+            if (result.Tables["Images"].Rows.Count > 0)
+                return result.Tables["Images"].Rows[0]["ImgLink"].ToString();
+            else
+                return "";
+        }
+
+        private void setImgSrc()
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Activity ORDER BY Votes DESC", conn);
+
+            SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
+
+            conn.Open();
+            daActivity.Fill(result, "Activity");
+            conn.Close();
+
+            slide1.Src = getFeaturedActivity(Convert.ToInt32(result.Tables[0].Rows[0]["ActivityID"]));
+            slide2.Src = getFeaturedActivity(Convert.ToInt32(result.Tables[0].Rows[1]["ActivityID"]));
+            slide3.Src = getFeaturedActivity(Convert.ToInt32(result.Tables[0].Rows[2]["ActivityID"]));
+            slide1Title.InnerHtml = result.Tables[0].Rows[0]["ActivityName"].ToString();
+            slide2Title.InnerHtml = result.Tables[0].Rows[1]["ActivityName"].ToString();
+            slide3Title.InnerHtml = result.Tables[0].Rows[2]["ActivityName"].ToString();
+            slide1Link.HRef = "../ActivitiesPage/ActivityDesc.aspx?actID=" + Convert.ToInt32(result.Tables[0].Rows[0]["ActivityID"]);
+            slide2Link.HRef = "../ActivitiesPage/ActivityDesc.aspx?actID=" + Convert.ToInt32(result.Tables[0].Rows[1]["ActivityID"]);
+            slide3Link.HRef = "../ActivitiesPage/ActivityDesc.aspx?actID=" + Convert.ToInt32(result.Tables[0].Rows[2]["ActivityID"]);
         }
     }
 }
