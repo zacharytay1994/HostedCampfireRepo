@@ -26,3 +26,36 @@ table {
     margin-left: auto;
     margin-right: auto;
 }
+
+td {
+    width:100px;
+}
+
+.activityGrid {
+    width: 80%;
+    min-width: 80%;
+    position: center;
+}
+
+.header {
+    background-color: lightgrey;
+    font-size: medium;
+    border-style: solid;
+    border-color: black;
+}
+
+.rows {
+    background-color: aliceblue;
+    color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
+    .rows::alternate {
+        background-color: green;
+    }
+
+    .rows:hover {
+        background-color: #CE5D5A;
+        color: #F7F6F3;
+    }

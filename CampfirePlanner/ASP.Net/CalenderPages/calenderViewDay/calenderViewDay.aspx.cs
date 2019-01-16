@@ -197,5 +197,10 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
 
             return name;
         }
+
+        protected void testview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

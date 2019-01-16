@@ -8,7 +8,7 @@
     <table>
         <tr>
             <td class="auto-style2">
-                <asp:Label ID="lblProjName" runat="server" Text="PROJECT/EVENT"></asp:Label>
+                <asp:Label ID="lblProjName" runat="server" Text="PROJECT/EVENT:"></asp:Label>
             </td>
             <td class="auto-style2">
                 <asp:Label ID="lblProjNameO" runat="server" Text="Label"></asp:Label>
@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <td class="auto-style2">
-                <asp:Label ID="lblOrganizer" runat="server" Text="ORGANIZER"></asp:Label>
+                <asp:Label ID="lblOrganizer" runat="server" Text="ORGANIZER:"></asp:Label>
             </td>
             <td class="auto-style2">
                 <asp:Label ID="lblOrganizerO" runat="server" Text="Label"></asp:Label>
@@ -25,7 +25,7 @@
         </tr>
         <tr>
             <td colspan="2">
-    <asp:ListView ID="testview" runat="server"  DataKeyNames="ActivityID">
+    <asp:ListView ID="testview" runat="server"  DataKeyNames="ActivityID"  OnSelectedIndexChanged="testview_SelectedIndexChanged">
           <LayoutTemplate>
           <table cellpadding="2" width="640px" border="1" runat="server" id="tblProducts">
             <tr runat="server">
@@ -85,10 +85,8 @@
 
     <asp:Table ID="Table1" runat="server">
     </asp:Table>
-     
-    </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="body2" runat="server">
-    <table class="w-100">
+    <br />
+    <table>
         <tr>
             <td>12 AM</td>
             <td>1 AM</td>
@@ -142,6 +140,4 @@
             <td>&nbsp;</td>
         </tr>
     </table>
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="body3" runat="server">
 </asp:Content>
