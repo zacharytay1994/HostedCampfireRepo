@@ -1,0 +1,105 @@
+﻿body {
+    width: 100%;
+    /*margin: 0 auto;
+    padding: 10px;*/
+    background-color: #ffdead;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+}
+
+p, div, li, .buttonStyle {
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    color: black;
+}
+
+h2 {
+    text-align:center;
+}
+
+.lblWelcome {  
+    display: block;
+    margin-bottom: 50px;
+    text-align:center;
+}
+
+.eventGrid {
+    width:80%;
+    min-width:80%;
+    position:center;
+}
+
+.header {
+    background-color: lightgrey;
+    font-size:medium;
+    border-style: solid;
+    border-color: black;
+}
+
+.pager {
+
+}
+
+.rows {
+    background-color: aliceblue;
+    color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
+    .rows::alternate {
+        background-color: green;
+    }
+
+    .rows:hover {
+        background-color: #CE5D5A;
+        color: #F7F6F3;
+    }
+
+.addEventBtn {
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    vertical-align: central;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    background: #ff3366;
+    display: block;
+    width: 20%;
+    outline: none;
+    border: 2px solid #ff3366;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+    .addEventbtn:hover {
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        border: 2px solid #fff;
+    }
+
+.backEventBtn {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    vertical-align: central;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    background: #ff3366;
+    display: block;
+    width: 20%;
+    outline: none;
+    border: 2px solid #ff3366;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+    .backEventBtn:hover {
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        border: 2px solid #fff;
+    }

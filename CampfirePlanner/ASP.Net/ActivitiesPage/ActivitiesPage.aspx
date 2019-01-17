@@ -101,12 +101,16 @@
     </div> 
 
     <div class="col-md-12">
-        <div style="align-self:center" class="text-center">
-                <asp:CheckBoxList Width="100%" ID="cbl_categories" runat="server" OnSelectedIndexChanged="cbl_categories_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="categoriesbox">
-                    <asp:ListItem Value="a">CategoryOne</asp:ListItem>
-                    <asp:ListItem Value="b">CategoryTwo</asp:ListItem>
-                    <asp:ListItem Value="c">CategoryThree</asp:ListItem>
-                    <asp:ListItem Value="d">CategoryFour</asp:ListItem>
+        <table style="text-align: center;">
+            <tr>
+                <asp:CheckBoxList Width="1239px" Style="text-align: left" ID="cbl_categories" runat="server" OnSelectedIndexChanged="cbl_categories_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True" BorderStyle="Solid" BorderWidth="1px" CssClass="categoriesbox">
+                    <asp:ListItem Value="a">Cooperative Games</asp:ListItem>
+                    <asp:ListItem Value="b">High Activity Games</asp:ListItem>
+                    <asp:ListItem Value="c">Quick and Easy Games</asp:ListItem>
+                    <asp:ListItem Value="d">Sports Oriented Games</asp:ListItem>
+                    <asp:ListItem Value="e">Water Games</asp:ListItem>
+                    <asp:ListItem Value="f">Nature Games</asp:ListItem>
+                    <asp:ListItem Value="g">Large Group Games</asp:ListItem>
                 </asp:CheckBoxList>
             <br />
         </div>
