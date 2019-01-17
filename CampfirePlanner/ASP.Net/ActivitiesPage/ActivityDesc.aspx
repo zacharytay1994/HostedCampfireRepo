@@ -4,140 +4,101 @@
     <link href="Css/activityDesc.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
-            text-align: center;
-            width: 469px;
-        }
-
-        .auto-style2 {
-            height: 38px;
-        }
-
-        .auto-style3 {
-            text-align: left;
-            height: 38px;
-        }
-
-        .auto-style4 {
-            color: #FFFFFF;
-            background-color: #FF3300;
+            height: 450px;
+            width: 100%;
         }
     </style>
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
-    <table class="w-100">
-        <tr>
-            <td class="auto-style1" rowspan="5">
                 <div class="col-sm-12">
-                    <%--<h1 class="text-center" style="text-align:center;">Featured Item Here</h1>--%>
-                    <div class="slideshow-container" style="text-align: center;">
+                    <%--<asp:Label ID="lbl_activityid" runat="server"></asp:Label>--%>
+                    <div id="slideshow" class="slideshow-container" style="text-align: center;">
                         <div id="slide1" class="mySlides1">
-                            <div class="numText">1 / 3</div>
-                            <a href="HomePage.aspx">
-                                <img src="../../Images/image1.jpg" style="width: 100%;" /></a>
-                            <br />
-                            <div class="text">Caption Text</div>
-                        </div>
-                        <div id="slide2" class="mySlides1">
-                            <div class="numText">2 / 3</div>
-                            <a href="HomePage.aspx">
-                                <img src="" style="width: 100%;" /></a>
-                            <br />
-                            <div class="text">Caption Text</div>
-                        </div>
-                        <div id="slide3" class="mySlides1">
-                            <div class="numText">3 / 3</div>
-                            <a href="HomePage.aspx">
-                                <img src="" style="width: 100%; visibility: hidden;" /></a>
-                            <br />
-                            <div class="text">Caption Text</div>
+                            <img id="image1" runat="server" src="" class="auto-style1" />
                         </div>
                         <a class="prev" onclick="plusSlides(-1, 0)" style="color: white;">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 0)" style="color: white;">&#10095;</a>
                     </div>
-                    <div style="text-align: center">
-                        <span class="dot1" onclick="currentSlide(1)"></span>
-                        <span class="dot1" onclick="currentSlide(2)"></span>
-                        <span class="dot1" onclick="currentSlide(3)"></span>
-                    </div>
-                    <br />
+                    <script>
+                        if (<%= slideshowCount()%> == 2) {
+                            var div = document.createElement("div");
+                            div.id = "slide2";
+                            div.className = "mySlides1";
+                            div.innerHTML += "<img src=\"<%= getImgLink()%>\" id=\"image2\" style=\" width: 100%; height: 450px;\">"
+                            document.getElementById("slideshow").appendChild(div);
+                        }
+                        else if (<%= slideshowCount()%> == 3) {
+                            var div = document.createElement("div");
+                            div.id = "slide3";
+                            div.className = "mySlides1";
+                            div.innerHTML += "<img src=\"<%= getImgLink2()%>\" id=\"image3\" style=\" width: 100%; height: 450px;\">"
+                            document.getElementById("slideshow").appendChild(div);
+                        }
+                    </script>
                     <h2 style="text-align: center;">Featured Activities</h2>
                 </div>
-            </td>
-            <td class="auto-style2">
-                <asp:Label ID="lblTitle" runat="server"></asp:Label>
-            </td>
-            <td class="auto-style2">
-                <asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')" />
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <asp:Label ID="lblDuration" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">&nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <asp:Label ID="lblDesc" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style2" colspan="2">
-                <asp:Label ID="lblLinks" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style1">Votes Displayed Here</td>
-            <td colspan="2">
-                <asp:Label ID="lblCategories" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="text-left" colspan="3">
-                <asp:Label ID="lblExp" runat="server"></asp:Label>
-                Activity ID =
-               
-                <asp:Label ID="lbl_activityid" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style3" colspan="3"></td>
-        </tr>
-        <tr>
-            <td class="auto-style3" colspan="3">Comments</td>
-        </tr>
-        <tr>
-            <td class="text-left" colspan="3">&nbsp;</td>
-        </tr>
-    </table>
+                <div style="text-align: right;">
+                    <asp:ImageButton ID="btnUpVote" runat="server" ImageUrl="~/Images/thumbs-up.png" CssClass="btnUP" Width="25px" Height="25px" OnClick="btnUpVote_Click" />
+                    
+                    <asp:ImageButton ID="btnDownVote" runat="server" ImageUrl="~/Images/dislike-thumb.png" CssClass="btnDOWN" Width="25px" Height="25px" OnClick="btnDownVote_Click" />
+                    
+                    <asp:Label ID="lblVotes" runat="server"></asp:Label>
+                </div>
+    <div style="text-align:center">
+        <asp:Label ID="lblTitle"  runat="server"></asp:Label>
+        <%--<asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')"--%> &nbsp;<asp:Label ID="lblDuration" runat="server"></asp:Label>
+                    <br />
+        <asp:Label ID="lblCategories" runat="server"></asp:Label>
+                    <br />
+        <asp:Label ID="lblDesc" runat="server"></asp:Label>
+                    <br />
+        <asp:Label ID="lblExp" runat="server"></asp:Label>
+                    <br />
+        <asp:Label ID="lblLinks" runat="server"></asp:Label>
+    </div>
+
+    
     <script>
         //Multiple slideshows
-        var slideIndex = [1, 1];
-        var slideId = ["mySlides1", "mySlides2"];
-        var dotId = ["dot1", "dot2"];
-        showSlides(1, 0);
-        showSlides(1, 1);
+        var slideIndex = 0;
+        showSlides(slideIndex);
 
-        function plusSlides(n, no) {
-            showSlides(slideIndex[no] += n, no);
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
         }
 
-        function showSlides(n, no) {
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
             var i;
-            var x = document.getElementsByClassName(slideId[no]);
-            var dots = document.getElementsByClassName(dotId[no]);
-            if (n > x.length) { slideIndex[no] = 1; }
-            if (n < 1) { slideIndex[no] = x.length; }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
+            var slides = document.getElementsByClassName("mySlides1");
+            var dots = document.getElementsByClassName("dot1");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
             }
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
-            x[slideIndex[no] - 1].style.display = "block";
-            dots[slideIndex[no] - 1].className += " active";
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides1");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
         }
     </script>
 </asp:Content>

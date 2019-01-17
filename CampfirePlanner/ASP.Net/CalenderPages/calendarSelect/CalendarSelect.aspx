@@ -50,9 +50,9 @@
                     <asp:TextBox ID="txtDayz" runat="server" ReadOnly="True" Width="53px" Height="31px">0</asp:TextBox>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:RangeValidator ID="rvDayz" runat="server" ControlToValidate="txtDayz" CssClass="auto-style1" Display="Dynamic" ErrorMessage="Number of Days Cannot Exceed 7" MaximumValue="7" MinimumValue="1"></asp:RangeValidator>
-                    &nbsp;<asp:RequiredFieldValidator ID="rfDayz" runat="server" ControlToValidate="txtEvent" CssClass="auto-style1" Display="Dynamic" ErrorMessage="Please Select At Least 1 Day"></asp:RequiredFieldValidator>
+                    &nbsp;<asp:RequiredFieldValidator ID="rfDayz" runat="server" ControlToValidate="txtDayz" CssClass="auto-style1" Display="Dynamic" ErrorMessage="Please Select At Least 1 Day"></asp:RequiredFieldValidator>
                     <br />
-                    <asp:Button ID="btnReset" runat="server" OnClick="btnReset_Click" Text="Reset" />
+                    <asp:Button ID="btnReset" runat="server" OnClick="btnReset_Click" Text="Reset" CausesValidation="False" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnCreate" runat="server" Height="33px" OnClick="btnCreate_Click" Text="Create" Width="85px" />
                     &nbsp;

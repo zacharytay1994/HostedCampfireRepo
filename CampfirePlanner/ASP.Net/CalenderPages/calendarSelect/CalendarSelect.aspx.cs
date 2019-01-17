@@ -31,6 +31,8 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
                     SelectedDates.Remove(calSelect.SelectedDate);
                 }
             }
+            else if (SelectedDates.Count() == 2 && SelectedDates.Contains(calSelect.SelectedDate))
+                SelectedDates.Remove(calSelect.SelectedDate);
 
             ViewState["SelectedDates"] = SelectedDates;
             int dayz = 0;
