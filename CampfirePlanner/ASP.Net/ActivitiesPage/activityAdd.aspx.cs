@@ -54,9 +54,20 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                     };
                     var uploadResult = _cloudinary.Upload(uploadParams);
 
-                    objActivity.activityPhoto = uploadResult.SecureUri.ToString();
+                    string imgLink = uploadResult.SecureUri.ToString();
 
                     int id = objActivity.activityAdd();
+
+                    string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+                    SqlConnection conn = new SqlConnection(strConn);
+                    SqlCommand cmd = new SqlCommand
+                             ("INSERT INTO Images (ImgLink, ActivityID) VALUES (@imglink, @actid)", conn);
+                    cmd.Parameters.AddWithValue("@imglink", imgLink);
+                    cmd.Parameters.AddWithValue("@actid", id);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
 
                     string strValues = "";
                     strValues += "name=" + activityName.Text;

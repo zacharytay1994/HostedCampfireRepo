@@ -46,7 +46,9 @@ namespace CampfirePlannerPlanner.ASP.Net.LoginRegister
                     {
                         Session["UserAuthentication"] = dr["Username"].ToString();
                         conn.Close();
-                        Response.Redirect("~/ASP.Net/HomePage/HomePage.aspx");
+                        //Response.Redirect("~/ASP.Net/HomePage/HomePage.aspx");
+                        ScriptManager.RegisterStartupScript(this, this.GetType(),
+                    "alert", "alert('Welcome back!');window.location = '/ASP.Net/HomePage/HomePage.aspx';", true);
                     }
                 }
             }
