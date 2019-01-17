@@ -31,18 +31,34 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
                     SelectedDates.Remove(calSelect.SelectedDate);
                 }
             }
+            else if (SelectedDates.Count() == 2 && SelectedDates.Contains(calSelect.SelectedDate))
+                SelectedDates.Remove(calSelect.SelectedDate);
 
             ViewState["SelectedDates"] = SelectedDates;
             int dayz = 0;
             if (SelectedDates.Count() == 2)
             {
-                dayz = (SelectedDates[0].Day - SelectedDates[1].Day);
+                dayz = (SelectedDates[0] - SelectedDates[1]).Days;
                 if (dayz < 0)
+                {
                     dayz = -dayz;
+                    lblDates.Text = SelectedDates[0].ToString("dd/MM/yyyy") + " - " + SelectedDates[1].ToString("dd/MM/yyyy");
+                }
+                else
+                    lblDates.Text = SelectedDates[1].Date.ToString("dd/MM/yyyy") + " - " + SelectedDates[0].Date.ToString("dd/MM/yyyy");
+                txtDayz.Text = (dayz+1).ToString();
             }
             else if (SelectedDates.Count() == 1)
+            {
                 dayz = 1;
-            txtDayz.Text = dayz.ToString();
+                txtDayz.Text = (dayz).ToString();
+                lblDates.Text = SelectedDates[0].ToString("dd/MM/yyyy");
+            }
+            else
+            {
+                txtDayz.Text = "0";
+                lblDates.Text = "";
+            }
         }
 
         protected void calSelect_PreRender(object sender, EventArgs e)
@@ -81,46 +97,8 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
             txtDayz.Text = "";
         }
 
-        protected void btnCreate_Click(object sender, EventArgs e)
-        {
-            if (rvDayz.IsValid)
-            {
-                DateTime startDate;
-                DateTime endDate;
-
-                if (SelectedDates.Count() > 1)
-                {
-                    if (SelectedDates[1] > SelectedDates[0])
-                    {
-                        startDate = SelectedDates[0];
-                        endDate = SelectedDates[1];
-                    }
-                    else
-                    {
-                        startDate = SelectedDates[1];
-                        endDate = SelectedDates[0];
-                    }
-                }
-                else
-                {
-                    startDate = SelectedDates[0];
-                    endDate = SelectedDates[0];
-                }
-
-                Session["startDate"] = startDate;
-                Session["endDate"] = endDate;
-                Session["evName"] = txtEvent.Text;
-
-                txtEvent.Enabled = false;
-                calSelect.Enabled = false;
-                btnReset.Enabled = false;
-                btnCreate.Enabled = false;
-                tdList.Visible = true;
-                tdList2.Visible = true;
-
-                fillUserList();
-            }
-        }
+        //protected void btnCreate_Click(object sender, EventArgs e)
+        //{ }
 
         private int getAccID()
         {
@@ -220,6 +198,44 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
 
         protected void btnEventCreate_Click(object sender, EventArgs e)
         {
+            if (rvDayz.IsValid)
+            {
+                DateTime startDate;
+                DateTime endDate;
+
+                if (SelectedDates.Count() > 1)
+                {
+                    if (SelectedDates[1] > SelectedDates[0])
+                    {
+                        startDate = SelectedDates[0];
+                        endDate = SelectedDates[1];
+                    }
+                    else
+                    {
+                        startDate = SelectedDates[1];
+                        endDate = SelectedDates[0];
+                    }
+                }
+                else
+                {
+                    startDate = SelectedDates[0];
+                    endDate = SelectedDates[0];
+                }
+
+                Session["startDate"] = startDate;
+                Session["endDate"] = endDate;
+                Session["evName"] = txtEvent.Text;
+
+                //txtEvent.Enabled = false;
+                //calSelect.Enabled = false;
+                //btnReset.Enabled = false;
+                //btnCreate.Enabled = false;
+                //tdList.Visible = true;
+                //tdList2.Visible = true;
+
+                fillUserList();
+            }
+
             Event newEvent = new Event();
             newEvent.startDate = Convert.ToDateTime(Session["startDate"]);
             newEvent.endDate = Convert.ToDateTime(Session["endDate"]);

@@ -220,6 +220,13 @@
     <Compile Include="ASP.Net\CalenderPages\calendarSelect\CalendarSelect.aspx.designer.cs">
       <DependentUpon>CalendarSelect.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ASP.Net\MasterPages\CalendarNavBar\Calendar.Master.cs">
+      <DependentUpon>Calendar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASP.Net\MasterPages\CalendarNavBar\Calendar.Master.designer.cs">
+      <DependentUpon>Calendar.Master</DependentUpon>
+    </Compile>
     <Compile Include="Classes\ActivityPage.cs" />
     <Compile Include="Classes\Activity.cs" />
     <Compile Include="ASP.Net\CalenderPages\calenderRecommend\calenderRecommend.aspx.cs">
@@ -304,11 +311,14 @@
     <Content Include="ASP.Net\ActivitiesPage\Css\activityDesc.css" />
     <Content Include="ASP.Net\ActivitiesPage\Css\activityForm.css" />
     <Content Include="ASP.Net\CalenderPages\calendarEventMain\calendarEventMain.aspx" />
+    <Content Include="ASP.Net\CalenderPages\calendarEventMain\calenderEventMain.css" />
     <Content Include="ASP.Net\CalenderPages\calendarSelect\CalendarSelect.aspx" />
+    <Content Include="ASP.Net\CalenderPages\calendarSelect\CalendarSelect.css" />
     <Content Include="ASP.Net\CalenderPages\calenderRecommend\calenderRecommend.aspx" />
-    <Content Include="ASP.Net\CalenderPages\calenderRecommend\Css\calendarRecommend.css" />
+    <Content Include="ASP.Net\CalenderPages\calenderRecommend\calenderRecommend.css" />
     <Content Include="ASP.Net\CalenderPages\calenderViewDay\calenderViewDay.ascx" />
     <Content Include="ASP.Net\CalenderPages\calenderViewDay\calenderViewDay.aspx" />
+    <Content Include="ASP.Net\CalenderPages\calenderViewDay\calenderViewDay.css" />
     <Content Include="ASP.Net\CalenderPages\calenderViewDay\testPage.html" />
     <Content Include="ASP.Net\HomePage\HomePage.aspx" />
     <Content Include="ASP.Net\LandingPage\LandingPage.aspx" />
@@ -341,6 +351,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="ASP.Net\MasterPages\ScheduleNavBar\ScheduleNested.master" />
+    <Content Include="ASP.Net\MasterPages\CalendarNavBar\Calendar.Master" />
     <None Include="Properties\PublishProfiles\CampfirePlanner2 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CampfirePlannerMVC - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CampfirePlannerMVC - Web Deploy1.pubxml" />

@@ -67,27 +67,27 @@
                 <div class="slideshow-container" style="text-align: center;">
                     <div class="mySlides1">
                         <div class="numText">1 / 3</div>
-                        <a href="HomePage.aspx">
-                            <img src="../../Images/image1.jpg" style="width: 100%;" /></a>
+                        <a runat="server" id="slide1Link" href="">
+                            <img runat="server" id="slide1" style="width: 400px; height: 350px;" /></a>
                         <br />
-                        <div class="text">Caption Text</div>
+                        <div runat="server" id="slide1Title" class="text">Caption Text</div>
                     </div> 
                     <div class="mySlides1">
                         <div class="numText">2 / 3</div>
-                        <a href="HomePage.aspx">
-                            <img src="../../Images/image2.jpg" style="width: 100%;" /></a>
+                        <a runat="server" id="slide2Link" href="">
+                            <img runat="server" id="slide2" style="width: 400px; height: 350px;" /></a>
                         <br />
-                        <div class="text">Caption Text</div>
+                        <div runat="server" id="slide2Title" class="text">Caption Text</div>
                     </div>
-                    <div class="mySlides1">
+                    <div class="mySlides1 ">
                         <div class="numText">3 / 3</div>
-                        <a href="HomePage.aspx">
-                            <img src="../../Images/image3.jpg" style="width: 100%;" /></a>
+                        <a runat="server" id="slide3Link">
+                            <img runat="server" id ="slide3" style="width: 400px; height: 350px;" /></a>
                         <br />
-                        <div class="text">Caption Text</div>
+                        <div runat="server" id="slide3Title" class="text">Caption Text</div>
                     </div>
-                    <a class="prev" onclick="plusSlides(-1, 0)" style="color: white;">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 0)" style="color: white;">&#10095;</a>
+                    <a class="prev" onclick="plusSlides(-1)" style="color: white;">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)" style="color: white;">&#10095;</a>
                 </div>
                 <div style="text-align: center">
                     <span class="dot1" onclick="currentSlide(1)"></span>
@@ -98,20 +98,22 @@
                 <h2 style="text-align: center;">Featured Activities</h2>
             </div>
         </div>
-    </div>
+    </div> 
 
     <div class="col-md-12">
         <table style="text-align: center;">
             <tr>
-                <asp:CheckBoxList Width="500px" Style="text-align: left" ID="cbl_categories" runat="server" OnSelectedIndexChanged="cbl_categories_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True" BorderStyle="Solid" BorderWidth="1px" CssClass="categoriesbox">
-                    <asp:ListItem Value="a">CategoryOne</asp:ListItem>
-                    <asp:ListItem Value="b">CategoryTwo</asp:ListItem>
-                    <asp:ListItem Value="c">CategoryThree</asp:ListItem>
-                    <asp:ListItem Value="d">CategoryFour</asp:ListItem>
+                <asp:CheckBoxList Width="1239px" Style="text-align: left" ID="cbl_categories" runat="server" OnSelectedIndexChanged="cbl_categories_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True" BorderStyle="Solid" BorderWidth="1px" CssClass="categoriesbox">
+                    <asp:ListItem Value="a">Cooperative Games</asp:ListItem>
+                    <asp:ListItem Value="b">High Activity Games</asp:ListItem>
+                    <asp:ListItem Value="c">Quick and Easy Games</asp:ListItem>
+                    <asp:ListItem Value="d">Sports Oriented Games</asp:ListItem>
+                    <asp:ListItem Value="e">Water Games</asp:ListItem>
+                    <asp:ListItem Value="f">Nature Games</asp:ListItem>
+                    <asp:ListItem Value="g">Large Group Games</asp:ListItem>
                 </asp:CheckBoxList>
-            </tr>
-
-        </table>
+            <br />
+        </div>
         <h3 style="text-align: center;">Please Select Categories to Display</h3>
         <br />
     </div>
@@ -310,7 +312,47 @@
         }*/
 
         //Multiple slideshows
-        var slideIndex = [1, 1];
+        var slideIndex = 0;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides1");
+            var dots = document.getElementsByClassName("dot1");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides1");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+        /*var slideIndex = [1, 1];
         var slideId = ["mySlides1", "mySlides2"];
         var dotId = ["dot1", "dot2"];
         showSlides(1, 0);
@@ -334,7 +376,7 @@
             }
             x[slideIndex[no] - 1].style.display = "block";
             dots[slideIndex[no] - 1].className += " active";
-        }
+        }*/
 
             //Automatic scrolling
             /*var slideIndex = 0;

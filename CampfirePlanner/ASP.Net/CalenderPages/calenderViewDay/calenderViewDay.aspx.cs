@@ -14,12 +14,13 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int eventid = Convert.ToInt32(Request.QueryString["eventID"]);
+            int eventid = 3;//Convert.ToInt32(Request.QueryString["eventID"]);
             int day = 1;
             //int eventid = 2;
 
             DataTable table = GetData(eventid, day);
-            fillTimeTable();
+            initInterface(eventid);
+            //fillTimeTable();
 
             //calenderViewDay1 myControl = (calenderViewDay1)Page.LoadControl("../calenderViewDay/calenderViewDay.ascx");
             //myControl.stringy = "StringyTest";
@@ -31,8 +32,48 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             //Table1.Rows[0].Cells.Add(c);
             //Page.Controls.Add(Page.LoadControl("../calenderViewDay/calenderViewDay.ascx"));
 
-            returnTime(table);
+            //returnTime(table);
+            lv_databind(table);
+        }
 
+        public void initInterface(int eventid)
+        {
+            // Get Data from SQL and store Data in DataTable table
+            string strConn = ConfigurationManager.ConnectionStrings
+                ["CampfireConnectionString"].ToString();
+
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand
+                ("select EventName, Username from Event INNER JOIN " +
+                "Users ON event.AccountID = Users.AccountID Where EventID = @eventid", conn);
+
+            cmd.Parameters.AddWithValue("@eventid", eventid);
+
+            DataSet result = new DataSet();
+
+            SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
+
+            conn.Open();
+
+            daActivity.Fill(result, "ActivityTable");
+
+            conn.Close();
+
+            DataTable table = result.Tables["ActivityTable"];
+
+            string organizerName = table.Rows[0]["Username"].ToString();
+            string eventName = table.Rows[0]["EventName"].ToString();
+
+            lblOrganizerO.Text = organizerName;
+            lblProjNameO.Text = eventName;
+        }
+
+        // bind data to listview
+        public void lv_databind(DataTable table)
+        {
+            testview.DataSource = table;
+            testview.DataBind();
         }
 
         // Get data of activities on specific day of event
@@ -45,7 +86,8 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             SqlConnection conn = new SqlConnection(strConn);
 
             SqlCommand cmd = new SqlCommand
-                ("SELECT * FROM EventActivities WHERE EventID = @eventid AND Day = @day", conn);
+                ("SELECT * FROM EventActivities INNER JOIN Activity ON EventActivities.ActivityID = Activity.ActivityID " +
+                "WHERE EventID = @eventid AND Day = @day ORDER BY StartTime ASC", conn);
 
             cmd.Parameters.AddWithValue("@eventid", _eventid);
             cmd.Parameters.AddWithValue("@day", _day);
@@ -154,6 +196,11 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             conn.Close();
 
             return name;
+        }
+
+        protected void testview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
