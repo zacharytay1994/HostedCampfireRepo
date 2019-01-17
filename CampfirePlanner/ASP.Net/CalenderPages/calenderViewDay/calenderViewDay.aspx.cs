@@ -14,7 +14,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int eventid = 3;//Convert.ToInt32(Request.QueryString["eventID"]);
+            int eventid = Convert.ToInt32(Request.QueryString["eventID"]);
             int day = 1;
             //int eventid = 2;
 
