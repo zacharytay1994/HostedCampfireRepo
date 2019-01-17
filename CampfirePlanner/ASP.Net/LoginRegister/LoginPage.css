@@ -1,18 +1,14 @@
-﻿body1 {
-    background-image: url(test.jpg);
-    background-size: auto;
+﻿body {
+    background-image: url('../../Images/loginbackground.jpg');
+    background-size:cover;
     background-attachment: fixed;
-    background-color: darkorange;
-}
-
-.auto-style4 {
-    height: 30px;
-    width: 566px;
+    margin:0;
 }
 
 .auto-style5 {
     height: 30px;
     width: 120px;
+    color:white;
 }
 
 .auto-style7 {
@@ -41,32 +37,108 @@
 
 .auto-style12 {
     height: 40px;
-    width: 566px;
+    /*width: 566px;*/
 }
 
+.emailtb {
+    background-image: url('LoginImages/m.png');
+    background-position: left center;
+    background-position-x: 8px;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.pwtb {
+    background-image: url('LoginImages/l.png');
+    background-position: left center;
+    background-position-x: 8px;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+}
+
+.loginform {
+    padding: 80px 0px 0px 0px;
+}
+
+.top-pic {
+    width: 130px;
+    height: 130px;
+    display: block;
+    -webkit-transform: rotate(45deg) translate3d(0, 0, 0);
+    -moz-transform: rotate(45deg) translate3d(0, 0, 0);
+    -ms-transform: rotate(45deg) translate3d(0, 0, 0);
+    -o-transform: rotate(45deg) translate3d(0, 0, 0);
+    transform: rotate(45deg) translate3d(0, 0, 0);
+    margin: 0 auto 4em;
+    background: #fff;
+    position: relative;
+}
+
+    .top-pic span {
+        border: 2px solid #F36;
+        width: 105px;
+        height: 105px;
+        display: block;
+        margin: 0px auto;
+        position: absolute;
+        top: 11px;
+        left: 11px;
+    }
+
+        .top-pic span img {
+            -webkit-transform: rotate(-45deg) translate3d(0, 0, 0);
+            -moz-transform: rotate(-45deg) translate3d(0, 0, 0);
+            -ms-transform: rotate(-45deg) translate3d(0, 0, 0);
+            -o-transform: rotate(-45deg) translate3d(0, 0, 0);
+            transform: rotate(-45deg) translate3d(0, 0, 0);
+            margin: 20px 0 0 20px;
+        }
+
 .textbox {
-    border-radius: 5px;
+    /*border-radius: 5px;*/
+    background-color:black;
+    border:none;
+    color:white;
+    margin-bottom: 20px;
+    /*-webkit-filter: blur(1px);*/
+    /*filter: url(100px);*/
 }
 
 .loginbutton {
-    background-color: transparent;
-    border-style: solid;
-    border-width: thin;
-    border-color: black;
-    color: black;
-    font-size: x-large;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 14px;
-    padding-right: 14px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    padding: 13px 0;
+    background: #ff3366;
+    display: inline-block;
+    width: 20%;
+    outline: none;
+    border: 2px solid #ff3366;
+    cursor: pointer;
+    text-transform: uppercase;
 }
 
+    .loginbutton:hover {
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        border: 2px solid #fff;
+    }
+
 .hypercss {
-    color: black;
+    color: white;
 }
 
     .hypercss:hover {
-        color: black;
+        color: white;
+        text-decoration:underline;
     }
 
 p.loginheader {
@@ -76,8 +148,8 @@ p.loginheader {
 }
 
 table {
-    width: 77%;
-    margin-left: 23%;
+    width: 100%;
+    /*margin-right:23%;*/
 }
 
 tr {

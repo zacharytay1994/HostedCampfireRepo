@@ -322,6 +322,8 @@
     <Content Include="ASP.Net\CalenderPages\calenderViewDay\testPage.html" />
     <Content Include="ASP.Net\HomePage\HomePage.aspx" />
     <Content Include="ASP.Net\LandingPage\LandingPage.aspx" />
+    <Content Include="ASP.Net\LoginRegister\LoginImages\l.png" />
+    <Content Include="ASP.Net\LoginRegister\LoginImages\m.png" />
     <Content Include="ASP.Net\LoginRegister\LoginPage.aspx" />
     <Content Include="ASP.Net\LoginRegister\LoginPage.css" />
     <Content Include="ASP.Net\LoginRegister\RegisterPage.aspx" />
@@ -357,6 +359,8 @@
     <Content Include="Images\image1.jpg" />
     <Content Include="Images\image2.jpg" />
     <Content Include="Images\image3.jpg" />
+    <Content Include="Images\loginbackground.jpg" />
+    <Content Include="Images\loginpic.png" />
     <Content Include="Images\Logo_sm.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
