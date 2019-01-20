@@ -14,7 +14,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "Welcome, " + Session["UserAuthentication"].ToString();
+            lblWelcome.Text = "Welcome to your Events Page, " + Session["UserAuthentication"].ToString();
             displayEvents();
         }              
 

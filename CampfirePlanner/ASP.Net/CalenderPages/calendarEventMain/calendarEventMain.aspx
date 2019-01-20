@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="calendarEventMain.aspx.cs" Inherits="CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain.calendarEventMain" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="calenderEventMain.css" rel="stylesheet" />
+    <link href="calenderEventMain.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:Extra-Bold" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
     <style type="text/css">
@@ -8,8 +8,9 @@
             display: block;
             margin-bottom: 50px;
             text-align: center;
-            font-family: Arial;
+            font-family: Georgia;
             text-decoration: underline;
+            padding-top: 10px;
         }
     </style>
 </asp:Content>
@@ -19,7 +20,7 @@
         <asp:Label ID="lblWelcome" runat="server" CssClass="auto-style2" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
     </div>
     <div>
-        <h2>Current Events</h2>
+        <h2 style="font-family:Georgia; font-weight: bold; text-align: left; border-bottom:solid; border-left: solid; border-left-width: 20px; border-color:dodgerblue; padding-left:10px; width: 90%; margin-left: 5%;">Current Events</h2>
         <asp:GridView ID="gvEvents" runat="server" EmptyDataText="There are no Events!" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" AutoGenerateColumns="False" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" OnSelectedIndexChanged="gvEvents_SelectedIndexChanged">
             <%--<AlternatingRowStyle BackColor="White" />--%>
             <Columns>
@@ -72,7 +73,6 @@
         </asp:GridView>
     </div>
     </main>
-    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="body2" runat="server">
     <main>

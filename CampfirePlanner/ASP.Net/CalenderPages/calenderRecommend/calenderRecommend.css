@@ -1,35 +1,30 @@
 ﻿body {
-
+    background-color: #ffdead;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
 }
 
 h1 {
     text-align: center;
 }
 
-body {
-    width: 60%;
-    margin: 0 auto;
-    padding: 10px;
-}
-
 .border {
     border: solid;
     border-width: thin;
-    background-image: url("/Images/Ex30.png");
+    /*background-image: url("/Images/Ex30.png");*/
 }
 
 p, div, li, .buttonStyle {
     font-family: 'Lato', Helvetica, Arial, sans-serif;
-    color: white;
+    color: black;
 }
 
-form {
+/*form {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: black;
     padding: 30px;
     margin: auto;
     width: 70%;
-}
+}*/
 
 .submitButton, .buttonStyle {
     display: inline-block;
@@ -56,14 +51,13 @@ form {
 
 .col-25 {
     float: left;
-    width: 25%;
     margin-top: 6px;
 }
 
 .col-75 {
     float: left;
-    width: 75%;
     margin-top: 6px;
+    width: 75%;
 }
 
 /* Clear floats after the columns */
@@ -90,4 +84,26 @@ input[type=text]:focus, select:focus, textarea:focus {
 
 .textbox {
     border-radius: 5px;
+}
+
+.fronts {
+    /*width: 400px;*/
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+
+.titles {
+    /*height: 200px;
+    width: 400px;*/
+    position: fixed;
+    top: 75%;
+    left: 10%;
+    margin-top: -100px;
+}
+
+.recbuttons {
+  
 }

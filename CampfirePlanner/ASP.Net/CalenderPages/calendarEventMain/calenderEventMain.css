@@ -12,7 +12,9 @@ p, div, li, .buttonStyle {
 }
 
 h2 {
-    text-align:center;
+    text-align: center;
+    font-family: Georgia;
+    font-weight: bold;
 }
 
 .lblWelcome {  
@@ -103,3 +105,11 @@ h2 {
         -o-transition: all 0.3s ease;
         border: 2px solid #fff;
     }
+
+.auto-style2 {
+    display: block;
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: Georgia;
+    text-decoration: underline;
+}
