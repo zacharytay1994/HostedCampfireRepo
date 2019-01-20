@@ -3,21 +3,30 @@
 }
 
 body {
-    font-family: Verdana,sans-serif;
+    /*font-family: Verdana,sans-serif;
     color: white;
     font-size: 16px;
     margin: 0 auto;
     background-color: #752900;
-    background-image: url('../Images/background.jpeg');
+    background-image: url('../Images/background.jpeg');*/
+    background-color: #ffdead;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
 }
 
 h2 {
-    text-align: center;
+    text-align: left;
+    margin-left: 1%;
+    border-left:solid;
+    border-bottom:solid;
+    border-color:dodgerblue;
+    border-left-width: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
 }
 
 .featured {
-    width: 100%;
-    position: relative;
+    /*width: 100%;*/
+    /*position: relative;*/
     margin: auto;
 }
 
@@ -53,7 +62,7 @@ td {
     }
 
 .clist {
-    width: 100%;
+    /*width: 100%;*/
 }
 
 /*-----SlideShow-----*/
@@ -108,7 +117,7 @@ img {
     padding: 8px 12px;
     position: absolute;
     bottom: 8px;
-    width: 100%;
+    /*width: 100%;*/
     text-align: center;
 }
 /*Num Text*/

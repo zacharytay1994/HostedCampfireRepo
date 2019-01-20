@@ -1,7 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NavBar.ascx.cs" Inherits="CampfirePlannerPlanner.ASP.Net.MasterPages.MainNavBar.NavBar" %>
-<nav class="navbar navbar-expand-md navbar-light" style="background-color:aliceblue">
+<style>
+    a:hover{
+        background-color: lightblue;
+    }
+</style>
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:lightskyblue; border-bottom:solid; border-color:darkblue">
     <!-- The brand(or icon) of the navbar -->
-    <a class="navbar-brand" href="/ASP.Net/HomePage/HomePage.aspx" style="font-size: 32px; font-weight: bold; color: red;">CampfirePlanner
+    <a class="navbar-brand" href="/ASP.Net/HomePage/HomePage.aspx" style="font-size: 32px; font-weight: bold; color: salmon; font-family:Garamond;">CampfirePlanner
     </a>
     <!-- Toggle/collapsible Button, also known as hamburger button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar">
@@ -12,13 +17,13 @@
         <!-- Links that are aligned to the left, mr-auto: right margin auto-adjusted -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx">Planner</a>
+                <a class="nav-link" href="/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx" style="border-left:solid; border-color:dodgerblue; font-family:'Bodoni MT'; color: black;">Planner</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/ASP.Net/ActivitiesPage/ActivitiesPage.aspx">Activities</a>
+                <a class="nav-link" href="/ASP.Net/ActivitiesPage/ActivitiesPage.aspx" style="border-left:solid; border-color:dodgerblue; font-family:'Bodoni MT'; color: black;">Activities</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="#" style="border-left:solid; border-color:dodgerblue; font-family:'Bodoni MT'; color: black; ">About Us</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">

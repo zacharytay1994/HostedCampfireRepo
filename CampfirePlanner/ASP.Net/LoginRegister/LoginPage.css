@@ -1,8 +1,10 @@
 ﻿body {
-    background-image: url('../../Images/loginbackground.jpg');
+    /*background-image: url('../../Images/loginbackground.jpg');
     background-size:cover;
     background-attachment: fixed;
-    margin:0;
+    margin:0;*/
+    background-color: #ffdead;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
 }
 
 .auto-style5 {
@@ -41,14 +43,14 @@
 }
 
 .emailtb {
-    background-image: url('LoginImages/m.png');
+    /*background-image: url('LoginImages/m.png');
     background-position: left center;
     background-position-x: 8px;
     background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 0.7);
     border: none;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 20px;*/
 }
 
 .pwtb {
@@ -162,4 +164,42 @@ td {
 
 p.hlink, p.login {
     text-align: center;
+}
+
+.inputboxone {
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 65%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+
+.inputboxtwo {
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+
+.loginbutton {
+    width: 200px;
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+}
+
+.hlink {
+    width: 400px;
+    position: fixed;
+    top: 95%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
 }

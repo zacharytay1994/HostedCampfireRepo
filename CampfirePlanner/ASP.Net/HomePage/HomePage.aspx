@@ -19,75 +19,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <div class="scrollUp">
         <br />
-&nbsp;&nbsp;&nbsp;
+            <%--&nbsp;&nbsp;&nbsp;--%>
         <input type="submit" class="scrollButton" value="Top" />
     </div>
-
-    <div class="featured">
-        <!--Featured Activities-->
-        <br />
-        <h2>Featured Activities</h2>
-        <div class="slideshow-container" style="text-align:center;">
-            <div class="mySlides1">
-                <div class="numText">1 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image1.jpg" style="width:100%;" /></a>
-                <br />
-                <div class="text">Caption Text</div>
-            </div>
-            <div class="mySlides1">
-                <div class="numText">2 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image2.jpg" style="width:100%;" /></a>
-                <br />
-                <div class="text">Caption Text</div>
-            </div>
-            <div class="mySlides1">
-                <div class="numText">3 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image3.jpg" style="width:100%;" /></a>
-                <br />
-            <div class="text">Caption Text</div>
-            </div>
-            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-        </div>
-        <div style="text-align:center">
-            <span class="dot1" onclick="currentSlide(1)"></span> 
-            <span class="dot1" onclick="currentSlide(2)"></span> 
-            <span class="dot1" onclick="currentSlide(3)"></span> 
-        </div>
-        <br />
-
-        <!--Featured Schedules-->
-        <h2>Suggested Schedules</h2>
-        <div class="slideshow-container" style="text-align:center;">
-            <div class="mySlides2">
-                <div class="numText">1 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image1.jpg" style="width:100%;" /></a>
-                <div class="text">Caption Text</div>
-            </div>
-            <div class="mySlides2">
-                <div class="numText">2 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image2.jpg" style="width:100%;" /></a>
-                <div class="text">Caption Text</div>
-            </div>
-            <div class="mySlides2">
-                <div class="numText">3 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image3.jpg" style="width:100%;" /></a>
-                <div class="text">Caption Text</div>
-            </div>
-            <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-        </div>
-        <div style="text-align:center">
-            <span class="dot2" onclick="currentSlide(1)"></span> 
-            <span class="dot2" onclick="currentSlide(2)"></span> 
-            <span class="dot2" onclick="currentSlide(3)"></span> 
-        </div>
-        <br />
-    </div>
-
-</asp:Content>
-
-<asp:Content ID="Content3" ContentPlaceHolderID="body2" runat="server">
     <div id="main">
         <div class="row">
             <div class="col-sm-12">
@@ -171,6 +105,72 @@
                     </div>
                 </div>
             </div>
+    </div>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="body2" runat="server">
+    <div class="featured">
+        <!--Featured Activities-->
+        <%--<br />--%>
+        <h2>Featured Activities</h2>
+        <div class="slideshow-container" style="text-align:center;">
+            <div class="mySlides1">
+                <div class="numText">1 / 3</div>
+                <a href="HomePage.aspx"><img src="../../Images/image1.jpg" style="width:80%"/></a>
+                <br />
+                <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides1">
+                <div class="numText">2 / 3</div>
+                <a href="HomePage.aspx"><img src="../../Images/image2.jpg" style="width:80%;" /></a>
+                <br />
+                <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides1">
+                <div class="numText">3 / 3</div>
+                <a href="HomePage.aspx"><img src="../../Images/image3.jpg" style="width:80%;" /></a>
+                <br />
+            <div class="text">Caption Text</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+        </div>
+        <div style="text-align:center">
+            <span class="dot1" onclick="currentSlide(1)"></span> 
+            <span class="dot1" onclick="currentSlide(2)"></span> 
+            <span class="dot1" onclick="currentSlide(3)"></span> 
+        </div>
+        <br />
+
+        <!--Featured Schedules-->
+        <h2>Suggested Schedules</h2>
+        <div class="slideshow-container" style="text-align:center;">
+            <div class="mySlides2">
+                <div class="numText">1 / 3</div>
+                <a href="HomePage.aspx"><img src="../../Images/image1.jpg" style="width:80%;" /></a>
+                <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides2">
+                <div class="numText">2 / 3</div>
+                <a href="HomePage.aspx"><img src="../../Images/image2.jpg" style="width:80%;" /></a>
+                <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides2">
+                <div class="numText">3 / 3</div>
+                <a href="HomePage.aspx"><img src="../../Images/image3.jpg" style="width:80%;" /></a>
+                <div class="text">Caption Text</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+        </div>
+        <div style="text-align:center">
+            <span class="dot2" onclick="currentSlide(1)"></span> 
+            <span class="dot2" onclick="currentSlide(2)"></span> 
+            <span class="dot2" onclick="currentSlide(3)"></span> 
+        </div>
+        <br />
+    </div>
+
         <!---Scripts--->
         <script>
           //Single slideshow
@@ -269,7 +269,6 @@
                 window.scrollTo(0, 0);
             };
         </script>
-    </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="body3" runat="server">
     <!--Category Bar-->
