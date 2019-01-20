@@ -15,18 +15,18 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
         protected void Page_Load(object sender, EventArgs e)
         {
             int eventid = Convert.ToInt32(Request.QueryString["eventID"]);
-            //int day = 1;
+            int day = 1;
             //int eventid = 2;
 
-            if (!Page.IsPostBack)
-            {
-                for (int i = 1; i <= getNumberOfDays(eventid); i++)
-                {
-                    rblDay.Items.Add(new ListItem("Day " + Convert.ToString(i), Convert.ToString(i)));
-                }
-            }
+            //if (!Page.IsPostBack)
+            //{
+            //    for (int i = 1; i <= getNumberOfDays(eventid); i++)
+            //    {
+            //        rblDay.Items.Add(new ListItem("Day " + Convert.ToString(i), Convert.ToString(i)));
+            //    }
+            //}
 
-            int day = Convert.ToInt32(Session["day"]);
+            //int day = Convert.ToInt32(Session["day"]);
 
 
             DataTable table = GetData(eventid, day);
