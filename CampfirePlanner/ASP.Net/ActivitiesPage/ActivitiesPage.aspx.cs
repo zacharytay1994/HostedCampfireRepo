@@ -16,7 +16,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
         {
             if (!Page.IsPostBack)
             {
-                List<string> typesList = new List<string> { };
+                List<string> typesList = new List<string> { "a" };
                 Session["session_type"] = typesList;
                 Session["session_page"] = 0;
                 lbl_pagenumber.Text = Session["session_page"].ToString();

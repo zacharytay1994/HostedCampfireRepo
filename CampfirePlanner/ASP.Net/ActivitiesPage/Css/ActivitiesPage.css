@@ -1,22 +1,35 @@
 ﻿body {
-    background-color: #752900;
-    color: white;
+    background-color: #ffdead;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
 }
 h1 {
     border: solid;
 }
 
-p {
-    border: solid;
+h2 {
+    text-align: left;
+    margin-left: 1%;
+    border-left: solid;
+    border-bottom: solid;
+    border-color: dodgerblue;
+    border-left-width: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-family: Georgia;
+    width: 95%;
 }
 
+p{
+    margin-left:1%;
+}
 .col-md-2 {
     border: thin solid;
     border-radius: 7px;
     margin-left: 70px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: #ff8f2d;
+    background-color: #5A3E2A;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
 }
 
 /*-----SlideShow-----*/
@@ -127,4 +140,25 @@ img {
 #cbl_categories {
     margin-left:auto;
     margin-right:auto;
+}
+
+.textinbox{
+    color:salmon;
+    font-weight:bold;
+}
+
+.buttonasp{
+    border-radius:10px;
+}
+
+.asptext {
+    font-weight: bold;
+    font-family: "Segoe UI";
+}
+
+.categoriesbox{
+}
+
+.row{
+    /*width: 95%;*/
 }

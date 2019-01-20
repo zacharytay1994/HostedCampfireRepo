@@ -20,7 +20,9 @@
 
         .auto-style4 {
             font-family: "Segoe UI";
-            font-size: x-small;
+            font-size:small;
+            color: lightgrey;
+            font-weight:bold;
         }
     </style>
     <script>
@@ -60,8 +62,192 @@
             return false; //Redirect
         }
     </script>
-    <div class="title">
+    <h2 style="margin-top:10px;">Activities</h2>
+    <p>Please Select Categories to Display.</p>
+    <div class="col-md-12" style="border-bottom:solid; border-color:salmon; margin-left:1%; width:95%;">
+        <table style="text-align: center;">
+            <tr>
+                <asp:CheckBoxList Width="1239px" Style="text-align: left" ID="cbl_categories" runat="server" OnSelectedIndexChanged="cbl_categories_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="categoriesbox">
+                    <asp:ListItem Selected="tr" Value="a">Cooperative Games</asp:ListItem>
+                    <asp:ListItem Value="b">High Activity Games</asp:ListItem>
+                    <asp:ListItem Value="c">Quick and Easy Games</asp:ListItem>
+                    <asp:ListItem Value="d">Sports Oriented Games</asp:ListItem>
+                    <asp:ListItem Value="e">Water Games</asp:ListItem>
+                    <asp:ListItem Value="f">Nature Games</asp:ListItem>
+                    <asp:ListItem Value="g">Large Group Games</asp:ListItem>
+                </asp:CheckBoxList>   
+        </table>
+        <br />
+    </div>
+    <div class="container">
         <div class="row">
+            <div onclick="redirect(this.id)" class="col-md-2" id="4" style="border: 3px solid black; background-image: url(<%= getImage()%>)">
+                <a href="ActivityDesc.aspx">
+                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
+                <table class="box" style="width: 100%">
+                    <tr>
+                        <td class="auto-style3"><strong>
+                            <asp:Label ID="Label1" runat="server" CssClass="textinbox"></asp:Label>
+                        </strong></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label2" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label4" runat="server" Text="1" Visible="False"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+                <%--<asp:Button runat="server" width="100%" ID="Button0" OnClick="Button0_Click" Text="Let's GO!" />--%>
+            </div>
+
+            <div onclick="redirect(this.id)" class="col-md-2" id="8" style="border: 3px solid black;">
+                <a href="ActivityDesc.aspx">
+                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
+                <table class="box" style="width: 100%">
+                    <tr>
+                        <td><strong>
+                            <asp:Label ID="Label5" runat="server" CssClass="textinbox"></asp:Label>
+                        </strong></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label6" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label8" runat="server" Text="2" Visible="False"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+                <%--<asp:Button runat="server" width="100%" ID="Button1" onclick="Button1_Click" Text="Let's GO!" />--%>
+            </div>
+
+            <div onclick="redirect(this.id)" class="col-md-2" id="12" style="border: 3px solid black;">
+                <a href="ActivityDesc.aspx">
+                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
+                <table class="box" style="width: 100%">
+                    <tr>
+                        <td><strong>
+                            <asp:Label ID="Label9" runat="server" CssClass="textinbox"></asp:Label>
+                        </strong></td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style1">
+                            <asp:Label ID="Label10" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label12" runat="server" Text="3" Visible="False"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+                <%--<asp:Button runat="server" width="100%" ID="Button2" onclick="Button2_Click" Text="Let's GO!" />--%>
+            </div>
+
+            <div onclick="redirect(this.id)" class="col-md-2" id="16" style="border: 3px solid black;">
+                <a href="ActivityDesc.aspx">
+                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
+                <table class="box" style="width: 100%">
+                    <tr>
+                        <td><strong>
+                            <asp:Label ID="Label13" runat="server" CssClass="textinbox"></asp:Label>
+                        </strong></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label14" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label16" runat="server" Text="4" Visible="False"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+                <%--<asp:Button runat="server" width="100%" ID="Button3" onclick="Button3_Click" Text="Let's GO!" />--%>
+            </div>
+        </div>
+        <div class="row">
+            <div onclick="redirect(this.id)" class="col-md-2" id="20" style="border: 3px solid black;">
+                <a href="ActivityDesc.aspx">
+                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
+                <table class="box" style="width: 100%">
+                    <tr>
+                        <td><strong>
+                            <asp:Label ID="Label17" runat="server" CssClass="textinbox"></asp:Label>
+                        </strong></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label18" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label20" runat="server" Text="5" Visible="False"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+                <%--<asp:Button runat="server" width="100%" ID="Button4" onclick="Button4_Click" Text="Let's GO!" />--%>
+            </div>
+
+            <div onclick="redirect(this.id)" class="col-md-2" id="24" style="border: 3px solid black;">
+                <a href="ActivityDesc.aspx">
+                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
+                <table class="box" style="width: 100%">
+                    <tr>
+                        <td><strong>
+                            <asp:Label ID="Label21" runat="server" CssClass="textinbox"></asp:Label>
+                        </strong></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label22" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label24" runat="server" Text="6" Visible="False"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+                <%-- <asp:Button runat="server" width="100%" ID="Button5" onclick="Button5_Click" Text="Let's GO!" />--%>
+            </div>
+
+            <div onclick="redirect(this.id)" class="col-md-2" id="28" style="border: 3px solid black;">
+                <a href="ActivityDesc.aspx">
+                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
+                <table class="box" style="width: 100%">
+                    <tr>
+                        <td class="auto-style2"><strong>
+                            <asp:Label ID="Label25" runat="server" CssClass="textinbox"></asp:Label>
+                        </strong></td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <asp:Label ID="Label26" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label28" runat="server" Text="7" Visible="False"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+                <%-- <asp:Button runat="server" width="100%" ID="Button6" onclick="Button6_Click" Text="Let's GO!" />--%>
+            </div>
+
+            <div onclick="redirect(this.id)" class="col-md-2" style="border: 3px solid black;">
+                <a href="ActivityDesc.aspx">
+                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
+                <table class="box" style="width: 100%;">
+                    <tr>
+                        <td><strong>
+                            <asp:Label ID="Label29" runat="server" CssClass="textinbox"></asp:Label>
+                        </strong></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label30" runat="server" CssClass="auto-style4"></asp:Label>
+                            <asp:Label ID="Label32" runat="server" Text="8" Visible="False"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+                <%--<asp:Button runat="server" width="100%" ID="Button7" onclick="Button7_Click" text="Let's GO!"/>--%>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="text-align: center;">
+        <asp:Button ID="btn_previous" runat="server" Text="Previous" OnClick="btn_previous_Click" CssClass="buttonasp" />
+        <asp:Button ID="btn_next" runat="server" Text="Next" OnClick="btn_next_Click" CssClass="buttonasp"/>
+        <br>
+        <b>Page:</b>
+        <asp:Label ID="lbl_pagenumber" runat="server" Text="Label" CssClass="asptext"></asp:Label>
+        <br />
+        <asp:Label ID="lblID" runat="server" CssClass="asptext"></asp:Label>
+        <br />
+    </div>
+    <h2>Featured Activities</h2>
+    <div class="title">
+        <div>
             <div class="col-sm-12">
                 <%--<h1 class="text-center" style="text-align:center;">Featured Item Here</h1>--%>
                 <div class="slideshow-container" style="text-align: center;">
@@ -95,195 +281,9 @@
                     <span class="dot1" onclick="currentSlide(3)"></span>
                 </div>
                 <br />
-                <h2 style="text-align: center;">Featured Activities</h2>
             </div>
         </div>
     </div> 
-
-    <div class="col-md-12">
-        <table style="text-align: center;">
-            <tr>
-                <asp:CheckBoxList Width="1239px" Style="text-align: left" ID="cbl_categories" runat="server" OnSelectedIndexChanged="cbl_categories_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True" BorderStyle="Solid" BorderWidth="1px" CssClass="categoriesbox">
-                    <asp:ListItem Value="a">Cooperative Games</asp:ListItem>
-                    <asp:ListItem Value="b">High Activity Games</asp:ListItem>
-                    <asp:ListItem Value="c">Quick and Easy Games</asp:ListItem>
-                    <asp:ListItem Value="d">Sports Oriented Games</asp:ListItem>
-                    <asp:ListItem Value="e">Water Games</asp:ListItem>
-                    <asp:ListItem Value="f">Nature Games</asp:ListItem>
-                    <asp:ListItem Value="g">Large Group Games</asp:ListItem>
-                </asp:CheckBoxList>
-            <br />
-        </div>
-        <h3 style="text-align: center;">Please Select Categories to Display</h3>
-        <br />
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div onclick="redirect(this.id)" class="col-md-2" id="4" style="border: 3px solid black; background-image: url(<%= getImage()%>)">
-                <a href="ActivityDesc.aspx">
-                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
-                <table class="box" style="width: 100%">
-                    <tr>
-                        <td class="auto-style3"><strong>
-                            <asp:Label ID="Label1" runat="server"></asp:Label>
-                        </strong></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="Label2" runat="server" CssClass="auto-style4"></asp:Label>
-                            <asp:Label ID="Label4" runat="server" Text="1" Visible="False"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
-                <%--<asp:Button runat="server" width="100%" ID="Button0" OnClick="Button0_Click" Text="Let's GO!" />--%>
-            </div>
-
-            <div onclick="redirect(this.id)" class="col-md-2" id="8" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
-                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
-                <table class="box" style="width: 100%">
-                    <tr>
-                        <td><strong>
-                            <asp:Label ID="Label5" runat="server"></asp:Label>
-                        </strong></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="Label6" runat="server" CssClass="auto-style4"></asp:Label>
-                            <asp:Label ID="Label8" runat="server" Text="2" Visible="False"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
-                <%--<asp:Button runat="server" width="100%" ID="Button1" onclick="Button1_Click" Text="Let's GO!" />--%>
-            </div>
-
-            <div onclick="redirect(this.id)" class="col-md-2" id="12" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
-                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
-                <table class="box" style="width: 100%">
-                    <tr>
-                        <td><strong>
-                            <asp:Label ID="Label9" runat="server"></asp:Label>
-                        </strong></td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style1">
-                            <asp:Label ID="Label10" runat="server" CssClass="auto-style4"></asp:Label>
-                            <asp:Label ID="Label12" runat="server" Text="3" Visible="False"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
-                <%--<asp:Button runat="server" width="100%" ID="Button2" onclick="Button2_Click" Text="Let's GO!" />--%>
-            </div>
-
-            <div onclick="redirect(this.id)" class="col-md-2" id="16" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
-                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
-                <table class="box" style="width: 100%">
-                    <tr>
-                        <td><strong>
-                            <asp:Label ID="Label13" runat="server"></asp:Label>
-                        </strong></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="Label14" runat="server" CssClass="auto-style4"></asp:Label>
-                            <asp:Label ID="Label16" runat="server" Text="4" Visible="False"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
-                <%--<asp:Button runat="server" width="100%" ID="Button3" onclick="Button3_Click" Text="Let's GO!" />--%>
-            </div>
-        </div>
-        <div class="row">
-            <div onclick="redirect(this.id)" class="col-md-2" id="20" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
-                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
-                <table class="box" style="width: 100%">
-                    <tr>
-                        <td><strong>
-                            <asp:Label ID="Label17" runat="server"></asp:Label>
-                        </strong></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="Label18" runat="server" CssClass="auto-style4"></asp:Label>
-                            <asp:Label ID="Label20" runat="server" Text="5" Visible="False"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
-                <%--<asp:Button runat="server" width="100%" ID="Button4" onclick="Button4_Click" Text="Let's GO!" />--%>
-            </div>
-
-            <div onclick="redirect(this.id)" class="col-md-2" id="24" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
-                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
-                <table class="box" style="width: 100%">
-                    <tr>
-                        <td><strong>
-                            <asp:Label ID="Label21" runat="server"></asp:Label>
-                        </strong></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="Label22" runat="server" CssClass="auto-style4"></asp:Label>
-                            <asp:Label ID="Label24" runat="server" Text="6" Visible="False"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
-                <%-- <asp:Button runat="server" width="100%" ID="Button5" onclick="Button5_Click" Text="Let's GO!" />--%>
-            </div>
-
-            <div onclick="redirect(this.id)" class="col-md-2" id="28" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
-                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
-                <table class="box" style="width: 100%">
-                    <tr>
-                        <td class="auto-style2"><strong>
-                            <asp:Label ID="Label25" runat="server"></asp:Label>
-                        </strong></td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style2">
-                            <asp:Label ID="Label26" runat="server" CssClass="auto-style4"></asp:Label>
-                            <asp:Label ID="Label28" runat="server" Text="7" Visible="False"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
-                <%-- <asp:Button runat="server" width="100%" ID="Button6" onclick="Button6_Click" Text="Let's GO!" />--%>
-            </div>
-
-            <div onclick="redirect(this.id)" class="col-md-2" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
-                    <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
-                <table class="box" style="width: 100%;">
-                    <tr>
-                        <td><strong>
-                            <asp:Label ID="Label29" runat="server"></asp:Label>
-                        </strong></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="Label30" runat="server" CssClass="auto-style4"></asp:Label>
-                            <asp:Label ID="Label32" runat="server" Text="8" Visible="False"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
-                <%--<asp:Button runat="server" width="100%" ID="Button7" onclick="Button7_Click" text="Let's GO!"/>--%>
-            </div>
-        </div>
-    </div>
-    <div class="container" style="text-align: center;">
-        <asp:Button ID="btn_previous" runat="server" Text="Previous" OnClick="btn_previous_Click" />
-        <asp:Button ID="btn_next" runat="server" Text="Next" OnClick="btn_next_Click" />
-        <br>
-        Page:
-        <asp:Label ID="lbl_pagenumber" runat="server" Text="Label"></asp:Label>
-        <br />
-        <asp:Label ID="lblID" runat="server"></asp:Label>
-        <br />
-    </div>
     <!---Scripts--->
     <script>
         //Single slideshow
