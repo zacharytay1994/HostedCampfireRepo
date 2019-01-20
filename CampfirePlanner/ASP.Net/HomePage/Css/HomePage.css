@@ -22,11 +22,37 @@ h2 {
     border-left-width: 20px;
     padding-left: 10px;
     padding-bottom: 10px;
+    font-family: Georgia;
+}
+
+p{
+    text-align: left;
+    margin-left: 1%;
+}
+
+.captiontext {
+    text-align: center;
+    border-left: solid;
+    border-color: dodgerblue;
+    font-weight: bold;
+    font-family: Georgia;
+}
+
+.main {
+    width: 95%;
+    position: relative;
+    margin: auto;
+}
+
+    .main > div {
+        text-align: center;
+        font-size: 14px;
+        line-height: 30px;
 }
 
 .featured {
-    /*width: 100%;*/
-    /*position: relative;*/
+    width: 95%;
+    position: relative;
     margin: auto;
 }
 
@@ -117,8 +143,12 @@ img {
     padding: 8px 12px;
     position: absolute;
     bottom: 8px;
-    /*width: 100%;*/
+    width: 100%;
     text-align: center;
+    /*display: block;*/
+    background-color: lightsalmon;
+    border-radius: 15px;
+    font-weight: bold;
 }
 /*Num Text*/
 .numText {
