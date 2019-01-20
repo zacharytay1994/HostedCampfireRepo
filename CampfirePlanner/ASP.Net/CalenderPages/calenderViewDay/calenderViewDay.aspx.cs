@@ -15,8 +15,19 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
         protected void Page_Load(object sender, EventArgs e)
         {
             int eventid = Convert.ToInt32(Request.QueryString["eventID"]);
-            int day = 1;
+            //int day = 1;
             //int eventid = 2;
+
+            if (!Page.IsPostBack)
+            {
+                for (int i = 1; i <= getNumberOfDays(eventid); i++)
+                {
+                    rblDay.Items.Add(new ListItem("Day " + Convert.ToString(i), Convert.ToString(i)));
+                }
+            }
+
+            int day = Convert.ToInt32(Session["day"]);
+
 
             DataTable table = GetData(eventid, day);
             initInterface(eventid);
@@ -107,70 +118,70 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             return table;
         }
 
-        // create a table with timeslots
-        public void fillTimeTable()
-        {
-            int numrows = 96;
-            int numcells = 1;
-            int hour = 00;
-            string hourstr;
-            int min = 00;
-            string minstr;
-            string time;
-            for (int j = 0; j < numrows; j++)
-            {
-                hourstr = hour.ToString();
-                if (hourstr.Length < 2)
-                {
-                    hourstr = "0" + hourstr;
-                }
-                minstr = min.ToString();
-                if (minstr.Length < 2)
-                {
-                    minstr = minstr + "0";
-                }
-                time = hourstr + minstr;
-                TableRow r = new TableRow();
-                for (int i = 0; i < numcells; i++)
-                {
-                    TableCell c = new TableCell();
-                    c.Controls.Add(new LiteralControl(time.ToString()));
-                    r.Cells.Add(c);
-                }
-                Table1.Rows.Add(r);
-                if (min < 45)
-                {
-                    min += 15;
-                }
-                else
-                {
-                    hour += 01;
-                    min = 00;
-                }
-            }
-        }
+        //// create a table with timeslots
+        //public void fillTimeTable()
+        //{
+        //    int numrows = 96;
+        //    int numcells = 1;
+        //    int hour = 00;
+        //    string hourstr;
+        //    int min = 00;
+        //    string minstr;
+        //    string time;
+        //    for (int j = 0; j < numrows; j++)
+        //    {
+        //        hourstr = hour.ToString();
+        //        if (hourstr.Length < 2)
+        //        {
+        //            hourstr = "0" + hourstr;
+        //        }
+        //        minstr = min.ToString();
+        //        if (minstr.Length < 2)
+        //        {
+        //            minstr = minstr + "0";
+        //        }
+        //        time = hourstr + minstr;
+        //        TableRow r = new TableRow();
+        //        for (int i = 0; i < numcells; i++)
+        //        {
+        //            TableCell c = new TableCell();
+        //            c.Controls.Add(new LiteralControl(time.ToString()));
+        //            r.Cells.Add(c);
+        //        }
+        //        Table1.Rows.Add(r);
+        //        if (min < 45)
+        //        {
+        //            min += 15;
+        //        }
+        //        else
+        //        {
+        //            hour += 01;
+        //            min = 00;
+        //        }
+        //    }
+        //}
 
-        public void returnTime(DataTable _table)
-        {
-            for (int i=0; i<_table.Rows.Count;i++)
-            {
-                string timeValue = _table.Rows[i]["StartTime"].ToString();
-                string mins = timeValue[3].ToString() + timeValue[4].ToString();
-                string hours = timeValue[0].ToString() + timeValue[1].ToString();
-                int index = Convert.ToInt32(mins) % 15;
-                index += Convert.ToInt32(hours) * 4;
+        //public void returnTime(DataTable _table)
+        //{
+        //    for (int i=0; i<_table.Rows.Count;i++)
+        //    {
+        //        string timeValue = _table.Rows[i]["StartTime"].ToString();
+        //        string mins = timeValue[3].ToString() + timeValue[4].ToString();
+        //        string hours = timeValue[0].ToString() + timeValue[1].ToString();
+        //        int index = Convert.ToInt32(mins) % 15;
+        //        index += Convert.ToInt32(hours) * 4;
 
-                calenderViewDay1 myControl = (calenderViewDay1)Page.LoadControl("../calenderViewDay/calenderViewDay.ascx");
-                string name = getNameActivity(Convert.ToInt32(_table.Rows[i]["ActivityID"]));
-                myControl.stringy = name;
-                ContentPlaceHolder content = (ContentPlaceHolder)this.Master.FindControl("body1");
-                content.Controls.Add(myControl);
+        //        calenderViewDay1 myControl = (calenderViewDay1)Page.LoadControl("../calenderViewDay/calenderViewDay.ascx");
+        //        string name = getNameActivity(Convert.ToInt32(_table.Rows[i]["ActivityID"]));
+        //        myControl.stringy = name;
+        //        ContentPlaceHolder content = (ContentPlaceHolder)this.Master.FindControl("body1");
+        //        content.Controls.Add(myControl);
 
-                TableCell c = new TableCell();
-                c.Controls.Add(myControl);
-                Table1.Rows[index].Cells.Add(c);
-            }
-        }
+        //        TableCell c = new TableCell();
+        //        c.Controls.Add(myControl);
+        //        Table1.Rows[index].Cells.Add(c);
+        //    }
+        //}
 
         public string getNameActivity(int _index)
         {
@@ -198,9 +209,45 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             return name;
         }
 
+        protected int getNumberOfDays(int _eventid)
+        {
+            string targetedEventID = _eventid.ToString(); //*********
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Event WHERE EventID = @event", conn);
+            cmd.Parameters.AddWithValue("@event", targetedEventID);
+
+            //Declare and instantiate DataAdapter object
+            SqlDataAdapter daEvents = new SqlDataAdapter(cmd);
+
+            //Create a DataSet object to contain the records retrieved from database
+            DataSet result = new DataSet();
+
+            //A connection must be opened before any operations made.
+            conn.Open();
+
+            daEvents.Fill(result, "Event");
+
+            //A connection should always be closed, whether error occurs or not.
+            conn.Close();
+
+            DateTime start = Convert.ToDateTime(result.Tables[0].Rows[0]["StartDate"]);
+            DateTime end = Convert.ToDateTime(result.Tables[0].Rows[0]["EndDate"]);
+
+            TimeSpan daysActivity = end.Subtract(start);
+
+            return daysActivity.Days + 1;
+        }
+
         protected void testview_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void rblDay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["day"] = rblDay.SelectedItem;
         }
     }
 }

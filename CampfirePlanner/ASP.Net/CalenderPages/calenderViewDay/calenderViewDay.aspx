@@ -4,6 +4,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <h2 style="margin-top:10px; width:95%; font-weight:bold;">Event Schedule Planner</h2>
+    <div>
+            <asp:RadioButtonList ID="rblDay" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" OnSelectedIndexChanged="rblDay_SelectedIndexChanged" Selected="1"></asp:RadioButtonList>                
+            <asp:Label ID="lblDay" runat="server"></asp:Label>
+    </div>
     <table style="padding:10px;">
         <tr>
             <td class="auto-style2">
