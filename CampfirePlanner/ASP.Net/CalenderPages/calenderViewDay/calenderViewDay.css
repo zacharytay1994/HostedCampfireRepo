@@ -1,5 +1,4 @@
 ﻿body {
-    text-align: center;
     background-color: #ffdead;
     background-image: url("https://www.transparenttextures.com/patterns/felt.png");
 }
@@ -11,6 +10,30 @@
     margin-left:auto;
     margin-right:auto;
     display:block;
+}
+
+h2 {
+    text-align: left;
+    margin-left: 1%;
+    border-left: solid;
+    border-bottom: solid;
+    border-color: dodgerblue;
+    border-left-width: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-family: Georgia;
+}
+
+.titles {
+    text-align: left;
+    margin-left: 1%;
+    border-left: solid;
+    border-bottom: solid;
+    border-color: dodgerblue;
+    border-left-width: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-family: Georgia;
 }
 
 .auto-style1 {
@@ -25,6 +48,17 @@ table {
     position:center;
     margin-left: auto;
     margin-right: auto;
+    margin: 20px;
+}
+
+.outputtext{
+    font-weight:bold;
+    font-family:Georgia;
+    font-size:large;
+}
+
+.listviewcss{
+    position:center;
 }
 
 td {

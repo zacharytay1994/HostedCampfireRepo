@@ -3,24 +3,23 @@
     <link href="calenderViewDay.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
-
-<asp:Label ID="PageTitle" runat="server" Text="Event Schedule Planner" CssClass="label1"></asp:Label>
-    <table>
+    <h2 style="margin-top:10px; width:95%; font-weight:bold;">Event Schedule Planner</h2>
+    <table style="padding:10px;">
         <tr>
             <td class="auto-style2">
-                <asp:Label ID="lblProjName" runat="server" Text="PROJECT/EVENT:"></asp:Label>
+                <asp:Label ID="lblProjName" runat="server" Text="PROJECT/EVENT:"><h2>Project/Event:</h2></asp:Label>
             </td>
             <td class="auto-style2">
-                <asp:Label ID="lblProjNameO" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblProjNameO" runat="server" Text="Label" CssClass="outputtext"></asp:Label>
             </td>
             <td class="auto-style2" rowspan="2">&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style2">
-                <asp:Label ID="lblOrganizer" runat="server" Text="ORGANIZER:"></asp:Label>
+                <asp:Label ID="lblOrganizer" runat="server" Text="ORGANIZER:"><h2>Organizer:</h2></asp:Label>
             </td>
             <td class="auto-style2">
-                <asp:Label ID="lblOrganizerO" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblOrganizerO" runat="server" Text="Label" CssClass="outputtext"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -83,7 +82,7 @@
     </table>
     <%--<asp:DropDownList ID="ddl1" runat="server"></asp:DropDownList>--%>
 
-    <asp:Table ID="Table1" runat="server">
+    <%--<asp:Table ID="Table1" runat="server">
     </asp:Table>
     <br />
     <table>
@@ -139,5 +138,5 @@
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
-    </table>
+    </table>--%>
 </asp:Content>
