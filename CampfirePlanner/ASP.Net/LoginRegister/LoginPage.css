@@ -43,14 +43,14 @@
 }
 
 .emailtb {
-    /*background-image: url('LoginImages/m.png');
+    background-image: url('LoginImages/m.png');
     background-position: left center;
     background-position-x: 8px;
     background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 0.7);
     border: none;
     color: white;
-    margin-bottom: 20px;*/
+    margin-bottom: 20px;
 }
 
 .pwtb {
