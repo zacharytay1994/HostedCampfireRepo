@@ -11,7 +11,7 @@
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
                 <div class="col-sm-12">
-                    <%--<asp:Label ID="lbl_activityid" runat="server"></asp:Label>--%>
+                    <%--<asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')"--%>
                     <div id="slideshow" class="slideshow-container" style="text-align: center;">
                         <div id="slide1" class="mySlides1">
                             <img id="image1" runat="server" src="" class="auto-style1" />
@@ -55,6 +55,18 @@
         <asp:Label ID="lblExp" runat="server"></asp:Label>
                     <br />
         <asp:Label ID="lblLinks" runat="server"></asp:Label>
+                    <br />
+        <asp:Button ID="btnShowHide" runat="server" OnClick="btnShowHide_Click" Text="Show/Hide Comments" />
+        <asp:GridView ID="gvComments" runat="server" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="Username" HeaderText="Username" />
+                <asp:BoundField DataField="CommentText" HeaderText="Comment" />
+            </Columns>
+        </asp:GridView>
+                    <br />
+        <asp:Label ID="lblComments" runat="server" Text="Add a Comment!"></asp:Label>
+        <asp:TextBox ID="txtAddComment" runat="server"></asp:TextBox>
+        <asp:Button ID="btnSubmitComment" runat="server" Text="Submit" />
     </div>
 
     

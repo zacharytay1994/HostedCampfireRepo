@@ -355,5 +355,30 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
 
             return accID;
         }
+
+        protected void btnShowHide_Click(object sender, EventArgs e)
+        {
+            displayComments();
+        }
+
+        protected void displayComments()
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+            using (SqlConnection con = new SqlConnection(strConn))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Comments INNER JOIN Users ON Comments.AccountID = Users.AccountID WHERE ActivityID = @activityid AND AccountID = @accountid", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        cmd.Parameters.AddWithValue("@activityid", Convert.ToInt32(Request.QueryString["actID"]));
+                        cmd.Parameters.AddWithValue("@accountid", getAccID());
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        this.gvComments.DataSource = dt;
+                        this.gvComments.DataBind();
+                    }
+                }
+            }
+        }
     }
 }
