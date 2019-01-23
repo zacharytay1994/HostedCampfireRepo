@@ -361,6 +361,28 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             displayComments();
         }
 
+        protected void addComment()
+        {
+            string commentText = txtAddComment.Text;
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+
+            using (SqlConnection con = new SqlConnection(strConn))
+            {
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Comments VALUES(@accID, @actID, @commentText)", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        cmd.Parameters.AddWithValue("@activityid", Convert.ToInt32(Request.QueryString["actID"]));
+                        cmd.Parameters.AddWithValue("@accountid", getAccID());
+                        cmd.Parameters.AddWithValue("@commentText", commentText);
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        lblThanks.Text = "Comment Added!";
+                    }
+                }
+            }
+        }
+
         protected void displayComments()
         {
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
@@ -379,6 +401,11 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                     }
                 }
             }
+        }
+
+        protected void btnSubmitComment_Click(object sender, EventArgs e)
+        {
+            addComment();
         }
     }
 }

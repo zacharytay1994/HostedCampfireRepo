@@ -66,7 +66,8 @@
                     <br />
         <asp:Label ID="lblComments" runat="server" Text="Add a Comment!"></asp:Label>
         <asp:TextBox ID="txtAddComment" runat="server"></asp:TextBox>
-        <asp:Button ID="btnSubmitComment" runat="server" Text="Submit" />
+        <asp:Button ID="btnSubmitComment" runat="server" Text="Submit" OnClick="btnSubmitComment_Click" />
+        <asp:Label ID="lblThanks" runat="server"></asp:Label>
     </div>
 
     

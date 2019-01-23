@@ -118,5 +118,13 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
         {
             Response.Redirect("~/ASP.Net/HomePage/HomePage.aspx");
         }
+
+        protected void gvEvents_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            // Set the page index to the page clicked by user.
+            gvEvents.PageIndex = e.NewPageIndex;
+            // Display records on the new page.
+            displayEvents();
+        }
     }
 }
