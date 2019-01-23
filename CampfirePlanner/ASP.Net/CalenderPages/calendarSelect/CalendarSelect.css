@@ -41,3 +41,7 @@
         -o-transition: all 0.3s ease;
         border: 2px solid #fff;
     }
+
+table {
+    text-align: center;
+}

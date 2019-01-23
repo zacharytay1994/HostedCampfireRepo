@@ -10,14 +10,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <div>
-        <p>
-            Please Select Start and End Date of Your Event
-        </p>
-        <p>
-            Name of Event:
-                        <asp:TextBox ID="txtEvent" runat="server" AutoPostBack="True" AutoCompleteType="Disabled"></asp:TextBox>
-            &nbsp;
-        </p>
         <div class="test1">
         
         </div>
@@ -26,6 +18,14 @@
             <table class="w-100">
                 <tr>
                     <td valign="top" class="auto-style9">
+        
+        <p>
+            Please Select Start and End Date of Your Event</p>
+        <p>
+            Name of Event:
+                        <asp:TextBox ID="txtEvent" runat="server" AutoPostBack="True" AutoCompleteType="Disabled"></asp:TextBox>
+            &nbsp;
+        </p>
         
             <asp:Calendar ID="calSelect" runat="server" BackColor="White" CssClass="calendarSelect" DayHeaderStyle-CssClass="header" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="287px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="357px" OnLoad="calSelect_Load" OnPreRender="calSelect_PreRender" OnSelectionChanged="calSelect_SelectionChanged">
                 <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
@@ -58,7 +58,10 @@
 
         <asp:Button ID="btnEventCreate" runat="server" CssClass="auto-style5" OnClick="btnEventCreate_Click" Text="Create Event" />
                     </td>
-                    <td valign="top">
+                </tr>
+                <tr>
+                    <td valign="top" class="auto-style9">
+        
                 Search Users :<br />
                         <asp:TextBox ID="txtSearch" runat="server" AutoCompleteType="Disabled" AutoPostBack="True" OnTextChanged="txtSearch_TextChanged"></asp:TextBox>
                         <br />
