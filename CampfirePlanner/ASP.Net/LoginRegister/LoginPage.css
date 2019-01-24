@@ -77,14 +77,14 @@
     -o-transform: rotate(45deg) translate3d(0, 0, 0);
     transform: rotate(45deg) translate3d(0, 0, 0);
     margin: 0 auto 4em;
-
     background: #fff;
     border: 2px solid #F36;
     width: 105px;
     height: 105px;
     display: block;
-    margin: 0px auto;
-    position: center;
+    position: fixed;
+    top: 25%;
+    left: 46%;
 }
 
     /*.top-pic  {
