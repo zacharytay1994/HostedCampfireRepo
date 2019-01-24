@@ -16,19 +16,20 @@
     <div class="collapse navbar-collapse" id="navBar">
         <!-- Links that are aligned to the left, mr-auto: right margin auto-adjusted -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+            <li class="nav-item" id="Planner">
                 <a class="nav-link" href="/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx" style="border-left:solid; border-color:dodgerblue; font-family:'Bodoni MT'; color: black;">Planner</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="Activites">
                 <a class="nav-link" href="/ASP.Net/ActivitiesPage/ActivitiesPage.aspx" style="border-left:solid; border-color:dodgerblue; font-family:'Bodoni MT'; color: black;">Activities</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="About">
                 <a class="nav-link" href="#" style="border-left:solid; border-color:dodgerblue; font-family:'Bodoni MT'; color: black; ">About Us</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            <li class="nav-item" id="Logout" runat="server">
                 <%--<asp:Button ID="btnSignIn" runat="server" Text="Sign In" CssClass="btn btn-link nav-link" CausesValidation="False" OnClick="btnSignIn_Click" />--%>
+                <a class="nav-link" href="#" style="border-left:solid; border-color:dodgerblue; font-family:'Bodoni MT'; color: black; ">Log Out</a>
             </li>
         </ul>
     </div>

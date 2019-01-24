@@ -43,8 +43,8 @@ h2 {
 .rows {
     background-color: aliceblue;
     color: black;
-    border-style: solid;
-    border-width: 1px;
+    border-left-style: solid;
+    border-right-style: solid;
 }
 
     .rows::alternate {
@@ -111,5 +111,15 @@ h2 {
     margin-bottom: 50px;
     text-align: center;
     font-family: Georgia;
+    text-decoration: underline;
+}
+
+.GridPager {
+    background-color: lightgray;
+    border-style: solid;
+    border-color: black;
+}
+
+.GridPager span {
     text-decoration: underline;
 }
