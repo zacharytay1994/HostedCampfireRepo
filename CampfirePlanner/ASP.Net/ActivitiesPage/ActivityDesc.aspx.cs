@@ -372,8 +372,8 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
-                        cmd.Parameters.AddWithValue("@activityid", Convert.ToInt32(Request.QueryString["actID"]));
-                        cmd.Parameters.AddWithValue("@accountid", getAccID());
+                        cmd.Parameters.AddWithValue("@actID", Convert.ToInt32(Request.QueryString["actID"]));
+                        cmd.Parameters.AddWithValue("@accID", getAccID());
                         cmd.Parameters.AddWithValue("@commentText", commentText);
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
@@ -388,12 +388,12 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             using (SqlConnection con = new SqlConnection(strConn))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Comments INNER JOIN Users ON Comments.AccountID = Users.AccountID WHERE ActivityID = @activityid AND AccountID = @accountid", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Comments INNER JOIN Users ON Comments.AccountID = Users.AccountID WHERE ActivityID = @activityid", con))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
                         cmd.Parameters.AddWithValue("@activityid", Convert.ToInt32(Request.QueryString["actID"]));
-                        cmd.Parameters.AddWithValue("@accountid", getAccID());
+                        //cmd.Parameters.AddWithValue("@accountid", getAccID());
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
                         this.gvComments.DataSource = dt;
