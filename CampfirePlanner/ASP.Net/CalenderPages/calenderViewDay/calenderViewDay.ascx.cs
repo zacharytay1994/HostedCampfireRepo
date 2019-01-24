@@ -13,7 +13,12 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text = stringy;
+            if (Session["UserAuthentication"] != null)
+            {
+                Label1.Text = stringy;
+            }
+            else
+                Response.Redirect("~/ASP.Net/LoginRegister/LoginPage.aspx");
         }
     }
 }

@@ -204,14 +204,24 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
         //    }
         //}
 
-        protected void btnDownVote_Click(object sender, EventArgs e)
+        protected void btnDownVote_Click(object sender, ImageClickEventArgs e)
         {
-            voteClicked(0);
+            if (Session["UserAuthentication"] != null)
+            {
+                voteClicked(0);
+            }
+            else
+                Response.Redirect("~/ASP.NET/LoginRegister/LoginPage.aspx");
         }
 
-        protected void btnUpVote_Click(object sender, EventArgs e)
+        protected void btnUpVote_Click(object sender, ImageClickEventArgs e)
         {
-            voteClicked(1);
+            if (Session["UserAuthentication"] != null)
+            {
+                voteClicked(1);
+            }
+            else
+                Response.Redirect("~/ASP.NET/LoginRegister/LoginPage.aspx");
         }
 
         private void voteClicked(int voteStatus)
@@ -405,7 +415,12 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
 
         protected void btnSubmitComment_Click(object sender, EventArgs e)
         {
-            addComment();
+            if (Session["UserAuthentication"] != null)
+            {
+                addComment();
+            }
+            else
+                Response.Redirect("~/ASP.Net/LoginRegister/LoginPage.aspx");
         }
     }
 }
