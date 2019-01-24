@@ -326,7 +326,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             cmd = new SqlCommand("UPDATE Activity SET Votes = @vote WHERE ActivityID = @actID", conn);
 
             cmd.Parameters.AddWithValue("@vote", total);
-            cmd.Parameters.AddWithValue("@actID", getAccID());
+            cmd.Parameters.AddWithValue("@actID", Convert.ToInt32(Request.QueryString["actID"]));
             SqlDataAdapter daID = new SqlDataAdapter(cmd);
             result = new DataSet();
             conn.Open();
