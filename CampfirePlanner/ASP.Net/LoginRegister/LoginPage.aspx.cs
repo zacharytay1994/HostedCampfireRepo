@@ -14,7 +14,8 @@ namespace CampfirePlannerPlanner.ASP.Net.LoginRegister
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //System.Web.UI.HtmlControls.HtmlGenericControl liLogout = (System.Web.UI.HtmlControls.HtmlGenericControl)Master?.FindControl("Logout");
+            //liLogout.Visible = false;
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
