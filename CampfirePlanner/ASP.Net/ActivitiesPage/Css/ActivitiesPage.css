@@ -32,6 +32,11 @@ p{
     background-image: url("https://www.transparenttextures.com/patterns/felt.png");
 }
 
+.col-md-2:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
 /*-----SlideShow-----*/
 .mySlides {
     display: none;
