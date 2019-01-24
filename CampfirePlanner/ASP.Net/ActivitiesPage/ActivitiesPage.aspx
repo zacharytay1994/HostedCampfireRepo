@@ -68,13 +68,15 @@
         <table style="text-align: center;">
             <tr>
                 <asp:CheckBoxList Width="1239px" Style="text-align: left" ID="cbl_categories" runat="server" OnSelectedIndexChanged="cbl_categories_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True" CssClass="categoriesbox">
-                    <asp:ListItem Selected="tr" Value="a">Cooperative Games</asp:ListItem>
-                    <asp:ListItem Value="b">High Activity Games</asp:ListItem>
-                    <asp:ListItem Value="c">Quick and Easy Games</asp:ListItem>
-                    <asp:ListItem Value="d">Sports Oriented Games</asp:ListItem>
-                    <asp:ListItem Value="e">Water Games</asp:ListItem>
-                    <asp:ListItem Value="f">Nature Games</asp:ListItem>
-                    <asp:ListItem Value="g">Large Group Games</asp:ListItem>
+                    <asp:ListItem Selected="True" Value="a">Ice-breakers</asp:ListItem>
+                    <asp:ListItem Value="b">Summer</asp:ListItem>
+                    <asp:ListItem Value="c">Winter</asp:ListItem>
+                    <asp:ListItem Value="d">Beach</asp:ListItem>
+                    <asp:ListItem Value="e">Pool Parties</asp:ListItem>
+                    <asp:ListItem Value="f">Formal</asp:ListItem>
+                    <asp:ListItem Value="g">Office</asp:ListItem>
+                    <asp:ListItem Value="h">New</asp:ListItem>
+                    <asp:ListItem Value="h">Cheeky</asp:ListItem>
                 </asp:CheckBoxList>   
         </table>
         <br />

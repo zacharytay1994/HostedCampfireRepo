@@ -33,7 +33,7 @@
                             <tr>
                                 <td class="auto-style3">
                                     <p class="auto-style3">&nbsp;</p>
-                                    <img src="../../Images/ice.jpeg" width="150" height="150" class="photo" />
+                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']"><img src="../../Images/ice.jpeg" width="150" height="150" class="photo" /></a>
                                     <p class="auto-style3"><b>IceBreakers(<5)</b></p>
                                 </td>
                                 <td class="auto-style3">
