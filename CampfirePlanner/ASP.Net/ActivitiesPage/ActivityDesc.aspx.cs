@@ -17,6 +17,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
         {
             if (!Page.IsPostBack)
             {
+                displayComments();
                 showActivityDesc();
 
                 //if (Session["UserAuthentication"].ToString() == "Admin")
