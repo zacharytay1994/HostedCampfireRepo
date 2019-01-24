@@ -9,7 +9,7 @@
         .auto-style1 {
             height: 35px;
         }
-        \
+        
         .auto-style2 {
             height: 38px;
         }
@@ -81,8 +81,8 @@
     </div>
     <div class="container">
         <div class="row">
-            <div onclick="redirect(this.id)" class="col-md-2" id="4" style="border: 3px solid black; background-image: url(<%= getImage()%>)">
-                <a href="ActivityDesc.aspx">
+            <div onclick="redirect(this.id)" class="col-md-2" id="4" style="border: 3px solid black; /*background-image: url(<%= getImage()%>)*/">
+                <a onclick="redirect(this.id)">
                     <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
                 <table class="box" style="width: 100%">
                     <tr>
@@ -101,7 +101,7 @@
             </div>
 
             <div onclick="redirect(this.id)" class="col-md-2" id="8" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
+                <a onclick="redirect(this.id)">
                     <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
                 <table class="box" style="width: 100%">
                     <tr>
@@ -120,7 +120,7 @@
             </div>
 
             <div onclick="redirect(this.id)" class="col-md-2" id="12" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
+                <a onclick="redirect(this.id)">
                     <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
                 <table class="box" style="width: 100%">
                     <tr>
@@ -139,7 +139,7 @@
             </div>
 
             <div onclick="redirect(this.id)" class="col-md-2" id="16" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
+                <a onclick="redirect(this.id)">
                     <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
                 <table class="box" style="width: 100%">
                     <tr>
@@ -159,7 +159,7 @@
         </div>
         <div class="row">
             <div onclick="redirect(this.id)" class="col-md-2" id="20" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
+                <a onclick="redirect(this.id)">
                     <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
                 <table class="box" style="width: 100%">
                     <tr>
@@ -178,7 +178,7 @@
             </div>
 
             <div onclick="redirect(this.id)" class="col-md-2" id="24" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
+                <a onclick="redirect(this.id)">
                     <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
                 <table class="box" style="width: 100%">
                     <tr>
@@ -197,7 +197,7 @@
             </div>
 
             <div onclick="redirect(this.id)" class="col-md-2" id="28" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
+                <a onclick="redirect(this.id)">
                     <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
                 <table class="box" style="width: 100%">
                     <tr>
@@ -215,8 +215,8 @@
                 <%-- <asp:Button runat="server" width="100%" ID="Button6" onclick="Button6_Click" Text="Let's GO!" />--%>
             </div>
 
-            <div onclick="redirect(this.id)" class="col-md-2" style="border: 3px solid black;">
-                <a href="ActivityDesc.aspx">
+            <div onclick="redirect(this.id)" id="32" class="col-md-2" style="border: 3px solid black;">
+                <a onclick="redirect(this.id)">
                     <img src="../../Images/image2.jpg" width="100%" style="border: 3px solid black; border-top: 0.01px solid black;" /></a>
                 <table class="box" style="width: 100%;">
                     <tr>
@@ -395,5 +395,4 @@
                 setTimeout(showSlides, 2000); // Change image every 2 seconds
             }*/
     </script>
-    <!--<audio src="../n057.mp3" autoplay="autoplay" loop="loop"></audio>--> <!--If it's too quiet-->
 </asp:Content>
