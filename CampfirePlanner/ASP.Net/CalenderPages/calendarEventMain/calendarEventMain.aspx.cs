@@ -14,9 +14,14 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "Welcome to your Events Page, " + Session["UserAuthentication"].ToString();
-            displayEvents();
-        }              
+            if (Session["UserAuthentication"] != null)
+            {
+                lblWelcome.Text = "Welcome to your Events Page, " + Session["UserAuthentication"].ToString();
+                displayEvents();
+            }
+            else
+                Response.Redirect("~/ASP.Net/LoginRegister/LoginPage.aspx");
+        }
 
         protected int returnUserID()
         {

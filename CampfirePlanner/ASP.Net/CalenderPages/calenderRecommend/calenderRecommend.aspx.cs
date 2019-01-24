@@ -15,22 +15,27 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (txtStart.Text != "" || txtEnd.Text != "")
+            if (Session["UserAuthentication"] != null)
             {
-                TimeSpan timeActivity = DateTime.Parse(txtEnd.Text).Subtract(DateTime.Parse(txtStart.Text));
-                if (timeActivity.TotalMinutes < 0)
+                if (txtStart.Text != "" || txtEnd.Text != "")
                 {
-                    lblValidTime.Text = "Please enter valid times!";
+                    TimeSpan timeActivity = DateTime.Parse(txtEnd.Text).Subtract(DateTime.Parse(txtStart.Text));
+                    if (timeActivity.TotalMinutes < 0)
+                    {
+                        lblValidTime.Text = "Please enter valid times!";
+                    }
                 }
-            }
 
-            if (!Page.IsPostBack)
-            {
-                for (int i = 1; i <= getNumberOfDays(); i++)
+                if (!Page.IsPostBack)
                 {
-                    rblDay.Items.Add(new ListItem("Day " + Convert.ToString(i), Convert.ToString(i)));
+                    for (int i = 1; i <= getNumberOfDays(); i++)
+                    {
+                        rblDay.Items.Add(new ListItem("Day " + Convert.ToString(i), Convert.ToString(i)));
+                    }
                 }
             }
+            else
+                Response.Redirect("~/ASP.Net/LoginRegister/LoginPage.aspx");
         }
 
         protected void btnRecommendation_Click(object sender, EventArgs e)

@@ -15,7 +15,12 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["UserAuthentication"] != null)
+            {
+
+            }
+            else
+                Response.Redirect("~/ASP.Net/LoginRegister/LoginPage.aspx");
         }
 
         protected void calSelect_SelectionChanged(object sender, EventArgs e)
@@ -46,7 +51,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
                 }
                 else
                     lblDates.Text = SelectedDates[1].Date.ToString("dd/MM/yyyy") + " - " + SelectedDates[0].Date.ToString("dd/MM/yyyy");
-                txtDayz.Text = (dayz+1).ToString();
+                txtDayz.Text = (dayz + 1).ToString();
             }
             else if (SelectedDates.Count() == 1)
             {
