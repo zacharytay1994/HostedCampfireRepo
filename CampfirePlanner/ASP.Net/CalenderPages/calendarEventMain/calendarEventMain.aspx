@@ -19,7 +19,7 @@
     <div>
         <asp:Label ID="lblWelcome" runat="server" CssClass="auto-style2" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
         <br />
-        <asp:Label ID="lblCollabInfo" runat="server" Font-Bold="True" Font-Size="XX-Large" Visible="True"></asp:Label>
+        <h2 style="font-family:Georgia; font-weight: bold; text-align: left; border-bottom:solid; border-left: solid; border-left-width: 20px; border-color:dodgerblue; padding-left:10px; width: 90%; margin-left: 5%;"><asp:Label ID="lblCollabInfo" runat="server" Font-Bold="True" Font-Size="XX-Large" Visible="True"></asp:Label></h2>
         <br />
             <asp:Label ID="lblCollab" runat="server" Font-Bold="False" Visible="False"></asp:Label>
         <br />
