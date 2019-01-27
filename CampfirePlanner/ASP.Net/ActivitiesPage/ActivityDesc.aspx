@@ -56,7 +56,8 @@
                     <br />
         <asp:Label ID="lblLinks" runat="server"></asp:Label>
                     <br />
-        <asp:Button ID="btnShowHide" runat="server" OnClick="btnShowHide_Click" Text="Show/Hide Comments" />
+        <asp:Button ID="btnShow" runat="server" OnClick="btnShow_Click" Text="Show Comments" />
+        <asp:Button ID="btnHide" runat="server" OnClick="btnHide_Click" Text="Hide Comments" />
         <asp:GridView ID="gvComments" runat="server" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="Username" HeaderText="Username" />
@@ -65,7 +66,7 @@
         </asp:GridView>
                     <br />
         <asp:Label ID="lblComments" runat="server" Text="Add a Comment: "></asp:Label>
-        <asp:TextBox ID="txtAddComment" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtAddComment" runat="server" Width="789px"></asp:TextBox>
         <asp:Button ID="btnSubmitComment" runat="server" Text="Submit" OnClick="btnSubmitComment_Click" />
         <asp:Label ID="lblThanks" runat="server"></asp:Label>
     </div>

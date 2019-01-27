@@ -367,9 +367,14 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             return accID;
         }
 
-        protected void btnShowHide_Click(object sender, EventArgs e)
+        protected void btnShow_Click(object sender, EventArgs e)
         {
-            displayComments();
+            gvComments.Visible = true;
+        }
+
+        protected void btnHide_Click(object sender, EventArgs e)
+        {
+            gvComments.Visible = false;
         }
 
         protected void addComment()
@@ -389,9 +394,12 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
                         lblThanks.Text = "Comment Added!";
+                        txtAddComment.Text = "";
                     }
                 }
             }
+
+            displayComments();
         }
 
         protected void displayComments()

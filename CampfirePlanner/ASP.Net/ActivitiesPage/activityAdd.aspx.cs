@@ -93,7 +93,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
 
         protected void returnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/HomePage.aspx");
+            Response.Redirect("~/ASP.Net/HomePage/HomePage.aspx");
         }
     }
 }

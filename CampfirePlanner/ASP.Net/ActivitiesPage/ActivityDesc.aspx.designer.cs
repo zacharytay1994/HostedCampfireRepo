@@ -103,13 +103,22 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
         protected global::System.Web.UI.WebControls.Label lblLinks;
         
         /// <summary>
-        /// btnShowHide control.
+        /// btnShow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnShowHide;
+        protected global::System.Web.UI.WebControls.Button btnShow;
+        
+        /// <summary>
+        /// btnHide control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHide;
         
         /// <summary>
         /// gvComments control.
