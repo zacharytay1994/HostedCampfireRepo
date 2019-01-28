@@ -28,10 +28,10 @@
           <LayoutTemplate>
           <table cellpadding="2" width="640px" border="1" runat="server" id="tblProducts">
             <tr runat="server">
-              <th runat="server">Time</th>
-              <th runat="server">Activity</th>
-              <th runat="server">Duration</th>
-              <th runat="server">Description</th>
+              <th class="fkingheader" runat="server">Time</th>
+              <th class="fkingheader" runat="server">Activity</th>
+              <th class="fkingheader" runat="server">Duration</th>
+              <th class="fkingheader" runat="server">Description</th>
             </tr>
             <tr runat="server" id="itemPlaceholder" />
           </table>
@@ -45,16 +45,16 @@
         </LayoutTemplate>
         <ItemTemplate>
           <tr runat="server">
-            <td>
+            <td class="fkingbox" style="background-color:rgba(255,0,0,0.3);">
               <asp:Label ID="StartTime" runat="Server" Text='<%#Eval("StartTime") %>'/>
             </td>
-            <td>
-              <button id="actID" onclick="on()" type="button"><asp:Label ID="ActivityName" runat="Server" Text='<%#Eval("ActivityName") %>' /></button>
+            <td class="fkingbox">
+              <div id="actID" onClick="on()"><asp:Label ID="ActivityName" runat="Server" Text='<%#Eval("ActivityName") %>' /></div>
             </td>
-            <td>
+            <td class="fkingbox">
               <asp:Label ID="Duration" runat="Server" Text='<%#Eval("Duration") %>' />
             </td>
-              <td>
+              <td class="fkingbox">
               <asp:Label ID="Description" runat="Server" Text='<%#Eval("ActivityDesc") %>' />
             </td>
           </tr>
@@ -68,15 +68,22 @@
         <div>
             <h2 id="actName" ></h2>
             <div>
-                <p style=""><b>Time-line</b></p>
-                <h1 style="text-align:left; color:white">[Start Time]</h1>
+                <p style="color:white; text-align:center"><b>Timeline</b></p>
+                <h1 style="text-align:left; color:white">[9.00 AM]</h1>
                 <p style="border-bottom:solid; border-color:white; color:white; text-align:center">Click on timeline to add ++</p>
-                <h1 style="text-align:right; color:white">[End Time]</h1>
+                <h1 style="text-align:right; color:white">[9.45 AM]</h1>
+                <div class="timeDis" style="left:10%">
+                    <p style="font-family:Georgia; font-weight:bold;"><u>9.05</u></p>
+                    Fetch students from attrium.
+                </div>
+                <div class="timeDis" style="left:50%">
+                    <p style="font-family:Georgia; font-weight:bold;"><u>9.25</u></p>
+                    Prize giving ceremony.
+                </div>
             </div>
         </div>
     </div>
-    <button onclick="on()" type="button">Click me test</button>
-    <script>
+    <script type="text/javascript">
         function displayOverlay() {
 
         }
