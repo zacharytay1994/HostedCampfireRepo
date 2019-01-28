@@ -54,7 +54,7 @@
                 <asp:ButtonField CommandName="Select" Text="Collaborators" HeaderText="Collaborators"/>
                 <asp:HyperLinkField DataNavigateUrlFields="EventID" DataNavigateUrlFormatString="../calenderViewDay/calenderViewDay.aspx?eventID={0}" Text="View" HeaderText="Details" />
                 <asp:HyperLinkField DataNavigateUrlFields="EventID" DataNavigateUrlFormatString="../calenderRecommend/calenderRecommend.aspx?eventID={0}" Text="Add Activity" HeaderText="Add Activity" />
-                <asp:ButtonField Text="Delete" CommandName="Select" />
+                <asp:ButtonField Text="Delete" CommandName="deleteClicked" />
             </Columns>
 
 <HeaderStyle CssClass="header"></HeaderStyle>
