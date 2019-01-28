@@ -33,22 +33,54 @@
                             <tr>
                                 <td class="auto-style3">
                                     <p class="auto-style3">&nbsp;</p>
-                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']"><img src="../../Images/ice.jpeg" width="150" height="150" class="photo" /></a>
+                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']">
+                                        <div class="insideInfo">
+                                            <img src="../../Images/ice.jpeg" width="150" height="150" class="photo" />
+                                            <div class="middle">
+                                                <div class="infoHead">IceBreakers(<5)</div>
+                                                <p class="infoBody">Classic Ice-Breakers for kids 5 and below! Guaranteed kids friendly games!</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <p class="auto-style3"><b>IceBreakers(<5)</b></p>
                                 </td>
                                 <td class="auto-style3">
                                     <p class="auto-style3">&nbsp;</p>
-                                    <img src="../../Images/ice3.jpg" width="150" height="150" class="photo" />
+                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']">
+                                        <div class="insideInfo">
+                                            <img src="../../Images/ice3.jpg" width="150" height="150" class="photo" />
+                                            <div class="middle">
+                                                <div class="infoHead">IceBreakers(5-12)</div>
+                                                <p class="infoBody">Classic Ice-Breakers for kids 5- 12! Fun for all!</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <p class="captiontext">IceBreakers(5-12)</p>
                                 </td>
                                 <td class="auto-style3">
                                     <p class="auto-style3">&nbsp;</p>
-                                    <img src="../../Images/ice2.jpg" width="150" height="150" class="photo" />
+                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']">
+                                        <div class="insideInfo">
+                                            <img src="../../Images/ice2.jpg" width="150" height="150" class="photo" />
+                                            <div class="middle">
+                                                <div class="infoHead">IceBreakers(12-16)</div>
+                                                <p class="infoBody">Classic Ice-Breakers for teenagers 12-16! Guarantee a blast!</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <p class="captiontext">IceBreakers(12-16)</p>
                                 </td>
                                 <td class="auto-style3">
                                     <p class="auto-style3">&nbsp;</p>
-                                    <img src="../../Images/ice4.jpg" width="150" height="150" class="photo" />
+                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']">
+                                        <div class="insideInfo">
+                                            <img src="../../Images/ice4.jpg" width="150" height="150" class="photo" />
+                                            <div class="middle">
+                                                <div class="infoHead">IceBreakers(>16)</div>
+                                                <p class="infoBody">Classic Ice-Breakers for ages > 16! FUN FUN FUN!</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <p class="captiontext">IceBreakers(>16)</p>
                                 </td>
                             </tr>
@@ -58,22 +90,54 @@
                             <tr>
                                 <td class="auto-style3">
                                     <p class="auto-style3">&nbsp;</p>
-                                    <img src="../../Images/summer.jpg" width="150" height="150" class="photo" />
+                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']">
+                                        <div class="insideInfo">
+                                            <img src="../../Images/summer.jpg" width="150" height="150" class="photo" />
+                                            <div class="middle">
+                                                <div class="infoHead">It's Summer!</div>
+                                                <p class="infoBody">Fun filled sun activities! Remember your sunscreen!</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <p class="auto-style3"><b>It's Summer!</b></p>
                                 </td>
                                 <td class="auto-style3">
                                     <p class="auto-style3">&nbsp;</p>
-                                    <img src="../../Images/winter.jpg" width="150" height="150" class="photo" />
+                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']">
+                                        <div class="insideInfo">
+                                            <img src="../../Images/winter.jpg" width="150" height="150" class="photo" />
+                                            <div class="middle">
+                                                <div class="infoHead">Winter Fun!</div>
+                                                <p class="infoBody">Indoor Outdoors "Brrr" Chily Goodness!</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <p class="captiontext">Winter Fun!</p>
                                 </td>
                                 <td class="auto-style3">
                                     <p class="auto-style3">&nbsp;</p>
-                                    <img src="../../Images/beachparty.jpg" width="150" height="150" class="photo" />
+                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']">
+                                        <div class="insideInfo">
+                                            <img src="../../Images/beachparty.jpg" width="150" height="150" class="photo" />
+                                            <div class="middle">
+                                                <div class="infoHead">Beach Zone</div>
+                                                <p class="infoBody">Beach, Balls, and Babes!</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <p class="captiontext">Beach Zone</p>
                                 </td>
                                 <td class="auto-style3">
                                     <p class="auto-style3">&nbsp;</p>
-                                    <img src="../../Images/pool.jpg" width="150" height="150" class="photo" />
+                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']">
+                                        <div class="insideInfo">
+                                            <img src="../../Images/pool.jpg" width="150" height="150" class="photo" />
+                                            <div class="middle">
+                                                <div class="infoHead">Pool Parties</div>
+                                                <p class="infoBody">Water activities guaranteed to make you wet!</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <p class="captiontext">Pool Parties</p>
                                 </td>
                             </tr>
@@ -83,22 +147,54 @@
                             <tr>
                                 <td class="auto-style3">
                                     <p class="auto-style3">&nbsp;</p>
-                                    <img src="../../Images/formal.jpg" width="150" height="150" class="photo" />
+                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']">
+                                        <div class="insideInfo">
+                                            <img src="../../Images/formal.jpg" width="150" height="150" class="photo" />
+                                            <div class="middle">
+                                                <div class="infoHead">Formal Activities</div>
+                                                <p class="infoBody">A Prom, A Wedding, We got you covered!</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <p class="auto-style3"><b>Formal Activities</b></p>
                                 </td>
                                 <td class="auto-style3">
                                     <p class="auto-style3">&nbsp;</p>
-                                    <img src="../../Images/office.jpg" width="150" height="150" class="photo" />
+                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']">
+                                        <div class="insideInfo">
+                                            <img src="../../Images/office.jpg" width="150" height="150" class="photo" />
+                                            <div class="middle">
+                                                <div class="infoHead">Office Events</div>
+                                                <p class="infoBody">All work and no play, more like all play and no work!</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <p class="captiontext">Office Events</p>
                                 </td>
                                 <td class="auto-style3">
                                     <p class="auto-style3">&nbsp;</p>
-                                    <img src="../../Images/fire.jpg" width="150" height="150" class="photo" />
+                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']">
+                                        <div class="insideInfo">
+                                            <img src="../../Images/fire.jpg" width="150" height="150" class="photo" />
+                                            <div class="middle">
+                                                <div class="infoHead">Something New!</div>
+                                                <p class="infoBody">Want to try some experimental games? At your own risk!</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <p class="captiontext">Something NEW!</p>
                                 </td>
                                 <td class="auto-style3">
                                     <p class="auto-style3">&nbsp;</p>
-                                    <img src="../../Images/cheeky.jpg" width="150" height="150" class="photo" />
+                                    <a href="../ActivitiesPage/ActivitiesPage.aspx?catid=['a']">
+                                        <div class="insideInfo">
+                                            <img src="../../Images/cheeky.jpg" width="150" height="150" class="photo" />
+                                            <div class="middle">
+                                                <div class="infoHead">Something CHEEKY</div>
+                                                <p class="infoBody">Break the ice real fast, with some strip poker!</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     <p class="captiontext">Something CHEEKY!</p>
                                 </td> 
                             </tr>
