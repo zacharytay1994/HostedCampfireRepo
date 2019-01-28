@@ -118,6 +118,8 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             return table;
         }
 
+
+
         //// create a table with timeslots
         //public void fillTimeTable()
         //{

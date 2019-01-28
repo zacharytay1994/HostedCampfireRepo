@@ -53,7 +53,7 @@
               <asp:Label ID="StartTime" runat="Server" Text='<%#Eval("StartTime") %>'/>
             </td>
             <td>
-              <asp:Label ID="ActivityName" runat="Server" Text='<%#Eval("ActivityName") %>' />
+              <button id="actID" onclick="on()" type="button"><asp:Label ID="ActivityName" runat="Server" Text='<%#Eval("ActivityName") %>' /></button>
             </td>
             <td>
               <asp:Label ID="Duration" runat="Server" Text='<%#Eval("Duration") %>' />
@@ -143,4 +143,26 @@
             <td>&nbsp;</td>
         </tr>
     </table>--%>
+    <div id="overlay" onclick="off()">
+        <div>
+            <h2 id="actName" >
+
+            </h2>
+        </div>
+    </div>
+    <button onclick="on()" type="button">Click me test</button>
+    <script>
+        function displayOverlay() {
+
+        }
+        function on() {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("actName").innerHTML =
+                document.getElementById("actID").innerText;
+        }
+
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
 </asp:Content>
