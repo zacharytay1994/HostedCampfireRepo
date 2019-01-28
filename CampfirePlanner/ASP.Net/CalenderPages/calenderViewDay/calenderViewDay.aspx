@@ -4,10 +4,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <h2 style="margin-top:10px; width:95%; font-weight:bold;">Event Schedule Planner</h2>
-    <div>
-            <asp:RadioButtonList ID="rblDay" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" OnSelectedIndexChanged="rblDay_SelectedIndexChanged" Selected="1"></asp:RadioButtonList>                
-            <asp:Label ID="lblDay" runat="server"></asp:Label>
-    </div>
     <table style="padding:10px;">
         <tr>
             <td class="auto-style2">
@@ -28,7 +24,7 @@
         </tr>
         <tr>
             <td colspan="2">
-    <asp:ListView ID="testview" runat="server"  DataKeyNames="ActivityID"  OnSelectedIndexChanged="testview_SelectedIndexChanged">
+    <asp:ListView ID="testview" runat="server"  DataKeyNames="ActivityID">
           <LayoutTemplate>
           <table cellpadding="2" width="640px" border="1" runat="server" id="tblProducts">
             <tr runat="server">
@@ -63,91 +59,20 @@
             </td>
           </tr>
         </ItemTemplate>
-        <EditItemTemplate>
-          <tr style="background-color: #ADD8E6">
-            <td>
-              <asp:LinkButton ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />&nbsp;
-              <asp:LinkButton ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
-            </td>
-            <td>
-              <asp:TextBox ID="FirstNameTextBox" runat="server" Text='<%#Bind("FirstName") %>' 
-                MaxLength="50" /><br />
-            </td>
-            <td>
-              <asp:TextBox ID="LastNameTextBox" runat="server" Text='<%#Bind("LastName") %>' 
-                MaxLength="50" /><br />
-            </td>
-          </tr>
-        </EditItemTemplate>
     </asp:ListView>
             </td>
             <td>&nbsp;</td>
         </tr>
     </table>
-    <%--<asp:DropDownList ID="ddl1" runat="server"></asp:DropDownList>--%>
-
-    <%--<asp:Table ID="Table1" runat="server">
-    </asp:Table>
-    <br />
-    <table>
-        <tr>
-            <td>12 AM</td>
-            <td>1 AM</td>
-            <td>2 AM</td>
-            <td>3 AM</td>
-            <td>4 AM</td>
-            <td>5 AM</td>
-            <td>6 AM</td>
-            <td>7 AM</td>
-            <td>8 AM</td>
-            <td>9 AM</td>
-            <td>10 AM</td>
-            <td>11 AM</td>
-            <td>12 PM</td>
-            <td>1 PM</td>
-            <td>2 PM</td>
-            <td>3 PM</td>
-            <td>4 PM</td>
-            <td>5 PM</td>
-            <td>6 PM</td>
-            <td>7 PM</td>
-            <td>8 PM</td>
-            <td>9 PM</td>
-            <td>10 PM</td>
-            <td>12 PM</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>--%>
     <div id="overlay" onclick="off()">
         <div>
-            <h2 id="actName" >
-
-            </h2>
+            <h2 id="actName" ></h2>
+            <div>
+                <p style=""><b>Time-line</b></p>
+                <h1 style="text-align:left; color:white">[Start Time]</h1>
+                <p style="border-bottom:solid; border-color:white; color:white; text-align:center">Click on timeline to add ++</p>
+                <h1 style="text-align:right; color:white">[End Time]</h1>
+            </div>
         </div>
     </div>
     <button onclick="on()" type="button">Click me test</button>
@@ -158,7 +83,7 @@
         function on() {
             document.getElementById("overlay").style.display = "block";
             document.getElementById("actName").innerHTML =
-                document.getElementById("actID").innerText;
+                document.getElementById("actID").innerHTML;
         }
 
         function off() {
