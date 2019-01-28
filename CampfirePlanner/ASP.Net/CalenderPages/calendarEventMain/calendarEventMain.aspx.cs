@@ -131,5 +131,53 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
             // Display records on the new page.
             displayEvents();
         }
+
+        private bool checkRole(int eventID)
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Event INNER JOIN EventMembers ON Event.EventID = EventMembers.EventID WHERE Event.EventID = @eID AND AccountID = @aID", conn);
+            cmd.Parameters.AddWithValue("@eID", eventID);
+            cmd.Parameters.AddWithValue("@aID", returnUserID());
+            SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
+            conn.Open();
+            daActivity.Fill(result, "Event");
+            conn.Close();
+
+            string role = result.Tables[0].Rows[0]["MemberStatus"].ToString();
+
+            if (role == "c")
+                return true;
+            else
+                return false;
+        }
+
+        protected void RowCommand(Object sender, GridViewCommandEventArgs e)
+        {
+
+            if (e.CommandName == "Select")
+            {
+                int eventID = Convert.ToInt32(gvEvents.SelectedRow.Cells[0].Text);
+
+                if (checkRole(eventID) == true)
+                {
+                    string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+                    SqlConnection conn = new SqlConnection(strConn);
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Event WHERE EventID = @eID", conn);
+                    cmd.Parameters.AddWithValue("@eID", eventID);
+                    
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    
+                    // Refresh GridView
+                    gvEvents.DataSource = null;
+                    gvEvents.DataBind();
+                    displayEvents();
+                }
+            }
+
+        }
     }
 }
