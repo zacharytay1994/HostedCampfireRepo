@@ -17,6 +17,7 @@
     <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/bootstrap.min.js"></script>
+    <link href="Campfire_Master.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -25,10 +26,8 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     </form>--%>
     <form id="form1" runat="server">
-        <uc1:Navbar runat="server" id="Navbar" /> 
-            <asp:ContentPlaceHolder ID="body1" runat="server">
-
-            </asp:ContentPlaceHolder>
+        <uc1:Navbar runat="server" id="Navbar" CssClass="navBar" /> 
+            <asp:ContentPlaceHolder ID="body1" runat="server"></asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="body2" runat="server"></asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="body3" runat="server"></asp:ContentPlaceHolder>
     </form>

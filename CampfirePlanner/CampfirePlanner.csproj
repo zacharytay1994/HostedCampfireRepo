@@ -328,6 +328,7 @@
     <Content Include="ASP.Net\LoginRegister\LoginPage.css" />
     <Content Include="ASP.Net\LoginRegister\RegisterPage.aspx" />
     <Content Include="ASP.Net\LoginRegister\RegisterPage.css" />
+    <Content Include="ASP.Net\MasterPages\MainNavBar\Campfire_Master.css" />
     <Content Include="ASP.Net\MasterPages\MainNavBar\NavBar.ascx" />
     <Content Include="ASP.Net\MasterPages\ScheduleNavBar\Schedule.css" />
     <Content Include="Content\bootstrap-grid.css" />
