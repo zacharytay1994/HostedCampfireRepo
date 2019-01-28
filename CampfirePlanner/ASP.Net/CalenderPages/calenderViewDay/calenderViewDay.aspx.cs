@@ -14,37 +14,42 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int eventid = Convert.ToInt32(Request.QueryString["eventID"]);
-            int day = 1;
-            //int eventid = 2;
+            if (Session["UserAuthentication"] != null)
+            {
+                int eventid = Convert.ToInt32(Request.QueryString["eventID"]);
+                int day = 1;
+                //int eventid = 2;
 
-            //if (!Page.IsPostBack)
-            //{
-            //    for (int i = 1; i <= getNumberOfDays(eventid); i++)
-            //    {
-            //        rblDay.Items.Add(new ListItem("Day " + Convert.ToString(i), Convert.ToString(i)));
-            //    }
-            //}
+                //if (!Page.IsPostBack)
+                //{
+                //    for (int i = 1; i <= getNumberOfDays(eventid); i++)
+                //    {
+                //        rblDay.Items.Add(new ListItem("Day " + Convert.ToString(i), Convert.ToString(i)));
+                //    }
+                //}
 
-            //int day = Convert.ToInt32(Session["day"]);
+                //int day = Convert.ToInt32(Session["day"]);
 
 
-            DataTable table = GetData(eventid, day);
-            initInterface(eventid);
-            //fillTimeTable();
+                DataTable table = GetData(eventid, day);
+                initInterface(eventid);
+                //fillTimeTable();
 
-            //calenderViewDay1 myControl = (calenderViewDay1)Page.LoadControl("../calenderViewDay/calenderViewDay.ascx");
-            //myControl.stringy = "StringyTest";
-            //ContentPlaceHolder content = (ContentPlaceHolder)this.Master.FindControl("body1");
-            //content.Controls.Add(myControl);
+                //calenderViewDay1 myControl = (calenderViewDay1)Page.LoadControl("../calenderViewDay/calenderViewDay.ascx");
+                //myControl.stringy = "StringyTest";
+                //ContentPlaceHolder content = (ContentPlaceHolder)this.Master.FindControl("body1");
+                //content.Controls.Add(myControl);
 
-            //TableCell c = new TableCell();
-            //c.Controls.Add(myControl);
-            //Table1.Rows[0].Cells.Add(c);
-            //Page.Controls.Add(Page.LoadControl("../calenderViewDay/calenderViewDay.ascx"));
+                //TableCell c = new TableCell();
+                //c.Controls.Add(myControl);
+                //Table1.Rows[0].Cells.Add(c);
+                //Page.Controls.Add(Page.LoadControl("../calenderViewDay/calenderViewDay.ascx"));
 
-            //returnTime(table);
-            lv_databind(table);
+                //returnTime(table);
+                lv_databind(table);
+            }
+            else
+                Response.Redirect("~/ASP.Net/LoginRegister/LoginPage.aspx");
         }
 
         public void initInterface(int eventid)

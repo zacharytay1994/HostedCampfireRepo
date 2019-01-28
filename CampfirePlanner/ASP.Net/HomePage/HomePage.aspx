@@ -119,7 +119,7 @@
         <div class="slideshow-container" style="text-align:center;">
             <div class="mySlides1">
                 <div class="numText">1 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image1.jpg" style="width:80%"/></a>
+                <a href="HomePage.aspx"><img src="../../Images/image1.jpg" style="width:90%"/></a>
                 <br />
                 <br />
                 <br />
@@ -128,7 +128,7 @@
             </div>
             <div class="mySlides1">
                 <div class="numText">2 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image2.jpg" style="width:80%;" /></a>
+                <a href="HomePage.aspx"><img src="../../Images/image2.jpg" style="width:90%;" /></a>
                 <br />
                 <br />
                 <br />
@@ -137,15 +137,13 @@
             </div>
             <div class="mySlides1">
                 <div class="numText">3 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image3.jpg" style="width:80%;" /></a>
+                <a href="HomePage.aspx"><img src="../../Images/image3.jpg" style="width:90%;" /></a>
                 <br />
                 <br />
                 <br />
                 <br />
             <div class="text">Misty Mountain Lake</div>
             </div>
-            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
         </div>
         <div style="text-align:center">
             <span class="dot1" onclick="currentSlide(1)"></span> 
@@ -159,86 +157,80 @@
         <div class="slideshow-container" style="text-align:center;">
             <div class="mySlides2">
                 <div class="numText">1 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image1.jpg" style="width:80%;" /></a>
-                <%--<div class="text">Caption Text</div>--%>
+                <a href="HomePage.aspx"><img src="../../Images/image1.jpg" style="width:90%;" /></a>
+                <br />
+                <br />
+                <br />
+                <br />
+                <div class="text">Mt. Rainer National Park</div>
             </div>
             <div class="mySlides2">
                 <div class="numText">2 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image2.jpg" style="width:80%;" /></a>
-                <%--<div class="text">Caption Text</div>--%>
+                <a href="HomePage.aspx"><img src="../../Images/image2.jpg" style="width:90%;" /></a>
+                <br />
+                <br />
+                <br />
+                <br />
+                <div class="text">Pyramid of Giza</div>
             </div>
             <div class="mySlides2">
                 <div class="numText">3 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image3.jpg" style="width:80%;" /></a>
-                <%--<div class="text">Caption Text</div>--%>
+                <a href="HomePage.aspx"><img src="../../Images/image3.jpg" style="width:90%;" /></a>
+                <br />
+                <br />
+                <br />
+                <br />
+                <div class="text">Misty Mountain Lake</div>
             </div>
-            <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
         </div>
         <div style="text-align:center">
             <span class="dot2" onclick="currentSlide(1)"></span> 
             <span class="dot2" onclick="currentSlide(2)"></span> 
             <span class="dot2" onclick="currentSlide(3)"></span> 
         </div>
-        <br />
     </div>
-
         <!---Scripts--->
         <script>
           //Single slideshow
-            /*var slideIndex = 1;
-            showSlides(slideIndex);
-            function plusSlides(n) {
-              showSlides(slideIndex += n);
-            }
-            function currentSlide(n) {
-              showSlides(slideIndex = n);
-            }
-            function showSlides(n) {
-              var i;
-              var slides = document.getElementsByClassName("mySlides1");
-              var dots = document.getElementsByClassName("dot");
-                if (n > slides.length) { slideIndex = 1; }    
-                if (n < 1) { slideIndex = slides.length; }
-              for (i = 0; i < slides.length; i++) {
-                  slides[i].style.display = "none";  
-              }
-              for (i = 0; i < dots.length; i++) {
-                  dots[i].className = dots[i].className.replace(" active", "");
-              }
-              slides[slideIndex-1].style.display = "block";  
-              dots[slideIndex-1].className += " active";
-            }*/
-            
+            //var slideIndex = 1;
+            //showSlides(slideIndex);
+            //function plusSlides(n) {
+            //  showSlides(slideIndex += n);
+            //}
+            //function currentSlide(n) {
+            //  showSlides(slideIndex = n);
+            //}
+            //function showSlides(n) {
+            //  var i;
+            //  var slides = document.getElementsByClassName("mySlides1");
+            //  var dots = document.getElementsByClassName("dot");
+            //    if (n > slides.length) { slideIndex = 1; }    
+            //    if (n < 1) { slideIndex = slides.length; }
+            //  for (i = 0; i < slides.length; i++) {
+            //      slides[i].style.display = "none";  
+            //  }
+            //  for (i = 0; i < dots.length; i++) {
+            //      dots[i].className = dots[i].className.replace(" active", "");
+            //  }
+            //  slides[slideIndex-1].style.display = "block";  
+            //  dots[slideIndex-1].className += " active";
+            //}
+
+             //// Next/previous controls
+            //function plusSlides(n) {
+            //    showSlides(slideIndex += n);
+            //}
+
+            //// Thumbnail image controls
+            //function currentSlide(n) {
+            //    showSlides(slideIndex = n);
+            //    showSlides2(slideIndex = n);
+            //}
+
 //Multiple slideshows
         var slideIndex = 0;
         showSlides(slideIndex);
-
-        // Next/previous controls
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        // Thumbnail image controls
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides1");
-            var dots = document.getElementsByClassName("dot1");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
+        showSlides2(slideIndex);
 
         function showSlides() {
             var i;
@@ -251,23 +243,18 @@
             slides[slideIndex - 1].style.display = "block";
             setTimeout(showSlides, 3000); // Change image every 3 seconds
         }
-            
-            //Automatic scrolling
-            /*var slideIndex = 0;
-            var slideId = ["mySlides1" , "mySlides2"];
-            showSlides(1,0);
-            showSlides(1,1);
-            function showSlides(n, no) {
-                var i;
-                var x = document.getElementsByClassName("slideId[n,no]");
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) {slideIndex = 1}
-                slides[slideIndex-1].style.display = "block";
-                setTimeout(showSlides, 2000); // Change image every 2 seconds
-            }*/ 
+
+        function showSlides2() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides2");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides2, 3000); // Change image every 3 seconds
+        }
         </script>
         
         <script> 
@@ -282,30 +269,3 @@
             };
         </script>
 </asp:Content>
-<%--<asp:Content ID="Content4" ContentPlaceHolderID="body3" runat="server">
-    <!--Category Bar-->
-    <br />
-    <br />
-    <br />
-    <br />
-    <div class="row">
-        <div class="col-sm-2">
-            <div class="categories">
-                <table class="clist">
-                    <tr>
-                        <th class="auto-style1">Categories</th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <asp:CheckBoxList ID="cbl_categories" runat="server" RepeatDirection="Vertical" AutoPostBack="True" Width="200px" CssClass="auto-style2" Height="159px">
-                            <asp:ListItem Value="a">Action</asp:ListItem>
-                            <asp:ListItem Value="b">Adventure</asp:ListItem>
-                            <asp:ListItem Value="c">Rhythm</asp:ListItem>
-                            <asp:ListItem Value="d">Icebreaker</asp:ListItem>
-                        </asp:CheckBoxList>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-</asp:Content>--%>

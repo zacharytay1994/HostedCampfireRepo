@@ -18,7 +18,12 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserAuthentication"] != null)
+            {
 
+            }
+            else
+                Response.Redirect("~/ASP.Net/LoginRegister/LoginPage.aspx");
         }
 
         protected void submitForm_Click(object sender, EventArgs e)
@@ -88,7 +93,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
 
         protected void returnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/HomePage.aspx");
+            Response.Redirect("~/ASP.Net/HomePage/HomePage.aspx");
         }
     }
 }

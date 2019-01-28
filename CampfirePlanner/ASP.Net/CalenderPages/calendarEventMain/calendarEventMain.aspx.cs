@@ -14,9 +14,14 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "Welcome to your Events Page, " + Session["UserAuthentication"].ToString();
-            displayEvents();
-        }              
+            if (Session["UserAuthentication"] != null)
+            {
+                lblWelcome.Text = "Welcome to your Events Page, " + Session["UserAuthentication"].ToString();
+                displayEvents();
+            }
+            else
+                Response.Redirect("~/ASP.Net/LoginRegister/LoginPage.aspx");
+        }
 
         protected int returnUserID()
         {
@@ -125,6 +130,88 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
             gvEvents.PageIndex = e.NewPageIndex;
             // Display records on the new page.
             displayEvents();
+        }
+
+        private bool checkRole(int eventID)
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Event INNER JOIN EventMembers ON Event.EventID = EventMembers.EventID WHERE Event.EventID = @eID AND Event.AccountID = @aID", conn);
+            cmd.Parameters.AddWithValue("@eID", eventID);
+            cmd.Parameters.AddWithValue("@aID", returnUserID());
+            SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
+            conn.Open();
+            daActivity.Fill(result, "Event");
+            conn.Close();
+
+            string role = result.Tables[0].Rows[0]["MemberStatus"].ToString();
+
+            if (role == "c")
+                return true;
+            else
+                return false;
+        }
+
+        protected void RowCommand(Object sender, GridViewCommandEventArgs e)
+        {
+
+            if (e.CommandName == "deleteClicked")
+            {
+                //Determine the RowIndex of the Row whose Button was clicked.
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+
+                //Reference the GridView Row.
+                GridViewRow row = gvEvents.Rows[rowIndex];
+
+                //Access Cell values.
+                int eventID = int.Parse(row.Cells[0].Text);
+
+                if (checkRole(eventID) == true)
+                {
+                    string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+                    SqlConnection conn = new SqlConnection(strConn);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM EventActivities WHERE EventID = @eID", conn);
+                    cmd.Parameters.AddWithValue("@eID", eventID);
+                    SqlDataAdapter daVotes = new SqlDataAdapter(cmd);
+                    DataSet result = new DataSet();
+
+                    conn.Open();
+                    daVotes.Fill(result, "EventActivities");
+                    conn.Close();
+
+                    if (result.Tables["EventActivities"].Rows.Count > 0) // If Event has Activities
+                    {
+                        // Delete Event's Activities
+                        cmd = new SqlCommand("DELETE FROM EventActivities WHERE EventID = @eID", conn);
+                        cmd.Parameters.AddWithValue("@eID", eventID);
+
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+
+                    // Delete Event's Members
+                    cmd = new SqlCommand("DELETE FROM EventMembers WHERE EventID = @eID", conn);
+                    cmd.Parameters.AddWithValue("@eID", eventID);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    // Delete Event
+                    cmd = new SqlCommand("DELETE FROM Event WHERE EventID = @eID", conn);
+                    cmd.Parameters.AddWithValue("@eID", eventID);      
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    
+                    // Refresh GridView
+                    gvEvents.DataSource = null;
+                    gvEvents.DataBind();
+                    displayEvents();
+                }
+            }
+
         }
     }
 }

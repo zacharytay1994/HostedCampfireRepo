@@ -17,6 +17,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
         {
             if (!Page.IsPostBack)
             {
+                displayComments();
                 showActivityDesc();
 
                 //if (Session["UserAuthentication"].ToString() == "Admin")
@@ -204,14 +205,24 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
         //    }
         //}
 
-        protected void btnDownVote_Click(object sender, EventArgs e)
+        protected void btnDownVote_Click(object sender, ImageClickEventArgs e)
         {
-            voteClicked(0);
+            if (Session["UserAuthentication"] != null)
+            {
+                voteClicked(0);
+            }
+            else
+                Response.Redirect("~/ASP.NET/LoginRegister/LoginPage.aspx");
         }
 
-        protected void btnUpVote_Click(object sender, EventArgs e)
+        protected void btnUpVote_Click(object sender, ImageClickEventArgs e)
         {
-            voteClicked(1);
+            if (Session["UserAuthentication"] != null)
+            {
+                voteClicked(1);
+            }
+            else
+                Response.Redirect("~/ASP.NET/LoginRegister/LoginPage.aspx");
         }
 
         private void voteClicked(int voteStatus)
@@ -326,7 +337,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             cmd = new SqlCommand("UPDATE Activity SET Votes = @vote WHERE ActivityID = @actID", conn);
 
             cmd.Parameters.AddWithValue("@vote", total);
-            cmd.Parameters.AddWithValue("@actID", getAccID());
+            cmd.Parameters.AddWithValue("@actID", Convert.ToInt32(Request.QueryString["actID"]));
             SqlDataAdapter daID = new SqlDataAdapter(cmd);
             result = new DataSet();
             conn.Open();
@@ -356,9 +367,14 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             return accID;
         }
 
-        protected void btnShowHide_Click(object sender, EventArgs e)
+        protected void btnShow_Click(object sender, EventArgs e)
         {
-            displayComments();
+            gvComments.Visible = true;
+        }
+
+        protected void btnHide_Click(object sender, EventArgs e)
+        {
+            gvComments.Visible = false;
         }
 
         protected void addComment()
@@ -378,9 +394,12 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
                         lblThanks.Text = "Comment Added!";
+                        txtAddComment.Text = "";
                     }
                 }
             }
+
+            displayComments();
         }
 
         protected void displayComments()
@@ -405,7 +424,12 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
 
         protected void btnSubmitComment_Click(object sender, EventArgs e)
         {
-            addComment();
+            if (Session["UserAuthentication"] != null)
+            {
+                addComment();
+            }
+            else
+                Response.Redirect("~/ASP.Net/LoginRegister/LoginPage.aspx");
         }
     }
 }
