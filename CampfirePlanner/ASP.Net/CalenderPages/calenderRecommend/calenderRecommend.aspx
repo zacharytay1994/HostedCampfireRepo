@@ -83,7 +83,6 @@
                     <div class="titles" style="top:45%; left:75%">
                     <asp:Button ID="btnReturn" class="buttonStyle" runat="server" Text="Return to Event Page" CausesValidation="False" OnClick="btnReturn_Click" />
                     <asp:Button ID="btnAdd" class="buttonStyle" runat="server" Text="Add" OnClick="btnAdd_Click" />
-                    <asp:Label ID="lblAdded" runat="server" ForeColor="Red"></asp:Label>
                     </div>
                 </div>
 

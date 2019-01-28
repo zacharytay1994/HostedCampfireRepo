@@ -92,9 +92,9 @@ td {
 }
 
 /*-----SlideShow-----*/
-.mySlides1, .mySlides2 {
+/*.mySlides1, .mySlides2 {
     display: none;
-}
+}*/
 
 img {
     vertical-align: middle;
