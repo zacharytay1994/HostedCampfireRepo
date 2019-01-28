@@ -16,6 +16,9 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
         {
             if (!Page.IsPostBack)
             {
+                string catid = Request.QueryString["catid"];
+                //List<string> typesList = new List<string> { "catid" };
+                //for (int index = 0; index < getlength(typesList)
                 List<string> typesList = new List<string> { "a" };
                 Session["session_type"] = typesList;
                 Session["session_page"] = 0;

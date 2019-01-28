@@ -24,6 +24,20 @@ h2 {
     font-family: Georgia;
 }
 
+#actName {
+    text-align: left;
+    margin-left: 1%;
+    margin-top: 20px;
+    border-left: solid;
+    border-bottom: solid;
+    border-color: dodgerblue;
+    border-left-width: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-family: Georgia;
+    color: white;
+}
+
 .titles {
     text-align: left;
     margin-left: 1%;
@@ -45,10 +59,9 @@ h2 {
 }
 
 table {
-    position:center;
-    margin-left: auto;
-    margin-right: auto;
-    margin: 20px;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .outputtext{
@@ -89,3 +102,39 @@ td {
         background-color: #CE5D5A;
         color: #F7F6F3;
     }
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    display: none;
+}
+
+.timeDis {
+    display: inline-block;
+    position: relative;
+    width: 10%;
+    height: 10%;
+    text-align: center;
+    color: black;
+    background-color: darkseagreen;
+    border: solid;
+    border-color: goldenrod;
+    border-width:3px;
+}
+
+.fkingheader {
+    background-color:white;
+    font-weight:bold;
+}
+
+.fkingbox {
+}
