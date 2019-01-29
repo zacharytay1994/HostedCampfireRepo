@@ -123,6 +123,8 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
             return table;
         }
 
+
+
         //// create a table with timeslots
         //public void fillTimeTable()
         //{
@@ -244,15 +246,5 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
 
             return daysActivity.Days + 1;
         }
-
-        protected void testview_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void rblDay_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Session["day"] = rblDay.SelectedItem;
-        }
-    }
+    }        
 }

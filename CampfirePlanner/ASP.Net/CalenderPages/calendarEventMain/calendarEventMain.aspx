@@ -48,7 +48,7 @@
     </div>
     <div>
         <h2 style="font-family:Georgia; font-weight: bold; text-align: left; border-bottom:solid; border-left: solid; border-left-width: 20px; border-color:dodgerblue; padding-left:10px; width: 90%; margin-left: 5%;">Current Events</h2>
-        <asp:GridView ID="gvEvents" runat="server" EmptyDataText="There are no Events!" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" AutoGenerateColumns="False" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" OnSelectedIndexChanged="gvEvents_SelectedIndexChanged" OnPageIndexChanging="gvEvents_PageIndexChanging">
+        <asp:GridView ID="gvEvents" runat="server" EmptyDataText="There are no Events!" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" AutoGenerateColumns="False" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" OnSelectedIndexChanged="gvEvents_SelectedIndexChanged" OnPageIndexChanging="gvEvents_PageIndexChanging" OnRowCommand="RowCommand">
             <%--<AlternatingRowStyle BackColor="White" />--%>
             <Columns>
                 <asp:BoundField DataField="EventID" HeaderText="Event ID" />
@@ -58,6 +58,7 @@
                 <asp:ButtonField CommandName="Select" Text="View Collaborators" HeaderText="Collaborators"/>
                 <asp:HyperLinkField DataNavigateUrlFields="EventID" DataNavigateUrlFormatString="../calenderViewDay/calenderViewDay.aspx?eventID={0}" Text="View" HeaderText="Details" />
                 <asp:HyperLinkField DataNavigateUrlFields="EventID" DataNavigateUrlFormatString="../calenderRecommend/calenderRecommend.aspx?eventID={0}" Text="Add Activity" HeaderText="Add Activity" />
+                <asp:ButtonField Text="Delete" CommandName="deleteClicked" />
             </Columns>
 
 <HeaderStyle CssClass="header"></HeaderStyle>
