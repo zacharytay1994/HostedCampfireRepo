@@ -24,17 +24,39 @@
             position: fixed; /* Sit on top of the page content */
             display: none; /* Hidden by default */
             width: 100%; /* Full width (cover the whole page) */
-            height: 100%; /* Full height (cover the whole page) */
-            top: 0;
+            height: 0%; /* Full height (cover the whole page) */
+            /*top: 0;*/
             left: 0;
             right: 0;
             bottom: 0;
             background-color: rgba(237, 223, 248,0.6); /* Black background with opacity */
             z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
             cursor: pointer; /* Add a pointer on hover */
-            background: url(../../Images/fallingleavesgif.gif);
             background-repeat: no-repeat;
             background-size:cover;
+            animation-name: uplift;
+            animation-duration: 1s;
+            animation-fill-mode:forwards;
+            animation-timing-function:ease;
+            background: url(../../Images/header_background.png);
+        }
+
+        @keyframes uplift {
+            0% {
+                height: 0%;
+            }
+            100% {
+                height: 100%;
+            }
+        }
+
+        @keyframes downlift {
+            0% {
+                height: 100%;
+            }
+            100% {
+                height: 0%;
+            }
         }
 
         #panel1 {
@@ -42,119 +64,347 @@
             position:absolute;
             width: 20%;
             height: 100%;
-            background-color:black;
             margin-right: 2%;
             margin-left:2%;
             animation-name: getInPlace1;
-            animation-duration: .5s;
+            animation-duration: 1s;
             animation-fill-mode:forwards;
             animation-timing-function: ease;
+            animation-delay: 1s;
+            border-right:solid;
+            border-left:solid;
+            border-color:black;
+            background-color: #f52500;
+            background-image: url("https://www.transparenttextures.com/patterns/embossed-paper.png");
+        }
+        #sidePanel1 {
+            display:none;
+            position:absolute;
+            width: 20%;
+            height: 100%;
+            margin-right: 2%;
+            margin-left:2%;
+            animation-name: getInPlaceSP1;
+            animation-duration: 1s;
+            animation-fill-mode:forwards;
+            animation-timing-function: ease;
+            border-right:solid;
+            border-left:solid;
+            border-color:gold;
+            border-width:2px;
+            background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+            z-index: 2;
+            left:2%;
+        }
+
+        @keyframes getInPlaceSP1 {
+            0% {
+                background-color:rgba(255, 255, 255, 0.0);
+                left: 2%;
+            }
+            100% {
+                background-color:rgba(248, 232, 217, 0.9);
+                left: 22%;
+            }
         }
         #panel2 {
             display:inline-block;
             position:absolute;
             width: 20%;
             height: 100%;
-            background-color:white;
             margin-right: 2%;
-            margin-left:2%;
+            margin-left: 2%;
             animation-name: getInPlace2;
-            animation-duration: .5s;
+            animation-duration: 1s;
             animation-fill-mode:forwards;
             animation-timing-function: ease;
+            animation-delay: 1s;
+            border-right:solid;
+            border-left:solid;
+            border-color:black;
+            background-color: #b55400;
+            background-image: url("https://www.transparenttextures.com/patterns/embossed-paper.png");
+        }
+        #sidePanel2 {
+            display:none;
+            position:absolute;
+            width: 20%;
+            height: 100%;
+            margin-right: 2%;
+            margin-left:2%;
+            animation-name: getInPlaceSP2;
+            animation-duration: 1s;
+            animation-fill-mode:forwards;
+            animation-timing-function: ease;
+            border-right:solid;
+            border-left:solid;
+            border-color:gold;
+            border-width:2px;
+            background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+            z-index: 2;
+            left:26%;
+        }
+
+        @keyframes getInPlaceSP2 {
+            0% {
+                background-color:rgba(255, 255, 255, 0.0);
+                left: 26%;
+            }
+            100% {
+                background-color:rgba(248, 232, 217, 0.9);
+                left: 46%;
+            }
         }
         #panel3 {
             display:inline-block;
             position:absolute;
             width: 20%;
             height: 100%;
-            background-color:black;
             margin-right: 2%;
             margin-left:2%;
             animation-name: getInPlace3;
-            animation-duration: .5s;
+            animation-duration: 1s;
             animation-fill-mode:forwards;
             animation-timing-function: ease;
+            animation-delay: 1s;
+            border-right:solid;
+            border-left:solid;
+            border-color:black;
+            background-color: #c9c12f;
+            background-image: url("https://www.transparenttextures.com/patterns/embossed-paper.png");
+        }
+        #sidePanel3 {
+            display:none;
+            position:absolute;
+            width: 20%;
+            height: 100%;
+            margin-right: 2%;
+            margin-left:2%;
+            animation-name: getInPlaceSP3;
+            animation-duration: 1s;
+            animation-fill-mode:forwards;
+            animation-timing-function: ease;
+            border-right:solid;
+            border-left:solid;
+            border-color:gold;
+            border-width:2px;
+            background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+            z-index: 2;
+            left:50%;
+        }
+
+        @keyframes getInPlaceSP3 {
+            0% {
+                background-color:rgba(255, 255, 255, 0.0);
+                left: 50%;
+            }
+            100% {
+                background-color:rgba(248, 232, 217, 0.9);
+                left: 70%;
+            }
         }
         #panel4 {
             display:inline-block;
             position:absolute;
             width: 20%;
             height: 100%;
-            background-color:white;
             margin-right: 2%;
             margin-left:2%;
             animation-name: getInPlace4;
-            animation-duration: .5s;
+            animation-duration: 1s;
             animation-fill-mode:forwards;
             animation-timing-function: ease;
+            animation-delay: 1s;
+            border-right:solid;
+            border-left:solid;
+            border-color:black;
+            background-color: #23ad86;
+            background-image: url("https://www.transparenttextures.com/patterns/embossed-paper.png");
+        }
+        #sidePanel4 {
+            display:none;
+            position:absolute;
+            width: 20%;
+            height: 100%;
+            margin-right: 2%;
+            margin-left:2%;
+            animation-name: getInPlaceSP4;
+            animation-duration: 1s;
+            animation-fill-mode:forwards;
+            animation-timing-function: ease;
+            border-right:solid;
+            border-left:solid;
+            border-color:gold;
+            border-width:2px;
+            background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+            z-index: 2;
+            left:76%;
+        }
+
+        @keyframes getInPlaceSP4 {
+            0% {
+                background-color:rgba(255, 255, 255, 0.0);
+                left: 76%;
+            }
+            100% {
+                background-color:rgba(248, 232, 217, 0.9);
+                left: 56%;
+            }
         }
 
         @keyframes getInPlace1 {
             0% {
-                background-color: red;
+                background-color: #ccae93;
                 left: 0%;
                 top: 0px;
             }
             100% {
-                background-color: red;
+                background-color: #f52500;
                 left: 2%;
                 top: 0px;
             }
         }
         @keyframes getInPlace2 {
             0% {
-                background-color: red;
+                background-color: #fac7be;
                 left: 0%;
                 top: 0px;
             }
             100% {
-                background-color: red;
+                background-color: #b55400;
                 left: 26%;
                 top: 0px;
             }
         }
         @keyframes getInPlace3 {
             0% {
-                background-color: red;
+                background-color: #c9bd80;
                 left: 0%;
                 top: 0px;
             }
             100% {
-                background-color: red;
+                background-color: #c9c12f;
                 left: 50%;
                 top: 0px;
             }
         }
         @keyframes getInPlace4 {
             0% {
-                background-color: red;
+                background-color: #82ada1;
                 left: 0%;
                 top: 0px;
             }
             100% {
-                background-color: red;
+                background-color: #23ad86;
                 left: 74%;
                 top: 0px;
             }
         }
         #menuOpen {
-            background-color:rgba(210, 204, 248,0.5);
+            background-color:rgba(210, 204, 248,0.7);
             position:fixed;
             width:100%;
-            height: 2%;
-            top:98%;
+            height: 3%;
+            top:97%;
             z-index: 2;
             border-top:solid;
             border-right:solid;
             border-left:solid;
-            border-color:rgba(210, 204, 248,0.5)
+            border-color:rgba(210, 204, 248,0.8);
+            transition: 1s;
         }
 
         #menuOpen:hover {
-            background-color:rgba(221, 211, 248,0.5);
-            opacity: 0.9;
-            transform:scaleY(3);
+            background-color:rgba(221, 211, 248,1);
+        }
+
+        #menuClose {
+           border-bottom:solid;
+           border-color:rgb(205, 169, 240);
+           border-width:3px;
+        }
+
+        #menuTitle {
+            background: url(../../Images/header_background3.png);
+            position:fixed;
+            z-index: 2;
+            border-bottom:solid;
+            border-right:solid;
+            border-left:solid;
+            border-color:rgba(130, 154, 240,0.5);
+            text-align:center;
+            width:100%;
+        }
+        #menuFooter {
+            background: url(../../Images/header_background2.png);
+            position:fixed;
+            z-index: 2;
+            border-top:solid;
+            border-right:solid;
+            border-left:solid;
+            border-color:rgba(205, 169, 240,0.5);
+            border-width:3px;
+            text-align:center;
+            width:100%;
+            bottom:0%;
+        }
+        .panelText {
+            top:50%;
+            text-align:center;
+            width:100%;
+            color:white;
+            position:relative;
+        }
+        .panelDesc{
+            top:50%;
+            text-align:center;
+            width:100%;
+            color:white;
+            position:relative;
+        }
+        .instructTitle {
+            bottom:30%;
+            text-align:center;
+            width:100%;
+            color:black;
+            position:absolute;
+            padding-left:5px;
+            font-family:'Bodoni MT';
+            text-decoration-line:underline;
+        }
+        .videodiv {
+            position:relative;
+            text-align:center;
+            top:30%;
+            border-top:solid;
+            border-bottom:solid;
+            border-color:black;
+            border-width:10px;
+        }
+        .videoIn {
+            width: 100%;
+            height: 100%;
+        }
+        .redirectBut {
+            top:80%; 
+            position:absolute;
+            text-align:center;
+            width: 100%;
+            border:solid;
+            border-color:black;
+            padding:5px;
+            background-color:lightgray;
+            border-radius:10px;
+            border-width:5px;
+        }
+        .redirectBut:hover {
+            background-color: lightcyan;
+        }
+        .butText {
+            text-align:center;
+            font-family:'Bodoni MT';
+            color:black;
+            font-weight:bold;
         }
     </style>
 </head>
@@ -162,12 +412,79 @@
     <%--<form id="form2" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     </form>--%>
-    <div id="menuOpen" onclick="onMenu()"></div>
-    <div id="overlayMenu" onclick="offMenu()">
-        <div id="panel1"></div>
-        <div id="panel2"></div>
-        <div id="panel3"></div>
-        <div id="panel4"></div>
+    <div id="menuOpen" onclick="onMenu()">
+        <p style="text-align:center;font-size:50%;"><b>[CLICK ME] Show me what to do! [CLICK ME]</b></p>
+    </div>
+    <div id="overlayMenu">
+        <div id="panel1" onclick="clearSidePanels(); displaySP1();">
+            <h3 class="panelText"><u>CREATE</u></h3>
+            <p class="panelDesc">an event >></p>
+        </div>
+        <div id="sidePanel1">
+            <div class="videodiv">
+                <video class="videoIn" autoplay loop controls">
+                    <source src="../../Images/HowToCreateEvent.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3 class="instructTitle">
+                How to create an Event
+            </h3>
+            <a class="redirectBut" href="/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx"><p class="butText">- take me there -</p></a>
+        </div>
+        <div id="panel2" onclick="clearSidePanels(); displaySP2()">
+            <h3 class="panelText"><u>ADD</u></h3>
+            <p class="panelDesc">activities >></p>
+        </div>
+        <div id="sidePanel2">
+            <div class="videodiv">
+                <video class="videoIn" autoplay loop controls">
+                    <source src="../../Images/HowToAddActivity.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3 class="instructTitle">
+                How to add an Activity
+            </h3>
+            <a class="redirectBut" href="/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx"><p class="butText">- take me there -</p></a>
+        </div>
+        <div id="panel3" onclick="clearSidePanels(); displaySP3()">
+            <h3 class="panelText"><u>MANAGE</u></h3>
+            <p class="panelDesc">your timeline >></p>
+        </div>
+        <div id="sidePanel3">
+            <div class="videodiv">
+                <video class="videoIn" autoplay loop controls">
+                    <source src="../../Images/HowToManageTimeline.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3 class="instructTitle">
+                How to manage your Timeline
+            </h3>
+            <a class="redirectBut" href="/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx"><p class="butText">- take me there -</p></a>
+        </div>
+        <div id="panel4" onclick="clearSidePanels(); displaySP4()">
+            <h3 class="panelText"><u>MORE</u></h3>
+            <p class="panelDesc">browse! create! share!</p>
+        </div>
+        <div id="sidePanel4">
+            <div class="videodiv">
+                <video class="videoIn" autoplay loop controls">
+                    <source src="../../Images/WhatElse.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3 class="instructTitle">
+                What else does Campfire Offers?
+            </h3>
+            <a class="redirectBut" href="/ASP.Net/HomePage/HomePage.aspx"><p class="butText">- take me there -</p></a>
+        </div>
+        <div id="menuTitle">
+            <h3 style="color:black; font-family:'Bodoni MT';"><u>- Getting Started -</u></h3>
+            <div id="menuClose" onclick="offMenu(); clearSidePanels()">
+            <p style="text-align:center; margin-bottom:0; color:black; font-family:'Bodoni MT';"><u>click to close</u></p>
+        </div>
+        <div id="menuFooter">
+            <p style="color:lightblue; font-family:'Bodoni MT'; text-align:center; margin-bottom:0" onclick="offMenu(); clearSidePanels()">- welcome to the help desk -</p>
+        </div>
+        </div>
     </div>
     <form id="form1" runat="server">
         <uc1:Navbar runat="server" id="Navbar" />
@@ -183,7 +500,47 @@
         }
 
         function offMenu() {
-            document.getElementById("overlayMenu").style.display = "none";
+            document.getElementById("overlayMenu").style.animationName = "downlift";
+            setTimeout(function () {
+                document.getElementById("overlayMenu").style.display = "none";
+                document.getElementById("overlayMenu").style.animationName = "uplift";
+            }, 1000);
+            //document.getElementById("overlayMenu").style.display = "none";
+        }
+
+        function displaySP1() {
+            document.getElementById("sidePanel1").style.display = "inline-block";
+        }
+        function clearSP1() {
+            document.getElementById("sidePanel1").style.display = "none";
+        }
+
+        function displaySP2() {
+            document.getElementById("sidePanel2").style.display = "inline-block";
+        }
+        function clearSP2() {
+            document.getElementById("sidePanel2").style.display = "none";
+        }
+
+        function displaySP3() {
+            document.getElementById("sidePanel3").style.display = "inline-block";
+        }
+        function clearSP3() {
+            document.getElementById("sidePanel3").style.display = "none";
+        }
+
+        function displaySP4() {
+            document.getElementById("sidePanel4").style.display = "inline-block";
+        }
+        function clearSP4() {
+            document.getElementById("sidePanel4").style.display = "none";
+        }
+
+        function clearSidePanels() {
+            document.getElementById("sidePanel1").style.display = "none";
+            document.getElementById("sidePanel2").style.display = "none";
+            document.getElementById("sidePanel3").style.display = "none";
+            document.getElementById("sidePanel4").style.display = "none";
         }
     </script>
 </body>
