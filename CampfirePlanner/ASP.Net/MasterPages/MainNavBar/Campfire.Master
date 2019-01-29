@@ -26,9 +26,12 @@
     </form>--%>
     <form id="form1" runat="server">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <uc1:Navbar runat="server" id="Navbar" CssClass="navBar" /> 
             <asp:ContentPlaceHolder ID="body1" runat="server"></asp:ContentPlaceHolder>
 =======
+=======
+>>>>>>> parent of bbf4231... Merge pull request #7 from zacharytay1994/sexy
         <uc1:Navbar runat="server" id="Navbar" /> 
             <asp:ContentPlaceHolder ID="body1" runat="server">
 
