@@ -19,18 +19,172 @@
     <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style>
+        #overlayMenu {
+            position: fixed; /* Sit on top of the page content */
+            display: none; /* Hidden by default */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(237, 223, 248,0.6); /* Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+            background: url(../../Images/fallingleavesgif.gif);
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        #panel1 {
+            display:inline-block;
+            position:absolute;
+            width: 20%;
+            height: 100%;
+            background-color:black;
+            margin-right: 2%;
+            margin-left:2%;
+            animation-name: getInPlace1;
+            animation-duration: .5s;
+            animation-fill-mode:forwards;
+            animation-timing-function: ease;
+        }
+        #panel2 {
+            display:inline-block;
+            position:absolute;
+            width: 20%;
+            height: 100%;
+            background-color:white;
+            margin-right: 2%;
+            margin-left:2%;
+            animation-name: getInPlace2;
+            animation-duration: .5s;
+            animation-fill-mode:forwards;
+            animation-timing-function: ease;
+        }
+        #panel3 {
+            display:inline-block;
+            position:absolute;
+            width: 20%;
+            height: 100%;
+            background-color:black;
+            margin-right: 2%;
+            margin-left:2%;
+            animation-name: getInPlace3;
+            animation-duration: .5s;
+            animation-fill-mode:forwards;
+            animation-timing-function: ease;
+        }
+        #panel4 {
+            display:inline-block;
+            position:absolute;
+            width: 20%;
+            height: 100%;
+            background-color:white;
+            margin-right: 2%;
+            margin-left:2%;
+            animation-name: getInPlace4;
+            animation-duration: .5s;
+            animation-fill-mode:forwards;
+            animation-timing-function: ease;
+        }
+
+        @keyframes getInPlace1 {
+            0% {
+                background-color: red;
+                left: 0%;
+                top: 0px;
+            }
+            100% {
+                background-color: red;
+                left: 2%;
+                top: 0px;
+            }
+        }
+        @keyframes getInPlace2 {
+            0% {
+                background-color: red;
+                left: 0%;
+                top: 0px;
+            }
+            100% {
+                background-color: red;
+                left: 26%;
+                top: 0px;
+            }
+        }
+        @keyframes getInPlace3 {
+            0% {
+                background-color: red;
+                left: 0%;
+                top: 0px;
+            }
+            100% {
+                background-color: red;
+                left: 50%;
+                top: 0px;
+            }
+        }
+        @keyframes getInPlace4 {
+            0% {
+                background-color: red;
+                left: 0%;
+                top: 0px;
+            }
+            100% {
+                background-color: red;
+                left: 74%;
+                top: 0px;
+            }
+        }
+        #menuOpen {
+            background-color:rgba(210, 204, 248,0.5);
+            position:fixed;
+            width:100%;
+            height: 2%;
+            top:98%;
+            z-index: 2;
+            border-top:solid;
+            border-right:solid;
+            border-left:solid;
+            border-color:rgba(210, 204, 248,0.5)
+        }
+
+        #menuOpen:hover {
+            background-color:rgba(221, 211, 248,0.5);
+            opacity: 0.9;
+            transform:scaleY(3);
+        }
+    </style>
 </head>
 <body>
     <%--<form id="form2" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     </form>--%>
+    <div id="menuOpen" onclick="onMenu()"></div>
+    <div id="overlayMenu" onclick="offMenu()">
+        <div id="panel1"></div>
+        <div id="panel2"></div>
+        <div id="panel3"></div>
+        <div id="panel4"></div>
+    </div>
     <form id="form1" runat="server">
-        <uc1:Navbar runat="server" id="Navbar" /> 
+        <uc1:Navbar runat="server" id="Navbar" />
             <asp:ContentPlaceHolder ID="body1" runat="server">
-
+                
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="body2" runat="server"></asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="body3" runat="server"></asp:ContentPlaceHolder>
     </form>
+    <script>
+        function onMenu() {
+            document.getElementById("overlayMenu").style.display = "block";
+        }
+
+        function offMenu() {
+            document.getElementById("overlayMenu").style.display = "none";
+        }
+    </script>
 </body>
 </html>
