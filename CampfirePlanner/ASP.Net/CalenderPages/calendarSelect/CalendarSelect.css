@@ -29,9 +29,12 @@
     background-color: #000000;
 }
 
-.calendarSelect {
-    
-}
+/*.calendarSelect {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+}*/
 
     .calendarSelect:hover {
         color: red;
@@ -41,6 +44,31 @@
         -o-transition: all 0.3s ease;
         border: 2px solid #fff;
     }
+
+.userGrid {
+    
+}
+
+.userRows {
+    background-color: aliceblue;
+    color: black;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+}
+
+.header {
+    background-color: lightgrey;
+    font-size: medium;
+    border-style: solid;
+    border-color: black;
+}
+
+.buttonAdd {
+    background-color: transparent;
+    color: blue;
+    text-decoration: underline;
+}
 
 table {
     text-align: center;
