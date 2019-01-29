@@ -4,7 +4,7 @@
         background-color: lightblue;
     }
 </style>
-<nav class="navbar navbar-expand-md navbar-light" style="background-color:indianred; border-bottom:solid; border-color:darkblue">
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:indianred; border-bottom:solid; border-color:darkred">
     <!-- The brand(or icon) of the navbar -->
     <a class="navbar-brand" href="/ASP.Net/HomePage/HomePage.aspx" style="font-size: 32px; font-weight: bold; color: salmon; font-family:Garamond;">CampfirePlanner
     </a>
