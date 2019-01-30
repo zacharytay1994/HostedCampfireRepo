@@ -17,7 +17,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
         {
             if (Session["UserAuthentication"] != null)
             {
-
+                fillUserList();
             }
             else
                 Response.Redirect("~/ASP.Net/LoginRegister/LoginPage.aspx");
@@ -255,8 +255,8 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
 
                 addEventMembers(eventID, accID, "m");
             }
-
-            Response.Redirect("/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx");
+            ScriptManager.RegisterStartupScript(this, this.GetType(),
+                    "alert", "alert('Created!');window.location = '/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx';", true);
         }
 
         private void addEventMembers(int eID, int aID, string aStatus)

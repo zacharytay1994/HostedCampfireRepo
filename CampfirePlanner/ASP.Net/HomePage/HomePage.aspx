@@ -20,7 +20,8 @@
     <div class="scrollUp">
         <br />
             <%--&nbsp;&nbsp;&nbsp;--%>
-        <input type="submit" class="scrollButton" value="Top" />
+        
+        <input type="image" src="../../Images/go-to-the-top.png" class="scrollButton" />
     </div>
     <div class="main">
         <div class="row">
@@ -212,7 +213,7 @@
         <h2>Featured Activities</h2>
         <p style="border-bottom:solid; border-color:salmon;">Activities people favoured this week!</p>
         <br />
-        <div class="slideshow-container" style="text-align:center;">
+        <div class="slideshow-container" style="text-align:center">
             <div class="mySlides1">
                 <div class="numText">1 / 3</div>
                 <a href="HomePage.aspx"><img src="../../Images/image1.jpg" style="width:90%"/></a>
@@ -224,7 +225,7 @@
             </div>
             <div class="mySlides1">
                 <div class="numText">2 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image2.jpg" style="width:90%;" /></a>
+                <a href="HomePage.aspx"><img src="../../Images/image2.jpg" style="width:90%" /></a>
                 <br />
                 <br />
                 <br />
@@ -233,7 +234,7 @@
             </div>
             <div class="mySlides1">
                 <div class="numText">3 / 3</div>
-                <a href="HomePage.aspx"><img src="../../Images/image3.jpg" style="width:90%;" /></a>
+                <a href="HomePage.aspx"><img src="../../Images/image3.jpg" style="width:90%" /></a>
                 <br />
                 <br />
                 <br />
@@ -283,6 +284,8 @@
             <span class="dot2" onclick="currentSlide(1)"></span> 
             <span class="dot2" onclick="currentSlide(2)"></span> 
             <span class="dot2" onclick="currentSlide(3)"></span> 
+            <br />
+            <br />
         </div>
     </div>
         <!---Scripts--->

@@ -173,7 +173,8 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             objActivity.StartTime = DateTime.Parse(txtStart.Text).TimeOfDay.ToString();
             objActivity.Day = Convert.ToInt32(rblDay.SelectedValue);
             objActivity.eventActivityAdd();
-            lblAdded.Text = "Added!";
+            ScriptManager.RegisterStartupScript(this, this.GetType(),
+                    "alert", "alert('Created!');window.location = '/ASP.Net/CalenderPages/calenderRecommend/calenderRecommend.aspx';", true);
         }
 
         protected void btnReturn_Click(object sender, EventArgs e)
