@@ -10,7 +10,6 @@
             margin-bottom: 50px;
             text-align: center;
             font-family: Georgia;
-            text-decoration: underline;
             padding-top: 10px;
         }
     </style>
