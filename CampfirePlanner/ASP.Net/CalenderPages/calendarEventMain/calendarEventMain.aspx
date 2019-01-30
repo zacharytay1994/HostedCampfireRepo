@@ -22,15 +22,15 @@
          <h2 style="font-family:Georgia; font-weight: bold; text-align: left; border-bottom:solid; border-left: solid; border-left-width: 20px; border-color:dodgerblue; padding-left:10px; width: 90%; margin-left: 5%;"><asp:Label ID="lblCollabInfo" runat="server" Font-Bold="True" Visible="True"></asp:Label></h2>
         <br />
             <div style="text-align:center">
-                <asp:Label ID="lblCollab" runat="server" Font-Bold="False" Visible="False"></asp:Label>
+                <asp:Label ID="lblCollab" runat="server" Font-Bold="true" Visible="False"></asp:Label>
             </div>
             <div style="margin-left:auto; margin-right:auto;">
                  <br />
-                <asp:GridView ID="gvCollab" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="118px">
+                <asp:GridView ID="gvCollab" runat="server" AutoGenerateColumns="False" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" >
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
-                        <asp:BoundField DataField="AccountID" HeaderText="User" />
-                        <asp:BoundField DataField="Username" HeaderText="Username" />
+                        <asp:BoundField DataField="AccountID" HeaderText="User ID" />
+                        <asp:BoundField DataField="Username" HeaderText="Name" />
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

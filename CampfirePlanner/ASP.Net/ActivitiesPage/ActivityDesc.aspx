@@ -7,12 +7,32 @@
             height: 450px;
             width: 100%;
         }
+        .auto-style2 {
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+            left: 0px;
+            top: 0px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .auto-style3 {
+            width: 136px;
+        }
     </style>
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
-                <div class="col-sm-12">
+                <div class="auto-style2">
+
+                    <table class="w-100">
+                        <tr>
+                            <td>
+                                <asp:Label ID="lblTitle" Font-Bold="true" Font-Size="Large"  runat="server"></asp:Label>
                     <%--<asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')"--%>
-                    <div id="slideshow" class="slideshow-container" style="text-align: center;">
+                    <div id="slideshow" class="slideshow-container" style="text-align: left;">
                         <div id="slide1" class="mySlides1">
                             <img id="image1" runat="server" src="" class="auto-style1" />
                         </div>
@@ -35,29 +55,51 @@
                             document.getElementById("slideshow").appendChild(div);
                         }
                     </script>
-                    <h2 style="text-align: center;">Featured Activities</h2>
                 </div>
-                <div style="text-align: right;">
-                    <asp:ImageButton ID="btnUpVote" runat="server" ImageUrl="~/Images/thumbs-up.png" CssClass="btnUP" Width="25px" Height="25px" OnClick="btnUpVote_Click" />
+                            </td>
+                            <td class="auto-style3">
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <asp:ImageButton ID="btnUpVote" runat="server" ImageUrl="~/Images/thumbs-up.png" CssClass="btnUP" Width="25px" Height="25px" OnClick="btnUpVote_Click" />
                     
-                    <asp:ImageButton ID="btnDownVote" runat="server" ImageUrl="~/Images/dislike-thumb.png" CssClass="btnDOWN" Width="25px" Height="25px" OnClick="btnDownVote_Click" />
+                                <asp:ImageButton ID="btnDownVote" runat="server" ImageUrl="~/Images/dislike-thumb.png" CssClass="btnDOWN" Width="25px" Height="25px" OnClick="btnDownVote_Click" />
                     
-                    <asp:Label ID="lblVotes" runat="server"></asp:Label>
-                </div>
+                                <asp:Label ID="lblVotes" runat="server"></asp:Label>
+                            </td>
+                            <td class="text-center">
+                                <asp:Label ID="lblDesc" runat="server"></asp:Label>
+                                <br />
+                                <asp:Label ID="lblExp" runat="server"></asp:Label>
+                                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Categories:
+                                <asp:Label ID="lblCategories" runat="server"></asp:Label>
+                                <br />
+                                Time Required:
+                                <asp:Label ID="lblDuration" runat="server"></asp:Label>
+                                <br />
+                                <asp:Label ID="lblLinks" runat="server"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+
     <div style="text-align:center">
-        <asp:Label ID="lblTitle"  runat="server"></asp:Label>
-        <%--<asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')"--%> &nbsp;<asp:Label ID="lblDuration" runat="server"></asp:Label>
-                    <br />
-        <asp:Label ID="lblCategories" runat="server"></asp:Label>
-                    <br />
-        <asp:Label ID="lblDesc" runat="server"></asp:Label>
-                    <br />
-        <asp:Label ID="lblExp" runat="server"></asp:Label>
-                    <br />
-        <asp:Label ID="lblLinks" runat="server"></asp:Label>
-                    <br />
-        <asp:Button ID="btnShow" runat="server" OnClick="btnShow_Click" Text="Show Comments" />
-        <asp:Button ID="btnHide" runat="server" OnClick="btnHide_Click" Text="Hide Comments" />
         <asp:GridView ID="gvComments" runat="server" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="Username" HeaderText="Username" />
@@ -115,4 +157,5 @@
             setTimeout(showSlides, 3000); // Change image every 3 seconds
         }
     </script>
+                </div>
 </asp:Content>
