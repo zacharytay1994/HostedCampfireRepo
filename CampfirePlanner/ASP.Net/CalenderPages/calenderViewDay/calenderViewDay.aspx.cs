@@ -246,5 +246,10 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calenderViewDay
 
             return daysActivity.Days + 1;
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx");
+        }
     }        
 }

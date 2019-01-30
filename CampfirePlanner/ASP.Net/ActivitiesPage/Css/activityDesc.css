@@ -65,6 +65,8 @@ img {
     margin-right: auto;
 }
 
+
+
 /* unvisited link */
 .btnUP:link, .btnDOWN:link {
     color: black;
@@ -82,4 +84,11 @@ img {
 
 .btnDOWN:active {
     color:red;
+}
+
+.comments{
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    border-collapse:collapse;
 }

@@ -11,7 +11,7 @@
 <nav class="navbar navbar-expand-md navbar-light" style="background-color:indianred; border-bottom:solid; border-color:darkred">
     <!-- The brand(or icon) of the navbar -->
     <a class="navbar-brand" href="/ASP.Net/HomePage/HomePage.aspx">
-        <img src="../../../Images/campfire_logo.png" class="auto-style1" />
+        <img src="../../../Images/campfire_logo.png" class="auto-style1" style="border:none;"/>
     </a>
     <!-- Toggle/collapsible Button, also known as hamburger button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar">

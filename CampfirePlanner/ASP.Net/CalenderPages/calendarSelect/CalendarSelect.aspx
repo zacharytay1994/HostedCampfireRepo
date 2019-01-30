@@ -19,7 +19,7 @@
                 <tr>
                     <td valign="top" class="auto-style9">
         
-        <p>
+        <p style="font-weight:bold;">
             Please Select Start and End Date of Your Event</p>
         <p>
             Name of Event:
@@ -57,13 +57,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td valign="top" class="auto-style9">
+                    <td align="top" class="auto-style9">
         
                 Search Users :<br />
                         <asp:TextBox ID="txtSearch" runat="server" AutoCompleteType="Disabled" AutoPostBack="True" OnTextChanged="txtSearch_TextChanged"></asp:TextBox>
                         <br />
                         <br />
-        <div style="margin-left:auto;margin-right:auto;display:inline-block;"><asp:GridView ID="gvUsers" runat="server" AutoGenerateColumns="False" OnRowCommand="gvUsers_RowCommand" Width="384px" CssClass="userGrid" HeaderStyle-CssClass="userHeader" RowStyle-CssClass="userRow">
+        <div style="margin-left:auto;margin-right:auto;display:inline-block;">
+            <asp:GridView ID="gvUsers" runat="server" AutoGenerateColumns="False" OnRowCommand="gvUsers_RowCommand" Width="384px" CssClass="userGrid" HeaderStyle-CssClass="userHeader" RowStyle-CssClass="rows">
             <Columns>
                 <asp:BoundField DataField="AccountID" HeaderText="ID">
                     <HeaderStyle HorizontalAlign="Center" />
@@ -98,7 +99,7 @@
         <asp:Button ID="btnEventCreate" runat="server" CssClass="auto-style5" OnClick="btnEventCreate_Click" Text="Create Event" />
                         <br />
                         <br />
-        <asp:Button ID="btnReset" runat="server" OnClick="btnReset_Click" Text="Reset" CausesValidation="False" />
+        <asp:Button ID="btnReset" runat="server" CssClass="auto-style5" OnClick="btnReset_Click" Text="Reset" CausesValidation="False" />
             
                     </td>
                 </tr>

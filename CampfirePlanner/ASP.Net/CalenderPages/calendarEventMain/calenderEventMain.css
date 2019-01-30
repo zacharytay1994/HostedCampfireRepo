@@ -73,7 +73,7 @@ h2 {
     text-transform: uppercase;
 }
 
-    .addEventbtn:hover {
+    .addEventBtn:hover {
         transition: all 0.3s ease;
         -webkit-transition: all 0.3s ease;
         -moz-transition: all 0.3s ease;

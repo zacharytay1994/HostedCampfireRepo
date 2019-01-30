@@ -64,6 +64,7 @@
             <td>&nbsp;</td>
         </tr>
     </table>
+    <asp:Button ID="btnBack" runat="server" CssClass="backViewBtn" Text="Back" OnClick="btnBack_Click" />
     <div id="overlay" onclick="off()">
         <div>
             <h2 id="actName" ></h2>
