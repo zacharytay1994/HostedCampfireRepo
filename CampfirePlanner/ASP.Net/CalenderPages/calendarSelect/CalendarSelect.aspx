@@ -54,7 +54,6 @@
                     &nbsp;<asp:RequiredFieldValidator ID="rfName" runat="server" ControlToValidate="txtEvent" CssClass="auto-style1" Display="Dynamic" ErrorMessage="Name of Event cannot be blank"></asp:RequiredFieldValidator>
 
                     <br />
-
                 </td>
             </tr>
             <tr>
