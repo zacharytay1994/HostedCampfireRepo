@@ -33,6 +33,14 @@
     
 }
 
+.userHeader {
+    background-color:lightgrey;
+}   
+
+.userRow {
+    background-color:aliceblue;
+}
+
     .calendarSelect:hover {
         color: red;
         transition: all 0.3s ease;

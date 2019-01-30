@@ -19,41 +19,46 @@
     <div>
         <asp:Label ID="lblWelcome" runat="server" CssClass="auto-style2" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
         <br />
-        <asp:Label ID="lblCollabInfo" runat="server" Font-Bold="True" Font-Size="XX-Large" Visible="True"></asp:Label>
+         <h2 style="font-family:Georgia; font-weight: bold; text-align: left; border-bottom:solid; border-left: solid; border-left-width: 20px; border-color:dodgerblue; padding-left:10px; width: 90%; margin-left: 5%;"><asp:Label ID="lblCollabInfo" runat="server" Font-Bold="True" Visible="True"></asp:Label></h2>
         <br />
-            <asp:Label ID="lblCollab" runat="server" Font-Bold="False" Visible="False"></asp:Label>
+            <div style="text-align:center">
+                <asp:Label ID="lblCollab" runat="server" Font-Bold="False" Visible="False"></asp:Label>
+            </div>
+            <div style="margin-left:auto; margin-right:auto;">
+                 <br />
+                <asp:GridView ID="gvCollab" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="118px">
+                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                    <Columns>
+                        <asp:BoundField DataField="AccountID" HeaderText="User" />
+                        <asp:BoundField DataField="Username" HeaderText="Username" />
+                    </Columns>
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+               </asp:GridView>
         <br />
-        <asp:GridView ID="gvCollab" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="118px">
-            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-            <Columns>
-                <asp:BoundField DataField="AccountID" HeaderText="User" />
-                <asp:BoundField DataField="Username" HeaderText="Username" />
-            </Columns>
-            <EditRowStyle BackColor="#999999" />
-            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-            <SortedAscendingCellStyle BackColor="#E9E7E2" />
-            <SortedAscendingHeaderStyle BackColor="#506C8C" />
-            <SortedDescendingCellStyle BackColor="#FFFDF8" />
-            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-        </asp:GridView>
-        <br />
+            </div>      
     </div>
     <div>
         <h2 style="font-family:Georgia; font-weight: bold; text-align: left; border-bottom:solid; border-left: solid; border-left-width: 20px; border-color:dodgerblue; padding-left:10px; width: 90%; margin-left: 5%;">Current Events</h2>
-        <asp:GridView ID="gvEvents" runat="server" EmptyDataText="There are no Events!" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" AutoGenerateColumns="False" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" OnSelectedIndexChanged="gvEvents_SelectedIndexChanged" OnPageIndexChanging="gvEvents_PageIndexChanging">
+        <asp:GridView ID="gvEvents" runat="server" EmptyDataText="There are no Events!" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" AutoGenerateColumns="False" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" OnSelectedIndexChanged="gvEvents_SelectedIndexChanged" OnPageIndexChanging="gvEvents_PageIndexChanging" OnRowCommand="RowCommand">
             <%--<AlternatingRowStyle BackColor="White" />--%>
             <Columns>
                 <asp:BoundField DataField="EventID" HeaderText="Event ID" />
                 <asp:BoundField DataField="StartDate" DataFormatString="{0:MM-dd-yyyy}" HeaderText="Start Date" />
                 <asp:BoundField DataField="EndDate" DataFormatString="{0:MM-dd-yyyy}" HeaderText="End Date" />
                 <asp:BoundField DataField="EventName" HeaderText="Event Name" />
-                <asp:ButtonField CommandName="Select" Text="Collaborators" HeaderText="Collaborators"/>
+                <asp:ButtonField CommandName="Select" Text="View Collaborators" HeaderText="Collaborators"/>
                 <asp:HyperLinkField DataNavigateUrlFields="EventID" DataNavigateUrlFormatString="../calenderViewDay/calenderViewDay.aspx?eventID={0}" Text="View" HeaderText="Details" />
                 <asp:HyperLinkField DataNavigateUrlFields="EventID" DataNavigateUrlFormatString="../calenderRecommend/calenderRecommend.aspx?eventID={0}" Text="Add Activity" HeaderText="Add Activity" />
+                <asp:ButtonField Text="Delete" CommandName="deleteClicked" />
             </Columns>
 
 <HeaderStyle CssClass="header"></HeaderStyle>
