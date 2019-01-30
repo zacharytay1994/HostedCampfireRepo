@@ -13,15 +13,6 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
     public partial class ActivityDesc {
         
         /// <summary>
-        /// lblTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitle;
-        
-        /// <summary>
         /// image1 control.
         /// </summary>
         /// <remarks>
@@ -40,6 +31,15 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
         protected global::System.Web.UI.WebControls.ImageButton btnUpVote;
         
         /// <summary>
+        /// lblVotes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVotes;
+        
+        /// <summary>
         /// btnDownVote control.
         /// </summary>
         /// <remarks>
@@ -49,13 +49,31 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
         protected global::System.Web.UI.WebControls.ImageButton btnDownVote;
         
         /// <summary>
-        /// lblVotes control.
+        /// lblTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVotes;
+        protected global::System.Web.UI.WebControls.Label lblTitle;
+        
+        /// <summary>
+        /// lblDuration control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDuration;
+        
+        /// <summary>
+        /// lblCategories control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCategories;
         
         /// <summary>
         /// lblDesc control.
@@ -76,24 +94,6 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
         protected global::System.Web.UI.WebControls.Label lblExp;
         
         /// <summary>
-        /// lblCategories control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategories;
-        
-        /// <summary>
-        /// lblDuration control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDuration;
-        
-        /// <summary>
         /// lblLinks control.
         /// </summary>
         /// <remarks>
@@ -101,6 +101,24 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLinks;
+        
+        /// <summary>
+        /// btnShow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnShow;
+        
+        /// <summary>
+        /// btnHide control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHide;
         
         /// <summary>
         /// gvComments control.
