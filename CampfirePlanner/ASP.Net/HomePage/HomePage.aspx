@@ -20,7 +20,8 @@
     <div class="scrollUp">
         <br />
             <%--&nbsp;&nbsp;&nbsp;--%>
-        <input type="submit" class="scrollButton" value="Top" />
+        
+        <input type="image" src="../../Images/go-to-the-top.png" class="scrollButton" />
     </div>
     <div class="main">
         <div class="row">
