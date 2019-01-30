@@ -153,65 +153,57 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
                 return false;
         }
 
-        protected void RowCommand(Object sender, GridViewCommandEventArgs e)
+        protected void gvEvents_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            GridViewRow row = (GridViewRow)gvEvents.Rows[e.RowIndex];
+ 
+            //Access Cell values.
+            int eventID = int.Parse(row.Cells[0].Text);
 
-            if (e.CommandName == "deleteClicked")
+            if (checkRole(eventID) == true)
             {
-                //Determine the RowIndex of the Row whose Button was clicked.
-                int rowIndex = Convert.ToInt32(e.CommandArgument);
+                string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+                SqlConnection conn = new SqlConnection(strConn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM EventActivities WHERE EventID = @eID", conn);
+                cmd.Parameters.AddWithValue("@eID", eventID);
+                SqlDataAdapter daVotes = new SqlDataAdapter(cmd);
+                DataSet result = new DataSet();
 
-                //Reference the GridView Row.
-                GridViewRow row = gvEvents.Rows[rowIndex];
+                conn.Open();
+                daVotes.Fill(result, "EventActivities");
+                conn.Close();
 
-                //Access Cell values.
-                int eventID = int.Parse(row.Cells[0].Text);
-
-                if (checkRole(eventID) == true)
+                if (result.Tables["EventActivities"].Rows.Count > 0) // If Event has Activities
                 {
-                    string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
-                    SqlConnection conn = new SqlConnection(strConn);
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM EventActivities WHERE EventID = @eID", conn);
+                    // Delete Event's Activities
+                    cmd = new SqlCommand("DELETE FROM EventActivities WHERE EventID = @eID", conn);
                     cmd.Parameters.AddWithValue("@eID", eventID);
-                    SqlDataAdapter daVotes = new SqlDataAdapter(cmd);
-                    DataSet result = new DataSet();
 
-                    conn.Open();
-                    daVotes.Fill(result, "EventActivities");
-                    conn.Close();
-
-                    if (result.Tables["EventActivities"].Rows.Count > 0) // If Event has Activities
-                    {
-                        // Delete Event's Activities
-                        cmd = new SqlCommand("DELETE FROM EventActivities WHERE EventID = @eID", conn);
-                        cmd.Parameters.AddWithValue("@eID", eventID);
-
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
-                    }
-
-                    // Delete Event's Members
-                    cmd = new SqlCommand("DELETE FROM EventMembers WHERE EventID = @eID", conn);
-                    cmd.Parameters.AddWithValue("@eID", eventID);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
-
-                    // Delete Event
-                    cmd = new SqlCommand("DELETE FROM Event WHERE EventID = @eID", conn);
-                    cmd.Parameters.AddWithValue("@eID", eventID);      
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    
-                    // Refresh GridView
-                    gvEvents.DataSource = null;
-                    gvEvents.DataBind();
-                    displayEvents();
                 }
-            }
 
+                // Delete Event's Members
+                cmd = new SqlCommand("DELETE FROM EventMembers WHERE EventID = @eID", conn);
+                cmd.Parameters.AddWithValue("@eID", eventID);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                // Delete Event
+                cmd = new SqlCommand("DELETE FROM Event WHERE EventID = @eID", conn);
+                cmd.Parameters.AddWithValue("@eID", eventID);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                // Refresh GridView
+                gvEvents.DataSource = null;
+                gvEvents.DataBind();
+                displayEvents();
+            }
         }
+
     }
 }
