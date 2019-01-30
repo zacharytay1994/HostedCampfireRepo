@@ -3,7 +3,8 @@
     /*margin: 0 auto;
     padding: 10px;*/
     background-color: #ffdead;
-    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+    background-image: url("../../../Images/campfirebackground.jpg");
+    background-size: cover;
 }
 
 p, div, li, .buttonStyle {
