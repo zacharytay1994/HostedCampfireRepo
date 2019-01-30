@@ -62,7 +62,13 @@
             return false; //Redirect
         }
     </script>
-    <h2 style="margin-top:10px;">Activities</h2>
+    <div id="trigger" style="height:60px; width:99%" onmouseover="hideAll()"></div>
+    <div id="clickerTitles" style="text-align:center;">
+        <div class="selectTitle" id="actCat" onmouseover="displayActCat(); hideFeatCat(); hideSuggCat()">Activities</div>
+        <div class="selectTitle" id="featCat" onmouseover="displayFeatCat(); hideActCat(); hideSuggCat()">Featured</div>
+    </div>
+    <div class="aniContainer" id="actCatDiv">
+        <h2 style="margin-top:10px;">Activities</h2>
     <p>Please Select Categories to Display.</p>
     <div class="col-md-12" style="border-bottom:solid; border-color:salmon; margin-left:1%; width:95%;">
         <table style="text-align: center;">
@@ -247,7 +253,9 @@
         <asp:Label ID="lblID" runat="server" CssClass="asptext"></asp:Label>
         <br />
     </div>
-    <h2>Featured Activities</h2>
+    </div>
+    <div class="aniContainer" id="featCatDiv">
+        <h2>Featured Activities</h2>
     <div class="title">
         <div>
             <div class="col-sm-12">
@@ -286,6 +294,7 @@
             </div>
         </div>
     </div> 
+    </div>
     <!---Scripts--->
     <script>
         //Single slideshow
@@ -396,5 +405,29 @@
                 slides[slideIndex-1].style.display = "block";
                 setTimeout(showSlides, 2000); // Change image every 2 seconds
             }*/
+    </script>
+    <script>
+        function displayActCat() {
+            document.getElementById("actCatDiv").style.display = "block";
+            document.getElementById("clickerTitles").style.animationName = "pushup";
+            document.getElementById("trigger").style.animationName = "pushuptrigger";
+        }
+        function displayFeatCat() {
+            document.getElementById("featCatDiv").style.display = "block";
+            document.getElementById("clickerTitles").style.animationName = "pushup";
+            document.getElementById("trigger").style.animationName = "pushuptrigger";
+        }
+        function hideActCat() {
+            document.getElementById("actCatDiv").style.display = "none";
+        }
+        function hideFeatCat() {
+            document.getElementById("featCatDiv").style.display = "none";
+        }
+        function hideAll() {
+            document.getElementById("actCatDiv").style.display = "none";
+            document.getElementById("featCatDiv").style.display = "none";
+            document.getElementById("clickerTitles").style.animationName = "pushdown";
+            document.getElementById("trigger").style.animationName = "pushdowntrigger";
+        }
     </script>
 </asp:Content>
