@@ -32,7 +32,7 @@
     </div>
     <div id="trigger" style="height:60px; width:99%" onmouseover="hideAll()"></div>
     <div id="clickerTitles" style="text-align:center;">
-        <div class="selectTitle" id="actCat" onmouseover="displayActCat(); hideFeatCat(); hideSuggCat()">Activities</div>
+        <div class="selectTitle" id="actCat" onmouseover="displayActCat(); hideFeatCat(); hideSuggCat()">Categories</div>
         <div class="selectTitle" id="featCat" onmouseover="displayFeatCat(); hideActCat(); hideSuggCat()">Featured</div>
         <div class="selectTitle" id="suggCat" onmouseover="displaySuggCat(); hideActCat(); hideFeatCat()">Suggested</div>
     </div>

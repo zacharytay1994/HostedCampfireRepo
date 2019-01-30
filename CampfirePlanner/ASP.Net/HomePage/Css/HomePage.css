@@ -9,7 +9,6 @@ body {
     margin: 0 auto;
     background-color: #752900;
     background-image: url('../Images/background.jpeg');*/
-    background-color: rgba(255, 128, 255, 0.5);
     background-image: url("../../../Images/campfirebackground.jpg");
     background-size:cover;
 }
