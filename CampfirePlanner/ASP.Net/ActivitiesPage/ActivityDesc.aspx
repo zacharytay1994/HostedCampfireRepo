@@ -98,13 +98,10 @@
             }
         </script>
     </div>
+    
 
-    <asp:ImageButton ID="btnUpVote" runat="server" ImageUrl="~/Images/thumbs-up.png" CssClass="btnUP" Width="25px" Height="25px"
-        OnClick="btnUpVote_Click" />
-    <asp:Label ID="lblVotes" runat="server"></asp:Label>
 
-    <asp:ImageButton ID="btnDownVote" runat="server" ImageUrl="~/Images/dislike-thumb.png" CssClass="btnDOWN" Width="25px"
-        Height="25px" OnClick="btnDownVote_Click" />
+
     <div style="text-align: center">
         <asp:Label ID="lblTitle" runat="server"></asp:Label>
         <%--<asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')"--%> &nbsp;<asp:Label ID="lblDuration" runat="server"></asp:Label>
@@ -117,9 +114,21 @@
         <br />
         <asp:Label ID="lblLinks" runat="server"></asp:Label>
         <br />
-        <asp:Button ID="btnShow" runat="server" OnClick="btnShow_Click" Text="Show Comments" />
-        <asp:Button ID="btnHide" runat="server" OnClick="btnHide_Click" Text="Hide Comments" />
-        <asp:GridView ID="gvComments" runat="server" AutoGenerateColumns="False">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <asp:ImageButton ID="btnUpVote" runat="server" ImageUrl="~/Images/thumbs-up.png" CssClass="btnUP" Width="25px" Height="25px"
+        OnClick="btnUpVote_Click" />
+        <asp:Label ID="lblVotes" runat="server"></asp:Label>
+        <asp:ImageButton ID="btnDownVote" runat="server" ImageUrl="~/Images/dislike-thumb.png" CssClass="btnDOWN" Width="25px"
+        Height="25px" OnClick="btnDownVote_Click" />
+
+<%--        <asp:Button ID="btnShow" runat="server" OnClick="btnShow_Click" Text="Show Comments" />
+        <asp:Button ID="btnHide" runat="server" OnClick="btnHide_Click" Text="Hide Comments" />--%>
+
+        <asp:GridView ID="gvComments" runat="server" AutoGenerateColumns="False" CssClass="comments">
             <Columns>
                 <asp:BoundField DataField="Username" HeaderText="Username" />
                 <asp:BoundField DataField="CommentText" HeaderText="Comment" />
