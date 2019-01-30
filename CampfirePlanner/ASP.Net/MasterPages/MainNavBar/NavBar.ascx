@@ -23,7 +23,7 @@
                 <a class="nav-link" href="/ASP.Net/ActivitiesPage/ActivitiesPage.aspx" style="border-left:solid; border-color:dodgerblue; font-family:'Bodoni MT'; color: black;">Activities</a>
             </li>
             <li class="nav-item" id="ActivityAdd">
-                <a class="nav-link" href="/ASP.Net/ActivitiesPage/activityAdd.aspx" style="border-left:solid; border-color:dodgerblue; font-family:'Bodoni MT'; color: black; ">Add an Activity</a>
+                <a class="nav-link" href="/ASP.Net/ActivitiesPage/activityForm.aspx" style="border-left:solid; border-color:dodgerblue; font-family:'Bodoni MT'; color: black; ">Add an Activity</a>
             </li>
             <li class="nav-item" id="About">
                 <a class="nav-link" href="#" style="border-left:solid; border-color:dodgerblue; font-family:'Bodoni MT'; color: black; ">About Us</a>

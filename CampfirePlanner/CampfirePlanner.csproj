@@ -185,19 +185,19 @@
     <Compile Include="ASP.Net\ActivitiesPage\ActivitiesPage2.aspx.designer.cs">
       <DependentUpon>ActivitiesPage2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ASP.Net\ActivitiesPage\activityAdd.aspx.cs">
-      <DependentUpon>activityAdd.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASP.Net\ActivitiesPage\activityAdd.aspx.designer.cs">
-      <DependentUpon>activityAdd.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx.cs">
       <DependentUpon>ActivityDesc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx.designer.cs">
       <DependentUpon>ActivityDesc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASP.Net\ActivitiesPage\activityForm.aspx.cs">
+      <DependentUpon>activityForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASP.Net\ActivitiesPage\activityForm.aspx.designer.cs">
+      <DependentUpon>activityForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASP.Net\CalenderPages\calendarEventMain\calendarEventMain.aspx.cs">
       <DependentUpon>calendarEventMain.aspx</DependentUpon>
@@ -305,8 +305,8 @@
     <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage2.ascx" />
     <Content Include="ASP.Net\ActivitiesPage\ActivitiesPage2.aspx" />
+    <Content Include="ASP.Net\ActivitiesPage\activityForm.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\Css\ActivitiesPage.css" />
-    <Content Include="ASP.Net\ActivitiesPage\activityAdd.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\ActivityDesc.aspx" />
     <Content Include="ASP.Net\ActivitiesPage\Css\activityDesc.css" />
     <Content Include="ASP.Net\ActivitiesPage\Css\activityForm.css" />
