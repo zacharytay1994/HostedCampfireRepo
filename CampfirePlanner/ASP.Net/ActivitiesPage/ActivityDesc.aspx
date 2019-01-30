@@ -12,15 +12,15 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
     <div class="col-sm-12">
-            <h2 style="text-align: center;">
-                <asp:Label ID="lblTitle" runat="server"></asp:Label></h2>
-            <p class="delfield">
-                <asp:Button ID="btnDel" CssClass="delbutton" runat="server" Height="30px" OnClick="btnDel_Click" Text="Delete Activity" Width="125px" OnClientClick="return confirm('Are You Sure?')" />
-            </p>
+        <h2 style="text-align: center;">
+            <asp:Label ID="lblTitle" runat="server"></asp:Label></h2>
+        <p class="delfield">
+            <asp:Button ID="btnDel" CssClass="delbutton" runat="server" Height="30px" OnClick="btnDel_Click" Text="Delete Activity" Width="125px" OnClientClick="return confirm('Are You Sure?')" Visible="False" />
+        </p>
 
         <div id="slideshow" class="slideshow-container" style="text-align: center;">
             <div id="slide1" class="mySlides1">
-                <img id="image1" runat="server" src="" class="auto-style1" />
+                <img id="image1" runat="server" src="" style="height: 450px;" />
             </div>
             <a class="prev" onclick="plusSlides(-1, 0)" style="color: white;">&#10094;</a>
             <a class="next" onclick="plusSlides(1, 0)" style="color: white;">&#10095;</a>
@@ -30,14 +30,14 @@
                 var div = document.createElement("div");
                 div.id = "slide2";
                 div.className = "mySlides1";
-                div.innerHTML += "<img src=\"<%= getImgLink()%>\" id=\"image2\" style=\" width: 100%; height: 450px;\">"
+                div.innerHTML += "<img src=\"<%= getImgLink()%>\" id=\"image2\" style=\" height: 450px;\">"
                 document.getElementById("slideshow").appendChild(div);
             }
             else if (<%= slideshowCount()%> == 3) {
                 var div = document.createElement("div");
                 div.id = "slide3";
                 div.className = "mySlides1";
-                div.innerHTML += "<img src=\"<%= getImgLink2()%>\" id=\"image3\" style=\" width: 100%; height: 450px;\">"
+                div.innerHTML += "<img src=\"<%= getImgLink2()%>\" id=\"image3\" style=\" height: 450px;\">"
                 document.getElementById("slideshow").appendChild(div);
             }
         </script>
@@ -113,23 +113,22 @@
 
         <%--        <asp:Button ID="btnShow" runat="server" OnClick="btnShow_Click" Text="Show Comments" />
         <asp:Button ID="btnHide" runat="server" OnClick="btnHide_Click" Text="Hide Comments" />--%>
-
+        <br />
+        <div>
+            <asp:Label ID="lblComments" runat="server" Text="Add a Comment: "></asp:Label>
+            <asp:TextBox ID="txtAddComment" runat="server" Width="789px"></asp:TextBox>
+            <asp:Button ID="btnSubmitComment" runat="server" Text="Submit" OnClick="btnSubmitComment_Click" />
+            <asp:Label ID="lblThanks" runat="server"></asp:Label>
+        </div>
+        <br />
         <asp:GridView ID="gvComments" runat="server" AutoGenerateColumns="False" CssClass="comments">
             <Columns>
                 <asp:BoundField DataField="Username" HeaderText="Username" />
                 <asp:BoundField DataField="CommentText" HeaderText="Comment" />
             </Columns>
         </asp:GridView>
-        <br />
-        <asp:Label ID="lblComments" runat="server" Text="Add a Comment: "></asp:Label>
-        <asp:TextBox ID="txtAddComment" runat="server" Width="789px"></asp:TextBox>
-        <asp:Button ID="btnSubmitComment" runat="server" Text="Submit" OnClick="btnSubmitComment_Click" />
-        <asp:Label ID="lblThanks" runat="server"></asp:Label>
-        <br />
-        <br />
-        <br />
     </div>
-
-
-
+    <br />
+    <br />
+    <br />
 </asp:Content>
