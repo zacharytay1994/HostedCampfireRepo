@@ -107,6 +107,12 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
                 lblCollab.Text = "You are not currently collaborating with anyone!";
             }
 
+            else if (gvCollab.Rows.Count == 1)
+            {
+                lblCollab.Visible = true;
+                lblCollab.Text = "You are collaborating with " + gvCollab.Rows.Count + " person!";
+            }
+
             else
             {
                 lblCollab.Visible = true;

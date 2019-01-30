@@ -26,10 +26,10 @@
             </div>
             <div style="margin-left:auto; margin-right:auto;">
                  <br />
-                <asp:GridView ID="gvCollab" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="118px">
+                <asp:GridView ID="gvCollab" runat="server" AutoGenerateColumns="False" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" >
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
-                        <asp:BoundField DataField="AccountID" HeaderText="User" />
+                        <asp:BoundField DataField="AccountID" HeaderText="ID" />
                         <asp:BoundField DataField="Username" HeaderText="Username" />
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
