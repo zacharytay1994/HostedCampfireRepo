@@ -31,15 +31,6 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
         protected global::System.Web.UI.WebControls.ImageButton btnUpVote;
         
         /// <summary>
-        /// btnDownVote control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnDownVote;
-        
-        /// <summary>
         /// lblVotes control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVotes;
+        
+        /// <summary>
+        /// btnDownVote control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnDownVote;
         
         /// <summary>
         /// lblTitle control.
