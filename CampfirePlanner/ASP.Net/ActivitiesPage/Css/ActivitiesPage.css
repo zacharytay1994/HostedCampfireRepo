@@ -11,7 +11,7 @@ h2 {
     margin-left: 1%;
     border-left: solid;
     border-bottom: solid;
-    border-color: dodgerblue;
+    border-color: slategrey;
     border-left-width: 20px;
     padding-left: 10px;
     padding-bottom: 10px;
@@ -48,10 +48,9 @@ img {
 }
 
 .slideshow-container {
-    max-width: 100%;
+    max-width: 1080px;
     position: relative;
     margin: auto;
-    max-height:90%
 }
 /*Prev&Next Buttons*/
 .prev, .next {
@@ -154,7 +153,17 @@ img {
 
 .buttonasp{
     border-radius:10px;
+    background-color:white;
 }
+
+    .buttonasp:hover {
+        cursor: pointer;
+        transition: all 0.1s ease;
+        -webkit-transition: all 0.1s ease;
+        -moz-transition: all 0.1s ease;
+        -o-transition: all 0.1s ease;
+        border: 2px solid #fff;
+    }
 
 .asptext {
     font-weight: bold;

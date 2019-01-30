@@ -14,7 +14,7 @@ using CloudinaryDotNet.Actions;
 
 namespace CampfirePlanner.ASP.Net.ActivitiesPage
 {
-    public partial class activityAdd : System.Web.UI.Page
+    public partial class activityForm : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -52,7 +52,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
 
                     var myAccount = new Account { ApiKey = "775262439546842", ApiSecret = "AaFN__kiLc85ypytnaHJuIlHLKY", Cloud = "campfire-inc" };
                     Cloudinary _cloudinary = new Cloudinary(myAccount);
-                    
+
                     var uploadParams = new ImageUploadParams()
                     {
                         File = new FileDescription(file.FileName, file.InputStream),
@@ -82,7 +82,7 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                     strValues += "&explain=" + txtExplanation.Text;
                     strValues += "&link=" + txtLinks.Text;
                     strValues += "&photo=defaultpicture.jpg";
-                    Response.Redirect("confirmActivityAdd.aspx?" + strValues);
+                    Response.Redirect("ActivitiesPage.aspx");
                 }
                 else
                 {
