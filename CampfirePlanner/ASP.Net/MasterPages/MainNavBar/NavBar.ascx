@@ -19,7 +19,7 @@
 <nav class="navbar navbar-expand-md navbar-light" style="background-color:#f27100; border-color:darkred; background-image: url('../../Images/campfirebackground.jpg'); background-size:cover;">
     <!-- The brand(or icon) of the navbar -->
     <a class="navbar-brand" href="/ASP.Net/HomePage/HomePage.aspx">
-        <img src="../../../Images/campfire_logo.png" class="auto-style1" />
+        <img src="../../../Images/campfire_logo.png" class="auto-style1" style="border:none;"/>
     </a>
     <!-- Toggle/collapsible Button, also known as hamburger button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar">

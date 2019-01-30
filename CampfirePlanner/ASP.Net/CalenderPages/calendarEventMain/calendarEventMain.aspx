@@ -18,16 +18,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <main>
         <div>
-        <asp:Label ID="lblWelcome" runat="server" CssClass="auto-style2" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
-        <br />
-         <h2 style="font-family:Georgia; font-weight: bold; text-align: left; border-bottom:solid; border-left: solid; border-left-width: 20px; border-color:slategrey; padding-left:10px; width: 90%; margin-left: 5%;"><asp:Label ID="lblCollabInfo" runat="server" Font-Bold="True" Visible="True"></asp:Label></h2>
-        <br />
-            <div style="text-align:center">
+            <asp:Label ID="lblWelcome" runat="server" CssClass="auto-style2" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
+            <br />
+            <h2 style="font-family: Georgia; font-weight: bold; text-align: left; border-bottom: solid; border-left: solid; border-left-width: 20px; border-color: slategrey; padding-left: 10px; width: 90%; margin-left: 5%;">
+                <asp:Label ID="lblCollabInfo" runat="server" Font-Bold="True" Visible="True"></asp:Label></h2>
+            <br />
+            <div style="text-align: center">
                 <asp:Label ID="lblCollab" runat="server" Font-Bold="true" Visible="False"></asp:Label>
             </div>
-            <div style="margin-left:auto; margin-right:auto;">
-                 <br />
-                <asp:GridView ID="gvCollab" runat="server" AutoGenerateColumns="False" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" >
+            <div style="margin-left: auto; margin-right: auto;">
+                <br />
+                <asp:GridView ID="gvCollab" runat="server" AutoGenerateColumns="False" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:BoundField DataField="AccountID" HeaderText="User ID" />
@@ -39,14 +40,14 @@
                     <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
                     <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
                     <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-               </asp:GridView>
-        <br />
-            </div>      
-    </div>
+                    <sortedascendingcellstyle backcolor="#E9E7E2" />
+                    <sortedascendingheaderstyle backcolor="#506C8C" />
+                    <sorteddescendingcellstyle backcolor="#FFFDF8" />
+                    <sorteddescendingheaderstyle backcolor="#6F8DAE" />
+                </asp:GridView>
+                <br />
+            </div>
+        </div>
         <div>
             <h2 style="font-family: Georgia; font-weight: bold; text-align: left; border-bottom: solid; border-left: solid; border-left-width: 20px; border-color: slategrey; padding-left: 10px; width: 90%; margin-left: 5%;">Current Events</h2>
             <asp:GridView ID="gvEvents" OnRowDeleting="gvEvents_RowDeleting" runat="server" EmptyDataText="There are no Events!" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" AutoGenerateColumns="False" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" OnSelectedIndexChanged="gvEvents_SelectedIndexChanged" OnPageIndexChanging="gvEvents_PageIndexChanging">
@@ -62,7 +63,7 @@
                     <%--<asp:ButtonField Text="Delete" CommandName="deleteClicked" />--%>
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:LinkButton ID="lbDelete" runat="server" onClientClick="return confirmationAlert()" CommandName="Delete">Delete</asp:LinkButton>
+                            <asp:LinkButton ID="lbDelete" runat="server" OnClientClick="return confirmationAlert()" CommandName="Delete">Delete</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

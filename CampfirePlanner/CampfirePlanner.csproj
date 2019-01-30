@@ -370,7 +370,7 @@
     <Content Include="Images\image2.jpg" />
     <Content Include="Images\image3.jpg" />
     <Content Include="Images\loginbackground.jpg" />
-    <Content Include="Images\login_logo.jpg" />
+    <Content Include="Images\login_logo.png" />
     <Content Include="Images\Logo_sm.png" />
     <Content Include="Images\office.jpg" />
     <Content Include="Images\pool.jpg" />
