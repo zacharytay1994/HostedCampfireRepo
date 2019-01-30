@@ -200,7 +200,7 @@
             }
             100% {
                 background-color:rgba(248, 232, 217, 0.9);
-                left: 70%;
+                left: 30%;
             }
         }
         #panel4 {

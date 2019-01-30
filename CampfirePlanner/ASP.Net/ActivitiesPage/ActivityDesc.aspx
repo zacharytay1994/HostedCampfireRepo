@@ -11,6 +11,7 @@
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
                 <div class="col-sm-12">
+                    <h2 style="text-align: center;">Featured Activities</h2>
                     <%--<asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')"--%>
                     <div id="slideshow" class="slideshow-container" style="text-align: center;">
                         <div id="slide1" class="mySlides1">
@@ -35,7 +36,7 @@
                             document.getElementById("slideshow").appendChild(div);
                         }
                     </script>
-                    <h2 style="text-align: center;">Featured Activities</h2>
+                    
                 </div>
                 <div style="text-align: right;">
                     <asp:ImageButton ID="btnUpVote" runat="server" ImageUrl="~/Images/thumbs-up.png" CssClass="btnUP" Width="25px" Height="25px" OnClick="btnUpVote_Click" />
