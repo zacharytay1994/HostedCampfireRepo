@@ -110,7 +110,7 @@ td {
     transition: .1s ease;
     opacity: 0;
     position: absolute;
-    transform: translate(60px, -160px);
+    transform: translate(70px, -160px);
     background-color:black;
     width: 180px;
     height: 180px;
@@ -165,7 +165,7 @@ td {
     }
 /*Caption text*/
 .text {
-    color: #f2f2f2;
+    color: #F8F8FF;
     font-size: 15px;
     padding: 8px 12px;
     position: absolute;
@@ -173,7 +173,7 @@ td {
     width: 100%;
     text-align: center;
     /*display: block;*/
-    background-color: lightsalmon;
+    background-color: #B22222;
     border-radius: 15px;
     font-weight: bold;
 }
@@ -218,14 +218,14 @@ td {
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: #800000;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
 }
 
     .active, .dot1:hover, .dot2:hover {
-        background-color: #717171;
+        background-color: #F08080;
     }
 
 /*-----Scroll Button-----*/
@@ -240,11 +240,13 @@ td {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #3e87ec;
+    background-color: #ffff99;
     color: white;
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
+    width: 55px;
+    height: 55px;
 }
 
     .scrollButton:hover {

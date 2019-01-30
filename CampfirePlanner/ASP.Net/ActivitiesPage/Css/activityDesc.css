@@ -1,4 +1,8 @@
-﻿/*-----SlideShow-----*/
+﻿body {
+    background-color: #ffdead;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+}
+/*-----SlideShow-----*/
 .mySlides {
     display: none;
 }
@@ -86,9 +90,3 @@ img {
     color:red;
 }
 
-.comments{
-    margin-left:auto;
-    margin-right:auto;
-    text-align:center;
-    border-collapse:collapse;
-}

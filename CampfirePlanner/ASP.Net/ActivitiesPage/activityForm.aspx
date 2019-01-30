@@ -1,20 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activityAdd.aspx.cs" Inherits="CampfirePlanner.ASP.Net.ActivitiesPage.activityAdd" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ASP.Net/MasterPages/MainNavBar/Campfire.Master" AutoEventWireup="true" CodeBehind="activityForm.aspx.cs" Inherits="CampfirePlanner.ASP.Net.ActivitiesPage.activityForm" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta charset="utf-8" />
     <title>Add Activity</title>
-    <link rel="stylesheet" href="~/ASP.Net/ActivitiesPage/Css/activityForm.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:Extra-Bold" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
-</head>
-<body>
+    <link href="Css/activityForm.css" rel="stylesheet" />
+    
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <main>
-        <h1 style="font-size:150px" class="border">Add Activity</h1>
+        <br />
+        <h1>Add Activity</h1>
         <div id="activities">
-            <form id="activitiesForm" runat="server">
+            
                 <div class="row">
                     <div class="col-25">
                         <label for="gameName">Name of Game</label>
@@ -30,7 +26,7 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="briefDescription" runat="server" placeholder="Just a sentence is fine!" CssClass="textbox"></asp:TextBox>
-                        <asp:Label ID="lblDescription" runat="server" Text="Example: &quot;A game that requires you to think on your feet!&quot;" ForeColor="Orange"></asp:Label>
+                        <asp:Label ID="lblDescription" runat="server" Text="Example: &quot;A game that requires you to think on your feet!&quot;" ForeColor="#CC0099"></asp:Label>
                         <br />
                         <asp:RequiredFieldValidator ID="rfvDescription" runat="server" ErrorMessage="Please add a Brief Description!" ControlToValidate="briefDescription" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
@@ -46,7 +42,7 @@
                         <asp:ListItem Value="c">Rhythm</asp:ListItem>
                         <asp:ListItem Value="d">IceBreaker</asp:ListItem>
                         </asp:ListBox>
-                        <asp:Label ID="lblCat" runat="server" Text="Hold Ctrl + Click to Select Multiple Categories" ForeColor="Orange"></asp:Label> <br />
+                        <asp:Label ID="lblCat" runat="server" Text="Hold Ctrl + Click to Select Multiple Categories" ForeColor="#CC0099"></asp:Label> <br />
                         <asp:RequiredFieldValidator ID="rfvCat" runat="server" ErrorMessage="Please Select at least One Category!" Display="Dynamic" ForeColor="Red" ControlToValidate="lbCat"></asp:RequiredFieldValidator>
 &nbsp;</div>
                 </div>
@@ -56,7 +52,7 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="txtDuration" type="number" step="1" min="1" max="120" runat="server" placeholder="Minutes"></asp:TextBox> <br \ />
-                        <asp:Label ID="Label1" runat="server" Text="Values from 1 to 120 minutes"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Values from 1 to 120 minutes" ForeColor="#CC0099"></asp:Label>
 &nbsp;<br />
                         <asp:RequiredFieldValidator ID="rfvDuration" runat="server" ControlToValidate="txtDuration" ErrorMessage="Please enter a duration!" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator> <br \ />
                     </div>
@@ -67,7 +63,7 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox id="txtExplanation" TextMode="multiline" Columns="50" Rows="15" runat="server" CssClass="textbox" />
-                        <asp:Label ID="lblExplain" runat="server" Text="Tell us about the rules and materials required!"></asp:Label>
+                        <asp:Label ID="lblExplain" runat="server" Text="Tell us about the rules and materials required!" ForeColor="#CC0099"></asp:Label>
 &nbsp;<br />
                         <asp:RequiredFieldValidator ID="rfvExplain" runat="server" ControlToValidate="activityName" ErrorMessage="Please provide an Explanation!" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
@@ -78,7 +74,7 @@
                     </div>
                     <div class="col-75">
                         <asp:TextBox ID="txtLinks" runat="server" CssClass="textbox"></asp:TextBox>
-                    <asp:Label ID="lblLinks" runat="server"></asp:Label><br />
+                    <asp:Label ID="lblLinks" runat="server" ForeColor="#CC0099"></asp:Label><br />
                         <asp:RegularExpressionValidator ID="revLinks" runat="server" ErrorMessage="Please use a Valid URL!" ValidationExpression="http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]*)?" ControlToValidate="txtLinks" Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>
                     </div>
                 </div>
@@ -89,14 +85,19 @@
                     <div class="col-75">
                         <asp:FileUpload ID="upPhoto" runat="server" />
                     </div>
-                    <asp:Label ID="lblPhoto" runat="server"></asp:Label>
+                    <asp:Label ID="lblPhoto" runat="server" ForeColor="#CC0099"></asp:Label>
                 </div>
                 <div class="row">
                     <asp:Button ID="submitForm" runat="server" Text="Submit" OnClick="submitForm_Click" />
                     <asp:Button ID="returnHome" runat="server" Text="Return to Main Menu" CausesValidation="False" OnClick="returnHome_Click" />
                 </div>
-            </form>
+            
         </div>
-    </main>
-</body>
-</html>
+        </main>
+    <br />
+    <br />
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="body2" runat="server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="body3" runat="server">
+</asp:Content>
