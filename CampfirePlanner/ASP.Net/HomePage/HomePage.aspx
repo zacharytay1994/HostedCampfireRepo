@@ -283,6 +283,8 @@
             <span class="dot2" onclick="currentSlide(1)"></span> 
             <span class="dot2" onclick="currentSlide(2)"></span> 
             <span class="dot2" onclick="currentSlide(3)"></span> 
+            <br />
+            <br />
         </div>
     </div>
         <!---Scripts--->
