@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <div id="clickerTitles" style="text-align:center;">
         <div class="selectTitle" id="actCat"">
-            <h3 style="width:95%; font-weight:bold;">Event Schedule Planner</h3>
+            <h3 style="width:95%; font-weight:bold; font-family:'Bodoni MT';">Event Schedule Planner</h3>
         </div>
     </div>
     <div class="aniContainer" id="actCatDiv">

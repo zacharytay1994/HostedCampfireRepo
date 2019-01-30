@@ -42,7 +42,8 @@
     margin-bottom: 5%;
     margin-top: 5%;
     font-family: 'Bodoni MT';
-    font-size: 150%;
+    font-size: 200%;
+    border-bottom:dotted;
 }
 
 #clickerTitles {
@@ -57,7 +58,7 @@
     z-index: 2;
     top: 0%;
     animation-name: pushdowntrigger;
-    animation-duration: 2s;
+    animation-duration: .5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease;
 }

@@ -97,22 +97,22 @@
     <div id="trigger" style="height:60px; width:99%" onmouseover="hideAll()"></div>
     <div id="clickerTitles" style="text-align:center;">
         <div class="selectTitle" style="animation-duration: 1s" id="nameCat">
-            <p><b>Name : </b></p><asp:Label ID="lblTitle" runat="server"></asp:Label>
+            <p style="border-bottom:dotted;"><b>Name : </b></p><asp:Label ID="lblTitle" runat="server"></asp:Label>
         </div>
         <div class="selectTitle" style="animation-duration: 1.5s" id="catCat">
-            <p><b>Category : </b></p><asp:Label ID="lblCategories" runat="server"></asp:Label>
+            <p style="border-bottom:dotted;"><b>Category : </b></p><asp:Label ID="lblCategories" runat="server"></asp:Label>
         </div>
         <div class="selectTitle" style="animation-duration: 1.9s" id="descCat">
-            <p><b>Description : </b></p><asp:Label ID="lblDesc" runat="server"></asp:Label>
+            <p style="border-bottom:dotted;"><b>Description : </b></p><asp:Label ID="lblDesc" runat="server"></asp:Label>
         </div>
         <div class="selectTitle" style="animation-duration: 1.6s" id="expCat">
-            <p><b>Explanation : </b></p><asp:Label ID="lblExp" runat="server"></asp:Label>
+            <p style="border-bottom:dotted;"><b>Explanation : </b></p><asp:Label ID="lblExp" runat="server"></asp:Label>
         </div>
         <div class="selectTitle" style="animation-duration: 1.8s" id="linksCat">
-            <p><b>Links : </b></p><asp:Label ID="lblLinks" runat="server"></asp:Label>
+            <p style="border-bottom:dotted;"><b>Links : </b></p><asp:Label ID="lblLinks" runat="server"></asp:Label>
         </div>
         <div class="selectTitle" id="commentdiv" style="animation-duration: 2s; animation-name:pushdowncomment; display:block; margin-left:auto; margin-right:auto" id="commentsCat" onmouseover="displayActCat(); hideFeatCat(); hideSuggCat()">
-            <p>Comments</p>
+            <p style="border-bottom:dotted;">Comments</p>
         </div>
     </div>
     <div style="text-align: center">
