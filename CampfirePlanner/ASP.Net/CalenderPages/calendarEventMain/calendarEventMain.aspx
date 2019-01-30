@@ -20,7 +20,7 @@
         <div>
         <asp:Label ID="lblWelcome" runat="server" CssClass="auto-style2" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
         <br />
-         <h2 style="font-family:Georgia; font-weight: bold; text-align: left; border-bottom:solid; border-left: solid; border-left-width: 20px; border-color:dodgerblue; padding-left:10px; width: 90%; margin-left: 5%;"><asp:Label ID="lblCollabInfo" runat="server" Font-Bold="True" Visible="True"></asp:Label></h2>
+         <h2 style="font-family:Georgia; font-weight: bold; text-align: left; border-bottom:solid; border-left: solid; border-left-width: 20px; border-color:slategrey; padding-left:10px; width: 90%; margin-left: 5%;"><asp:Label ID="lblCollabInfo" runat="server" Font-Bold="True" Visible="True"></asp:Label></h2>
         <br />
             <div style="text-align:center">
                 <asp:Label ID="lblCollab" runat="server" Font-Bold="true" Visible="False"></asp:Label>
@@ -48,7 +48,7 @@
             </div>      
     </div>
         <div>
-            <h2 style="font-family: Georgia; font-weight: bold; text-align: left; border-bottom: solid; border-left: solid; border-left-width: 20px; border-color: dodgerblue; padding-left: 10px; width: 90%; margin-left: 5%;">Current Events</h2>
+            <h2 style="font-family: Georgia; font-weight: bold; text-align: left; border-bottom: solid; border-left: solid; border-left-width: 20px; border-color: slategrey; padding-left: 10px; width: 90%; margin-left: 5%;">Current Events</h2>
             <asp:GridView ID="gvEvents" OnRowDeleting="gvEvents_RowDeleting" runat="server" EmptyDataText="There are no Events!" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" AutoGenerateColumns="False" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" OnSelectedIndexChanged="gvEvents_SelectedIndexChanged" OnPageIndexChanging="gvEvents_PageIndexChanging">
                 <%--<AlternatingRowStyle BackColor="White" />--%>
                 <Columns>
