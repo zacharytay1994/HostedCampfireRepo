@@ -55,12 +55,12 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             lblVotes.Text = voteCount().ToString();
 
             // Color Voted Button
-            /*btnUpVote.Style["background-color"] = "white";
-            btnDownVote.Style["background-color"] = "white";
+            btnUpVote.ImageUrl = "~/Images/thumbs-up.png";
+            btnDownVote.ImageUrl = "~/Images/dislike-thumb.png";
             if (voteCheck() == 1)      // Currently Up-Voted
-                btnUpVote.Style["background-color"] = "green";
+                btnUpVote.ImageUrl = "~/Images/like-clicked.png";
             else if (voteCheck() == 0) // Currently Down-Voted
-                btnDownVote.Style["background-color"] = "red";*/
+                btnDownVote.ImageUrl = "~/Images/dislike-clicked.png";
 
             //Display Categories
             lblCategories.Text = displayCategories();
