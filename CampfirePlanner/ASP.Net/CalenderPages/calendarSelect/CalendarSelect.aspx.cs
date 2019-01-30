@@ -17,7 +17,7 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarSelect
         {
             if (Session["UserAuthentication"] != null)
             {
-
+                fillUserList();
             }
             else
                 Response.Redirect("~/ASP.Net/LoginRegister/LoginPage.aspx");
