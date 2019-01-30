@@ -4,10 +4,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
     <h2 style="margin-top:10px; width:95%; font-weight:bold;">Event Schedule Planner</h2>
-    <div>
-            <asp:RadioButtonList ID="rblDay" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" OnSelectedIndexChanged="rblDay_SelectedIndexChanged" Selected="1"></asp:RadioButtonList>                
-            <asp:Label ID="lblDay" runat="server"></asp:Label>
-    </div>
     <table style="padding:10px;">
         <tr>
             <td class="auto-style2">
@@ -28,14 +24,14 @@
         </tr>
         <tr>
             <td colspan="2">
-    <asp:ListView ID="testview" runat="server"  DataKeyNames="ActivityID"  OnSelectedIndexChanged="testview_SelectedIndexChanged">
+    <asp:ListView ID="testview" runat="server"  DataKeyNames="ActivityID">
           <LayoutTemplate>
           <table cellpadding="2" width="640px" border="1" runat="server" id="tblProducts">
             <tr runat="server">
-              <th runat="server">Time</th>
-              <th runat="server">Activity</th>
-              <th runat="server">Duration</th>
-              <th runat="server">Description</th>
+              <th class="fkingheader" runat="server">Time</th>
+              <th class="fkingheader" runat="server">Activity</th>
+              <th class="fkingheader" runat="server">Duration</th>
+              <th class="fkingheader" runat="server">Description</th>
             </tr>
             <tr runat="server" id="itemPlaceholder" />
           </table>
@@ -49,98 +45,56 @@
         </LayoutTemplate>
         <ItemTemplate>
           <tr runat="server">
-            <td>
+            <td class="fkingbox" style="background-color:rgba(255,0,0,0.3);">
               <asp:Label ID="StartTime" runat="Server" Text='<%#Eval("StartTime") %>'/>
             </td>
-            <td>
-              <asp:Label ID="ActivityName" runat="Server" Text='<%#Eval("ActivityName") %>' />
+            <td class="fkingbox">
+              <div id="actID" onClick="on()"><asp:Label ID="ActivityName" runat="Server" Text='<%#Eval("ActivityName") %>' /></div>
             </td>
-            <td>
+            <td class="fkingbox">
               <asp:Label ID="Duration" runat="Server" Text='<%#Eval("Duration") %>' />
             </td>
-              <td>
+              <td class="fkingbox">
               <asp:Label ID="Description" runat="Server" Text='<%#Eval("ActivityDesc") %>' />
             </td>
           </tr>
         </ItemTemplate>
-        <EditItemTemplate>
-          <tr style="background-color: #ADD8E6">
-            <td>
-              <asp:LinkButton ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />&nbsp;
-              <asp:LinkButton ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
-            </td>
-            <td>
-              <asp:TextBox ID="FirstNameTextBox" runat="server" Text='<%#Bind("FirstName") %>' 
-                MaxLength="50" /><br />
-            </td>
-            <td>
-              <asp:TextBox ID="LastNameTextBox" runat="server" Text='<%#Bind("LastName") %>' 
-                MaxLength="50" /><br />
-            </td>
-          </tr>
-        </EditItemTemplate>
     </asp:ListView>
             </td>
             <td>&nbsp;</td>
         </tr>
     </table>
-    <%--<asp:DropDownList ID="ddl1" runat="server"></asp:DropDownList>--%>
+    <div id="overlay" onclick="off()">
+        <div>
+            <h2 id="actName" ></h2>
+            <div>
+                <p style="color:white; text-align:center"><b>Timeline</b></p>
+                <h1 style="text-align:left; color:white">[9.00 AM]</h1>
+                <p style="border-bottom:solid; border-color:white; color:white; text-align:center">Click on timeline to add ++</p>
+                <h1 style="text-align:right; color:white">[9.45 AM]</h1>
+                <div class="timeDis" style="left:10%">
+                    <p style="font-family:Georgia; font-weight:bold;"><u>9.05</u></p>
+                    Fetch students from attrium.
+                </div>
+                <div class="timeDis" style="left:50%">
+                    <p style="font-family:Georgia; font-weight:bold;"><u>9.25</u></p>
+                    Prize giving ceremony.
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function displayOverlay() {
 
-    <%--<asp:Table ID="Table1" runat="server">
-    </asp:Table>
-    <br />
-    <table>
-        <tr>
-            <td>12 AM</td>
-            <td>1 AM</td>
-            <td>2 AM</td>
-            <td>3 AM</td>
-            <td>4 AM</td>
-            <td>5 AM</td>
-            <td>6 AM</td>
-            <td>7 AM</td>
-            <td>8 AM</td>
-            <td>9 AM</td>
-            <td>10 AM</td>
-            <td>11 AM</td>
-            <td>12 PM</td>
-            <td>1 PM</td>
-            <td>2 PM</td>
-            <td>3 PM</td>
-            <td>4 PM</td>
-            <td>5 PM</td>
-            <td>6 PM</td>
-            <td>7 PM</td>
-            <td>8 PM</td>
-            <td>9 PM</td>
-            <td>10 PM</td>
-            <td>12 PM</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>--%>
+        }
+        function on() {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("actName").innerHTML =
+                document.getElementById("actID").innerHTML;
+        }
+
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
 </asp:Content>

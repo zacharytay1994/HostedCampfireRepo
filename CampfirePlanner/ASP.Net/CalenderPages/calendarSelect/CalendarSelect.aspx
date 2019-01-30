@@ -27,7 +27,7 @@
             &nbsp;
         </p>
         
-            <asp:Calendar ID="calSelect" runat="server" BackColor="White" CssClass="calendarSelect" DayHeaderStyle-CssClass="header" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="287px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="357px" OnLoad="calSelect_Load" OnPreRender="calSelect_PreRender" OnSelectionChanged="calSelect_SelectionChanged">
+            <div style="margin-left:auto;margin-right:auto;display:inline-block;"><asp:Calendar ID="calSelect" runat="server" BackColor="White" CssClass="calendarSelect" DayHeaderStyle-CssClass="header" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="10pt" ForeColor="Black" Height="287px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="357px" OnLoad="calSelect_Load" OnPreRender="calSelect_PreRender" OnSelectionChanged="calSelect_SelectionChanged">
                 <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
                 <DayStyle Width="14%" />
                 <NextPrevStyle Font-Size="8pt" ForeColor="White" />
@@ -37,6 +37,7 @@
                 <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
                 <TodayDayStyle BackColor="#CCCC99" />
             </asp:Calendar>
+                        </div>
                         <br />
                         <br />
         <p>
@@ -49,14 +50,10 @@
         </p>
                     <asp:RangeValidator ID="rvDayz" runat="server" ControlToValidate="txtDayz" CssClass="auto-style1" Display="Dynamic" ErrorMessage="Number of Days Cannot Exceed 7" MaximumValue="7" MinimumValue="1"></asp:RangeValidator>
         &nbsp;<asp:RequiredFieldValidator ID="rfDayz" runat="server" ControlToValidate="txtEvent" CssClass="auto-style1" Display="Dynamic" ErrorMessage="Please Select At Least 1 Day"></asp:RequiredFieldValidator>
-        <br />
-        <asp:Button ID="btnReset" runat="server" OnClick="btnReset_Click" Text="Reset" CausesValidation="False" />
-                    <asp:RequiredFieldValidator ID="rfName" runat="server" ControlToValidate="txtEvent" CssClass="auto-style1" Display="Dynamic" ErrorMessage="Name of Event cannot be blank"></asp:RequiredFieldValidator>
+        &nbsp;<asp:RequiredFieldValidator ID="rfName" runat="server" ControlToValidate="txtEvent" CssClass="auto-style1" Display="Dynamic" ErrorMessage="Name of Event cannot be blank"></asp:RequiredFieldValidator>
 
                         <br />
-                        <br />
 
-        <asp:Button ID="btnEventCreate" runat="server" CssClass="auto-style5" OnClick="btnEventCreate_Click" Text="Create Event" />
                     </td>
                 </tr>
                 <tr>
@@ -66,7 +63,7 @@
                         <asp:TextBox ID="txtSearch" runat="server" AutoCompleteType="Disabled" AutoPostBack="True" OnTextChanged="txtSearch_TextChanged"></asp:TextBox>
                         <br />
                         <br />
-        <asp:GridView ID="gvUsers" runat="server" AutoGenerateColumns="False" OnRowCommand="gvUsers_RowCommand" Width="384px">
+        <div style="margin-left:auto;margin-right:auto;display:inline-block;"><asp:GridView ID="gvUsers" runat="server" AutoGenerateColumns="False" OnRowCommand="gvUsers_RowCommand" Width="384px" CssClass="userGrid" HeaderStyle-CssClass="userHeader" RowStyle-CssClass="userRow">
             <Columns>
                 <asp:BoundField DataField="AccountID" HeaderText="ID">
                     <HeaderStyle HorizontalAlign="Center" />
@@ -76,13 +73,17 @@
                     <HeaderStyle HorizontalAlign="Center" />
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:BoundField>
-                <asp:ButtonField ButtonType="Button" Text="Add" CommandName="addUser">
+                <asp:ButtonField Text="Add" CommandName="addUser">
                     <HeaderStyle HorizontalAlign="Center" />
                     <ItemStyle HorizontalAlign="Center" Width="50px" />
                 </asp:ButtonField>
             </Columns>
+
+<HeaderStyle CssClass="userHeader"></HeaderStyle>
+
+<RowStyle CssClass="userRow"></RowStyle>
         </asp:GridView>
-            
+            </div>
                         <br />
                         Users Selected:
                     <asp:Label ID="lblCount" runat="server"></asp:Label>
@@ -90,6 +91,14 @@
         <asp:ListBox ID="lbSelected" runat="server" AutoPostBack="True" Height="263px" OnSelectedIndexChanged="lbSelected_SelectedIndexChanged" Width="244px"></asp:ListBox>
                         <br />
         <asp:Button ID="btnRemove" runat="server" OnClick="btnRemove_Click" Text="Remove" Visible="False" />
+            
+                        <br />
+                        <br />
+
+        <asp:Button ID="btnEventCreate" runat="server" CssClass="auto-style5" OnClick="btnEventCreate_Click" Text="Create Event" />
+                        <br />
+                        <br />
+        <asp:Button ID="btnReset" runat="server" OnClick="btnReset_Click" Text="Reset" CausesValidation="False" />
             
                     </td>
                 </tr>
