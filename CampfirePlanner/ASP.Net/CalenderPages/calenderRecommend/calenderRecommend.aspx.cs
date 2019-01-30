@@ -90,7 +90,8 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
 
         protected int getNumberOfDays()
         {
-            string targetedEventID = Request.QueryString["eventID"]; //*********
+            //string targetedEventID = Request.QueryString["eventID"]; //*********
+            int targetedEventID = Convert.ToInt32(Request.QueryString["eventID"]);
             string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
             SqlConnection conn = new SqlConnection(strConn);
 
@@ -174,7 +175,9 @@ namespace CampfirePlanner.ASP.Net.CalenderPages
             objActivity.Day = Convert.ToInt32(rblDay.SelectedValue);
             objActivity.eventActivityAdd();
             ScriptManager.RegisterStartupScript(this, this.GetType(),
-                    "alert", "alert('Created!');window.location = '/ASP.Net/CalenderPages/calenderRecommend/calenderRecommend.aspx';", true);
+                    "alert", "alert('Created!');", true);
+           
+            //Response.Redirect("~/ASP.Net/CalenderPages/calenderRecommend/calenderRecommend.aspx");
         }
 
         protected void btnReturn_Click(object sender, EventArgs e)
