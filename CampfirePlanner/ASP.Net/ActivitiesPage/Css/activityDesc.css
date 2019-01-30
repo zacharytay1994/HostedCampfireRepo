@@ -95,3 +95,22 @@ img {
     margin-right:auto;
     text-align:center;
 }
+
+.delfield {    
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding-bottom: 5px;
+}
+
+.delbutton {
+    background-color: red;
+    color: white;
+    border: 1px solid white;
+}
+
+.delbutton:hover {
+    background-color: transparent;
+    color: red;
+    border: 1px solid red;
+}

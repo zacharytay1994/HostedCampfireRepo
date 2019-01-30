@@ -13,15 +13,6 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
     public partial class ActivityDesc {
         
         /// <summary>
-        /// image1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage image1;
-        
-        /// <summary>
         /// lblTitle control.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,24 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitle;
+        
+        /// <summary>
+        /// btnDel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDel;
+        
+        /// <summary>
+        /// image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage image1;
         
         /// <summary>
         /// lblDuration control.

@@ -20,10 +20,11 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 displayComments();
                 showActivityDesc();
 
-                //if (Session["UserAuthentication"].ToString() == "Admin")
-                //{
-                //    btnDel.Visible = true;
-                //}
+                if (Session["UserAuthentication"] != null)
+                {
+                    if (Session["UserAuthentication"].ToString() == "Admin")
+                        btnDel.Visible = true;
+                }
                 //else
                 //{
                 //    btnDel.Visible = false;
@@ -161,18 +162,43 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 return "";
         }
 
-        //private int deleteActivity()
-        //{
-        //    string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
-        //    SqlConnection conn = new SqlConnection(strConn);
-        //    SqlCommand cmd = new SqlCommand("DELETE FROM Activity WHERE ActivityID = @actid", conn);
-        //    cmd.Parameters.AddWithValue("@actid", Convert.ToInt32(Request.QueryString["actID"]));
-        //    conn.Open();
-        //    cmd.ExecuteNonQuery();
-        //    conn.Close();
+        private void deleteActivity()
+        {
+            // Check if Activity Exists in Events
+            string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM EventActivities WHERE ActivityID = @aID", conn);
+            cmd.Parameters.AddWithValue("@aID", Convert.ToInt32(Request.QueryString["actID"]));
+            SqlDataAdapter daActivity = new SqlDataAdapter(cmd);
+            DataSet result = new DataSet();
 
-        //    return 0;
-        //}
+            conn.Open();
+            daActivity.Fill(result, "EventActivities");
+            conn.Close();
+
+            if (result.Tables["EventActivities"].Rows.Count > 0) // If Activity Exists
+            {
+                cmd = new SqlCommand("DELETE FROM EventActivities WHERE ActivityID = @actid", conn);
+                cmd.Parameters.AddWithValue("@actid", Convert.ToInt32(Request.QueryString["actID"]));
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
+            // Delete Activity's Images
+            cmd = new SqlCommand("DELETE FROM Images WHERE ActivityID = @actid", conn);
+            cmd.Parameters.AddWithValue("@actid", Convert.ToInt32(Request.QueryString["actID"]));
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            // Delete the Activity
+            cmd = new SqlCommand("DELETE FROM Activity WHERE ActivityID = @actid", conn);
+            cmd.Parameters.AddWithValue("@actid", Convert.ToInt32(Request.QueryString["actID"]));
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
 
         public int slideshowCount()
         {
@@ -194,16 +220,14 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             return count;
         }
 
-        //protected void btnDel_Click(object sender, EventArgs e)
-        //{
-        //    if (Session["UserAuthentication"].ToString() == "Admin")
-        //    {
-        //        if (deleteActivity() == 0)
-        //        {
-        //            Response.Redirect("~/ASP.Net/ActivitiesPage/ActivitiesPage.aspx");
-        //        }
-        //    }
-        //}
+        protected void btnDel_Click(object sender, EventArgs e)
+        {
+            if (Session["UserAuthentication"].ToString() == "Admin")
+            {
+                deleteActivity();
+                Response.Redirect("~/ASP.Net/ActivitiesPage/ActivitiesPage.aspx");
+            }
+        }
 
         protected void btnDownVote_Click(object sender, ImageClickEventArgs e)
         {

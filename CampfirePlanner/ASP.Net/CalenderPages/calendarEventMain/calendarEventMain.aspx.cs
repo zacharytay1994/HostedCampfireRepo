@@ -169,15 +169,16 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
 
             if (checkRole(eventID) == true)
             {
+                // Check if Event has Existing Activities
                 string strConn = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ToString();
                 SqlConnection conn = new SqlConnection(strConn);
                 SqlCommand cmd = new SqlCommand("SELECT * FROM EventActivities WHERE EventID = @eID", conn);
                 cmd.Parameters.AddWithValue("@eID", eventID);
-                SqlDataAdapter daVotes = new SqlDataAdapter(cmd);
+                SqlDataAdapter daEvent = new SqlDataAdapter(cmd);
                 DataSet result = new DataSet();
 
                 conn.Open();
-                daVotes.Fill(result, "EventActivities");
+                daEvent.Fill(result, "EventActivities");
                 conn.Close();
 
                 if (result.Tables["EventActivities"].Rows.Count > 0) // If Event has Activities

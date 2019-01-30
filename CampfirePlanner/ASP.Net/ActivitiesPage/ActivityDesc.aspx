@@ -7,30 +7,17 @@
             height: 100%;
             width: 100%;
         }
-
-        .auto-style2 {
-            position: relative;
-            width: 100%;
-            min-height: 1px;
-            -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
-            max-width: 100%;
-            left: 0px;
-            top: 0px;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
-        .auto-style3 {
-            width: 500px;
-        }
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
     <div class="col-sm-12">
-        <h2 style="text-align: center;">Featured Activities</h2>
-        <%--<asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')"--%>
+            <h2 style="text-align: center;">
+                <asp:Label ID="lblTitle" runat="server"></asp:Label></h2>
+            <p class="delfield">
+                <asp:Button ID="btnDel" CssClass="delbutton" runat="server" Height="30px" OnClick="btnDel_Click" Text="Delete Activity" Width="125px" OnClientClick="return confirm('Are You Sure?')" />
+            </p>
+
         <div id="slideshow" class="slideshow-container" style="text-align: center;">
             <div id="slide1" class="mySlides1">
                 <img id="image1" runat="server" src="" class="auto-style1" />
@@ -98,13 +85,12 @@
             }
         </script>
     </div>
-    
+
 
 
 
     <div style="text-align: center">
-        <asp:Label ID="lblTitle" runat="server"></asp:Label>
-        <%--<asp:Button ID="btnDel" runat="server" CssClass="auto-style4" Height="44px" OnClick="btnDel_Click" Text="Delete Activity" Visible="False" Width="170px" OnClientClick="return confirm('Are You Sure?')"--%> &nbsp;<asp:Label ID="lblDuration" runat="server"></asp:Label>
+        <asp:Label ID="lblDuration" runat="server"></asp:Label>
         <br />
         <asp:Label ID="lblCategories" runat="server"></asp:Label>
         <br />
@@ -120,12 +106,12 @@
         <br />
         <br />
         <asp:ImageButton ID="btnUpVote" runat="server" ImageUrl="~/Images/thumbs-up.png" CssClass="btnUP" Width="25px" Height="25px"
-        OnClick="btnUpVote_Click" />
+            OnClick="btnUpVote_Click" />
         <asp:Label ID="lblVotes" runat="server"></asp:Label>
         <asp:ImageButton ID="btnDownVote" runat="server" ImageUrl="~/Images/dislike-thumb.png" CssClass="btnDOWN" Width="25px"
-        Height="25px" OnClick="btnDownVote_Click" />
+            Height="25px" OnClick="btnDownVote_Click" />
 
-<%--        <asp:Button ID="btnShow" runat="server" OnClick="btnShow_Click" Text="Show Comments" />
+        <%--        <asp:Button ID="btnShow" runat="server" OnClick="btnShow_Click" Text="Show Comments" />
         <asp:Button ID="btnHide" runat="server" OnClick="btnHide_Click" Text="Hide Comments" />--%>
 
         <asp:GridView ID="gvComments" runat="server" AutoGenerateColumns="False" CssClass="comments">
