@@ -357,6 +357,7 @@
     <None Include="Properties\PublishProfiles\CampfirePlannerMVC - Web Deploy1.pubxml" />
     <Content Include="Images\background.jpeg" />
     <Content Include="Images\beachparty.jpg" />
+    <Content Include="Images\campfire_logo.png" />
     <Content Include="Images\cheeky.JPG" />
     <Content Include="Images\fire.jpg" />
     <Content Include="Images\formal.jpg" />
@@ -368,7 +369,7 @@
     <Content Include="Images\image2.jpg" />
     <Content Include="Images\image3.jpg" />
     <Content Include="Images\loginbackground.jpg" />
-    <Content Include="Images\loginpic.png" />
+    <Content Include="Images\login_logo.jpg" />
     <Content Include="Images\Logo_sm.png" />
     <Content Include="Images\office.jpg" />
     <Content Include="Images\pool.jpg" />
