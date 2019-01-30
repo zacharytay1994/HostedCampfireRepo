@@ -63,7 +63,7 @@
                         <asp:TextBox ID="txtSearch" runat="server" AutoCompleteType="Disabled" AutoPostBack="True" OnTextChanged="txtSearch_TextChanged"></asp:TextBox>
                         <br />
                         <br />
-        <div style="margin-left:auto;margin-right:auto;display:inline-block;"><asp:GridView ID="gvUsers" runat="server" AutoGenerateColumns="False" OnRowCommand="gvUsers_RowCommand" Width="384px" CssClass="userGrid" HeaderStyle-CssClass="userHeader" RowStyle-CssClass="userRow">
+        <div style="margin-left:auto;margin-right:auto;display:inline-block;"><asp:GridView AllowPaging="True" PageSize="5" ID="gvUsers" runat="server" AutoGenerateColumns="False" OnRowCommand="gvUsers_RowCommand" Width="384px" CssClass="userGrid" HeaderStyle-CssClass="userHeader" RowStyle-CssClass="userRow">
             <Columns>
                 <asp:BoundField DataField="AccountID" HeaderText="ID">
                     <HeaderStyle HorizontalAlign="Center" />

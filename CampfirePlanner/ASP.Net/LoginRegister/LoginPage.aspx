@@ -2,34 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="LoginPage.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
-    /*.auto-style13 {
-        width: 300px;
-        height: 30px;
-    }
-    .auto-style14 {
-        height: 40px;
-        width: 300px;
-    }
-    
-    .auto-style16 {
-        height: 30px;
-        width: 205px;
-        color: white;
-        text-align: right;
-    }
-    .auto-style17 {
-        height: 40px;
-        width: 205px;
-    }
-    .auto-style18 {
-        /*border-radius: 5px;
-        border-style: none;
-        border-color: inherit;
-        border-width: medium;
-        color: white;
-        margin-bottom: 20px;
-        margin-left: 0;
-    }*/
     .auto-style15 {
         width: 100%;
         margin-right: 0px;
@@ -43,7 +15,7 @@
         <table class="auto-style15" border="0" style="border:none;">
             <tr>
                 <th class="inputboxthree">
-                    <asp:Image ID="topPic" runat="server" CssClass="top-pic" ImageUrl="../../Images/loginpic.png" />
+                    <asp:Image ID="topPic" runat="server" CssClass="top-pic" ImageUrl="../../Images/login_logo.png"/>
                 </th>
             </tr>
             <tr>
