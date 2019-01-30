@@ -6,10 +6,14 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
-    <main>
+    <div id="trigger" style="height:60px; width:99%" onmouseover="hideAll()"></div>
+    <div id="clickerTitles" style="text-align:center;">
+        <div class="selectTitle" id="actCat" onmouseover="displayActCat(); hideFeatCat(); hideSuggCat()">Add an Activity</div>
+    </div>
+    <div class="aniContainer" id="actCatDiv">
         <br />
         <h1>Add Activity</h1>
-        <div id="activities">
+        <div>
             
                 <div class="row">
                     <div class="col-25">
@@ -87,15 +91,30 @@
                     </div>
                     <asp:Label ID="lblPhoto" runat="server" ForeColor="#CC0099"></asp:Label>
                 </div>
-                <div class="row">
+                <div class="row" style="justify-content:center;">
                     <asp:Button ID="submitForm" runat="server" Text="Submit" OnClick="submitForm_Click" />
                     <asp:Button ID="returnHome" runat="server" Text="Return to Main Menu" CausesValidation="False" OnClick="returnHome_Click" />
                 </div>
             
         </div>
-        </main>
     <br />
     <br />
+    </div>
+    <script>
+        function displayActCat() {
+            document.getElementById("actCatDiv").style.display = "block";
+            document.getElementById("clickerTitles").style.animationName = "pushup";
+            document.getElementById("trigger").style.animationName = "pushuptrigger";
+        }
+        function hideActCat() {
+            document.getElementById("actCatDiv").style.display = "none";
+        }
+        function hideAll() {
+            document.getElementById("actCatDiv").style.display = "none";
+            document.getElementById("clickerTitles").style.animationName = "pushdown";
+            document.getElementById("trigger").style.animationName = "pushdowntrigger";
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="body2" runat="server">
 </asp:Content>

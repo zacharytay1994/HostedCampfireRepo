@@ -30,24 +30,24 @@
         <!-- Links that are aligned to the left, mr-auto: right margin auto-adjusted -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item" id="Planner">
-                <a class="nav-link" href="/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx" style="border-color:slategrey; font-family:'Bodoni MT'; color: black;">Planner</a>
+                <a class="nav-link" href="/ASP.Net/CalenderPages/calendarEventMain/calendarEventMain.aspx" style="border-color:slategrey; font-family:'Bodoni MT'; color: black;">planner</a>
             </li>
             <li class="nav-item" id="Activites">
-                <a class="nav-link" href="/ASP.Net/ActivitiesPage/ActivitiesPage.aspx" style="border-left:solid; border-color:slategrey; font-family:'Bodoni MT'; color: black;">Activities</a>
+                <a class="nav-link" href="/ASP.Net/ActivitiesPage/ActivitiesPage.aspx" style="border-left:solid; border-color:slategrey; font-family:'Bodoni MT'; color: black;">activities</a>
             </li>
             <li class="nav-item" id="ActivityAdd">
 
-                <a class="nav-link" href="/ASP.Net/ActivitiesPage/activityForm.aspx" style="border-left:solid; border-color:slategrey; font-family:'Bodoni MT'; color: black; ">Add an Activity</a>
+                <a class="nav-link" href="/ASP.Net/ActivitiesPage/activityForm.aspx" style="border-left:solid; border-color:slategrey; font-family:'Bodoni MT'; color: black; ">add an activity</a>
 
             </li>
             <li class="nav-item" id="About">
-                <a class="nav-link" href="#" style="border-left:solid; border-color:slategrey; font-family:'Bodoni MT'; color: black; ">About Us</a>
+                <a class="nav-link" href="#" style="border-left:solid; border-color:slategrey; font-family:'Bodoni MT'; color: black; ">about us</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item" id="Logout" runat="server">
                 <%--<asp:Button ID="btnSignIn" runat="server" Text="Sign In" CssClass="btn btn-link nav-link" CausesValidation="False" OnClick="btnSignIn_Click" />--%>
-                <a runat="server" onserverclick="logInOut" id="btnNavLogInOut" class="nav-link" style="border-left:solid; border-color:slategrey; font-family:'Bodoni MT'; color: black; ">Log Out</a>
+                <a runat="server" onserverclick="logInOut" id="btnNavLogInOut" class="nav-link" style="border-left:solid; border-color:slategrey; font-family:'Bodoni MT'; color: black; ">log out</a>
             </li>
         </ul>
     </div>
