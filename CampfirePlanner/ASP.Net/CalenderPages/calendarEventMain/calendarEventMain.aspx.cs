@@ -87,11 +87,12 @@ namespace CampfirePlanner.ASP.Net.CalenderPages.calendarEventMain
             string conString = ConfigurationManager.ConnectionStrings["CampfireConnectionString"].ConnectionString;
             using (SqlConnection con = new SqlConnection(conString))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM EventMembers INNER JOIN Users ON EventMembers.AccountID = Users.AccountID WHERE EventID = @EventID", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM EventMembers INNER JOIN Users ON EventMembers.AccountID = Users.AccountID WHERE EventID = @EventID AND MemberStatus = 'm'", con))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
                         cmd.Parameters.AddWithValue("@EventID", eventID);
+                        //cmd.Parameters.AddWithValue("@Username", Session["UserAuthentication"].ToString());
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
                         this.gvCollab.DataSource = dt;
