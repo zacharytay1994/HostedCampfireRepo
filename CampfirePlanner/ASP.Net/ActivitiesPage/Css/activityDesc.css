@@ -1,4 +1,8 @@
-﻿/*-----SlideShow-----*/
+﻿body {
+    background-color: #ffdead;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+}
+/*-----SlideShow-----*/
 .mySlides {
     display: none;
 }
@@ -82,4 +86,17 @@ img {
 
 .btnDOWN:active {
     color:red;
+}
+
+h2 {
+    text-align: left;
+    margin-left: 1%;
+    border-left: solid;
+    border-bottom: solid;
+    border-color: dodgerblue;
+    border-left-width: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-family: Georgia;
+    width: 95%;
 }
