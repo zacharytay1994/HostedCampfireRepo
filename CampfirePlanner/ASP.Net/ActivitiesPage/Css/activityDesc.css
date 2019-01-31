@@ -260,4 +260,5 @@ img {
     background-color: transparent;
     color: red;
     border: 1px solid red;
+    cursor: pointer;
 }

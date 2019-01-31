@@ -29,33 +29,32 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="body2" runat="server">
     <div class="col-sm-12">
-        <h2 style="text-align: center;">
-            <asp:Label ID="lblTitle" runat="server"></asp:Label></h2>
-        <p class="delfield">
-            <asp:Button ID="btnDel" CssClass="delbutton" runat="server" Height="30px" OnClick="btnDel_Click" Text="Delete Activity" Width="125px" OnClientClick="return confirm('Are You Sure?')" Visible="False" />
-        </p>
+        <%--<h2 style="text-align: center;">
+            <asp:Label ID="lblTitle" runat="server"></asp:Label></h2>--%>
 
         <div id="slideshow" class="slideshow-container" style="text-align: center;">
             <div id="slide1" class="mySlides1">
-                <img id="image1" runat="server" src="" style="height: 450px;" />
+                <img id="image1" runat="server" src="" style="height: 200px;" />
             </div>
             <a class="prev" onclick="plusSlides(-1, 0)" style="color: white;">&#10094;</a>
             <a class="next" onclick="plusSlides(1, 0)" style="color: white;">&#10095;</a>
         </div>
-
+        <p class="delfield" style="position:fixed; z-index:2;">
+            <asp:Button ID="btnDel" CssClass="delbutton" runat="server" Height="30px" OnClick="btnDel_Click" Text="Delete Activity" Width="125px" OnClientClick="return confirm('Are You Sure?')" Visible="False" />
+        </p>
         <script>
             if (<%= slideshowCount()%> == 2) {
                 var div = document.createElement("div");
                 div.id = "slide2";
                 div.className = "mySlides1";
-                div.innerHTML += "<img src=\"<%= getImgLink()%>\" id=\"image2\" style=\" height: 450px;\">"
+                div.innerHTML += "<img src=\"<%= getImgLink()%>\" id=\"image2\" style=\" height: 200px;\">"
                 document.getElementById("slideshow").appendChild(div);
             }
             else if (<%= slideshowCount()%> == 3) {
                 var div = document.createElement("div");
                 div.id = "slide3";
                 div.className = "mySlides1";
-                div.innerHTML += "<img src=\"<%= getImgLink2()%>\" id=\"image3\" style=\" height: 450px;\">"
+                div.innerHTML += "<img src=\"<%= getImgLink2()%>\" id=\"image3\" style=\" height: 200px;\">"
                 document.getElementById("slideshow").appendChild(div);
             }
         </script>
@@ -143,7 +142,7 @@
         <br />
         <br />
         <br />
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, 0)">
+        <div style="position:absolute; top:80%; left:50%; transform:translate(-50%, 0)">
             <asp:ImageButton ID="btnUpVote" runat="server" ImageUrl="~/Images/thumbs-up.png" CssClass="btnUP" Width="25px" Height="25px"
                 OnClick="btnUpVote_Click" />
             <asp:Label ID="lblVotes" runat="server"></asp:Label>
@@ -158,27 +157,24 @@
         <div class="aniContainer" id="actCatDiv">
             <br />
             <h2>Comments by Other Users</h2>
-            <asp:GridView ID="gvComments" runat="server" AutoGenerateColumns="False" CssClass="comments">
-                <Columns>
-                    <asp:BoundField DataField="Username" HeaderText="Username" />
-                    <asp:BoundField DataField="CommentText" HeaderText="Comment" />
-                </Columns>
-            </asp:GridView>
+            
             <br />
 
             <asp:Label ID="lblComments" runat="server" Text="Add a Comment: "></asp:Label>
             <asp:TextBox ID="txtAddComment" runat="server" Width="789px"></asp:TextBox>
             <asp:Button ID="btnSubmitComment" runat="server" Text="Submit" OnClick="btnSubmitComment_Click" />
             <asp:Label ID="lblThanks" runat="server"></asp:Label>
-        </div>
-
-        <br />
-        <asp:GridView ID="gvComments" runat="server" AutoGenerateColumns="False" CssClass="comments">
+            <br />
+            <asp:GridView ID="gvComments" runat="server" AutoGenerateColumns="False" CssClass="comments">
             <Columns>
                 <asp:BoundField DataField="Username" HeaderText="Username" />
                 <asp:BoundField DataField="CommentText" HeaderText="Comment" />
             </Columns>
         </asp:GridView>
+        </div>
+
+        <br />
+        
     </div>
     <br />
     <br />
