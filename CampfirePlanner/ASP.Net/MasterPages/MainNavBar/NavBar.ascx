@@ -16,7 +16,7 @@
         height: 50px;
     }
 </style>
-<nav class="navbar navbar-expand-md navbar-light" style="background-color:#f27100; border-color:darkred; background-image: url('../../Images/campfirebackground.jpg'); background-size:cover;">
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:#f27100; border-color:darkred; background-image: url('https://i.imgur.com/2eOeYmD.jpg'); background-size:cover;">
     <!-- The brand(or icon) of the navbar -->
     <a class="navbar-brand" href="/ASP.Net/HomePage/HomePage.aspx">
         <img src="../../../Images/campfire_logo.png" class="auto-style1" style="border:none;"/>

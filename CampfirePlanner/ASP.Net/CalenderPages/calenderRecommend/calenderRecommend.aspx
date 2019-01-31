@@ -6,10 +6,14 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
+    <div id="clickerTitles" style="text-align:center;">
+        <div class="selectTitle" id="actCat"">
+            <h3>Scheduler</h3>
+        </div>
+    </div>
     &nbsp;
-    <main>
-        <h2 style="font-family:Georgia; font-weight:bold; border-left:solid; border-bottom:solid; border-left-width:20px; padding-left:10px; padding-bottom:10px; border-color: slategrey; width:90%; margin-left:5%;">Scheduler</h2>
-        <div>
+     <div style="background-image: url('https://www.transparenttextures.com/patterns/felt.png'); background-color:rgba(247, 227, 224, 0.9);">
+         <div>
                 <div class="titles" style="top:45%">
                     <div>
                         <h2 style="font-family:Georgia; border-left:solid; border-bottom:solid; border-left-width:20px; padding-left:10px; padding-bottom:10px; border-color: slategrey; width:90%">Select Day</h2>
@@ -95,5 +99,5 @@
                     </div>
                 </div>
         </div>
-    </main>
+   </div>
 </asp:Content>

@@ -15,11 +15,11 @@
         }
         .selectTitle {
             display:inline-block; margin-left:10%; margin-right:10%; margin-bottom:5%;
-            margin-top:5%; font-family:'Bodoni MT'; font-size:150%;
+            margin-top:5%; font-family:'Bodoni MT'; font-size:200%; border-bottom:dotted;
         }
-        #actCat:hover {
+        /*#actCat:hover {
             background-color:black;
-        }
+        }*/
     </style>
 </asp:Content>
 

@@ -20,11 +20,11 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
                 displayComments();
                 showActivityDesc();
 
-                if (Session["UserAuthentication"] != null)
-                {
-                    if (Session["UserAuthentication"].ToString() == "Admin")
-                        btnDel.Visible = true;
-                }
+                //if (Session["UserAuthentication"] != null)
+                //{
+                //    if (Session["UserAuthentication"].ToString() == "Admin")
+                //        btnDel.Visible = true;
+                //}
                 //else
                 //{
                 //    btnDel.Visible = false;
