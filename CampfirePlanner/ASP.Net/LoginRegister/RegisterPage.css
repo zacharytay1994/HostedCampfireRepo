@@ -1,8 +1,6 @@
 ﻿body {
-    background-image: url('../../Images/background.jpeg');
-    background-size: auto;
-    background-attachment: fixed;
-    margin:0;
+    background-color: #ffdead;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
 }
 
 .auto-style4 {

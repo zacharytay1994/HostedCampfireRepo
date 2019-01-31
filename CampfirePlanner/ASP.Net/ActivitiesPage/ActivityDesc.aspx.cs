@@ -54,13 +54,16 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage
             image1.Src = result.Tables[0].Rows[0]["ImgLink"].ToString();
             lblVotes.Text = voteCount().ToString();
 
-            // Color Voted Button
-            btnUpVote.ImageUrl = "~/Images/thumbs-up.png";
-            btnDownVote.ImageUrl = "~/Images/dislike-thumb.png";
-            if (voteCheck() == 1)      // Currently Up-Voted
-                btnUpVote.ImageUrl = "~/Images/like-clicked.png";
-            else if (voteCheck() == 0) // Currently Down-Voted
-                btnDownVote.ImageUrl = "~/Images/dislike-clicked.png";
+            if (Session["UserAuthentication"] != null)
+            {
+                // Color Voted Button
+                btnUpVote.ImageUrl = "~/Images/thumbs-up.png";
+                btnDownVote.ImageUrl = "~/Images/dislike-thumb.png";
+                if (voteCheck() == 1)      // Currently Up-Voted
+                    btnUpVote.ImageUrl = "~/Images/like-clicked.png";
+                else if (voteCheck() == 0) // Currently Down-Voted
+                    btnDownVote.ImageUrl = "~/Images/dislike-clicked.png";
+            }
 
             //Display Categories
             lblCategories.Text = displayCategories();
