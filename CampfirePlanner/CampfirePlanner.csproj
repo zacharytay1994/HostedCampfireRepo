@@ -220,6 +220,13 @@
     <Compile Include="ASP.Net\CalenderPages\calendarSelect\CalendarSelect.aspx.designer.cs">
       <DependentUpon>CalendarSelect.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ASP.Net\HomePage\about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASP.Net\HomePage\about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASP.Net\MasterPages\CalendarNavBar\Calendar.Master.cs">
       <DependentUpon>Calendar.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -320,6 +327,7 @@
     <Content Include="ASP.Net\CalenderPages\calenderViewDay\calenderViewDay.aspx" />
     <Content Include="ASP.Net\CalenderPages\calenderViewDay\calenderViewDay.css" />
     <Content Include="ASP.Net\CalenderPages\calenderViewDay\testPage.html" />
+    <Content Include="ASP.Net\HomePage\about.aspx" />
     <Content Include="ASP.Net\HomePage\HomePage.aspx" />
     <Content Include="ASP.Net\LandingPage\LandingPage.aspx" />
     <Content Include="ASP.Net\LoginRegister\LoginImages\l.png" />
