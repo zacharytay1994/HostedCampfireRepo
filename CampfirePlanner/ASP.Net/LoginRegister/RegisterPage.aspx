@@ -72,4 +72,6 @@
     </table>
 
     <p class="submit"><asp:Button ID="btn_submit" runat="server" Text="Register" OnClick="btn_submit_Click" cssclass="submitbutton"/></p>
+    <br />
+    <br />
 </asp:Content>

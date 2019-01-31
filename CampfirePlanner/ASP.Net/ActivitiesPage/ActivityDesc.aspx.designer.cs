@@ -94,15 +94,6 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
         protected global::System.Web.UI.WebControls.ImageButton btnDownVote;
         
         /// <summary>
-        /// gvComments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvComments;
-        
-        /// <summary>
         /// lblComments control.
         /// </summary>
         /// <remarks>
@@ -139,12 +130,16 @@ namespace CampfirePlanner.ASP.Net.ActivitiesPage {
         protected global::System.Web.UI.WebControls.Label lblThanks;
         
         /// <summary>
+        /// gvComments control.
         /// image1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+
+        protected global::System.Web.UI.WebControls.GridView gvComments;
+
         protected global::System.Web.UI.HtmlControls.HtmlImage image1;
     }
 }
