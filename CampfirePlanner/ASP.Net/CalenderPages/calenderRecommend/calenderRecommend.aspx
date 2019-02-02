@@ -6,13 +6,17 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
+    <div id="clickerTitles" style="text-align:center;">
+        <div class="selectTitle" id="actCat"">
+            <h3>Scheduler</h3>
+        </div>
+    </div>
     &nbsp;
-    <main>
-        <h2 style="font-family:Georgia; font-weight:bold; border-left:solid; border-bottom:solid; border-left-width:20px; padding-left:10px; padding-bottom:10px; border-color: dodgerblue; width:90%; margin-left:5%;">Scheduler</h2>
-        <div>
+     <div style="background-image: url('https://www.transparenttextures.com/patterns/felt.png'); background-color:rgba(247, 227, 224, 0.9);">
+         <div>
                 <div class="titles" style="top:45%">
                     <div>
-                        <h2 style="font-family:Georgia; border-left:solid; border-bottom:solid; border-left-width:20px; padding-left:10px; padding-bottom:10px; border-color: dodgerblue; width:90%">Select Day</h2>
+                        <h2 style="font-family:Georgia; border-left:solid; border-bottom:solid; border-left-width:20px; padding-left:10px; padding-bottom:10px; border-color: slategrey; width:90%">Select Day</h2>
                     </div>
                     <div>
                         <asp:RadioButtonList ID="rblDay" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" OnSelectedIndexChanged="rblDay_SelectedIndexChanged"></asp:RadioButtonList>                
@@ -22,7 +26,7 @@
 
                 <div class="titles" style="top:70%; left:15%">
                     <div style="display:inline-block;">
-                        <h2 style="font-family:Georgia; border-left:solid; border-bottom:solid; border-left-width:20px; padding-left:10px; padding-bottom:10px; border-color: dodgerblue; width:90%">Start Time</h2>
+                        <h2 style="font-family:Georgia; border-left:solid; border-bottom:solid; border-left-width:20px; padding-left:10px; padding-bottom:10px; border-color: slategrey; width:90%">Start Time</h2>
                     </div>
                     <div style="display:inline;">
                         <asp:TextBox ID="txtStart" type="time" runat="server"></asp:TextBox>
@@ -32,7 +36,7 @@
 
                 <div class="titles" style="top:90%; left:20%">
                     <div style="display:inline-block;">
-                         <h2 style="font-family:Georgia; border-left:solid; border-bottom:solid; border-left-width:20px; padding-left:10px; padding-bottom:10px; border-color: dodgerblue; width:90%">End Time</h2>
+                         <h2 style="font-family:Georgia; border-left:solid; border-bottom:solid; border-left-width:20px; padding-left:10px; padding-bottom:10px; border-color: slategrey; width:90%">End Time</h2>
                     </div>
                     <div style="display:inline-block;">
                         <asp:TextBox ID="txtEnd" type="time" runat="server"></asp:TextBox>
@@ -95,5 +99,5 @@
                     </div>
                 </div>
         </div>
-    </main>
+   </div>
 </asp:Content>

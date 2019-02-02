@@ -187,7 +187,6 @@
     </Compile>
     <Compile Include="ASP.Net\ActivitiesPage\activityAdd.aspx.cs">
       <DependentUpon>activityAdd.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ASP.Net\ActivitiesPage\activityAdd.aspx.designer.cs">
       <DependentUpon>activityAdd.aspx</DependentUpon>
@@ -375,6 +374,7 @@
     <Content Include="Images\office.jpg" />
     <Content Include="Images\pool.jpg" />
     <Content Include="Images\summer.jpg" />
+    <Content Include="Images\testing.jpg" />
     <Content Include="Images\winter.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

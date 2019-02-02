@@ -13,21 +13,35 @@
         .auto-style3 {
             text-align: center;
         }
+        .selectTitle {
+            display:inline-block; margin-left:10%; margin-right:10%; margin-bottom:5%;
+            margin-top:5%; font-family:'Bodoni MT'; font-size:200%; border-bottom:dotted;
+        }
+        /*#actCat:hover {
+            background-color:black;
+        }*/
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
-    <div class="scrollUp">
+    <div class="scrollUp" onclick="hideActCat()">
         <br />
             <%--&nbsp;&nbsp;&nbsp;--%>
         
         <input type="image" src="../../Images/go-to-the-top.png" class="scrollButton" />
     </div>
-    <div class="main">
+    <div id="trigger" style="height:60px; width:99%" onmouseover="hideAll()"></div>
+    <div id="clickerTitles" style="text-align:center;">
+        <div class="selectTitle" id="actCat" onmouseover="displayActCat(); hideFeatCat(); hideSuggCat()">Categories</div>
+        <div class="selectTitle" id="featCat" onmouseover="displayFeatCat(); hideActCat(); hideSuggCat()">Featured</div>
+        <div class="selectTitle" id="suggCat" onmouseover="displaySuggCat(); hideActCat(); hideFeatCat()">Suggested</div>
+    </div>
+    <div class="aniContainer" id="actCatDiv" style="display:none;">
         <div class="row">
             <div class="col-sm-12">
                 <!--Other Games-->
                 <div>
+                    <br />
                     <h2>Activity Categories</h2>
                     <p style="border-bottom:solid; border-color: salmon">From <i><b>casual icebreakers</b></i> to intense <i><b>team matches</b></i>, be it 5 minutes or 2 hours, you will definitely find what you are looking for using our extensive <i><b>Activity Catalogue</b></i>!</p>
                         <table class="col-md-12">
@@ -207,11 +221,11 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="body2" runat="server">
-    <div class="featured">
+    <div class="aniContainer" id="featCatDiv" style="display:none">
         <!--Featured Activities-->
         <br />
         <h2>Featured Activities</h2>
-        <p style="border-bottom:solid; border-color:salmon;">Activities people favoured this week!</p>
+        <p style="border-bottom:solid; border-color:salmon;"><b>Activities</b> people favoured this week!</p>
         <br />
         <div class="slideshow-container" style="text-align:center">
             <div class="mySlides1">
@@ -248,9 +262,12 @@
             <span class="dot1" onclick="currentSlide(3)"></span> 
         </div>
         <br />
-
-        <!--Featured Schedules-->
+    </div>
+    <div class="aniContainer" id="suggCatDiv" style="display:none">
+           <!--Featured Schedules-->
+        <br />
         <h2>Suggested Schedules</h2>
+        <p style="border-bottom:solid; border-color: salmon"><b>Events</b> that you might enjoy!</p>
         <div class="slideshow-container" style="text-align:center;">
             <div class="mySlides2">
                 <div class="numText">1 / 3</div>
@@ -287,7 +304,7 @@
             <br />
             <br />
         </div>
-    </div>
+        </div>
         <!---Scripts--->
         <script>
           //Single slideshow
@@ -367,4 +384,37 @@
                 window.scrollTo(0, 0);
             };
         </script>
+    <script>
+        function displayActCat() {
+            document.getElementById("actCatDiv").style.display = "block";
+            document.getElementById("clickerTitles").style.animationName = "pushup";
+            document.getElementById("trigger").style.animationName = "pushuptrigger";
+        }
+        function displayFeatCat() {
+            document.getElementById("featCatDiv").style.display = "block";
+            document.getElementById("clickerTitles").style.animationName = "pushup";
+            document.getElementById("trigger").style.animationName = "pushuptrigger";
+        }
+        function displaySuggCat() {
+            document.getElementById("suggCatDiv").style.display = "block";
+            document.getElementById("clickerTitles").style.animationName = "pushup";
+            document.getElementById("trigger").style.animationName = "pushuptrigger";
+        }
+        function hideActCat() {
+            document.getElementById("actCatDiv").style.display = "none";
+        }
+        function hideFeatCat() {
+            document.getElementById("featCatDiv").style.display = "none";
+        }
+        function hideSuggCat() {
+            document.getElementById("suggCatDiv").style.display = "none";
+        }
+        function hideAll() {
+            document.getElementById("actCatDiv").style.display = "none";
+            document.getElementById("featCatDiv").style.display = "none";
+            document.getElementById("suggCatDiv").style.display = "none";
+            document.getElementById("clickerTitles").style.animationName = "pushdown";
+            document.getElementById("trigger").style.animationName = "pushdowntrigger";
+        }
+    </script>
 </asp:Content>

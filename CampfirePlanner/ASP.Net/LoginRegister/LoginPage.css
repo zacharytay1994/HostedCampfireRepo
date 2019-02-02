@@ -4,7 +4,8 @@
     background-attachment: fixed;
     margin:0;*/
     background-color: #ffdead;
-    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+    background-image: url("../../../Images/campfirebackground.jpg");
+    background-size: cover;
 }
 
 .auto-style5 {
@@ -120,7 +121,8 @@
     }
 
 .hypercss {
-    color: white;
+    color: black;
+    font-family:'Bodoni MT';
 }
 
     .hypercss:hover {

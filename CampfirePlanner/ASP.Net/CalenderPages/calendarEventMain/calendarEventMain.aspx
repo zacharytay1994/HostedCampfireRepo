@@ -10,24 +10,28 @@
             margin-bottom: 50px;
             text-align: center;
             font-family: Georgia;
-            text-decoration: underline;
             padding-top: 10px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body1" runat="server">
-    <main>
-        <div>
-        <asp:Label ID="lblWelcome" runat="server" CssClass="auto-style2" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
+    <div id="clickerTitles" style="text-align:center;">
+        <div class="selectTitle" id="actCat" onmouseover="displayActCat(); hideFeatCat(); hideSuggCat()">
+            <asp:Label ID="Label1" runat="server" CssClass="auto-style2" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
+            <asp:Label ID="lblWelcome" runat="server" CssClass="auto-style2" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
+        </div>
+    </div>
+    <div class="aniContainer">
         <br />
-         <h2 style="font-family:Georgia; font-weight: bold; text-align: left; border-bottom:solid; border-left: solid; border-left-width: 20px; border-color:dodgerblue; padding-left:10px; width: 90%; margin-left: 5%;"><asp:Label ID="lblCollabInfo" runat="server" Font-Bold="True" Visible="True"></asp:Label></h2>
-        <br />
-            <div style="text-align:center">
+        <h2 style="font-family: Georgia; font-weight: bold; text-align: left; border-bottom: solid; border-left: solid; border-left-width: 20px; border-color: slategrey; padding-left: 10px; width: 90%; margin-left: 5%;">
+                <asp:Label ID="lblCollabInfo" runat="server" Font-Bold="True" Visible="True"></asp:Label></h2>
+            <br />
+            <div style="text-align: center">
                 <asp:Label ID="lblCollab" runat="server" Font-Bold="true" Visible="False"></asp:Label>
             </div>
-            <div style="margin-left:auto; margin-right:auto;">
-                 <br />
-                <asp:GridView ID="gvCollab" runat="server" AutoGenerateColumns="False" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" >
+            <div style="margin-left: auto; margin-right: auto;">
+                <br />
+                <asp:GridView ID="gvCollab" runat="server" AutoGenerateColumns="False" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:BoundField DataField="AccountID" HeaderText="User ID" />
@@ -39,16 +43,15 @@
                     <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
                     <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
                     <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-               </asp:GridView>
-        <br />
-            </div>      
-    </div>
+                    <sortedascendingcellstyle backcolor="#E9E7E2" />
+                    <sortedascendingheaderstyle backcolor="#506C8C" />
+                    <sorteddescendingcellstyle backcolor="#FFFDF8" />
+                    <sorteddescendingheaderstyle backcolor="#6F8DAE" />
+                </asp:GridView>
+                <br />
+            </div>
         <div>
-            <h2 style="font-family: Georgia; font-weight: bold; text-align: left; border-bottom: solid; border-left: solid; border-left-width: 20px; border-color: dodgerblue; padding-left: 10px; width: 90%; margin-left: 5%;">Current Events</h2>
+            <h2 style="font-family: Georgia; font-weight: bold; text-align: left; border-bottom: solid; border-left: solid; border-left-width: 20px; border-color: slategrey; padding-left: 10px; width: 90%; margin-left: 5%;">Current Events</h2>
             <asp:GridView ID="gvEvents" OnRowDeleting="gvEvents_RowDeleting" runat="server" EmptyDataText="There are no Events!" CssClass="eventGrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" SelectedRowStyle-CssClass="selectedRows" AllowPaging="True" AutoGenerateColumns="False" HorizontalAlign="Center" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" OnSelectedIndexChanged="gvEvents_SelectedIndexChanged" OnPageIndexChanging="gvEvents_PageIndexChanging">
                 <%--<AlternatingRowStyle BackColor="White" />--%>
                 <Columns>
@@ -62,7 +65,7 @@
                     <%--<asp:ButtonField Text="Delete" CommandName="deleteClicked" />--%>
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:LinkButton ID="lbDelete" runat="server" onClientClick="return confirmationAlert()" CommandName="Delete">Delete</asp:LinkButton>
+                            <asp:LinkButton ID="lbDelete" runat="server" OnClientClick="return confirmationAlert()" CommandName="Delete">Delete</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -87,13 +90,11 @@
             <asp:Button ID="btnEvents" runat="server" CssClass="addEventBtn" Text="Add Events" OnClick="btnEvents_Click" />
             &nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnBack" runat="server" CssClass="backEventBtn" Text="Back" OnClick="btnBack_Click" />
-        </div>
-        <div>
-        </div>
+    </div>
+    </div>
         <div>
             <h2>&nbsp;</h2>
         </div>
-    </main>
     <script>
         function confirmationAlert() {
             var ok = confirm('Are you sure you want to delete the event?');
@@ -101,6 +102,30 @@
                 return true;
             else
                 return false;
+        }
+    </script>
+    <script>
+        function displayActCat() {
+            document.getElementById("actCatDiv").style.display = "block";
+            document.getElementById("clickerTitles").style.animationName = "pushup";
+            document.getElementById("trigger").style.animationName = "pushuptrigger";
+        }
+        function displayFeatCat() {
+            document.getElementById("featCatDiv").style.display = "block";
+            document.getElementById("clickerTitles").style.animationName = "pushup";
+            document.getElementById("trigger").style.animationName = "pushuptrigger";
+        }
+        function hideActCat() {
+            document.getElementById("actCatDiv").style.display = "none";
+        }
+        function hideFeatCat() {
+            document.getElementById("featCatDiv").style.display = "none";
+        }
+        function hideAll() {
+            document.getElementById("actCatDiv").style.display = "none";
+            document.getElementById("featCatDiv").style.display = "none";
+            document.getElementById("clickerTitles").style.animationName = "pushdown";
+            document.getElementById("trigger").style.animationName = "pushdowntrigger";
         }
     </script>
 </asp:Content>
